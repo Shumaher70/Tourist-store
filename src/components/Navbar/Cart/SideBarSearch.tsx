@@ -1,5 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../../store';
+import { useDispatch } from 'react-redux';
 import { toggleSearch } from '../../../store/redusers/sideBarReduser';
 
 import { Card, Typography, Input } from '@material-tailwind/react';
@@ -8,18 +7,12 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 export default function SideBarSearch() {
   const dispatch = useDispatch();
 
-  const sideBarSelector = useSelector(
-    (state: RootState) => state.sideBar.translateSearchXl
-  );
-
   const clickHandler = () => {
     dispatch(toggleSearch());
   };
 
   return (
-    <Card
-      className={`z-20 absolute w-[40%] rounded-none right-0 h-full transition ease-in-out duration-200 ${sideBarSelector}`}
-    >
+    <Card className="z-20 absolute w-[100%] rounded-none right-0 h-full sm:w-[40%]">
       <div className="mb-2 flex justify-between items-center gap-4 p-4">
         <Typography variant="h5" color="blue-gray">
           Search

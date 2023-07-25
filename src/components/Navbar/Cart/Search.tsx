@@ -9,7 +9,7 @@ const Search = () => {
   return (
     <svg
       onClick={clickHandler}
-      className="cursor-pointer"
+      className="cursor-pointer "
       height="26"
       viewBox="0 0 19 20"
       fill="none"

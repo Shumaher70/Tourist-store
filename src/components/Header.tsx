@@ -12,7 +12,7 @@ import {
   SideBarCompany,
   SideBarSearch,
   SideBarCart,
-} from './variables';
+} from './Navbar/variablesHeader';
 
 const Header = () => {
   const {
@@ -24,19 +24,20 @@ const Header = () => {
   } = useSelector((state: RootState) => state.sideBar);
 
   return (
-    <>
+    <header>
       {toggleCart && <BgCloseCart />}
       {toggleSearch && <BgCloseSearch />}
       {(toggleStore || toggleMagazine || toggleCompany) && <BgClose />}
-      <SidebarStore />
-      <SideBarMagazine />
-      <SideBarCompany />
+      {toggleStore && <SidebarStore />}
+      {toggleMagazine && <SideBarMagazine />}
+      {toggleCompany && <SideBarCompany />}
+
       <Routes>
         <Route path="/" element={<Nav />} />
       </Routes>
-      <SideBarSearch />
-      <SideBarCart />
-    </>
+      {toggleCart && <SideBarCart />}
+      {toggleSearch && <SideBarSearch />}
+    </header>
   );
 };
 

@@ -1,17 +1,9 @@
-import { useSelector } from 'react-redux';
-import { RootState } from '../../../../store';
 import { ListItem, Card } from '@material-tailwind/react';
 
 const SideBarMagazine = () => {
-  const sideBarSelector = useSelector(
-    (state: RootState) => state.sideBar.translateMagazineXr
-  );
-
   return (
-    <Card
-      className={`absolute flex-col rounded-none w-[30%] h-full  ${sideBarSelector} transition ease-in-out duration-200`}
-    >
-      <ul className="mt-[50%] ml-[10%]">
+    <Card className={'absolute flex-col rounded-none w-[20%] h-full z-10'}>
+      <ul className="mt-24 ml-[10%]">
         <li>
           <ListItem className="cursor-pointer">OVERVIEW</ListItem>
         </li>

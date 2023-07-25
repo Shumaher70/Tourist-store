@@ -1,3 +1,4 @@
+import { useState, useLayoutEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar } from '@material-tailwind/react';
 
@@ -8,17 +9,24 @@ import {
   Search,
   IconProfile,
   Cart,
-} from '../variables';
+} from './variablesHeader';
 
 const Nav = () => {
+  const [showInfo, getInfo] = useState(true);
+  const { innerWidth: width } = window;
+
+  useLayoutEffect(() => {
+    width < 768 ? getInfo(false) : getInfo(true);
+  }, [width]);
+
   return (
-    <Navbar className="fixed rounded-none	 min-w-full max-w-screen-xl flex justify-around py-5 px-4 lg:px-8 lg:py-4">
+    <Navbar className="z-10 fixed rounded-none	flex justify-between items-center max-w-full px-3 lg:px-[10%] md:px-5">
       <NavLink className="flex justify-center items-center" to="/">
         <Logo />
       </NavLink>
-      <NavInfo />
-      <div className="container w-auto flex items-center gap-5">
-        <ShopFinder />
+      {showInfo && <NavInfo />}
+      <div className="w-auto flex items-center gap-5">
+        {showInfo && <ShopFinder />}
         <Search />
         <IconProfile />
         <Cart />

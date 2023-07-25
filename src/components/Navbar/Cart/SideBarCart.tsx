@@ -1,21 +1,15 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../../store/index';
+import { useDispatch } from 'react-redux';
 import { Card, Typography } from '@material-tailwind/react';
 
 import { toggleCart } from '../../../store/redusers/sideBarReduser';
 
 const SideBarCart = () => {
   const dispatch = useDispatch();
-  const transitionSelector = useSelector(
-    (state: RootState) => state.sideBar.translateCartXl
-  );
 
   const clickHandler = () => dispatch(toggleCart());
 
   return (
-    <Card
-      className={`z-20 absolute right-0 w-[40%] h-full rounded-none ${transitionSelector}`}
-    >
+    <Card className="z-20 absolute right-0 h-full rounded-none w-[100%] sm:w-[40%]">
       <div className="mb-2 flex justify-between items-center gap-4 p-4">
         <Typography variant="h5" color="blue-gray">
           Search

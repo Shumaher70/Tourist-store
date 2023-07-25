@@ -10,7 +10,7 @@ const BgCloseSearch = () => {
   return (
     <div
       onClick={clickHandler}
-      className="bg-gray-900 opacity-50 w-full h-full cursor-pointer absolute z-10"
+      className="bg-gray-900 opacity-50 w-full h-full cursor-pointer absolute z-20"
     ></div>
   );
 };

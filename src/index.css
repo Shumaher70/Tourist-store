@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.carousel-dots li button:before {
+  width: 15px !important;
+  height: 15px !important;
+  color: transparent !important;
+  border: 2px solid white;
+  border-radius: 50%;
+  opacity: 1 !important;
+}
+
+.carousel-dots-active button:before {
+  border-radius: 50%;
+}
+
+.carousel-dots li.carousel-dots-active button:before {
+  color: transparent !important;
+  background-color: white !important;
+  opacity: 1 !important;
+}
