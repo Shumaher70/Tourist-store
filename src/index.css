@@ -23,13 +23,13 @@
 
 .carousel-prev:before,
 .carousel-next:before {
-  background-image: url('/src/components/Main/CategoryCarousel/CategoryImg/back.png') !important;
+  background-image: url('/src/components/main/categoryCarousel/categoryImg/back.png') !important;
   width: 100px !important;
   height: 100px !important;
 }
 
 .carousel-next:before {
-  background-image: url('/src/components/Main/CategoryCarousel/CategoryImg/next.png') !important;
+  background-image: url('/src/components/main/categoryCarousel/categoryImg/next.png') !important;
 }
 
 .carousel-prev {

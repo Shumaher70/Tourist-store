@@ -2,6 +2,7 @@ import { useLayoutEffect, useState } from 'react';
 import { Typography } from '@material-tailwind/react';
 import { dammyCategoryDiscription } from './dammyCategoryDiscription';
 import { nanoid } from 'nanoid';
+
 const carousel = require('infinite-react-carousel');
 const { Slider } = carousel;
 
@@ -24,10 +25,10 @@ const CatrgoryCarousel = () => {
   }, [width]);
 
   return (
-    <div>
+    <div className="border-b-[1px] border-black">
       {screenLg && (
         <Slider
-          className="py-10 "
+          className="py-10"
           slidesPerRow={1}
           adaptiveHeight={true}
           slidesToShow={7}
@@ -38,10 +39,10 @@ const CatrgoryCarousel = () => {
               <div key={nanoid()}>
                 <img
                   className="cursor-pointer"
-                  src={require(`./CategoryImg/${item.img}`)}
+                  src={require(`./categoryImg/${item.img}`)}
                   alt={item.img}
                 />
-                <div className="flex justify-center">
+                <div className="flex justify-center ">
                   <Typography variant="h5" className="uppercase font-normal">
                     {item.discription}
                   </Typography>
@@ -54,7 +55,7 @@ const CatrgoryCarousel = () => {
 
       {screenMd && (
         <Slider
-          className="py-10 "
+          className="py-10"
           slidesPerRow={1}
           adaptiveHeight={true}
           arrows={true}
@@ -65,8 +66,7 @@ const CatrgoryCarousel = () => {
             return (
               <div key={nanoid()}>
                 <img
-                  className="cursor-pointer"
-                  src={require(`./CategoryImg/${item.img}`)}
+                  src={require(`./categoryImg/${item.img}`)}
                   alt={item.img}
                 />
                 <div className="flex justify-center">
@@ -94,7 +94,7 @@ const CatrgoryCarousel = () => {
               <div key={nanoid()}>
                 <img
                   className="cursor-pointer"
-                  src={require(`./CategoryImg/${item.img}`)}
+                  src={require(`./categoryImg/${item.img}`)}
                   alt={item.img}
                 />
                 <div className="flex justify-center">

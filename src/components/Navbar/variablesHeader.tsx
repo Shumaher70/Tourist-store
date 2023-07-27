@@ -1,18 +1,18 @@
-import Cart from './Cart/Cart';
-import NavInfo from './Info/NavInfo';
-import ShopFinder from './Cart/ShopFinder';
-import SideBarCompany from './Info/SideBarCompany/SideBarCompany';
-import SideBarMagazine from './Info/SideBarMagazine/SideBarMagazine';
-import SidebarStore from './Info/SideBarStore/SidebarStore';
-import SideBarSearch from './Cart/SideBarSearch';
-import SideBarCart from './Cart/SideBarCart';
-import BgClose from './Info/BgCloseInfo';
-import BgCloseSearch from './Cart/BgCloseSearch';
-import BgCloseCart from './Cart/BgCloseCart';
+import Cart from './cart/Cart';
+import NavInfo from './info/NavInfo';
+import ShopFinder from './cart/ShopFinder';
+import SideBarCompany from './info/sideBarCompany/SideBarCompany';
+import SideBarMagazine from './info/sideBarMagazine/SideBarMagazine';
+import SidebarStore from './info/sideBarStore/SidebarStore';
+import SideBarSearch from './cart/SideBarSearch';
+import SideBarCart from './cart/SideBarCart';
+import BgClose from './info/BgCloseInfo';
+import BgCloseSearch from './cart/BgCloseSearch';
+import BgCloseCart from './cart/BgCloseCart';
 import Nav from './Nav';
-import IconProfile from './Cart/Profile';
-import Search from './Cart/Search';
-import Logo from './Logo/Logo';
+import IconProfile from './cart/Profile';
+import Search from './cart/Search';
+import Logo from './logo/Logo';
 
 export {
   Cart,

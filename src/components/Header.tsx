@@ -12,7 +12,7 @@ import {
   SideBarCompany,
   SideBarSearch,
   SideBarCart,
-} from './Navbar/variablesHeader';
+} from './navbar/variablesHeader';
 
 const Header = () => {
   const {
