@@ -9,7 +9,7 @@ const SideBarCart = () => {
   const clickHandler = () => dispatch(toggleCart());
 
   return (
-    <Card className="z-20 absolute right-0 h-full rounded-none w-[100%] sm:w-[40%]">
+    <Card className="z-20 fixed right-0 h-full rounded-none w-[100%] sm:w-[40%]">
       <div className="mb-2 flex justify-between items-center gap-4 p-4">
         <Typography variant="h5" color="blue-gray">
           Search

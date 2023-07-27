@@ -12,7 +12,9 @@ export default function SideBarSearch() {
   };
 
   return (
-    <Card className="z-20 absolute w-[100%] rounded-none right-0 h-full sm:w-[40%]">
+    <Card
+      className={`z-20 fixed w-[100%] rounded-none right-0 h-full $ sm:w-[40%]`}
+    >
       <div className="mb-2 flex justify-between items-center gap-4 p-4">
         <Typography variant="h5" color="blue-gray">
           Search

@@ -1,9 +1,10 @@
-import MainCarousel from './Main/MainCarousel/img/MainCarousel';
+import { CatrgoryCarousel, MainCarousel } from './Main/variblesMain';
 
 const Main = () => {
   return (
     <main>
       <MainCarousel />
+      <CatrgoryCarousel />
     </main>
   );
 };

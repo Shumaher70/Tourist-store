@@ -45,7 +45,6 @@ export const sideBar = createSlice({
     toggleCart: (state) => {
       state.toggleCart = !state.toggleCart;
     },
-
     hideInfo: (state) => {
       state.toggleStore = false;
       state.toggleMagazine = false;
