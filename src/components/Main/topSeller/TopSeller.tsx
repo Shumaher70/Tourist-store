@@ -25,7 +25,7 @@ const TopSeller = () => {
             className="rounded-none shadow-none cursor-pointer"
           >
             <div className="relative">
-              <div className="absolute w-full h-full bg-black opacity-10"></div>
+              <div className="absolute w-full h-full bg-black opacity-5"></div>
               <img src={require(`./topSellerImg/${item.img}`)} alt={item.img} />
             </div>
 

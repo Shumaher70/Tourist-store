@@ -1,4 +1,9 @@
-import { CatrgoryCarousel, MainCarousel, TopSeller } from './main/variblesMain';
+import {
+  CatrgoryCarousel,
+  MainCarousel,
+  MainGarantee,
+  TopSeller,
+} from './main/variblesMain';
 
 const Main = () => {
   return (
@@ -6,6 +11,7 @@ const Main = () => {
       <MainCarousel />
       <CatrgoryCarousel />
       <TopSeller />
+      <MainGarantee />
     </main>
   );
 };
