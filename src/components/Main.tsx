@@ -3,6 +3,7 @@ import {
   MainCarousel,
   MainGarantee,
   TopSeller,
+  Magazine,
 } from './main/variblesMain';
 
 const Main = () => {
@@ -12,6 +13,7 @@ const Main = () => {
       <CatrgoryCarousel />
       <TopSeller />
       <MainGarantee />
+      <Magazine />
     </main>
   );
 };

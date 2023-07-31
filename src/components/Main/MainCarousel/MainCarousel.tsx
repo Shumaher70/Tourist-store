@@ -36,7 +36,7 @@ const MainCarousel = () => {
               src={require(`./img/${item.img}`)}
               alt={`${item.img}`}
             />
-            <div className="absolute flex flex-col items-start justify-between z-10 top-0 w-full h-full py-10 px-3 lg:px-[10%] md:px-5 ">
+            <div className="absolute flex flex-col items-start justify-between z-10 top-0 w-full h-full py-10 px-[10%]  ">
               <div>
                 <Typography
                   variant="h1"

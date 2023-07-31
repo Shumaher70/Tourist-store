@@ -43,7 +43,10 @@ const CatrgoryCarousel = () => {
                   alt={item.img}
                 />
                 <div className="flex justify-center ">
-                  <Typography variant="h5" className="uppercase font-normal">
+                  <Typography
+                    variant="h2"
+                    className="uppercase font-normal text-2xl sm:text-4xl"
+                  >
                     {item.discription}
                   </Typography>
                 </div>
@@ -70,7 +73,10 @@ const CatrgoryCarousel = () => {
                   alt={item.img}
                 />
                 <div className="flex justify-center">
-                  <Typography variant="h4" className="uppercase font-normal">
+                  <Typography
+                    variant="h4"
+                    className="uppercase font-normal text-2xl sm:text-4xl"
+                  >
                     {item.discription}
                   </Typography>
                 </div>
@@ -98,7 +104,10 @@ const CatrgoryCarousel = () => {
                   alt={item.img}
                 />
                 <div className="flex justify-center">
-                  <Typography variant="h2" className="uppercase font-normal">
+                  <Typography
+                    variant="h2"
+                    className="uppercase font-normal text-2xl sm:text-4xl"
+                  >
                     {item.discription}
                   </Typography>
                 </div>

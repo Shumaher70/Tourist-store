@@ -20,7 +20,7 @@ const Nav = () => {
   }, [width]);
 
   return (
-    <Navbar className="z-10 fixed rounded-none	flex justify-between items-center max-w-full px-3 lg:px-[10%] md:px-5">
+    <Navbar className="z-10 fixed rounded-none	flex justify-between items-center max-w-full px-[10%]">
       <NavLink className="flex justify-center items-center" to="/">
         <Logo />
       </NavLink>

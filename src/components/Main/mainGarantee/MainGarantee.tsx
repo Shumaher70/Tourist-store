@@ -1,9 +1,4 @@
-import {
-  Carousel,
-  Typography,
-  Button,
-  IconButton,
-} from '@material-tailwind/react';
+import { Carousel, Typography, Button } from '@material-tailwind/react';
 import { mainGaranteeTrigger } from './mainGaranteeTrigger';
 
 const MainGarantee = () => {
@@ -13,7 +8,7 @@ const MainGarantee = () => {
       prevArrow={() => false}
       nextArrow={() => false}
       navigation={({ setActiveIndex, activeIndex }) => (
-        <div className="absolute w-full h-[25%] px-[10%] bottom-4 left-2/4 z-50 flex -translate-x-2/4 pt-10 ">
+        <div className="absolute w-full h-[25%] px-[10%] bottom-4 left-2/4 z-50 flex -translate-x-2/4 pt-10 sm:py-10 ">
           <div className=" flex w-full h-full justify-between items-center border-t-[1px] border-white">
             {mainGaranteeTrigger.map((_, i) => (
               <img

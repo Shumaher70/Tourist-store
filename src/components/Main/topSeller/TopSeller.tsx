@@ -5,9 +5,12 @@ import { dammyTopSellerDiscription } from './dammyTopSellerDicription';
 
 const TopSeller = () => {
   return (
-    <div className="flex-col items-center p-10">
+    <div className="flex-col items-center py-10 px-[10%]">
       <div className="flex justify-between ">
-        <Typography variant="h2" className="font-normal uppercase">
+        <Typography
+          variant="h2"
+          className="font-normal uppercase text-2xl sm:text-4xl"
+        >
           top seller
         </Typography>
         <Button
