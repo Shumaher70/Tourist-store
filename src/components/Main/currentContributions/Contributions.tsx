@@ -30,14 +30,14 @@ const Contributions = () => {
           <img
             src={require('./main.jpg')}
             alt="main"
-            className="sm:w-[49%] w-full max-h-[550px] object-cover"
+            className="w-full xl:w-[49%] max-h-[550px] object-cover"
           />
-          <div className="sm:w-[49%] w-full flex flex-col justify-between">
+          <div className="w-full xl:w-[49%] flex flex-col justify-between">
             <div>
               <Typography
                 varian="h2"
                 color="black"
-                className="sm:text-4xl text-2xl border-t-[1px] border-b-[1px] border-black sm:mb-10 pb-20"
+                className="sm:text-4xl text-2xl border-t-[1px] border-b-[1px] border-black sm:mb-10 lg:pb-20"
               >
                 MAHARISHI X HEIMPLANET
               </Typography>
@@ -50,7 +50,7 @@ const Contributions = () => {
               <Button
                 color="white"
                 size="lg"
-                className="bg-black text-white rounded-none"
+                className="bg-black text-white rounded-none mt-5"
               >
                 READ MORE
               </Button>

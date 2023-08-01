@@ -25,7 +25,7 @@ const Magazine = () => {
         </Button>
       </div>
       <div className="pt-[5%] flex flex-wrap gap-5 justify-between">
-        <Card className="shadow-none rounded-none cursor-pointer w-[32%] xl:min-w-[420px] lg:min-w-[390px] sm:min-w-[290px] min-w-full ">
+        <Card className="shadow-none rounded-none cursor-pointer w-[32%] xl:min-w-[400px] lg:min-w-[390px] sm:min-w-[290px] min-w-full ">
           <CardHeader
             floated={false}
             shadow={false}
@@ -48,7 +48,7 @@ const Magazine = () => {
             </Typography>
           </CardBody>
         </Card>
-        <Card className="shadow-none rounded-none cursor-pointer w-[32%] xl:min-w-[420px] lg:min-w-[390px] sm:min-w-[290px] min-w-full">
+        <Card className="shadow-none rounded-none cursor-pointer w-[32%] xl:min-w-[400px] lg:min-w-[390px] sm:min-w-[290px] min-w-full">
           <CardHeader
             floated={false}
             shadow={false}
@@ -71,7 +71,7 @@ const Magazine = () => {
             </Typography>
           </CardBody>
         </Card>
-        <Card className="shadow-none rounded-none cursor-pointer w-[32%] xl:min-w-[420px] lg:min-w-[390px] sm:min-w-[290px] min-w-full ">
+        <Card className="shadow-none rounded-none cursor-pointer w-[32%] xl:min-w-[400px] lg:min-w-[390px] sm:min-w-[290px] min-w-full ">
           <CardHeader
             floated={false}
             shadow={false}
