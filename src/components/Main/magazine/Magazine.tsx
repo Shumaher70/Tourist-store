@@ -8,7 +8,7 @@ import {
 
 const Magazine = () => {
   return (
-    <div className="py-10 px-[10%] flex-col">
+    <div className="py-[5%] px-[10%] flex-col">
       <div className="flex justify-between items-center">
         <Typography
           variant="h2"
@@ -24,8 +24,8 @@ const Magazine = () => {
           DISCOVER
         </Button>
       </div>
-      <div className=" pt-10 w-full h-full flex flex-wrap gap-5 sm:justify-between justify-center">
-        <Card className="shadow-none rounded-none cursor-pointer ">
+      <div className="pt-[5%] flex flex-wrap gap-5 justify-between">
+        <Card className="shadow-none rounded-none cursor-pointer w-[32%] xl:min-w-[420px] lg:min-w-[390px] sm:min-w-[290px] min-w-full ">
           <CardHeader
             floated={false}
             shadow={false}
@@ -35,10 +35,10 @@ const Magazine = () => {
             <img
               src={require('./img-1.jpg')}
               alt="img1"
-              className="object-cover xl:w-[400px] xl:h-[400px] lg:w-[370px] lg:h-[370px] md:w-[270px] md:h-[270px] w-[350px] h-[350px]"
+              className="object-cover"
             />
           </CardHeader>
-          <CardBody className="p-0">
+          <CardBody className="p-0 mt-5">
             <Typography
               variant="h4"
               color="black"
@@ -48,7 +48,7 @@ const Magazine = () => {
             </Typography>
           </CardBody>
         </Card>
-        <Card className="shadow-none rounded-none cursor-pointer ">
+        <Card className="shadow-none rounded-none cursor-pointer w-[32%] xl:min-w-[420px] lg:min-w-[390px] sm:min-w-[290px] min-w-full">
           <CardHeader
             floated={false}
             shadow={false}
@@ -57,11 +57,11 @@ const Magazine = () => {
           >
             <img
               src={require('./img-2.webp')}
-              alt="img3"
-              className="object-cover xl:w-[400px] xl:h-[400px] lg:w-[370px] lg:h-[370px] md:w-[270px] md:h-[270px] w-[350px] h-[350px]"
+              alt="img2"
+              className="object-cover"
             />
           </CardHeader>
-          <CardBody className="p-0">
+          <CardBody className="p-0 mt-5">
             <Typography
               variant="h4"
               color="black"
@@ -71,7 +71,7 @@ const Magazine = () => {
             </Typography>
           </CardBody>
         </Card>
-        <Card className="shadow-none rounded-none cursor-pointer">
+        <Card className="shadow-none rounded-none cursor-pointer w-[32%] xl:min-w-[420px] lg:min-w-[390px] sm:min-w-[290px] min-w-full ">
           <CardHeader
             floated={false}
             shadow={false}
@@ -79,12 +79,12 @@ const Magazine = () => {
             className="m-0 rounded-none"
           >
             <img
-              src={require('./img-3.webp')}
+              src={require('./img-3.jpg')}
               alt="img3"
-              className="object-cover xl:w-[400px] xl:h-[400px] lg:w-[370px] lg:h-[370px] md:w-[270px] md:h-[270px] w-[350px] h-[350px]"
+              className="object-cover"
             />
           </CardHeader>
-          <CardBody className="p-0">
+          <CardBody className="p-0 mt-5">
             <Typography
               variant="h4"
               color="black"

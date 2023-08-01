@@ -4,6 +4,7 @@ import TopSeller from './topSeller/TopSeller';
 import MainGarantee from './mainGarantee/MainGarantee';
 import Magazine from './magazine/Magazine';
 import Inspiration from './inspiration/Inspiration';
+import Contributions from './currentContributions/Contributions';
 
 export {
   MainCarousel,
@@ -12,4 +13,5 @@ export {
   MainGarantee,
   Magazine,
   Inspiration,
+  Contributions,
 };

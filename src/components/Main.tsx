@@ -5,6 +5,7 @@ import {
   TopSeller,
   Magazine,
   Inspiration,
+  Contributions,
 } from './main/variblesMain';
 
 const Main = () => {
@@ -16,6 +17,7 @@ const Main = () => {
       <MainGarantee />
       <Magazine />
       <Inspiration />
+      <Contributions />
     </main>
   );
 };
