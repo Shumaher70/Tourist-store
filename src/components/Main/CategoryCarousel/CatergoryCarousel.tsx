@@ -42,10 +42,10 @@ const CatrgoryCarousel = () => {
                   src={require(`./categoryImg/${item.img}`)}
                   alt={item.img}
                 />
-                <div className="flex justify-center ">
+                <div className="flex justify-center">
                   <Typography
                     variant="h2"
-                    className="uppercase font-normal text-2xl sm:text-4xl"
+                    className="uppercase font-normal text-2xl sm:text-3xl"
                   >
                     {item.discription}
                   </Typography>
@@ -72,10 +72,10 @@ const CatrgoryCarousel = () => {
                   src={require(`./categoryImg/${item.img}`)}
                   alt={item.img}
                 />
-                <div className="flex justify-center">
+                <div className="flex justify-center items-center">
                   <Typography
                     variant="h4"
-                    className="uppercase font-normal text-2xl sm:text-4xl"
+                    className="uppercase font-normal text-2xl sm:text-2xl"
                   >
                     {item.discription}
                   </Typography>
@@ -106,7 +106,7 @@ const CatrgoryCarousel = () => {
                 <div className="flex justify-center">
                   <Typography
                     variant="h2"
-                    className="uppercase font-normal text-2xl sm:text-4xl"
+                    className="uppercase font-normal text-2xl sm:text-3xl"
                   >
                     {item.discription}
                   </Typography>

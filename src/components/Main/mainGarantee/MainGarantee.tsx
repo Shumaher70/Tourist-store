@@ -36,21 +36,17 @@ const MainGarantee = () => {
             <Typography
               variant="h2"
               color="white"
-              className="mb-4 text-3xl md:text-4xl lg:text-5xl border-y-[1px] border-white"
+              className="mb-4 text-2xl sn:text-4xl lg:text-5xl border-y-[1px] border-white"
             >
               LIFETIME GUARANTEE
             </Typography>
-            <Typography
-              variant="paragraph"
-              color="white"
-              className="mb-2 opacity-80"
-            >
+            <Typography variant="paragraph" color="white" className="mt-5">
               All HEIMPLANET Products are built to withstand the harsh test of
               time. If any of our products do not perform as promised, just
               contact us!
             </Typography>
             <div className="flex gap-2">
-              <Button size="lg" color="white" className="rounded-none">
+              <Button size="lg" color="white" className="rounded-none mt-5">
                 LEARN MORE
               </Button>
             </div>
@@ -69,22 +65,18 @@ const MainGarantee = () => {
             <Typography
               variant="h2"
               color="white"
-              className="mb-4 text-3xl md:text-4xl lg:text-5xl border-y-[1px] border-white"
+              className="mb-4 text-2xl sm:text-4xl border-y-[1px] border-white"
             >
               The Beauty of Nature
             </Typography>
-            <Typography
-              variant="paragraph"
-              color="white"
-              className="mb-2 opacity-80"
-            >
+            <Typography variant="paragraph" color="white" className="mt-5">
               It is not so much for its beauty that the forest makes a claim
               upon men's hearts, as for that subtle something, that quality of
               air that emanation from old trees, that so wonderfully changes and
               renews a weary spirit.
             </Typography>
             <div className="flex gap-2">
-              <Button size="lg" color="white" className="rounded-none">
+              <Button size="lg" color="white" className="rounded-none mt-5">
                 LEARN MORE
               </Button>
             </div>
@@ -103,22 +95,18 @@ const MainGarantee = () => {
             <Typography
               variant="h2"
               color="white"
-              className="mb-4 text-3xl md:text-4xl lg:text-5xl border-y-[1px] border-white"
+              className="mb-4 text-2xl sm:text-4xl border-y-[1px] border-white"
             >
               The Beauty of Nature
             </Typography>
-            <Typography
-              variant="paragraph"
-              color="white"
-              className="mb-2 opacity-80"
-            >
+            <Typography variant="paragraph" color="white" className="mt-5">
               It is not so much for its beauty that the forest makes a claim
               upon men's hearts, as for that subtle something, that quality of
               air that emanation from old trees, that so wonderfully changes and
               renews a weary spirit.
             </Typography>
             <div className="flex gap-2">
-              <Button size="lg" color="white" className="rounded-none">
+              <Button size="lg" color="white" className="rounded-none mt-5">
                 LEARN MORE
               </Button>
             </div>

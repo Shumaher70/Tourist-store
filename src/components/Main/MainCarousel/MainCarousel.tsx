@@ -40,7 +40,7 @@ const MainCarousel = () => {
               <div>
                 <Typography
                   variant="h1"
-                  className="inline-block uppercase text-4xl text-white border-t-[1px] border-b-[1px] border-white lg:text-7xl sm:text-6xl"
+                  className="inline-block uppercase text-2xl text-white border-t-[1px] border-b-[1px] border-white sm:text-4xl"
                 >
                   {item.title}
                 </Typography>
