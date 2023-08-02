@@ -12,7 +12,6 @@ import BgCloseCart from './cart/BgCloseCart';
 import Nav from './Nav';
 import IconProfile from './cart/Profile';
 import Search from './cart/Search';
-import Logo from './logo/Logo';
 
 export {
   Cart,
@@ -28,6 +27,5 @@ export {
   SideBarSearch,
   IconProfile,
   Search,
-  Logo,
   SideBarCart,
 };

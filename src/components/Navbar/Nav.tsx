@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { Navbar } from '@material-tailwind/react';
 
 import {
-  Logo,
   NavInfo,
   ShopFinder,
   Search,
@@ -21,8 +20,11 @@ const Nav = () => {
 
   return (
     <Navbar className="z-10 fixed rounded-none	flex justify-between items-center max-w-full px-[10%]">
-      <NavLink className="flex justify-center items-center" to="/">
-        <Logo />
+      <NavLink
+        className="flex justify-center items-center w-[50%] sm:w-[60%] lg:w-[20%]"
+        to="/"
+      >
+        {<img src={require('./logo/logo.png')} alt="logo" />}
       </NavLink>
       {showInfo && <NavInfo />}
       <div className="w-auto flex items-center gap-5">

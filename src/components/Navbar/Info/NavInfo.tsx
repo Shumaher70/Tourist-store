@@ -28,21 +28,27 @@ const NavInfo = () => {
           clickStoreHandler();
         }}
       >
-        <ListItem className="text-black md:text-base">STORE</ListItem>
+        <ListItem className="text-black md:text-base rounded-none">
+          STORE
+        </ListItem>
       </li>
       <li
         onClick={() => {
           clickMagazineHandler();
         }}
       >
-        <ListItem className="text-black md:text-base">MAGAZINE</ListItem>
+        <ListItem className="text-black md:text-base rounded-none">
+          MAGAZINE
+        </ListItem>
       </li>
       <li
         onClick={() => {
           clickCompanyHandler();
         }}
       >
-        <ListItem className="text-black md:text-base">COMPANY</ListItem>
+        <ListItem className="text-black md:text-base rounded-none">
+          COMPANY
+        </ListItem>
       </li>
     </ul>
   );

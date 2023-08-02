@@ -5,30 +5,36 @@ const SideBarMagazine = () => {
     <Card className={'fixed flex-col rounded-none w-[20%] h-full z-10'}>
       <ul className="mt-24 ml-[10%]">
         <li>
-          <ListItem className="cursor-pointer">OVERVIEW</ListItem>
+          <ListItem className="cursor-pointer rounded-none">OVERVIEW</ListItem>
         </li>
         <li>
-          <ListItem className="cursor-pointer">ADVENTURE</ListItem>
+          <ListItem className="cursor-pointer rounded-none">ADVENTURE</ListItem>
         </li>
         <li>
-          <ListItem className="cursor-pointer">COLLABORATIONS</ListItem>
+          <ListItem className="cursor-pointer rounded-none">
+            COLLABORATIONS
+          </ListItem>
         </li>
         <li>
-          <ListItem className="cursor-pointer">PROJECTS</ListItem>
+          <ListItem className="cursor-pointer rounded-none">PROJECTS</ListItem>
         </li>
         <li>
-          <ListItem className="cursor-pointer">HPT GOURMET CAMPING</ListItem>
+          <ListItem className="cursor-pointer rounded-none">
+            HPT GOURMET CAMPING
+          </ListItem>
         </li>
         <li>
-          <ListItem className="cursor-pointer">AMBASSADORS</ListItem>
+          <ListItem className="cursor-pointer rounded-none">
+            AMBASSADORS
+          </ListItem>
         </li>
         <li>
-          <ListItem className="cursor-pointer mt-5 p-1 pl-[12px] text-[0.7rem]">
+          <ListItem className="cursor-pointer rounded-none mt-5 p-1 pl-[12px] text-[0.7rem]">
             BLOG: LIGHTWEIGHT LUGGAGE
           </ListItem>
         </li>
         <li>
-          <ListItem className="cursor-pointer p-1 pl-[12px] text-[0.7rem]">
+          <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
             BLOG: MAVERICKS TOUR
           </ListItem>
         </li>
