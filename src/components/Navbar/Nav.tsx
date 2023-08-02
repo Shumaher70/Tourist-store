@@ -19,7 +19,7 @@ const Nav = () => {
   }, [width]);
 
   return (
-    <Navbar className="z-10 fixed rounded-none	flex justify-between items-center max-w-full px-[10%]">
+    <Navbar className="z-30 fixed rounded-none	flex justify-between items-center max-w-full px-[10%]">
       <NavLink
         className="flex justify-center items-center w-[50%] sm:w-[60%] lg:w-[20%]"
         to="/"

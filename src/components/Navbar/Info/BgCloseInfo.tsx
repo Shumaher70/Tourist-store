@@ -10,7 +10,7 @@ const BgClose = () => {
   return (
     <div
       onClick={clickHandler}
-      className={`fixed w-full h-[100%] bg-gray-900 opacity-20  cursor-pointer z-10`}
+      className={`fixed w-full h-[100%] bg-gray-900 opacity-20  cursor-pointer z-20`}
     ></div>
   );
 };

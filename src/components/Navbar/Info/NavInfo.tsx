@@ -22,35 +22,26 @@ const NavInfo = () => {
   };
 
   return (
-    <ul className="flex">
-      <li
-        onClick={() => {
-          clickStoreHandler();
-        }}
+    <div className="flex">
+      <ListItem
+        onClick={() => clickStoreHandler()}
+        className="text-black md:text-base rounded-none w-auto"
       >
-        <ListItem className="text-black md:text-base rounded-none">
-          STORE
-        </ListItem>
-      </li>
-      <li
-        onClick={() => {
-          clickMagazineHandler();
-        }}
+        STORE
+      </ListItem>
+      <ListItem
+        onClick={() => clickMagazineHandler()}
+        className="text-black md:text-base rounded-none w-auto"
       >
-        <ListItem className="text-black md:text-base rounded-none">
-          MAGAZINE
-        </ListItem>
-      </li>
-      <li
-        onClick={() => {
-          clickCompanyHandler();
-        }}
+        MAGAZINE
+      </ListItem>
+      <ListItem
+        onClick={() => clickCompanyHandler()}
+        className="text-black md:text-base rounded-none w-auto"
       >
-        <ListItem className="text-black md:text-base rounded-none">
-          COMPANY
-        </ListItem>
-      </li>
-    </ul>
+        COMPANY
+      </ListItem>
+    </div>
   );
 };
 
