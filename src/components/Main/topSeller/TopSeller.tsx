@@ -37,9 +37,7 @@ const TopSeller = () => {
             </Typography>
 
             <div className="flex justify-between pb-10">
-              <Typography variant="paragraph" color="light-gray">
-                {item.category}
-              </Typography>
+              <Typography variant="paragraph">{item.category}</Typography>
 
               <Typography
                 className="border-b-[1px] border-black"

@@ -18,6 +18,7 @@ import SidebarReStore from './info/sideBarStore/SidebarReStore';
 import SidebarAboutUs from './info/sideBarCompany/SidebarAboutUs';
 import SidebarSustainAbility from './info/sideBarCompany/SidebarSustainAbility';
 import SidebarDisignSpace from './info/sideBarCompany/SidebarDisignSpace';
+import ToggleNav from '../ToggleNav';
 
 export {
   Cart,
@@ -40,4 +41,5 @@ export {
   SidebarAboutUs,
   SidebarSustainAbility,
   SidebarDisignSpace,
+  ToggleNav,
 };

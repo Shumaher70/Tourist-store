@@ -11,8 +11,8 @@ const FooterGarantee = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M7 12L10 15L17 8" stroke="white" stroke-width="2" />
-          <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" />
+          <path d="M7 12L10 15L17 8" stroke="white" strokeWidth="2" />
+          <circle cx="12" cy="12" r="11" stroke="white" strokeWidth="2" />
         </svg>
         <Typography variant="h5" color="white" className="ml-2 text-xl">
           1% FOR THE PLANET
@@ -27,8 +27,8 @@ const FooterGarantee = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M7 12L10 15L17 8" stroke="white" stroke-width="2" />
-          <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" />
+          <path d="M7 12L10 15L17 8" stroke="white" strokeWidth="2" />
+          <circle cx="12" cy="12" r="11" stroke="white" strokeWidth="2" />
         </svg>
         <Typography variant="h5" color="white" className="ml-2 text-xl">
           LIFETIME WARRANTY
@@ -43,8 +43,8 @@ const FooterGarantee = () => {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M7 12L10 15L17 8" stroke="white" stroke-width="2" />
-          <circle cx="12" cy="12" r="11" stroke="white" stroke-width="2" />
+          <path d="M7 12L10 15L17 8" stroke="white" strokeWidth="2" />
+          <circle cx="12" cy="12" r="11" stroke="white" strokeWidth="2" />
         </svg>
         <Typography variant="h5" color="white" className="ml-2 text-xl">
           RE-STORE-PROGRAM

@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-import { Routes, Route } from 'react-router-dom';
 import { RootState } from '../store/index';
 import '../index.css';
 import {
@@ -18,6 +17,7 @@ import {
   SidebarReStore,
   SideBarSearch,
   SideBarCart,
+  ToggleNav,
 } from './navbar/variablesHeader';
 
 const Header = () => {
@@ -37,6 +37,7 @@ const Header = () => {
 
   return (
     <header>
+      <ToggleNav />
       {toggleCart && <BgCloseCart />}
       {toggleSearch && <BgCloseSearch />}
       {(toggleStore || toggleMagazine || toggleCompany) && <BgClose />}
@@ -51,10 +52,7 @@ const Header = () => {
         <SidebarSustainAbility />
       )}
       {toggleCompany && sidebarleCompanyDisignSpace && <SidebarDisignSpace />}
-
-      <Routes>
-        <Route path="/" element={<Nav />} />
-      </Routes>
+      <Nav />
       {toggleCart && <SideBarCart />}
       {toggleSearch && <SideBarSearch />}
     </header>
