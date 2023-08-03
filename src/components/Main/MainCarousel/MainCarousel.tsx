@@ -7,7 +7,7 @@ import { nanoid } from 'nanoid';
 import Slider from 'infinite-react-carousel';
 
 const MainCarousel = () => {
-  const sizeSelector = useSelector((state: RootState) => state.size.hightNav);
+  const sizeSelector = useSelector((state: RootState) => state.size.heightNav);
   const [slider, setSider] = useState<Boolean | HTMLDivElement>(false);
 
   useEffect(() => {

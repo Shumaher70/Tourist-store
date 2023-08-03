@@ -2,7 +2,10 @@ import { useDispatch } from 'react-redux';
 import { useState, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar } from '@material-tailwind/react';
-import { hightNav } from '../../store/redusers/sizeComponentsReducer';
+import {
+  heightNav,
+  widthNav,
+} from '../../store/redusers/sizeComponentsReducer';
 import {
   NavInfo,
   ShopFinder,
@@ -19,9 +22,11 @@ const Nav = () => {
   useEffect(() => {
     window.addEventListener('resize', () => {
       window.innerWidth < 768 ? getInfo(false) : getInfo(true);
-      dispatch(hightNav(size.current!.offsetHeight.toString()));
+      dispatch(heightNav(size.current!.offsetHeight.toString()));
+      dispatch(widthNav(size.current!.offsetWidth.toString()));
     });
-    dispatch(hightNav(size.current!.offsetHeight.toString()));
+    dispatch(heightNav(size.current!.offsetHeight.toString()));
+    dispatch(widthNav(size.current!.offsetWidth.toString()));
   }, [dispatch]);
 
   return (

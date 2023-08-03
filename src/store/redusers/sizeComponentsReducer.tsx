@@ -1,23 +1,28 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface SizeComponents {
-  hightNav: string;
+  heightNav: string;
+  widthNav: string;
 }
 
 const initialState: SizeComponents = {
-  hightNav: '',
+  heightNav: '',
+  widthNav: '',
 };
 
 export const size = createSlice({
   name: 'size',
   initialState,
   reducers: {
-    hightNav: (state, action: PayloadAction<string>) => {
-      state.hightNav = action.payload;
+    heightNav: (state, action: PayloadAction<string>) => {
+      state.heightNav = action.payload;
+    },
+    widthNav: (state, action: PayloadAction<string>) => {
+      state.widthNav = action.payload;
     },
   },
 });
 
-export const { hightNav } = size.actions;
+export const { heightNav, widthNav } = size.actions;
 
 export default size.reducer;

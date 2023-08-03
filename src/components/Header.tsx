@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/index';
 import '../index.css';
@@ -18,9 +19,12 @@ import {
   SideBarSearch,
   SideBarCart,
   ToggleNav,
+  NavMobail,
 } from './navbar/variablesHeader';
 
 const Header = () => {
+  const widthSlice = useSelector((state: RootState) => state.size.widthNav);
+  const [InititalWidth, setInititalWidth] = useState(false);
   const {
     toggleStore,
     sidebarStoreProduct,
@@ -35,9 +39,13 @@ const Header = () => {
     toggleCart,
   } = useSelector((state: RootState) => state.sideBar);
 
+  useEffect(() => {
+    +widthSlice < 768 ? setInititalWidth(true) : setInititalWidth(false);
+  }, [widthSlice]);
+
   return (
     <header>
-      <ToggleNav />
+      {InititalWidth && <ToggleNav />}
       {toggleCart && <BgCloseCart />}
       {toggleSearch && <BgCloseSearch />}
       {(toggleStore || toggleMagazine || toggleCompany) && <BgClose />}
@@ -53,6 +61,7 @@ const Header = () => {
       )}
       {toggleCompany && sidebarleCompanyDisignSpace && <SidebarDisignSpace />}
       <Nav />
+      {InititalWidth && <NavMobail />}
       {toggleCart && <SideBarCart />}
       {toggleSearch && <SideBarSearch />}
     </header>
