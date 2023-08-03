@@ -2,27 +2,43 @@ import { useLayoutEffect, useState } from 'react';
 import { Typography } from '@material-tailwind/react';
 import { dammyCategoryDiscription } from './dammyCategoryDiscription';
 import { nanoid } from 'nanoid';
-
-const carousel = require('infinite-react-carousel');
-const { Slider } = carousel;
+import Slider from 'infinite-react-carousel';
 
 const CatrgoryCarousel = () => {
   const [screenLg, getScreenLg] = useState(false);
   const [screenMd, getScreenMd] = useState(false);
   const [screenMind, getScreenMind] = useState(true);
 
-  const { innerWidth: width } = window;
   useLayoutEffect(() => {
-    if (width >= 1024) {
+    if (window.innerWidth >= 1024) {
       getScreenMind(false);
       getScreenMd(false);
       getScreenLg(true);
-    } else if (width < 1024 && width >= 768) {
+    } else if (window.innerWidth < 1024 && window.innerWidth >= 768) {
       getScreenMind(false);
       getScreenLg(false);
       getScreenMd(true);
+    } else if (window.innerWidth <= 768) {
+      getScreenMind(true);
+      getScreenLg(false);
+      getScreenMd(false);
     }
-  }, [width]);
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) {
+        getScreenMind(false);
+        getScreenMd(false);
+        getScreenLg(true);
+      } else if (window.innerWidth < 1024 && window.innerWidth >= 768) {
+        getScreenMind(false);
+        getScreenLg(false);
+        getScreenMd(true);
+      } else if (window.innerWidth <= 768) {
+        getScreenMind(true);
+        getScreenLg(false);
+        getScreenMd(false);
+      }
+    });
+  }, []);
 
   return (
     <div className="border-b-[1px] border-black">
