@@ -1,9 +1,20 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import {
+  showAction,
+  hiddeAction,
+} from '../store/redusers/mobailNavAccordionReducer';
 
 const ToggleNav = () => {
+  const dispatch = useDispatch();
   const [trigger, setTrigger] = useState(false);
   const clickHanlder = () => {
     setTrigger((previous) => !previous);
+    if (trigger) {
+      dispatch(hiddeAction());
+    } else {
+      dispatch(showAction());
+    }
   };
 
   const top = trigger ? 'rotate-45 top-[50%]' : 'top-[40%]';

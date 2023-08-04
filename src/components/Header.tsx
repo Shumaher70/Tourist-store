@@ -1,3 +1,5 @@
+import { useDispatch } from 'react-redux';
+import { hiddeAction } from '../store/redusers/mobailNavAccordionReducer';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/index';
@@ -23,6 +25,8 @@ import {
 } from './navbar/variablesHeader';
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const toggleSlice = useSelector((state: RootState) => state.acardion.toggle);
   const widthSlice = useSelector((state: RootState) => state.size.widthNav);
   const [InititalWidth, setInititalWidth] = useState(false);
   const {
@@ -40,8 +44,13 @@ const Header = () => {
   } = useSelector((state: RootState) => state.sideBar);
 
   useEffect(() => {
-    +widthSlice < 768 ? setInititalWidth(true) : setInititalWidth(false);
-  }, [widthSlice]);
+    if (+widthSlice < 768) {
+      setInititalWidth(true);
+    } else {
+      setInititalWidth(false);
+      dispatch(hiddeAction());
+    }
+  }, [widthSlice, dispatch, toggleSlice]);
 
   return (
     <header>
@@ -61,7 +70,7 @@ const Header = () => {
       )}
       {toggleCompany && sidebarleCompanyDisignSpace && <SidebarDisignSpace />}
       <Nav />
-      {InititalWidth && <NavMobail />}
+      {InititalWidth && toggleSlice && <NavMobail />}
       {toggleCart && <SideBarCart />}
       {toggleSearch && <SideBarSearch />}
     </header>
