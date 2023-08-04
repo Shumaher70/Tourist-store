@@ -1,6 +1,6 @@
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { hiddeAction } from '../store/redusers/mobailNavAccordionReducer';
-import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/index';
 import '../index.css';
