@@ -34,7 +34,7 @@ const Colections = () => {
           </div>
         </div>
         <div className="md:w-[47%]">
-          <img src={require('./missed-img.webp')} alt="missed" />
+          <img src={require('./img/missed-img.webp')} alt="missed" />
         </div>
       </div>
 
@@ -42,7 +42,7 @@ const Colections = () => {
         <div className="relative flex-1 w-[33%] min-w-[250px] sm:min-w-[450px] cursor-pointer">
           <img
             className="w-full h-full object-cover"
-            src={require('./season-4.webp')}
+            src={require('./img/season-4.webp')}
             alt="season-4"
           />
           <Typography
@@ -57,7 +57,7 @@ const Colections = () => {
         <div className="relative flex-1 w-[33%] min-w-[250px] sm:min-w-[450px] cursor-pointer">
           <img
             className="w-full h-full object-cover"
-            src={require('./all-products.webp')}
+            src={require('./img/all-products.webp')}
             alt="season-4"
           />
           <Typography
@@ -72,7 +72,7 @@ const Colections = () => {
         <div className="relative flex-1 w-[33%] min-w-[250px] sm:min-w-[450px] cursor-pointer">
           <img
             className="w-full h-full object-cover"
-            src={require('./backdoor.webp')}
+            src={require('./img/backdoor.webp')}
             alt="season-4"
           />
           <Typography
@@ -87,7 +87,7 @@ const Colections = () => {
         <div className="relative flex-1 w-[33%] min-w-[250px] sm:min-w-[450px] cursor-pointer">
           <img
             className="w-full h-full object-cover"
-            src={require('./Beanies-caps.webp')}
+            src={require('./img/Beanies-caps.webp')}
             alt="season-4"
           />
           <Typography
@@ -102,7 +102,7 @@ const Colections = () => {
         <div className="relative flex-1 w-[33%] min-w-[250px] sm:min-w-[450px] cursor-pointer">
           <img
             className="w-full h-full object-cover"
-            src={require('./apparel.webp')}
+            src={require('./img/apparel.webp')}
             alt="season-4"
           />
           <Typography
@@ -117,7 +117,7 @@ const Colections = () => {
         <div className="relative flex-1 w-[33%] min-w-[250px] sm:min-w-[450px] cursor-pointer">
           <img
             className="w-full h-full object-cover"
-            src={require('./camping-furniture.jpg')}
+            src={require('./img/camping-furniture.jpg')}
             alt="season-4"
           />
           <Typography

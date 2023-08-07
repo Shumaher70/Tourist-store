@@ -1,3 +1,5 @@
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../store';
@@ -9,10 +11,34 @@ import Slider from 'infinite-react-carousel';
 const MainCarousel = () => {
   const sizeSelector = useSelector((state: RootState) => state.size.heightNav);
   const [slider, setSider] = useState<Boolean | HTMLDivElement>(false);
+  const [page, setPage] = useState('');
 
   useEffect(() => {
     setSider(true);
   }, []);
+
+  const clickHandler = (element: React.MouseEvent): void => {
+    switch (element.currentTarget.previousSibling?.firstChild?.textContent) {
+      case 'Our tents':
+        setPage('/collections/zelte');
+        break;
+      case 'Carry Essentials':
+        setPage('/collections/carry-essentials');
+        break;
+      case 'LIMITED EDITION':
+        setPage('/pages/collab-maharishi-the-cave');
+        break;
+      case 'Transit Line':
+        setPage('/collections/transit-line');
+        break;
+      case 'HPT Selected':
+        setPage('/collections/hpt-selected');
+        break;
+      default:
+        setPage('');
+        break;
+    }
+  };
 
   return (
     slider && (
@@ -61,12 +87,14 @@ const MainCarousel = () => {
                       {item.discription}
                     </Typography>
                   </div>
-                  <Button
-                    className="rounded-none sm:w-[124px] h-[48px]"
-                    color="white"
-                  >
-                    Discover
-                  </Button>
+                  <NavLink onClick={(e) => clickHandler} to={`${page}`}>
+                    <Button
+                      className="rounded-none sm:w-[124px] h-[48px]"
+                      color="white"
+                    >
+                      Discover
+                    </Button>
+                  </NavLink>
                 </div>
               </div>
             );
