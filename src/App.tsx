@@ -12,13 +12,13 @@ const App = () => {
   return (
     <>
       <Header />
-
-      <Routes>
-        <Route path="*" element={<PageMissed />} />
-        <Route path="/" element={<Main />} />
-        <Route path="/Collections" element={<Colections />} />
-      </Routes>
-
+      <div className="pt-[1px]">
+        <Routes>
+          <Route path="*" element={<PageMissed />} />
+          <Route path="/" element={<Main />} />
+          <Route path="/Collections" element={<Colections />} />
+        </Routes>
+      </div>
       <Footer />
     </>
   );
