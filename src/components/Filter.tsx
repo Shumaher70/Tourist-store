@@ -38,8 +38,8 @@ interface FilterProps {
     checked: boolean;
   }[];
   checkedHandler: (event: string) => any;
-  products: {
-    tentsAccessories: {
+  products?: {
+    tentsAccessories?: {
       [name: string]: any;
     };
   };
@@ -174,7 +174,7 @@ const Filter = ({
               className="border-none text-black"
               label="SORT BY"
               menuProps={{
-                className: 'rounded-none text-black',
+                className: 'rounded-none',
               }}
               labelProps={{
                 className: 'text-black after:border-none',
@@ -193,7 +193,6 @@ const Filter = ({
           </div>
         </div>
       )}
-
       {activity && (
         <div className="pt-3 flex flex-wrap gap-5 border-t-[1px] border-[rgba(133,133,133,.2)]">
           {checkboxActivity?.map((activity) => (
@@ -213,7 +212,6 @@ const Filter = ({
           ))}
         </div>
       )}
-
       {type && (
         <div className="pt-3 flex flex-wrap gap-5 border-t-[1px] border-[rgba(133,133,133,.2)]">
           {checkboxType?.map((type) => (
@@ -233,7 +231,6 @@ const Filter = ({
           ))}
         </div>
       )}
-
       {size && (
         <div className="pt-3 flex flex-wrap gap-5 border-t-[1px] border-[rgba(133,133,133,.2)]">
           {checkboxSize?.map((size) => (
@@ -253,7 +250,6 @@ const Filter = ({
           ))}
         </div>
       )}
-
       {collection && (
         <div className="pt-3 flex flex-wrap gap-5 border-t-[1px] border-[rgba(133,133,133,.2)]">
           {checkboxCollection?.map((collection) => (
@@ -273,38 +269,45 @@ const Filter = ({
           ))}
         </div>
       )}
-
-      <div className="flex flex-wrap md:justify-between justify-center gap-5 my-5">
-        {products.tentsAccessories.map((product: any) => {
-          return (
-            <Card className="rounded-none cursor-pointer">
-              <div className="md:max-w-[350px] w-full ">
-                <img
-                  src={require(`../dammyDB/${product.mainImg[2]}`)}
-                  alt="tent"
-                  className="brightness-[95%]"
-                />
-                <img
-                  className="absolute top-0 opacity-0 hover:opacity-100 transition-all brightness-[95%]"
-                  src={require(`../dammyDB/${product.mainImg[3]}`)}
-                  alt="tent"
-                />
-              </div>
-              <CardBody>
-                <Typography variant="h5" className="uppercase text-black">
-                  {product.name}
-                </Typography>
-              </CardBody>
-              <CardFooter className="flex justify-between capitalize  py-2">
-                <Typography>{product.type}</Typography>
-                <Typography className="text-black border-b-[1px] border-black">
-                  € {product.price}, 00
-                </Typography>
-              </CardFooter>
-            </Card>
-          );
-        })}
-      </div>
+      {Object.entries({ ...products }).length > 0 ? (
+        <div className="flex flex-wrap md:justify-between justify-center gap-5 my-5">
+          {products?.tentsAccessories?.map((product: any) => {
+            return (
+              <Card key={nanoid()} className="rounded-none cursor-pointer">
+                <div className="md:max-w-[350px] w-full ">
+                  <img
+                    src={require(`../dammyDB/${product.mainImg[2]}`)}
+                    alt="tent"
+                    className="brightness-[95%]"
+                  />
+                  <img
+                    className="absolute top-0 opacity-0 hover:opacity-100 transition-all brightness-[95%]"
+                    src={require(`../dammyDB/${product.mainImg[3]}`)}
+                    alt="tent"
+                  />
+                </div>
+                <CardBody>
+                  <Typography variant="h5" className="uppercase text-black">
+                    {product.name}
+                  </Typography>
+                </CardBody>
+                <CardFooter className="flex justify-between capitalize  py-2">
+                  <Typography>{product.type}</Typography>
+                  <Typography className="text-black border-b-[1px] border-black">
+                    € {product.price}, 00
+                  </Typography>
+                </CardFooter>
+              </Card>
+            );
+          })}
+        </div>
+      ) : (
+        <div className="w-full flex justify-center py-[5%]">
+          <Typography className="italic sm:text-2xl text-1xl">
+            Sorry but the products is over
+          </Typography>
+        </div>
+      )}
     </div>
   );
 };

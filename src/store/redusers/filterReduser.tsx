@@ -88,7 +88,7 @@ const initialState: filter = {
   TransitLine: false,
 };
 
-export const FilterZelte = createSlice({
+export const Filter = createSlice({
   name: 'Zelte',
   initialState,
   reducers: {
@@ -131,6 +131,54 @@ export const FilterZelte = createSlice({
     season4: (state) => {
       state.Season4 = !state.Season4;
     },
+
+    // BAGS
+
+    everydayUse: (state) => {
+      state.EverydayUse = !state.EverydayUse;
+    },
+    sportsActivities: (state) => {
+      state.SportsActivities = !state.SportsActivities;
+    },
+    travel: (state) => {
+      state.Travel = !state.Travel;
+    },
+    waistPacks: (state) => {
+      state.WaistPacks = !state.WaistPacks;
+    },
+    washBags: (state) => {
+      state.WashBags = !state.WashBags;
+    },
+    organizer: (state) => {
+      state.Organizer = !state.Organizer;
+    },
+    backpacks: (state) => {
+      state.Backpacks = !state.Backpacks;
+    },
+    L1_4: (state) => {
+      state.L_1_4 = !state.L_1_4;
+    },
+    L5_18: (state) => {
+      state.L_5_18 = !state.L_5_18;
+    },
+    L19_35: (state) => {
+      state.L_19_35 = !state.L_19_35;
+    },
+    morethan35L: (state) => {
+      state.Morethan35L = !state.Morethan35L;
+    },
+    carryEssentials: (state) => {
+      state.CarryEssentials = !state.CarryEssentials;
+    },
+    monolithSeries: (state) => {
+      state.MonolithSeries = !state.MonolithSeries;
+    },
+    motionSeries: (state) => {
+      state.MotionSeries = !state.MotionSeries;
+    },
+    transitLine: (state) => {
+      state.TransitLine = !state.TransitLine;
+    },
   },
 });
 
@@ -148,6 +196,21 @@ export const {
   groups,
   season3,
   season4,
-} = FilterZelte.actions;
+  everydayUse,
+  sportsActivities,
+  travel,
+  waistPacks,
+  washBags,
+  organizer,
+  backpacks,
+  L1_4,
+  L5_18,
+  L19_35,
+  morethan35L,
+  carryEssentials,
+  monolithSeries,
+  motionSeries,
+  transitLine,
+} = Filter.actions;
 
-export default FilterZelte.reducer;
+export default Filter.reducer;
