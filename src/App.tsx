@@ -10,7 +10,6 @@ import CollabMaharishi from './pages/collabMaharishi/CollabMaharishi';
 import CarryeEssentials from './pages/collections/carryeEssentials/CarryeEssentials';
 import TransitLine from './pages/collections/transitLine/TransitLine';
 import HptSelected from './pages/collections/hHptSelected/HptSelected';
-
 import './index.css';
 
 const App = () => {

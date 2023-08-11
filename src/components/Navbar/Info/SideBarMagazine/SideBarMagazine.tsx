@@ -2,8 +2,8 @@ import { ListItem, Card } from '@material-tailwind/react';
 
 const SideBarMagazine = () => {
   return (
-    <Card className={'fixed flex-col rounded-none w-[20%] h-full z-20'}>
-      <ul className="mt-24 ml-[10%]">
+    <Card className={'fixed rounded-none xl:w-1/6 lg:w-1/4 w-2/6 h-full z-20'}>
+      <ul className="absolute top-[15%] pl-[10%]">
         <li>
           <ListItem className="cursor-pointer rounded-none">OVERVIEW</ListItem>
         </li>
