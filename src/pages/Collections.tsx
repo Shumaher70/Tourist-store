@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store';
+import { RootState } from '../store';
 import { Button, Typography } from '@material-tailwind/react';
 
 const Colections = () => {

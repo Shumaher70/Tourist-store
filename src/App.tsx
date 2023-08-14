@@ -3,13 +3,13 @@ import { Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
-import Colections from './pages/collections/Collections';
+import Colections from './pages/Collections';
 import PageMissed from './pages/pageMissed/PageMissed';
-import Zelte from './pages/collections/zelte/Zelte';
-import CollabMaharishi from './pages/collabMaharishi/CollabMaharishi';
-import CarryeEssentials from './pages/collections/carryeEssentials/CarryeEssentials';
-import TransitLine from './pages/collections/transitLine/TransitLine';
-import HptSelected from './pages/collections/hHptSelected/HptSelected';
+import Zelte from './pages/Zelte';
+import CollabMaharishi from './pages/CollabMaharishi';
+import CarryeEssentials from './pages/CarryeEssentials';
+import TransitLine from './pages/TransitLine';
+import HptSelected from './pages/HptSelected';
 import './index.css';
 
 const App = () => {

@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../store';
-import Filter from '../../components/Filter';
+import { RootState } from '../store';
+import Filter from '../components/Filter';
 
 import {
   expeditions,
@@ -16,8 +16,8 @@ import {
   groups,
   season3,
   season4,
-} from '../../store/redusers/filterReduser';
-import TemplatePage from '../TemplatePage';
+} from '../store/redusers/filterReduser';
+import TemplatePage from './TemplatePage';
 
 const CollabMaharishi = () => {
   const dispatch = useDispatch();

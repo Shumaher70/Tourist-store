@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../../store';
-import Filter from '../../../components/Filter';
+import { RootState } from '../store';
+import Filter from '../components/Filter';
 import {
   everydayUse,
   sportsActivities,
@@ -18,8 +18,8 @@ import {
   monolithSeries,
   motionSeries,
   transitLine,
-} from '../../../store/redusers/filterReduser';
-import TemplatePage from '../../TemplatePage';
+} from '../store/redusers/filterReduser';
+import TemplatePage from './TemplatePage';
 const CarryeEssentials = () => {
   const dispatch = useDispatch();
   const filterSlice = useSelector((state: RootState) => state.filter);

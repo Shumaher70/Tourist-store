@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../../store';
+import { RootState } from '../store';
 
-import Filter from '../../../components/Filter';
-import { accessories, backpacks } from '../../../store/redusers/filterReduser';
-import TemplatePage from '../../TemplatePage';
+import Filter from '../components/Filter';
+import { accessories, backpacks } from '../store/redusers/filterReduser';
+import TemplatePage from './TemplatePage';
 
 const TransitLine = () => {
   const dispatch = useDispatch();

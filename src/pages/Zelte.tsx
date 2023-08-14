@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../../store';
-import Filter from '../../../components/Filter';
-import TemplatePage from '../../TemplatePage';
+import { RootState } from '../store';
+import Filter from '../components/Filter';
+
 import {
   expeditions,
   extremeWeather,
@@ -16,8 +16,9 @@ import {
   groups,
   season3,
   season4,
-} from '../../../store/redusers/filterReduser';
-import { products } from '../../../dammyDB/dammyProducts';
+} from '../store/redusers/filterReduser';
+import { products } from '../dammyDB/dammyProducts';
+import TemplatePage from './TemplatePage';
 
 const Zelte = () => {
   const dispatch = useDispatch();

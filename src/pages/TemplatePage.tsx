@@ -56,7 +56,9 @@ const TemplatePage = ({
         <div className="md:w-[47%] md:h-[70vh]">
           <img
             className={`h-full w-full object-cover brightness-10 ${imgStyle}`}
-            src={`${img ? require(`./img/${img}`) : require('./error.jpg')}`}
+            src={`${
+              img ? require(`./img/${img}`) : require('./img/error.jpg')
+            }`}
             alt="missed"
           />
         </div>

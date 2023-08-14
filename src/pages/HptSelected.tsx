@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../../store';
+import { RootState } from '../store';
 
-import Filter from '../../../components/Filter';
+import Filter from '../components/Filter';
 import {
   aeroPress,
   basicNature,
@@ -16,8 +16,8 @@ import {
   cooking,
   knivesEquipment,
   sleeping,
-} from '../../../store/redusers/filterReduser';
-import TemplatePage from '../../TemplatePage';
+} from '../store/redusers/filterReduser';
+import TemplatePage from './TemplatePage';
 
 const HptSelected = () => {
   const dispatch = useDispatch();
