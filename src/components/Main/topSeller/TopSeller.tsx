@@ -2,6 +2,7 @@ import { Typography, Button, Card } from '@material-tailwind/react';
 import { nanoid } from 'nanoid';
 
 import { dammyTopSellerDiscription } from './dammyTopSellerDicription';
+import { NavLink } from 'react-router-dom';
 
 const TopSeller = () => {
   return (
@@ -13,12 +14,14 @@ const TopSeller = () => {
         >
           top seller
         </Typography>
-        <Button
-          color="white"
-          className="rounded-none border-[1px] border-[#000000]"
-        >
-          DISCOVER
-        </Button>
+        <NavLink to="/collections/topseller">
+          <Button
+            color="white"
+            className="rounded-none border-[1px] border-[#000000]"
+          >
+            DISCOVER
+          </Button>
+        </NavLink>
       </div>
 
       <div className="columns-1 pt-10 lg:columns-4 md:columns-2">

@@ -11,6 +11,7 @@ import CarryeEssentials from './pages/CarryeEssentials';
 import TransitLine from './pages/TransitLine';
 import HptSelected from './pages/HptSelected';
 import './index.css';
+import TopSellerPage from './pages/TopSellerPage';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           />
           <Route path="/collections/transit-line" element={<TransitLine />} />
           <Route path="/collections/hpt-selected" element={<HptSelected />} />
+          <Route path="/collections/topseller" element={<TopSellerPage />} />
         </Routes>
       </div>
       <Footer />
