@@ -43,7 +43,7 @@ const MainCarousel = () => {
             return (
               <div key={nanoid()}>
                 <img
-                  className="min-h-[600px] w-full object-cover object-center sm:max-h-[693px] brightness-60"
+                  className="min-h-[600px] w-full object-cover object-center sm:max-h-[693px] brightness-[80%]"
                   src={require(`./img/${item.img}`)}
                   alt={`${item.img}`}
                 />

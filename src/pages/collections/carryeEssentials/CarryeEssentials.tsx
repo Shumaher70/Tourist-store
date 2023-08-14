@@ -20,11 +20,11 @@ import {
   motionSeries,
   transitLine,
 } from '../../../store/redusers/filterReduser';
-
 const CarryeEssentials = () => {
   const dispatch = useDispatch();
   const sizeSlice = useSelector((state: RootState) => state.size.heightNav);
   const filterSlice = useSelector((state: RootState) => state.filter);
+
   const handleChecked = (event: string) => {
     switch (event) {
       case 'Everyday Use':
@@ -110,7 +110,7 @@ const CarryeEssentials = () => {
         </div>
         <div className="md:w-[47%] md:h-[70vh]">
           <img
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover brightness-10"
             src={require('./carryEssentials.webp')}
             alt="missed"
           />
