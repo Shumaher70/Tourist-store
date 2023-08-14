@@ -9,18 +9,13 @@ interface filter {
   Travel: boolean;
   TrekkingBikepacking: boolean;
   BeaniesCaps: boolean;
-  Campingfurniture: boolean;
   Hoodies: boolean;
   WaistPacks: boolean;
-  Hygiene: boolean;
-  Cooking: boolean;
   WashBags: boolean;
   Longsleeves: boolean;
-  KnivesEquipment: boolean;
   Organizer: boolean;
   Sweater: boolean;
   Backpacks: boolean;
-  Sleeping: boolean;
   Tshirts: boolean;
   Tarps: boolean;
   TentSpareParts: boolean;
@@ -42,6 +37,19 @@ interface filter {
   MonolithSeries: boolean;
   MotionSeries: boolean;
   TransitLine: boolean;
+  AeroPress: boolean;
+  BasicNature: boolean;
+  Blaek: boolean;
+  Coghlans: boolean;
+  DrBronners: boolean;
+  Eoe: boolean;
+  Fiskars: boolean;
+  Heimplanet: boolean;
+  Campingfurniture: boolean;
+  Hygiene: boolean;
+  Cooking: boolean;
+  KnivesEquipment: boolean;
+  Sleeping: boolean;
 }
 
 const initialState: filter = {
@@ -53,18 +61,13 @@ const initialState: filter = {
   Travel: false,
   TrekkingBikepacking: false,
   BeaniesCaps: false,
-  Campingfurniture: false,
   Hoodies: false,
   WaistPacks: false,
-  Hygiene: false,
-  Cooking: false,
   WashBags: false,
   Longsleeves: false,
-  KnivesEquipment: false,
   Organizer: false,
   Sweater: false,
   Backpacks: false,
-  Sleeping: false,
   Tshirts: false,
   Tarps: false,
   TentSpareParts: false,
@@ -86,6 +89,19 @@ const initialState: filter = {
   MonolithSeries: false,
   MotionSeries: false,
   TransitLine: false,
+  AeroPress: false,
+  BasicNature: false,
+  Blaek: false,
+  Coghlans: false,
+  DrBronners: false,
+  Eoe: false,
+  Fiskars: false,
+  Heimplanet: false,
+  Campingfurniture: false,
+  Hygiene: false,
+  Cooking: false,
+  KnivesEquipment: false,
+  Sleeping: false,
 };
 
 export const Filter = createSlice({
@@ -179,6 +195,47 @@ export const Filter = createSlice({
     transitLine: (state) => {
       state.TransitLine = !state.TransitLine;
     },
+
+    // HPT
+    campingfurniture: (state) => {
+      state.Campingfurniture = !state.Campingfurniture;
+    },
+    aeroPress: (state) => {
+      state.AeroPress = !state.AeroPress;
+    },
+    basicNature: (state) => {
+      state.BasicNature = !state.BasicNature;
+    },
+    blaek: (state) => {
+      state.Blaek = !state.Blaek;
+    },
+    coghlans: (state) => {
+      state.Coghlans = !state.Coghlans;
+    },
+    drBronners: (state) => {
+      state.DrBronners = !state.DrBronners;
+    },
+    eoe: (state) => {
+      state.Eoe = !state.Eoe;
+    },
+    fiskars: (state) => {
+      state.Fiskars = !state.Fiskars;
+    },
+    heimplanet: (state) => {
+      state.Heimplanet = !state.Heimplanet;
+    },
+    hygiene: (state) => {
+      state.Hygiene = !state.Hygiene;
+    },
+    cooking: (state) => {
+      state.Cooking = !state.Cooking;
+    },
+    knivesEquipment: (state) => {
+      state.KnivesEquipment = !state.KnivesEquipment;
+    },
+    sleeping: (state) => {
+      state.Sleeping = !state.Sleeping;
+    },
   },
 });
 
@@ -211,6 +268,19 @@ export const {
   monolithSeries,
   motionSeries,
   transitLine,
+  aeroPress,
+  basicNature,
+  blaek,
+  coghlans,
+  drBronners,
+  eoe,
+  fiskars,
+  heimplanet,
+  campingfurniture,
+  hygiene,
+  cooking,
+  knivesEquipment,
+  sleeping,
 } = Filter.actions;
 
 export default Filter.reducer;

@@ -21,6 +21,7 @@ interface FilterProps {
   typeProps?: boolean;
   sizeProps?: boolean;
   collectionProps?: boolean;
+  brandProps?: boolean;
   checkboxActivity?: {
     label: string;
     checked: boolean;
@@ -34,6 +35,10 @@ interface FilterProps {
     checked: boolean;
   }[];
   checkboxCollection?: {
+    label: string;
+    checked: boolean;
+  }[];
+  checkboxBrend?: {
     label: string;
     checked: boolean;
   }[];
@@ -69,10 +74,12 @@ const Filter = ({
   typeProps,
   sizeProps,
   collectionProps,
+  brandProps,
   checkboxActivity,
   checkboxType,
   checkboxSize,
   checkboxCollection,
+  checkboxBrend,
   checkedHandler,
   products,
 }: FilterProps) => {
@@ -80,6 +87,7 @@ const Filter = ({
   const [type, setType] = React.useState<boolean>(false);
   const [size, setSize] = React.useState<boolean>(false);
   const [collection, setCollection] = React.useState<boolean>(false);
+  const [brand, setBrand] = React.useState<boolean>(false);
   const [width, setWidth] = React.useState(false);
   const sizeSlice = useSelector((state: RootState) => state.size.widthNav);
 
@@ -92,24 +100,35 @@ const Filter = ({
     setType(false);
     setSize(false);
     setCollection(false);
+    setBrand(false);
   };
   const handleType = (_value: React.MouseEvent) => {
     setType((priv) => !priv);
     setActivity(false);
     setSize(false);
     setCollection(false);
+    setBrand(false);
   };
   const handleSize = (_value: React.MouseEvent) => {
     setSize((priv) => !priv);
     setActivity(false);
     setType(false);
     setCollection(false);
+    setBrand(false);
   };
   const handleCollection = (_value: React.MouseEvent) => {
     setCollection((priv) => !priv);
     setActivity(false);
     setType(false);
     setSize(false);
+    setBrand(false);
+  };
+  const handleBrand = (_value: React.MouseEvent) => {
+    setBrand((priv) => !priv);
+    setActivity(false);
+    setType(false);
+    setSize(false);
+    setCollection(false);
   };
 
   return (
@@ -165,6 +184,17 @@ const Filter = ({
                     collection
                   </Typography>
                   <Icon open={collection} />
+                </>
+              )}
+              {brandProps && (
+                <>
+                  <Typography
+                    onClick={handleBrand}
+                    className="cursor-pointer uppercase ml-10"
+                  >
+                    brand
+                  </Typography>
+                  <Icon open={brand} />
                 </>
               )}
             </div>
@@ -250,6 +280,7 @@ const Filter = ({
           ))}
         </div>
       )}
+
       {collection && (
         <div className="pt-3 flex flex-wrap gap-5 border-t-[1px] border-[rgba(133,133,133,.2)]">
           {checkboxCollection?.map((collection) => (
@@ -264,6 +295,26 @@ const Filter = ({
                 checked={collection.checked}
                 label={collection.label}
                 onChange={() => checkedHandler(collection.label)}
+              />
+            </div>
+          ))}
+        </div>
+      )}
+
+      {brand && (
+        <div className="pt-3 flex flex-wrap gap-5 border-t-[1px] border-[rgba(133,133,133,.2)]">
+          {checkboxBrend?.map((brend) => (
+            <div key={nanoid()}>
+              <Checkbox
+                className="h-5 w-5 rounded-none checked:bg-black border-black checked:border-black transition-all hover: hover:before:opacity-0 text-black"
+                containerProps={{ className: 'rounded-none p-0 mr-2' }}
+                labelProps={{
+                  className: 'text-black font-normal',
+                }}
+                ripple={false}
+                checked={brend.checked}
+                label={brend.label}
+                onChange={() => checkedHandler(brend.label)}
               />
             </div>
           ))}
