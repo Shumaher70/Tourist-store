@@ -12,6 +12,7 @@ import TransitLine from './pages/TransitLine';
 import HptSelected from './pages/HptSelected';
 import './index.css';
 import TopSellerPage from './pages/TopSellerPage';
+import LifetimeGuaranteePage from './pages/LifetimeGuaranteePage';
 
 const App = () => {
   return (
@@ -36,6 +37,11 @@ const App = () => {
           <Route path="/collections/transit-line" element={<TransitLine />} />
           <Route path="/collections/hpt-selected" element={<HptSelected />} />
           <Route path="/collections/topseller" element={<TopSellerPage />} />
+
+          <Route
+            path="/blogs/projekte/lebenslanger-support-garantie"
+            element={<LifetimeGuaranteePage />}
+          />
         </Routes>
       </div>
       <Footer />

@@ -1,5 +1,6 @@
 import { Carousel, Typography, Button } from '@material-tailwind/react';
 import { mainGaranteeTrigger } from './mainGaranteeTrigger';
+import { NavLink } from 'react-router-dom';
 
 const MainGarantee = () => {
   return (
@@ -46,9 +47,11 @@ const MainGarantee = () => {
               contact us!
             </Typography>
             <div className="flex gap-2">
-              <Button size="lg" color="white" className="rounded-none mt-5">
-                LEARN MORE
-              </Button>
+              <NavLink to="/blogs/projekte/lebenslanger-support-garantie">
+                <Button size="lg" color="white" className="rounded-none mt-5">
+                  LEARN MORE
+                </Button>
+              </NavLink>
             </div>
           </div>
         </div>

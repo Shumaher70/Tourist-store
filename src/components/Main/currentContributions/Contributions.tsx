@@ -1,11 +1,6 @@
-import {
-  Typography,
-  Button,
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-} from '@material-tailwind/react';
+import { Typography, Button } from '@material-tailwind/react';
+import ContribuionsCardWrapper from '../../../pages/ContribuionsCardWrapper';
+import ContributionsCard from '../../../pages/ContributionsCard';
 
 const Contributions = () => {
   return (
@@ -30,7 +25,7 @@ const Contributions = () => {
           <img
             src={require('./main.jpg')}
             alt="main"
-            className="w-full xl:w-[49%] max-h-[550px] object-cover"
+            className="w-full xl:w-[49%] max-h-[450px] object-cover"
           />
           <div className="w-full xl:w-[49%] flex flex-col justify-between">
             <div>
@@ -57,110 +52,23 @@ const Contributions = () => {
             </div>
           </div>
         </div>
-        <div className="py-10 flex flex-wrap gap-5 pt-[5%] justify-between">
-          <Card className="shadow-none rounded-none w-[30%] sm:min-w-[256px] min-w-full">
-            <CardHeader
-              floated={false}
-              shadow={false}
-              color="transparent"
-              className="m-0 rounded-none"
-            >
-              <img
-                src={require('./card-1.webp')}
-                alt="img1"
-                className="object-cover cursor-pointer"
-              />
-            </CardHeader>
-            <CardBody className="p-0 mt-5">
-              <Typography
-                variant="h4"
-                color="black"
-                className="uppercase font-normal"
-              >
-                SUP ADVENTURES - DOORSTEP TO OCEAN IN ONE DAY
-              </Typography>
-            </CardBody>
-            <CardFooter className="p-0 mt-5">
-              <Typography
-                variant="paragraph"
-                color="black"
-                className="border-t-[1px] border-black"
-              >
-                It was a sunny day when we decided to explore the pristine
-                nature right outside our doorstep.
-              </Typography>
-            </CardFooter>
-          </Card>
-          <Card className="shadow-none rounded-none w-[30%] sm:min-w-[256px] min-w-full">
-            <CardHeader
-              floated={false}
-              shadow={false}
-              color="transparent"
-              className="m-0 rounded-none"
-            >
-              <img
-                src={require('./card-2.jpg')}
-                alt="img2"
-                className="object-cover cursor-pointer"
-              />
-            </CardHeader>
-            <CardBody className="p-0 mt-5">
-              <Typography
-                variant="h4"
-                color="black"
-                className="uppercase font-normal "
-              >
-                OUR TIPS FOR TRAVELING LIGHT
-              </Typography>
-            </CardBody>
-            <CardFooter className="p-0 mt-5">
-              <Typography
-                variant="paragraph"
-                color="black"
-                className="border-t-[1px] border-black"
-              >
-                Space-saving and lightweight packing is a fundamental skill for
-                any globetrotter.
-              </Typography>
-            </CardFooter>
-          </Card>
-          <Card className="shadow-none rounded-none w-[30%] sm:min-w-[256px] min-w-full">
-            <CardHeader
-              floated={false}
-              shadow={false}
-              color="transparent"
-              className="m-0 rounded-none"
-            >
-              <img
-                src={require('./card-3.webp')}
-                alt="img3"
-                className="object-cover cursor-pointer"
-              />
-            </CardHeader>
-            <CardBody className="p-0 mt-5">
-              <Typography
-                variant="h4"
-                color="black"
-                className="uppercase font-normal"
-              >
-                CAMPING IN GERMANY
-              </Typography>
-            </CardBody>
-            <CardFooter className="p-0 mt-5">
-              <Typography
-                variant="paragraph"
-                color="black"
-                className="border-t-[1px] border-black"
-              >
-                More openings are in sight and it's time to plan the first trips
-                outdoors. If you want to spend a night at a campsite in
-                beautiful surroundings in Germany without being woken up by
-                slamming car doors or motorhome generators, only to find that
-                the first thing you see is a wall of caravans, it's not so easy.
-              </Typography>
-            </CardFooter>
-          </Card>
-        </div>
+        <ContribuionsCardWrapper>
+          <ContributionsCard
+            title="SUP ADVENTURES - DOORSTEP TO OCEAN IN ONE DAY"
+            description="It was a sunny day when we decided to explore the pristine nature right outside our doorstep."
+            img="contributions-1.webp"
+          />
+          <ContributionsCard
+            title="OUR TIPS FOR TRAVELING LIGHT"
+            description="Space-saving and lightweight packing is a fundamental skill for any globetrotter."
+            img="contributions-3.jpg"
+          />
+          <ContributionsCard
+            title="CAMPING IN GERMANY"
+            description="More openings are in sight and it's time to plan the first trips outdoors. If you want to spend a night at a campsite in beautiful surroundings in Germany without being woken up by slamming car doors or motorhome generators, only to find that the first thing you see is a wall of caravans, it's not so easy."
+            img="contributions-2.webp"
+          />
+        </ContribuionsCardWrapper>
       </div>
     </div>
   );

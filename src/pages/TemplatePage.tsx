@@ -35,7 +35,9 @@ const TemplatePage = ({
         <div className="flex flex-col justify-between md:w-[47%] w-full">
           <div>
             <Typography
-              className={`text-black w-full 2xl:text-7xl text-7xl border-y-[1px] border-black font-medium ${titleStyle}`}
+              className={`text-black w-full 2xl:text-7xl xl:text-6xl lg:text-5xl sm:text-4xl text-2xl border-y-[1px] border-black font-medium ${
+                titleStyle ? titleStyle : ''
+              }`}
             >
               {title}
             </Typography>
