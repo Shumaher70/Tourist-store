@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../store';
-import { Button, Typography } from '@material-tailwind/react';
 import Filter from '../../../components/Filter';
 import {
   everydayUse,
@@ -20,9 +19,9 @@ import {
   motionSeries,
   transitLine,
 } from '../../../store/redusers/filterReduser';
+import TemplatePage from '../../TemplatePage';
 const CarryeEssentials = () => {
   const dispatch = useDispatch();
-  const sizeSlice = useSelector((state: RootState) => state.size.heightNav);
   const filterSlice = useSelector((state: RootState) => state.filter);
 
   const handleChecked = (event: string) => {
@@ -79,43 +78,18 @@ const CarryeEssentials = () => {
   };
 
   return (
-    <div className="flex flex-col">
-      <div
-        style={{
-          marginTop: `${sizeSlice}px`,
-        }}
-        className="flex flex-wrap justify-between gap-5 px-[10%] py-[3%] bg-gray-100"
-      >
-        <div className="flex flex-col justify-between md:w-[47%] w-full">
-          <div>
-            <Typography className="text-black w-full 2xl:text-7xl text-7xl border-y-[1px] border-black font-medium">
-              BAGS
-            </Typography>
-            <Typography className="text-black mt-2">
-              Are you going on a trip or away for the weekend? Our bags and
+    <>
+      <TemplatePage
+        title="BAGS"
+        description="
+        Are you going on a trip or away for the weekend? Our bags and
               backpacks are guaranteed to stow everything you need on your trip.
               The thoughtful designs and versatile storage options offer plenty
-              of space for every purpose.
-            </Typography>
-          </div>
-          <div>
-            <Button
-              className="w-full md:w-auto  rounded-none bg-black text-white"
-              color="white"
-              size="lg"
-            >
-              Discover Products
-            </Button>
-          </div>
-        </div>
-        <div className="md:w-[47%] md:h-[70vh]">
-          <img
-            className="h-full w-full object-cover brightness-10"
-            src={require('./carryEssentials.webp')}
-            alt="missed"
-          />
-        </div>
-      </div>
+              of space for every purpose."
+        img="carryEssentials.webp"
+        buttonTitle="  Discover Products"
+        buttonStyle="bg-black text-white"
+      />
       <Filter
         products={{}}
         activityProps={true}
@@ -196,7 +170,7 @@ const CarryeEssentials = () => {
         ]}
         checkedHandler={handleChecked}
       />
-    </div>
+    </>
   );
 };
 

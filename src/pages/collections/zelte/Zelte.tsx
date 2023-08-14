@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../../store';
-import { Button, Typography } from '@material-tailwind/react';
 import Filter from '../../../components/Filter';
+import TemplatePage from '../../TemplatePage';
 import {
   expeditions,
   extremeWeather,
@@ -21,7 +21,7 @@ import { products } from '../../../dammyDB/dammyProducts';
 
 const Zelte = () => {
   const dispatch = useDispatch();
-  const sizeSlice = useSelector((state: RootState) => state.size.heightNav);
+
   const filterSlice = useSelector((state: RootState) => state.filter);
   const handleChecked = (event: string) => {
     switch (event) {
@@ -68,42 +68,17 @@ const Zelte = () => {
   };
 
   return (
-    <div className="flex flex-col">
-      <div
-        style={{
-          marginTop: `${sizeSlice}px`,
-        }}
-        className="flex flex-wrap justify-between gap-5 px-[10%] py-[3%] bg-gray-100"
-      >
-        <div className="flex flex-col justify-between md:w-[47%] w-full">
-          <div>
-            <Typography className="text-black w-full 2xl:text-7xl text-7xl border-y-[1px] border-black font-medium">
-              TENTS
-            </Typography>
-            <Typography className="text-black mt-2">
+    <>
+      <TemplatePage
+        title="TENTS"
+        description="
               The inflatable frame, inner and Flysheet work as one unit and only
               need to be assembled during the first set up - after the first set
-              up it's inflate and welcome home!
-            </Typography>
-          </div>
-          <div>
-            <Button
-              className="w-full md:w-auto  rounded-none bg-black text-white"
-              color="white"
-              size="lg"
-            >
-              Discover Products
-            </Button>
-          </div>
-        </div>
-        <div className="md:w-[47%] md:h-[70vh]">
-          <img
-            className="h-full w-full object-cover"
-            src={require('./zelteMineImg.webp')}
-            alt="missed"
-          />
-        </div>
-      </div>
+              up it's inflate and welcome home!"
+        img="zelteMineImg.webp"
+        buttonTitle="descover now"
+        buttonStyle="bg-black text-white"
+      />
       <Filter
         products={products.cotegory}
         activityProps={true}
@@ -172,7 +147,7 @@ const Zelte = () => {
         ]}
         checkedHandler={handleChecked}
       />
-    </div>
+    </>
   );
 };
 
