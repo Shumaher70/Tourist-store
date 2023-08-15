@@ -1,7 +1,6 @@
-import { Button, Typography } from '@material-tailwind/react';
+import { Typography } from '@material-tailwind/react';
 
 import TemplatePage from './TemplatePage';
-import { NavLink } from 'react-router-dom';
 import ContributionsCard from './ContributionsCard';
 import ContribuionsCardWrapper from './ContribuionsCardWrapper';
 
@@ -35,23 +34,7 @@ const LifetimeGuaranteePage = () => {
         service[at]heimplanet.com
       </Typography>
       <div className="px-[10%] py-[5%] bg-gray-100 flex-col">
-        <div className="flex justify-between">
-          <Typography
-            variant="h2"
-            className="font-normal uppercase text-2xl sm:text-4xl"
-          >
-            MORE CONTRIBUTIONS
-          </Typography>
-          <NavLink to="">
-            <Button
-              color="white"
-              className="rounded-none border-[1px] border-[#000000]"
-            >
-              DISCOVER
-            </Button>
-          </NavLink>
-        </div>
-        <ContribuionsCardWrapper>
+        <ContribuionsCardWrapper buttonTitle="DISCOVER">
           <ContributionsCard
             img="LifetimeGuaranteePageCardImg-1.webp"
             title="SUP ADVENTURES - DOORSTEP TO OCEAN IN ONE DAY"
