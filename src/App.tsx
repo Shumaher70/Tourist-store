@@ -15,6 +15,7 @@ import TopSellerPage from './pages/TopSellerPage';
 import LifetimeGuaranteePage from './pages/LifetimeGuaranteePage';
 import OnePercentPage from './pages/OnePercentPage';
 import Dyecoshell from './pages/Dyecoshell';
+import MagazineSectionHtpPage from './pages/MagazineSectionHtpPage';
 
 const App = () => {
   return (
@@ -40,6 +41,10 @@ const App = () => {
           <Route path="/collections/hpt-selected" element={<HptSelected />} />
           <Route path="/collections/topseller" element={<TopSellerPage />} />
 
+          <Route
+            path="/blogs/gourmet-camping"
+            element={<MagazineSectionHtpPage />}
+          />
           <Route
             path="/blogs/projekte/lebenslanger-support-garantie"
             element={<LifetimeGuaranteePage />}
