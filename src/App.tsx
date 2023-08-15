@@ -14,6 +14,7 @@ import './index.css';
 import TopSellerPage from './pages/TopSellerPage';
 import LifetimeGuaranteePage from './pages/LifetimeGuaranteePage';
 import OnePercentPage from './pages/OnePercentPage';
+import Dyecoshell from './pages/Dyecoshell';
 
 const App = () => {
   return (
@@ -46,6 +47,11 @@ const App = () => {
           <Route
             path="/blogs/projekte/1-for-the-planet"
             element={<OnePercentPage />}
+          />
+
+          <Route
+            path="/blogs/designraum/dyecoshell™"
+            element={<Dyecoshell />}
           />
         </Routes>
       </div>

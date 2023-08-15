@@ -111,9 +111,11 @@ const MainGarantee = () => {
               renews a weary spirit.
             </Typography>
             <div className="flex gap-2">
-              <Button size="lg" color="white" className="rounded-none mt-5">
-                LEARN MORE
-              </Button>
+              <NavLink to="/blogs/designraum/dyecoshell™">
+                <Button size="lg" color="white" className="rounded-none mt-5">
+                  LEARN MORE
+                </Button>
+              </NavLink>
             </div>
           </div>
         </div>
