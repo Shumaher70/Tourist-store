@@ -17,6 +17,7 @@ import OnePercentPage from './pages/OnePercentPage';
 import Dyecoshell from './pages/Dyecoshell';
 import MagazineSectionHtpPage from './pages/MagazineSectionHtpPage';
 import MagazineSectionAdventurePage from './pages/MagazineSectionAdventurePage';
+import MagazineSectionProductCallabsPage from './pages/MagazineSectionProductCallabsPage';
 
 const App = () => {
   return (
@@ -49,6 +50,10 @@ const App = () => {
           <Route
             path="/blogs/abenteuer"
             element={<MagazineSectionAdventurePage />}
+          />
+          <Route
+            path="/blogs/collabs"
+            element={<MagazineSectionProductCallabsPage />}
           />
           <Route
             path="/blogs/projekte/lebenslanger-support-garantie"

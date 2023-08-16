@@ -78,27 +78,29 @@ const Magazine = () => {
           </NavLink>
         </Card>
         <Card className="shadow-none rounded-none cursor-pointer w-[32%] xl:min-w-[400px] lg:min-w-[390px] sm:min-w-[290px] min-w-full ">
-          <CardHeader
-            floated={false}
-            shadow={false}
-            color="transparent"
-            className="m-0 rounded-none"
-          >
-            <img
-              src={require('./img-3.jpg')}
-              alt="img3"
-              className="object-cover"
-            />
-          </CardHeader>
-          <CardBody className="p-0 mt-5">
-            <Typography
-              variant="h4"
-              color="black"
-              className="uppercase font-normal"
+          <NavLink to="/blogs/collabs">
+            <CardHeader
+              floated={false}
+              shadow={false}
+              color="transparent"
+              className="m-0 rounded-none"
             >
-              PRODUCT COLLABS
-            </Typography>
-          </CardBody>
+              <img
+                src={require('./img-3.jpg')}
+                alt="img3"
+                className="object-cover"
+              />
+            </CardHeader>
+            <CardBody className="p-0 mt-5">
+              <Typography
+                variant="h4"
+                color="black"
+                className="uppercase font-normal"
+              >
+                PRODUCT COLLABS
+              </Typography>
+            </CardBody>
+          </NavLink>
         </Card>
       </div>
     </div>
