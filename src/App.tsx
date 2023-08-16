@@ -16,6 +16,7 @@ import LifetimeGuaranteePage from './pages/LifetimeGuaranteePage';
 import OnePercentPage from './pages/OnePercentPage';
 import Dyecoshell from './pages/Dyecoshell';
 import MagazineSectionHtpPage from './pages/MagazineSectionHtpPage';
+import MagazineSectionAdventurePage from './pages/MagazineSectionAdventurePage';
 
 const App = () => {
   return (
@@ -44,6 +45,10 @@ const App = () => {
           <Route
             path="/blogs/gourmet-camping"
             element={<MagazineSectionHtpPage />}
+          />
+          <Route
+            path="/blogs/abenteuer"
+            element={<MagazineSectionAdventurePage />}
           />
           <Route
             path="/blogs/projekte/lebenslanger-support-garantie"
