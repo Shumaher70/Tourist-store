@@ -34,20 +34,21 @@ const TemplateMagazineCarousel = (): JSX.Element => {
   }, []);
 
   return (
-    <div className="py-[5%]">
+    <div>
       {isSlider && (
         <div className="border-t-[1px] border-black">
           <Slider
-            className="pt-10"
+            className="py-10"
             adaptiveHeight={true}
             slidesToShow={screen}
             slidesPerRow={1}
             duration={200}
             centerMode={true}
+            arrows={false}
           >
             <div>
               <img
-                className="cursor-pointer relative brightness-50 2xl:h-[280px] 2xl:w-[280px] xl:w-[230px] xl:h-[230px] lg:w-[175px] lg:h-[175px] h-[150px] w-[150px] ovject-cover"
+                className="cursor-pointer relative brightness-50 2xl:h-[350px] 2xl:w-[350px] xl:w-[290px] xl:h-[290px] lg:w-[220px] lg:h-[220px] md:h-[220px] md:w-[220px] h-[200px] w-[200px] ovject-cover"
                 src={require('./img/TemplateMagazineCarouselImg1.jpg')}
                 alt="TemplateMagazineCarouselImg1"
               />
@@ -62,7 +63,7 @@ const TemplateMagazineCarousel = (): JSX.Element => {
             </div>
             <div>
               <img
-                className="cursor-pointer relative brightness-50 2xl:h-[280px] 2xl:w-[280px] xl:w-[230px] xl:h-[230px] lg:w-[175px] lg:h-[175px] h-[150px] w-[150px] object-cover"
+                className="cursor-pointer relative brightness-50 2xl:h-[350px] 2xl:w-[350px] xl:w-[290px] xl:h-[290px] lg:w-[220px] lg:h-[220px] md:h-[220px] md:w-[220px] h-[200px] w-[200px] object-cover"
                 src={require('./img/TemplateMagazineCarouselImg2.webp')}
                 alt="TemplateMagazineCarouselImg1"
               />
@@ -77,7 +78,7 @@ const TemplateMagazineCarousel = (): JSX.Element => {
             </div>
             <div>
               <img
-                className="cursor-pointer relative brightness-50 2xl:h-[280px] 2xl:w-[280px] xl:w-[230px] xl:h-[230px] lg:w-[175px] lg:h-[175px] h-[150px] w-[150px]"
+                className="cursor-pointer relative brightness-50 2xl:h-[350px] 2xl:w-[350px] xl:w-[290px] xl:h-[290px] lg:w-[220px] lg:h-[220px] md:h-[220px] md:w-[220px] h-[200px] w-[200px]"
                 src={require('./img/TemplateMagazineCarouselImg3.jpg')}
                 alt="TemplateMagazineCarouselImg1"
               />
@@ -92,7 +93,7 @@ const TemplateMagazineCarousel = (): JSX.Element => {
             </div>
             <div>
               <img
-                className="cursor-pointer relative brightness-50 2xl:h-[280px] 2xl:w-[280px] xl:w-[230px] xl:h-[230px] lg:w-[175px] lg:h-[175px] h-[150px] w-[150px]"
+                className="cursor-pointer relative brightness-50 2xl:h-[350px] 2xl:w-[350px] xl:w-[290px] xl:h-[290px] lg:w-[220px] lg:h-[220px] md:h-[220px] md:w-[220px] h-[200px] w-[200px]"
                 src={require('./img/TemplateMagazineCarouselImg4.webp')}
                 alt="TemplateMagazineCarouselImg1"
               />
