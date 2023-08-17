@@ -1,4 +1,5 @@
 import { Typography, Button } from '@material-tailwind/react';
+import { NavLink } from 'react-router-dom';
 
 const Inspiration = () => {
   return (
@@ -23,12 +24,14 @@ const Inspiration = () => {
           situations, new people, new cultures and new environments.
         </Typography>
         <div className="mt-5 flex ">
-          <Button color="white" className="rounded-none">
-            ABOUT AS
-          </Button>
+          <NavLink to="/pages/unternehmen-store">
+            <Button color="white" className="rounded-none">
+              ABOUT AS
+            </Button>
+          </NavLink>
           <Button
             variant="text"
-            className="rounded-none text-white border-[1px] border-white ml-5"
+            className="rounded-none text-white border-[1px] border-white ml-5 hover:bg-white hover:text-black transition-all"
           >
             RE:STORE PROGRAM
           </Button>

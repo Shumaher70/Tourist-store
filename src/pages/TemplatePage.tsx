@@ -1,3 +1,4 @@
+import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { Button, Typography } from '@material-tailwind/react';
@@ -6,11 +7,15 @@ interface TamplatePageProps {
   title?: string;
   description?: string;
   buttonTitle?: string;
+  buttonStyle?: string;
   img?: string;
   titleStyle?: string;
   descriptionStyle?: string;
-  buttonStyle?: string;
   imgStyle?: string;
+  extraButton?: boolean;
+  extraButtonTitle?: string;
+  extraButtonStyle?: string;
+  scrollRefTop?: (element: number) => void;
 }
 
 const TemplatePage = ({
@@ -22,17 +27,37 @@ const TemplatePage = ({
   titleStyle,
   descriptionStyle,
   buttonStyle,
+  extraButton,
+  extraButtonTitle,
+  extraButtonStyle,
+  scrollRefTop,
 }: TamplatePageProps) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   const sizeSlice = useSelector((state: RootState) => state.size.heightNav);
+
+  const [extraBtn, setExtraBtn] = useState<boolean>(false);
+
+  useEffect(() => {
+    setExtraBtn(() => (extraButton ? extraButton : false));
+  }, [extraButton]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (scrollRefTop)
+        scrollRefTop(scrollRef.current?.getBoundingClientRect().bottom ?? 0);
+    });
+  }, [scrollRefTop]);
+
   return (
-    <div className="flex flex-col">
+    <div ref={scrollRef} className="flex flex-col">
       <div
         style={{
           marginTop: `${sizeSlice}px`,
         }}
-        className="flex flex-wrap justify-between gap-5 px-[10%] py-[3%] bg-gray-100"
+        className="flex flex-col sm:flex-row  justify-between gap-5 px-[10%] py-[3%] bg-gray-100"
       >
-        <div className="flex flex-col justify-between md:w-[47%] w-full">
+        <div className="flex flex-col justify-between flex-1 w-full">
           <div>
             <Typography
               className={`text-black w-full 2xl:text-7xl xl:text-6xl lg:text-5xl sm:text-4xl text-2xl border-y-[1px] border-black font-medium ${
@@ -42,20 +67,30 @@ const TemplatePage = ({
               {title}
             </Typography>
             <Typography className={`text-black mt-2 ${descriptionStyle}`}>
-              {description}
+              {description ? description : ''}
             </Typography>
           </div>
-          <div>
+          <div className="flex">
             <Button
-              className={`w-full md:w-auto  rounded-none ${buttonStyle}`}
+              className={`md:w-auto rounded-none ${
+                buttonStyle ? buttonStyle : ''
+              }`}
               color="white"
               size="lg"
             >
               {buttonTitle}
             </Button>
+            {extraBtn && (
+              <Button
+                color="white"
+                className={`rounded-none ml-2 ${extraButtonStyle}`}
+              >
+                {extraButtonTitle}
+              </Button>
+            )}
           </div>
         </div>
-        <div className="md:w-[47%] md:h-[70vh]">
+        <div className="flex flex-1 sm:min-h-[60vh]">
           <img
             className={`h-full w-full object-cover brightness-10 ${imgStyle}`}
             src={`${

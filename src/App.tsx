@@ -18,6 +18,7 @@ import Dyecoshell from './pages/Dyecoshell';
 import MagazineSectionHtpPage from './pages/MagazineSectionHtpPage';
 import MagazineSectionAdventurePage from './pages/MagazineSectionAdventurePage';
 import MagazineSectionProductCallabsPage from './pages/MagazineSectionProductCallabsPage';
+import InspirationSectionAboutusPage from './pages/InspirationSectionAboutusPage';
 
 const App = () => {
   return (
@@ -31,6 +32,10 @@ const App = () => {
           <Route
             path="/pages/collab-maharishi-the-cave"
             element={<CollabMaharishi />}
+          />
+          <Route
+            path="/pages/unternehmen-store"
+            element={<InspirationSectionAboutusPage />}
           />
 
           <Route path="/collections" element={<Colections />} />

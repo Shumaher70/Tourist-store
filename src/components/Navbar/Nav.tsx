@@ -22,11 +22,12 @@ const Nav = () => {
   useEffect(() => {
     window.addEventListener('resize', () => {
       window.innerWidth < 768 ? getInfo(false) : getInfo(true);
-      dispatch(heightNav(size.current!.offsetHeight.toString()));
-      dispatch(widthNav(size.current!.offsetWidth.toString()));
+      dispatch(heightNav(size!.current!.offsetHeight!.toString()));
+      dispatch(widthNav(size!.current!.offsetWidth.toString()));
     });
-    dispatch(heightNav(size.current!.offsetHeight.toString()));
-    dispatch(widthNav(size.current!.offsetWidth.toString()));
+
+    dispatch(heightNav(size!.current!.offsetHeight!.toString()));
+    dispatch(widthNav(size!.current!.offsetWidth!.toString()));
   }, [dispatch]);
 
   return (
