@@ -17,8 +17,8 @@ const ToggleNav = () => {
     }
   };
 
-  const top = trigger ? 'rotate-45 top-[50%]' : 'top-[40%]';
-  const bottom = trigger ? '-rotate-45 top-[50%]' : 'bottom-[40%]';
+  const top = trigger ? 'rotate-45 top-[45%]' : 'top-[40%]';
+  const bottom = trigger ? '-rotate-45 top-[45%]' : 'bottom-[40%]';
   return (
     <div
       onClick={clickHanlder}
