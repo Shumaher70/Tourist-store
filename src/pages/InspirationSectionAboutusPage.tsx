@@ -15,14 +15,55 @@ const InspirationSectionAboutusPage = () => {
   const navStoreRef = useRef<HTMLDivElement>(null);
   const navNewsRef = useRef<HTMLDivElement>(null);
 
+  const [navMission, setNavMission] = useState(false);
+  const [navStore, setNavStore] = useState(false);
+  const [navNews, setNavNews] = useState(false);
+
   const [scrollTop, setScrollTop] = useState<number>(0);
   const [navFixed, setNavFixed] = useState<boolean>(false);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      const heightMission = Number('-' + navMissionRef.current?.offsetHeight);
+      const offsetMission = Number('-' + navMissionRef.current?.offsetHeight);
+      const offsetStore = Number('-' + navStoreRef.current?.offsetHeight);
+      const offsetNews = Number('-' + navNewsRef.current?.offsetHeight);
+
+      if (
+        navMissionRef.current?.getBoundingClientRect().top &&
+        navStoreRef.current?.getBoundingClientRect().top &&
+        navNewsRef.current?.getBoundingClientRect().top
+      )
+        if (
+          navMissionRef.current?.getBoundingClientRect().top >= offsetMission
+        ) {
+          setNavMission(true);
+          setNavStore(false);
+          setNavNews(false);
+        } else if (
+          navStoreRef.current?.getBoundingClientRect().top <
+            +navHeightSlice + 70 &&
+          navStoreRef.current?.getBoundingClientRect().top >= offsetStore
+        ) {
+          setNavMission(false);
+          setNavStore(true);
+          setNavNews(false);
+        } else if (
+          navNewsRef.current?.getBoundingClientRect().top <
+            +navHeightSlice + 70 &&
+          navNewsRef.current?.getBoundingClientRect().top >= offsetNews
+        ) {
+          setNavMission(false);
+          setNavStore(false);
+          setNavNews(true);
+        } else {
+          setNavMission(false);
+          setNavStore(false);
+          setNavNews(false);
+        }
+
+      console.log(navMission, navStore, navNews);
     });
-  }, []);
+  }, [navMission, navNews, navStore]);
 
   useEffect(() => {
     if (scrollTop < 0) {
@@ -55,19 +96,41 @@ const InspirationSectionAboutusPage = () => {
         className="flex justify-center items-center gap-5 w-full h-[60px] bg-white z-10 border-y-[1px] border-[rgba(133,133,133,.2)]"
       >
         <AnchorLink href="#mission" offset={+navHeightSlice + 60}>
-          <Typography className="text-black font-normal cursor-pointer">
-            MISSION
-          </Typography>
+          <div
+            style={
+              navMission
+                ? { borderBottom: '2px solid black' }
+                : { border: 'none' }
+            }
+          >
+            <Typography className="text-black font-normal cursor-pointer">
+              MISSION
+            </Typography>
+          </div>
         </AnchorLink>
         <AnchorLink href="#store" offset={+navHeightSlice + 60}>
-          <Typography className="text-black font-normal cursor-pointer">
-            STORE
-          </Typography>
+          <div
+            style={
+              navStore
+                ? { borderBottom: '2px solid black' }
+                : { border: 'none' }
+            }
+          >
+            <Typography className="text-black font-normal cursor-pointer">
+              STORE
+            </Typography>
+          </div>
         </AnchorLink>
         <AnchorLink href="#news" offset={+navHeightSlice + 60}>
-          <Typography className="text-black font-normal cursor-pointer">
-            NEWS
-          </Typography>
+          <div
+            style={
+              navNews ? { borderBottom: '2px solid black' } : { border: 'none' }
+            }
+          >
+            <Typography className="text-black font-normal cursor-pointer">
+              NEWS
+            </Typography>
+          </div>
         </AnchorLink>
       </div>
 
@@ -177,7 +240,6 @@ const InspirationSectionAboutusPage = () => {
         id="store"
         className="pl-[10%] bg-[#f6f6f6] flex md:flex-row flex-col"
       >
-        <div></div>
         <div className="py-[5%] flex flex-col justify-center flex-1 gap-5">
           <Typography className="font-normal text-4xl">
             HPT STORE HAMBURG
