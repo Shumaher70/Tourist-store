@@ -1,6 +1,7 @@
 import { Typography, Button } from '@material-tailwind/react';
 import ContribuionsCardWrapper from '../../../pages/ContribuionsCardWrapper';
 import ContributionsCard from '../../../pages/ContributionsCard';
+import { NavLink } from 'react-router-dom';
 
 const Contributions = () => {
   return (
@@ -14,12 +15,14 @@ const Contributions = () => {
           >
             CURRENT CONTRIBUTIONS
           </Typography>
-          <Button
-            color="white"
-            className="border-[1px] border-black rounded-none"
-          >
-            DISCOVER
-          </Button>
+          <NavLink to="/pages/blog">
+            <Button
+              color="white"
+              className="border-[1px] border-black rounded-none"
+            >
+              DISCOVER
+            </Button>
+          </NavLink>
         </div>
         <div className="flex flex-wrap gap-5 justify-between mt-10">
           <img

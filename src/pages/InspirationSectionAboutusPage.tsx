@@ -60,8 +60,6 @@ const InspirationSectionAboutusPage = () => {
           setNavStore(false);
           setNavNews(false);
         }
-
-      console.log(navMission, navStore, navNews);
     });
   }, [navHeightSlice, navMission, navNews, navStore]);
 

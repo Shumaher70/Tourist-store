@@ -20,6 +20,7 @@ import MagazineSectionAdventurePage from './pages/MagazineSectionAdventurePage';
 import MagazineSectionProductCallabsPage from './pages/MagazineSectionProductCallabsPage';
 import InspirationSectionAboutusPage from './pages/InspirationSectionAboutusPage';
 import ReStorePage from './pages/ReStorePage';
+import ContributionsPage from './pages/ContributionsPage';
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
             path="/pages/unternehmen-store"
             element={<InspirationSectionAboutusPage />}
           />
+          <Route path="/pages/blog" element={<ContributionsPage />} />
 
           <Route path="/collections" element={<Colections />} />
           <Route path="/collections/zelte" element={<Zelte />} />
