@@ -45,13 +45,15 @@ const Contributions = () => {
               </Typography>
             </div>
             <div>
-              <Button
-                color="white"
-                size="lg"
-                className="bg-black text-white rounded-none mt-5"
-              >
-                READ MORE
-              </Button>
+              <NavLink to="/blogs/collabs/maharishi-x-heimplanet-the-cave">
+                <Button
+                  color="white"
+                  size="lg"
+                  className="bg-black text-white rounded-none mt-5"
+                >
+                  READ MORE
+                </Button>
+              </NavLink>
             </div>
           </div>
         </div>

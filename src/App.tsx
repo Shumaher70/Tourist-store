@@ -21,6 +21,7 @@ import MagazineSectionProductCallabsPage from './pages/MagazineSectionProductCal
 import InspirationSectionAboutusPage from './pages/InspirationSectionAboutusPage';
 import ReStorePage from './pages/ReStorePage';
 import ContributionsPage from './pages/ContributionsPage';
+import ContributionsSectionMaharishiPage from './pages/ContributionsSectionMaharishiPage';
 
 const App = () => {
   return (
@@ -39,7 +40,6 @@ const App = () => {
             path="/pages/unternehmen-store"
             element={<InspirationSectionAboutusPage />}
           />
-          <Route path="/pages/blog" element={<ContributionsPage />} />
 
           <Route path="/collections" element={<Colections />} />
           <Route path="/collections/zelte" element={<Zelte />} />
@@ -52,6 +52,7 @@ const App = () => {
           <Route path="/collections/topseller" element={<TopSellerPage />} />
           <Route path="/collections/re-store" element={<ReStorePage />} />
 
+          <Route path="/pages/blog" element={<ContributionsPage />} />
           <Route
             path="/blogs/gourmet-camping"
             element={<MagazineSectionHtpPage />}
@@ -76,6 +77,10 @@ const App = () => {
           <Route
             path="/blogs/designraum/dyecoshell™"
             element={<Dyecoshell />}
+          />
+          <Route
+            path="/blogs/collabs/maharishi-x-heimplanet-the-cave"
+            element={<ContributionsSectionMaharishiPage />}
           />
         </Routes>
       </div>
