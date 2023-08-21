@@ -63,7 +63,7 @@ const InspirationSectionAboutusPage = () => {
 
       console.log(navMission, navStore, navNews);
     });
-  }, [navMission, navNews, navStore]);
+  }, [navHeightSlice, navMission, navNews, navStore]);
 
   useEffect(() => {
     if (scrollTop < 0) {

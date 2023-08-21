@@ -29,12 +29,14 @@ const Inspiration = () => {
               ABOUT AS
             </Button>
           </NavLink>
-          <Button
-            variant="text"
-            className="rounded-none text-white border-[1px] border-white ml-5 hover:bg-white hover:text-black transition-all"
-          >
-            RE:STORE PROGRAM
-          </Button>
+          <NavLink to="/collections/re-store">
+            <Button
+              variant="text"
+              className="rounded-none text-white border-[1px] border-white ml-5 hover:bg-white hover:text-black transition-all"
+            >
+              RE:STORE PROGRAM
+            </Button>
+          </NavLink>
         </div>
       </div>
     </div>

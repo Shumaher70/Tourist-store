@@ -42,7 +42,7 @@ interface FilterProps {
     label: string;
     checked: boolean;
   }[];
-  checkedHandler: (event: string) => any;
+  checkedHandler?: (event: string) => any;
   products?: {
     tentsAccessories?: {
       [name: string]: any;
@@ -236,7 +236,7 @@ const Filter = ({
                 ripple={false}
                 checked={activity.checked}
                 label={activity.label}
-                onChange={() => checkedHandler(activity.label)}
+                onChange={() => checkedHandler?.(activity.label)}
               />
             </div>
           ))}
@@ -255,7 +255,7 @@ const Filter = ({
                 ripple={false}
                 checked={type.checked}
                 label={type.label}
-                onChange={() => checkedHandler(type.label)}
+                onChange={() => checkedHandler?.(type.label)}
               />
             </div>
           ))}
@@ -274,7 +274,7 @@ const Filter = ({
                 ripple={false}
                 checked={size.checked}
                 label={size.label}
-                onChange={() => checkedHandler(size.label)}
+                onChange={() => checkedHandler?.(size.label)}
               />
             </div>
           ))}
@@ -294,7 +294,7 @@ const Filter = ({
                 ripple={false}
                 checked={collection.checked}
                 label={collection.label}
-                onChange={() => checkedHandler(collection.label)}
+                onChange={() => checkedHandler?.(collection.label)}
               />
             </div>
           ))}
@@ -314,7 +314,7 @@ const Filter = ({
                 ripple={false}
                 checked={brend.checked}
                 label={brend.label}
-                onChange={() => checkedHandler(brend.label)}
+                onChange={() => checkedHandler?.(brend.label)}
               />
             </div>
           ))}

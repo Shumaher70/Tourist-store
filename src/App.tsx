@@ -19,6 +19,7 @@ import MagazineSectionHtpPage from './pages/MagazineSectionHtpPage';
 import MagazineSectionAdventurePage from './pages/MagazineSectionAdventurePage';
 import MagazineSectionProductCallabsPage from './pages/MagazineSectionProductCallabsPage';
 import InspirationSectionAboutusPage from './pages/InspirationSectionAboutusPage';
+import ReStorePage from './pages/ReStorePage';
 
 const App = () => {
   return (
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/collections/transit-line" element={<TransitLine />} />
           <Route path="/collections/hpt-selected" element={<HptSelected />} />
           <Route path="/collections/topseller" element={<TopSellerPage />} />
+          <Route path="/collections/re-store" element={<ReStorePage />} />
 
           <Route
             path="/blogs/gourmet-camping"
