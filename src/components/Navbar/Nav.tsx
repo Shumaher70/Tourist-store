@@ -6,13 +6,7 @@ import {
   heightNav,
   widthNav,
 } from '../../store/redusers/sizeComponentsReducer';
-import {
-  NavInfo,
-  ShopFinder,
-  Search,
-  IconProfile,
-  Cart,
-} from './variablesHeader';
+import { NavInfo, ShopFinder, Search, IconProfile, Cart } from '../index';
 
 const Nav = () => {
   const [showInfo, getInfo] = useState(true);

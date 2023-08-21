@@ -3,25 +3,27 @@ import { Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
-import Colections from './pages/Collections';
-import PageMissed from './pages/pageMissed/PageMissed';
-import Zelte from './pages/Zelte';
-import CollabMaharishi from './pages/CollabMaharishi';
-import CarryeEssentials from './pages/CarryeEssentials';
-import TransitLine from './pages/TransitLine';
-import HptSelected from './pages/HptSelected';
+import {
+  Colections,
+  PageMissed,
+  Zelte,
+  CollabMaharishi,
+  CarryeEssentials,
+  TransitLine,
+  HptSelected,
+  TopSellerPage,
+  LifetimeGuaranteePage,
+  OnePercentPage,
+  Dyecoshell,
+  MagazineSectionHtpPage,
+  MagazineSectionAdventurePage,
+  MagazineSectionProductCallabsPage,
+  InspirationSectionAboutusPage,
+  ReStorePage,
+  ContributionsPage,
+  ContributionsSectionMaharishiPage,
+} from './pages/index';
 import './index.css';
-import TopSellerPage from './pages/TopSellerPage';
-import LifetimeGuaranteePage from './pages/LifetimeGuaranteePage';
-import OnePercentPage from './pages/OnePercentPage';
-import Dyecoshell from './pages/Dyecoshell';
-import MagazineSectionHtpPage from './pages/MagazineSectionHtpPage';
-import MagazineSectionAdventurePage from './pages/MagazineSectionAdventurePage';
-import MagazineSectionProductCallabsPage from './pages/MagazineSectionProductCallabsPage';
-import InspirationSectionAboutusPage from './pages/InspirationSectionAboutusPage';
-import ReStorePage from './pages/ReStorePage';
-import ContributionsPage from './pages/ContributionsPage';
-import ContributionsSectionMaharishiPage from './pages/ContributionsSectionMaharishiPage';
 
 const App = () => {
   return (

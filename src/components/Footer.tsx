@@ -3,7 +3,7 @@ import {
   FooterInfo,
   FooterPayment,
   FooterCookies,
-} from './footer/varivlesFooter';
+} from './index';
 
 const Footer = () => {
   return (

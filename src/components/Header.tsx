@@ -22,7 +22,7 @@ import {
   SideBarCart,
   ToggleNav,
   NavMobail,
-} from './navbar/variablesHeader';
+} from './index';
 
 const Header = () => {
   const dispatch = useDispatch();

@@ -24,8 +24,8 @@
 .carousel-prev:before,
 .carousel-next:before {
   background-image: url('/src/components/main/categoryCarousel/categoryImg/back.png') !important;
-  width: 100px !important;
-  height: 100px !important;
+  width: 40px !important;
+  height: 40px !important;
 }
 
 .carousel-next:before {

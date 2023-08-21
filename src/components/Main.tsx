@@ -6,7 +6,7 @@ import {
   Magazine,
   Inspiration,
   Contributions,
-} from './main/variblesMain';
+} from './index';
 
 const Main = () => {
   return (
