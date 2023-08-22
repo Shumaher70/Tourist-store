@@ -16,6 +16,7 @@ import InspirationSectionAboutusPage from './InspirationSectionAboutusPage';
 import ReStorePage from './ReStorePage';
 import ContributionsPage from './ContributionsPage';
 import ContributionsSectionMaharishiPage from './ContributionsSectionMaharishiPage';
+import FootherHelpContactFaqsPage from './FootherHelpContactFaqsPage';
 
 export {
   Colections,
@@ -36,4 +37,5 @@ export {
   ReStorePage,
   ContributionsPage,
   ContributionsSectionMaharishiPage,
+  FootherHelpContactFaqsPage,
 };

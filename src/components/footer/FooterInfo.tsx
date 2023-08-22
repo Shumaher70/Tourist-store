@@ -1,4 +1,5 @@
 import { Button, List, ListItem, Typography } from '@material-tailwind/react';
+import { NavLink } from 'react-router-dom';
 
 const FooterInfo = () => {
   return (
@@ -9,9 +10,11 @@ const FooterInfo = () => {
             HELP & CONTACT
           </Typography>
           <List className="px-0">
-            <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
-              FAQs
-            </ListItem>
+            <NavLink to="/pages/faq">
+              <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
+                FAQs
+              </ListItem>
+            </NavLink>
             <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
               Contact
             </ListItem>

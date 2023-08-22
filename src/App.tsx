@@ -22,6 +22,7 @@ import {
   ReStorePage,
   ContributionsPage,
   ContributionsSectionMaharishiPage,
+  FootherHelpContactFaqsPage,
 } from './pages/index';
 import './index.css';
 
@@ -33,6 +34,7 @@ const App = () => {
         <Routes>
           <Route path="*" element={<PageMissed />} />
           <Route path="/" element={<Main />} />
+
           <Route path="/pages" element={<PageMissed />} />
           <Route
             path="/pages/collab-maharishi-the-cave"
@@ -42,6 +44,7 @@ const App = () => {
             path="/pages/unternehmen-store"
             element={<InspirationSectionAboutusPage />}
           />
+          <Route path="/pages/faq" element={<FootherHelpContactFaqsPage />} />
 
           <Route path="/collections" element={<Colections />} />
           <Route path="/collections/zelte" element={<Zelte />} />
@@ -75,7 +78,6 @@ const App = () => {
             path="/blogs/projekte/1-for-the-planet"
             element={<OnePercentPage />}
           />
-
           <Route
             path="/blogs/designraum/dyecoshell™"
             element={<Dyecoshell />}
