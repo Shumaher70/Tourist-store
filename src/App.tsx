@@ -25,6 +25,7 @@ import {
   FootherHelpFaqsPage,
   FootherContactPage,
 } from './pages/index';
+import FootherShippingPage from './pages/FootherShippingPage';
 
 const App = () => {
   return (
@@ -83,6 +84,11 @@ const App = () => {
             path="/blogs/designraum/dyecoshell™"
             element={<Dyecoshell />}
           />
+          <Route
+            path="/blogs/versand/versand"
+            element={<FootherShippingPage />}
+          />
+
           <Route
             path="/blogs/collabs/maharishi-x-heimplanet-the-cave"
             element={<ContributionsSectionMaharishiPage />}

@@ -18,6 +18,7 @@ import ContributionsPage from './ContributionsPage';
 import ContributionsSectionMaharishiPage from './ContributionsSectionMaharishiPage';
 import FootherHelpFaqsPage from './FootherHelpFaqsPage';
 import FootherContactPage from './FootherContactPage';
+import FootherShippingPage from './FootherShippingPage';
 
 export {
   Colections,
