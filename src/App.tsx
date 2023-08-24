@@ -22,9 +22,9 @@ import {
   ReStorePage,
   ContributionsPage,
   ContributionsSectionMaharishiPage,
-  FootherHelpContactFaqsPage,
+  FootherHelpFaqsPage,
+  FootherContactPage,
 } from './pages/index';
-import './index.css';
 
 const App = () => {
   return (
@@ -44,7 +44,8 @@ const App = () => {
             path="/pages/unternehmen-store"
             element={<InspirationSectionAboutusPage />}
           />
-          <Route path="/pages/faq" element={<FootherHelpContactFaqsPage />} />
+          <Route path="/pages/faq" element={<FootherHelpFaqsPage />} />
+          <Route path="/pages/contact" element={<FootherContactPage />} />
 
           <Route path="/collections" element={<Colections />} />
           <Route path="/collections/zelte" element={<Zelte />} />

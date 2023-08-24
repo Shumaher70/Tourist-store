@@ -15,9 +15,11 @@ const FooterInfo = () => {
                 FAQs
               </ListItem>
             </NavLink>
-            <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
-              Contact
-            </ListItem>
+            <NavLink to="/pages/contact">
+              <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
+                Contact
+              </ListItem>
+            </NavLink>
             <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
               Shipping
             </ListItem>

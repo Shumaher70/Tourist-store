@@ -75,16 +75,12 @@ const TemplatePage = ({
               className={`md:w-auto rounded-none ${
                 buttonStyle ? buttonStyle : ''
               }`}
-              color="white"
               size="lg"
             >
-              {buttonTitle}
+              <Typography> {buttonTitle}</Typography>
             </Button>
             {extraBtn && (
-              <Button
-                color="white"
-                className={`rounded-none ml-2 ${extraButtonStyle}`}
-              >
+              <Button className={`rounded-none ml-2 ${extraButtonStyle}`}>
                 {extraButtonTitle}
               </Button>
             )}

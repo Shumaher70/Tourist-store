@@ -5,7 +5,7 @@ import { Button, Typography } from '@material-tailwind/react';
 import Faq from '../components/Faq';
 import Slider from 'infinite-react-carousel';
 
-const FootherHelpContactFaqsPage = () => {
+const FootherHelpFaqsPage = () => {
   const navHeight = useSelector((state: RootState) => state.size.heightNav);
   const [stateGeneral, setStateGeneral] = useState(true);
   const [stateReturn, setStateReturn] = useState(false);
@@ -288,4 +288,4 @@ const FootherHelpContactFaqsPage = () => {
   );
 };
 
-export default FootherHelpContactFaqsPage;
+export default FootherHelpFaqsPage;
