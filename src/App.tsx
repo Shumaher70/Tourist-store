@@ -25,6 +25,7 @@ import {
   FootherHelpFaqsPage,
   FootherContactPage,
   FootherTentSizePage,
+  FootherTarps,
 } from './pages/index';
 import FootherShippingPage from './pages/FootherShippingPage';
 
@@ -59,6 +60,7 @@ const App = () => {
           <Route path="/collections/hpt-selected" element={<HptSelected />} />
           <Route path="/collections/topseller" element={<TopSellerPage />} />
           <Route path="/collections/re-store" element={<ReStorePage />} />
+          <Route path="/collections/tarps" element={<FootherTarps />} />
 
           <Route path="/pages/blog" element={<ContributionsPage />} />
           <Route

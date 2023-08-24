@@ -236,6 +236,17 @@ export const Filter = createSlice({
     sleeping: (state) => {
       state.Sleeping = !state.Sleeping;
     },
+
+    //Tarps
+    tarps: (state) => {
+      state.Tarps = !state.Tarps;
+    },
+    dawn: (state) => {
+      state.Dawn = !state.Dawn;
+    },
+    dusk: (state) => {
+      state.Dusk = !state.Dusk;
+    },
   },
 });
 
@@ -281,6 +292,9 @@ export const {
   cooking,
   knivesEquipment,
   sleeping,
+  tarps,
+  dawn,
+  dusk,
 } = Filter.actions;
 
 export default Filter.reducer;

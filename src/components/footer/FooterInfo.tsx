@@ -38,12 +38,16 @@ const FooterInfo = () => {
             PRODUCTS
           </Typography>
           <List className="px-0">
-            <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
-              Tents & Accessories
-            </ListItem>
-            <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
-              Tarps
-            </ListItem>
+            <NavLink to="/collections/zelte">
+              <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
+                Tents & Accessories
+              </ListItem>
+            </NavLink>
+            <NavLink to="/collections/tarps">
+              <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
+                Tarps
+              </ListItem>
+            </NavLink>
             <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
               Backpacks & Bags
             </ListItem>
