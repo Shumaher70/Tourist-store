@@ -25,9 +25,11 @@ const FooterInfo = () => {
                 Shipping
               </ListItem>
             </NavLink>
-            <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
-              Tent sizes
-            </ListItem>
+            <NavLink to="/blogs/zelte/zeltgrossen">
+              <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
+                Tent sizes
+              </ListItem>
+            </NavLink>
           </List>
         </div>
 

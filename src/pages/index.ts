@@ -19,6 +19,7 @@ import ContributionsSectionMaharishiPage from './ContributionsSectionMaharishiPa
 import FootherHelpFaqsPage from './FootherHelpFaqsPage';
 import FootherContactPage from './FootherContactPage';
 import FootherShippingPage from './FootherShippingPage';
+import FootherTentSizePage from './FootherTentSizePage';
 
 export {
   Colections,
@@ -41,4 +42,6 @@ export {
   ContributionsSectionMaharishiPage,
   FootherHelpFaqsPage,
   FootherContactPage,
+  FootherShippingPage,
+  FootherTentSizePage,
 };

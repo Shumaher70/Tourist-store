@@ -24,6 +24,7 @@ import {
   ContributionsSectionMaharishiPage,
   FootherHelpFaqsPage,
   FootherContactPage,
+  FootherTentSizePage,
 } from './pages/index';
 import FootherShippingPage from './pages/FootherShippingPage';
 
@@ -87,6 +88,10 @@ const App = () => {
           <Route
             path="/blogs/versand/versand"
             element={<FootherShippingPage />}
+          />
+          <Route
+            path="/blogs/zelte/zeltgrossen"
+            element={<FootherTentSizePage />}
           />
 
           <Route
