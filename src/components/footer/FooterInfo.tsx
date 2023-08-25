@@ -131,9 +131,11 @@ const FooterInfo = () => {
             10% COUPON FOR NEWSLETTER REGISTRATION
           </Typography>
         </div>
-        <Button color="white" size="lg" className="rounded-none mt-5">
-          REGISTER NOW
-        </Button>
+        <NavLink to="/pages/newsletter">
+          <Button color="white" size="lg" className="rounded-none mt-5">
+            REGISTER NOW
+          </Button>
+        </NavLink>
       </div>
     </div>
   );

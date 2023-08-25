@@ -28,6 +28,8 @@ import FootherGearPage from './FootherGearPage';
 import FootherCareerPage from './FootherCareerPage';
 import FootherPreesContactPage from './FootherPreesContactPage';
 import FootherAffiliatePage from './FootherAffiliatePage';
+import RegisterPage from './RegisterPage';
+import FootherNewsletterPage from './FootherNewsletterPage';
 
 export {
   Colections,
@@ -60,4 +62,6 @@ export {
   FootherCareerPage,
   FootherPreesContactPage,
   FootherAffiliatePage,
+  RegisterPage,
+  FootherNewsletterPage,
 };

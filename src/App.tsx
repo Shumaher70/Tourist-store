@@ -34,6 +34,7 @@ import {
   FootherCareerPage,
   FootherPreesContactPage,
   FootherAffiliatePage,
+  FootherNewsletterPage,
 } from './pages/index';
 
 const App = () => {
@@ -57,6 +58,7 @@ const App = () => {
           <Route path="/pages/karriere" element={<FootherCareerPage />} />
           <Route path="/pages/faq" element={<FootherHelpFaqsPage />} />
           <Route path="/pages/contact" element={<FootherContactPage />} />
+          <Route path="/pages/newsletter" element={<FootherNewsletterPage />} />
 
           <Route path="/collections" element={<Colections />} />
           <Route path="/collections/zelte" element={<Zelte />} />
