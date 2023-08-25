@@ -23,6 +23,7 @@ import FootherTentSizePage from './FootherTentSizePage';
 import FootherTarpsPage from './FootherTarpsPage';
 import ContributionsAdventuresPage from './ContributionsAdventuresPage';
 import ContributionsOurTipsPage from './ContributionsOurTipsPage';
+import ContributionsCampingPage from './ContributionsCampingPage';
 
 export {
   Colections,
@@ -50,4 +51,5 @@ export {
   FootherTarpsPage,
   ContributionsAdventuresPage,
   ContributionsOurTipsPage,
+  ContributionsCampingPage,
 };

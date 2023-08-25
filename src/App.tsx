@@ -29,6 +29,7 @@ import {
   FootherShippingPage,
   ContributionsAdventuresPage,
   ContributionsOurTipsPage,
+  ContributionsCampingPage,
 } from './pages/index';
 
 const App = () => {
@@ -109,6 +110,10 @@ const App = () => {
           <Route
             path="/blogs/abenteuer/unsere-tipps-fur-reisen-mit-leichtem-gepack"
             element={<ContributionsOurTipsPage />}
+          />
+          <Route
+            path="/blogs/abenteuer/camping-in-deutschland"
+            element={<ContributionsCampingPage />}
           />
         </Routes>
       </div>
