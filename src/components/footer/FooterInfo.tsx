@@ -92,12 +92,17 @@ const FooterInfo = () => {
               </ListItem>
             </NavLink>
 
-            <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
-              Store
-            </ListItem>
-            <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
-              Affiliateprogram
-            </ListItem>
+            <NavLink to="/pages/unternehmen-store">
+              <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
+                Store
+              </ListItem>
+            </NavLink>
+
+            <NavLink to="/blogs/unternehmen/affiliate-partner-programm">
+              <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
+                Affiliateprogram
+              </ListItem>
+            </NavLink>
           </List>
         </div>
       </div>

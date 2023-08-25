@@ -33,6 +33,7 @@ import {
   FootherGearPage,
   FootherCareerPage,
   FootherPreesContactPage,
+  FootherAffiliatePage,
 } from './pages/index';
 
 const App = () => {
@@ -122,6 +123,10 @@ const App = () => {
           <Route
             path="/blogs/unternehmen/pressekontakt"
             element={<FootherPreesContactPage />}
+          />
+          <Route
+            path="/blogs/unternehmen/affiliate-partner-programm"
+            element={<FootherAffiliatePage />}
           />
         </Routes>
       </div>
