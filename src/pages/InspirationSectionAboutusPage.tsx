@@ -84,7 +84,7 @@ const InspirationSectionAboutusPage = () => {
         buttonTitle="learn More"
         buttonStyle="bg-black text-white"
         extraButton={true}
-        extraButtonStyle="border-[1px] border-black"
+        extraButtonStyle="border-[1px] border-black bg-white text-black hover:bg-black hover:text-white"
         extraButtonTitle="jobs"
       />
       <div

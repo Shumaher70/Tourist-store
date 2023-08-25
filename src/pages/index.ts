@@ -25,6 +25,7 @@ import ContributionsAdventuresPage from './ContributionsAdventuresPage';
 import ContributionsOurTipsPage from './ContributionsOurTipsPage';
 import ContributionsCampingPage from './ContributionsCampingPage';
 import FootherGearPage from './FootherGearPage';
+import FootherCareerPage from './FootherCareerPage';
 
 export {
   Colections,
@@ -54,4 +55,5 @@ export {
   ContributionsOurTipsPage,
   ContributionsCampingPage,
   FootherGearPage,
+  FootherCareerPage,
 };

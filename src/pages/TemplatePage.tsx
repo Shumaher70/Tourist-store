@@ -70,17 +70,19 @@ const TemplatePage = ({
               {description ? description : ''}
             </Typography>
           </div>
-          <div className="flex">
+          <div className="flex mt-5">
             <Button
-              className={`sm:w-auto rounded-none w-full mt-5 ${
+              className={`sm:w-auto rounded-none w-full ${
                 buttonStyle ? buttonStyle : ''
               }`}
             >
               <Typography> {buttonTitle}</Typography>
             </Button>
             {extraBtn && (
-              <Button className={`rounded-none ml-2 ${extraButtonStyle}`}>
-                {extraButtonTitle}
+              <Button
+                className={`sm:w-auto rounded-none  w-full ml-2 ${extraButtonStyle}`}
+              >
+                <Typography>{extraButtonTitle}</Typography>
               </Button>
             )}
           </div>

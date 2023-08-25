@@ -18,7 +18,10 @@ const MainCarousel = () => {
 
   return (
     slider && (
-      <div style={{ paddingTop: `${sizeSelector}px`, position: 'relative' }}>
+      <div
+        id="carousel"
+        style={{ paddingTop: `${sizeSelector}px`, position: 'relative' }}
+      >
         <Slider
           dots
           adaptiveHeight={true}

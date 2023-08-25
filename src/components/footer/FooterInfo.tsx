@@ -58,12 +58,16 @@ const FooterInfo = () => {
                 Gear
               </ListItem>
             </NavLink>
-            <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
-              HPT Selected
-            </ListItem>
-            <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
-              Re:Store
-            </ListItem>
+            <NavLink to="/collections/hpt-selected">
+              <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
+                HPT Selected
+              </ListItem>
+            </NavLink>
+            <NavLink to="/collections/re-store">
+              <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
+                Re:Store
+              </ListItem>
+            </NavLink>
           </List>
         </div>
 
@@ -72,12 +76,17 @@ const FooterInfo = () => {
             COMPANY
           </Typography>
           <List className="px-0">
-            <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
-              About Us
-            </ListItem>
-            <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
-              Career & Jobs
-            </ListItem>
+            <NavLink to="/pages/unternehmen-store">
+              <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
+                About Us
+              </ListItem>
+            </NavLink>
+            <NavLink to="/pages/karriere">
+              <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
+                Career & Jobs
+              </ListItem>
+            </NavLink>
+
             <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
               Press contact
             </ListItem>

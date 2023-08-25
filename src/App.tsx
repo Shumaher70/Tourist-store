@@ -31,6 +31,7 @@ import {
   ContributionsOurTipsPage,
   ContributionsCampingPage,
   FootherGearPage,
+  FootherCareerPage,
 } from './pages/index';
 
 const App = () => {
@@ -51,6 +52,7 @@ const App = () => {
             path="/pages/unternehmen-store"
             element={<InspirationSectionAboutusPage />}
           />
+          <Route path="/pages/karriere" element={<FootherCareerPage />} />
           <Route path="/pages/faq" element={<FootherHelpFaqsPage />} />
           <Route path="/pages/contact" element={<FootherContactPage />} />
 
