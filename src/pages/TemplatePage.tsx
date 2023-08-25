@@ -72,10 +72,9 @@ const TemplatePage = ({
           </div>
           <div className="flex">
             <Button
-              className={`md:w-auto rounded-none ${
+              className={`sm:w-auto rounded-none w-full mt-5 ${
                 buttonStyle ? buttonStyle : ''
               }`}
-              size="lg"
             >
               <Typography> {buttonTitle}</Typography>
             </Button>

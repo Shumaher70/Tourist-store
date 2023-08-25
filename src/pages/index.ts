@@ -21,6 +21,8 @@ import FootherContactPage from './FootherContactPage';
 import FootherShippingPage from './FootherShippingPage';
 import FootherTentSizePage from './FootherTentSizePage';
 import FootherTarpsPage from './FootherTarpsPage';
+import ContributionsAdventuresPage from './ContributionsAdventuresPage';
+import ContributionsOurTipsPage from './ContributionsOurTipsPage';
 
 export {
   Colections,
@@ -46,4 +48,6 @@ export {
   FootherShippingPage,
   FootherTentSizePage,
   FootherTarpsPage,
+  ContributionsAdventuresPage,
+  ContributionsOurTipsPage,
 };

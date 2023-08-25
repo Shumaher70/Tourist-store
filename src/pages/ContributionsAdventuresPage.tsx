@@ -12,7 +12,7 @@ const ContributionsAdventuresPage = () => {
         description="It was a sunny day when we decided to explore the pristine nature right outside our doorstep."
         buttonTitle="LEARN MORE"
         buttonStyle="bg-black text-white"
-        img="contributions-1.webp"
+        img="contributions-2.webp"
       />
       <div className="px-[10%] py-[5%]">
         <Typography>

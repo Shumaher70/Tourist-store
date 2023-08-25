@@ -26,9 +26,10 @@ import {
   FootherContactPage,
   FootherTentSizePage,
   FootherTarpsPage,
+  FootherShippingPage,
+  ContributionsAdventuresPage,
+  ContributionsOurTipsPage,
 } from './pages/index';
-import FootherShippingPage from './pages/FootherShippingPage';
-import ContributionsAdventuresPage from './pages/ContributionsAdventuresPage';
 
 const App = () => {
   return (
@@ -104,6 +105,10 @@ const App = () => {
           <Route
             path="/blogs/abenteuer/sup-abenteuer-direkt-vor-der-haustur"
             element={<ContributionsAdventuresPage />}
+          />
+          <Route
+            path="/blogs/abenteuer/unsere-tipps-fur-reisen-mit-leichtem-gepack"
+            element={<ContributionsOurTipsPage />}
           />
         </Routes>
       </div>
