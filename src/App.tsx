@@ -30,6 +30,7 @@ import {
   ContributionsAdventuresPage,
   ContributionsOurTipsPage,
   ContributionsCampingPage,
+  FootherGearPage,
 } from './pages/index';
 
 const App = () => {
@@ -64,6 +65,7 @@ const App = () => {
           <Route path="/collections/topseller" element={<TopSellerPage />} />
           <Route path="/collections/re-store" element={<ReStorePage />} />
           <Route path="/collections/tarps" element={<FootherTarpsPage />} />
+          <Route path="/collections/gear" element={<FootherGearPage />} />
 
           <Route path="/pages/blog" element={<ContributionsPage />} />
           <Route

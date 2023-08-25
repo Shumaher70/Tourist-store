@@ -48,15 +48,16 @@ const FooterInfo = () => {
                 Tarps
               </ListItem>
             </NavLink>
-            <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
-              Backpacks & Bags
-            </ListItem>
-            <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
-              Apparel
-            </ListItem>
-            <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
-              Gear
-            </ListItem>
+            <NavLink to="/collections/carry-essentials">
+              <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
+                Backpacks & Bags
+              </ListItem>
+            </NavLink>
+            <NavLink to="/collections/gear">
+              <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
+                Gear
+              </ListItem>
+            </NavLink>
             <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
               HPT Selected
             </ListItem>
