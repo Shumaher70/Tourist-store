@@ -25,9 +25,10 @@ import {
   FootherHelpFaqsPage,
   FootherContactPage,
   FootherTentSizePage,
-  FootherTarps,
+  FootherTarpsPage,
 } from './pages/index';
 import FootherShippingPage from './pages/FootherShippingPage';
+import ContributionsAdventuresPage from './pages/ContributionsAdventuresPage';
 
 const App = () => {
   return (
@@ -60,7 +61,7 @@ const App = () => {
           <Route path="/collections/hpt-selected" element={<HptSelected />} />
           <Route path="/collections/topseller" element={<TopSellerPage />} />
           <Route path="/collections/re-store" element={<ReStorePage />} />
-          <Route path="/collections/tarps" element={<FootherTarps />} />
+          <Route path="/collections/tarps" element={<FootherTarpsPage />} />
 
           <Route path="/pages/blog" element={<ContributionsPage />} />
           <Route
@@ -99,6 +100,10 @@ const App = () => {
           <Route
             path="/blogs/collabs/maharishi-x-heimplanet-the-cave"
             element={<ContributionsSectionMaharishiPage />}
+          />
+          <Route
+            path="/blogs/abenteuer/sup-abenteuer-direkt-vor-der-haustur"
+            element={<ContributionsAdventuresPage />}
           />
         </Routes>
       </div>

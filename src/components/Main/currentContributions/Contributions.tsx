@@ -62,16 +62,19 @@ const Contributions = () => {
             title="SUP ADVENTURES - DOORSTEP TO OCEAN IN ONE DAY"
             description="It was a sunny day when we decided to explore the pristine nature right outside our doorstep."
             img="contributions-1.webp"
+            path="/blogs/abenteuer/sup-abenteuer-direkt-vor-der-haustur"
           />
           <ContributionsCard
             title="OUR TIPS FOR TRAVELING LIGHT"
             description="Space-saving and lightweight packing is a fundamental skill for any globetrotter."
             img="contributions-3.jpg"
+            path="/blogs/abenteuer/unsere-tipps-fur-reisen-mit-leichtem-gepack"
           />
           <ContributionsCard
             title="CAMPING IN GERMANY"
             description="More openings are in sight and it's time to plan the first trips outdoors. If you want to spend a night at a campsite in beautiful surroundings in Germany without being woken up by slamming car doors or motorhome generators, only to find that the first thing you see is a wall of caravans, it's not so easy."
             img="contributions-2.webp"
+            path="/blogs/abenteuer/camping-in-deutschland"
           />
         </ContribuionsCardWrapper>
       </div>

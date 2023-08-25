@@ -20,7 +20,7 @@ import FootherHelpFaqsPage from './FootherHelpFaqsPage';
 import FootherContactPage from './FootherContactPage';
 import FootherShippingPage from './FootherShippingPage';
 import FootherTentSizePage from './FootherTentSizePage';
-import FootherTarps from './FootherTarps';
+import FootherTarpsPage from './FootherTarpsPage';
 
 export {
   Colections,
@@ -45,5 +45,5 @@ export {
   FootherContactPage,
   FootherShippingPage,
   FootherTentSizePage,
-  FootherTarps,
+  FootherTarpsPage,
 };

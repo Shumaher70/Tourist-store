@@ -96,7 +96,7 @@ const FootherTentSizePage = () => {
             <Button
               color="white"
               size="lg"
-              className="bg-black text-white rounded-none mt-5"
+              className="bg-black text-white rounded-none"
             >
               READ MORE
             </Button>
