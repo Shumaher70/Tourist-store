@@ -32,6 +32,7 @@ import {
   ContributionsCampingPage,
   FootherGearPage,
   FootherCareerPage,
+  FootherPreesContactPage,
 } from './pages/index';
 
 const App = () => {
@@ -102,7 +103,6 @@ const App = () => {
             path="/blogs/zelte/zeltgrossen"
             element={<FootherTentSizePage />}
           />
-
           <Route
             path="/blogs/collabs/maharishi-x-heimplanet-the-cave"
             element={<ContributionsSectionMaharishiPage />}
@@ -118,6 +118,10 @@ const App = () => {
           <Route
             path="/blogs/abenteuer/camping-in-deutschland"
             element={<ContributionsCampingPage />}
+          />
+          <Route
+            path="/blogs/unternehmen/pressekontakt"
+            element={<FootherPreesContactPage />}
           />
         </Routes>
       </div>

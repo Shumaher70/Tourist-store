@@ -86,10 +86,12 @@ const FooterInfo = () => {
                 Career & Jobs
               </ListItem>
             </NavLink>
+            <NavLink to="/blogs/unternehmen/pressekontakt">
+              <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
+                Press contact
+              </ListItem>
+            </NavLink>
 
-            <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
-              Press contact
-            </ListItem>
             <ListItem className="text-white px-0 py-0 mt-2 rounded-none">
               Store
             </ListItem>
