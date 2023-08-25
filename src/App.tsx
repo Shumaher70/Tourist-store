@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './components/Main';
@@ -35,6 +34,10 @@ import {
   FootherPreesContactPage,
   FootherAffiliatePage,
   FootherNewsletterPage,
+  FootherImprintPage,
+  FootherAgbPage,
+  FootherPrivacyPolicy,
+  FootherRevocationPage,
 } from './pages/index';
 
 const App = () => {
@@ -59,6 +62,10 @@ const App = () => {
           <Route path="/pages/faq" element={<FootherHelpFaqsPage />} />
           <Route path="/pages/contact" element={<FootherContactPage />} />
           <Route path="/pages/newsletter" element={<FootherNewsletterPage />} />
+          <Route path="/pages/impressum" element={<FootherImprintPage />} />
+          <Route path="/pages/agb" element={<FootherAgbPage />} />
+          <Route path="/pages/datenschutz" element={<FootherPrivacyPolicy />} />
+          <Route path="/pages/widerruf" element={<FootherRevocationPage />} />
 
           <Route path="/collections" element={<Colections />} />
           <Route path="/collections/zelte" element={<Zelte />} />

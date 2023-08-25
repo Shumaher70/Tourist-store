@@ -30,6 +30,10 @@ import FootherPreesContactPage from './FootherPreesContactPage';
 import FootherAffiliatePage from './FootherAffiliatePage';
 import RegisterPage from './RegisterPage';
 import FootherNewsletterPage from './FootherNewsletterPage';
+import FootherAgbPage from './FootherAgbPage';
+import FootherImprintPage from './FootherImprintPage';
+import FootherPrivacyPolicy from './FootherPrivacyPolicy';
+import FootherRevocationPage from './FootherRevocationPage';
 
 export {
   Colections,
@@ -64,4 +68,8 @@ export {
   FootherAffiliatePage,
   RegisterPage,
   FootherNewsletterPage,
+  FootherAgbPage,
+  FootherImprintPage,
+  FootherPrivacyPolicy,
+  FootherRevocationPage,
 };
