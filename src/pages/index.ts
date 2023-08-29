@@ -35,6 +35,7 @@ import FootherImprintPage from './FootherImprintPage';
 import FootherPrivacyPolicy from './FootherPrivacyPolicy';
 import FootherRevocationPage from './FootherRevocationPage';
 import ShopFinderPage from './ShopFinderPage';
+import AllProducts from './AllProducts';
 
 export {
   Colections,
@@ -74,4 +75,5 @@ export {
   FootherPrivacyPolicy,
   FootherRevocationPage,
   ShopFinderPage,
+  AllProducts,
 };

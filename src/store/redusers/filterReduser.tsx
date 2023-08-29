@@ -247,6 +247,23 @@ export const Filter = createSlice({
     dusk: (state) => {
       state.Dusk = !state.Dusk;
     },
+
+    //All Products
+    beaniesCaps: (state) => {
+      state.BeaniesCaps = !state.BeaniesCaps;
+    },
+    hoodies: (state) => {
+      state.Hoodies = !state.Hoodies;
+    },
+    longsleeves: (state) => {
+      state.Longsleeves = !state.Longsleeves;
+    },
+    sweater: (state) => {
+      state.Sweater = !state.Sweater;
+    },
+    tshirts: (state) => {
+      state.Tshirts = !state.Tshirts;
+    },
   },
 });
 
@@ -295,6 +312,11 @@ export const {
   tarps,
   dawn,
   dusk,
+  beaniesCaps,
+  hoodies,
+  longsleeves,
+  sweater,
+  tshirts,
 } = Filter.actions;
 
 export default Filter.reducer;
