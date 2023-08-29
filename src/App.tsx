@@ -39,6 +39,7 @@ import {
   FootherPrivacyPolicy,
   FootherRevocationPage,
   ShopFinderPage,
+  RegisterPage,
 } from './pages/index';
 
 const App = () => {
@@ -68,6 +69,7 @@ const App = () => {
           <Route path="/pages/agb" element={<FootherAgbPage />} />
           <Route path="/pages/datenschutz" element={<FootherPrivacyPolicy />} />
           <Route path="/pages/widerruf" element={<FootherRevocationPage />} />
+          <Route path="/pages/register" element={<RegisterPage />} />
 
           <Route path="/collections" element={<Colections />} />
           <Route path="/collections/zelte" element={<Zelte />} />
