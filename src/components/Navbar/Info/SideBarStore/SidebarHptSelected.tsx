@@ -1,4 +1,5 @@
 import { Card, List, ListItem } from '@material-tailwind/react';
+import { NavLink } from 'react-router-dom';
 
 const SidebarHptSelected = () => {
   return (
@@ -8,18 +9,35 @@ const SidebarHptSelected = () => {
       }
     >
       <List className="absolute top-[15%] pl-[10%]">
-        <ListItem className="cursor-pointer  rounded-none">
-          KNIVES & EQUIPMENT
-        </ListItem>
-        <ListItem className="cursor-pointer  rounded-none">
-          CAMPING FURNITURE
-        </ListItem>
-        <ListItem className="cursor-pointer  rounded-none">COOKING</ListItem>
-        <ListItem className="cursor-pointer  rounded-none">SLEEPING</ListItem>
-        <ListItem className="cursor-pointer  rounded-none">HYGIENE</ListItem>
-        <ListItem className="cursor-pointer  rounded-none">
-          ALL PRODUCTS
-        </ListItem>
+        <NavLink to="/collections/knives">
+          <ListItem className="cursor-pointer  rounded-none">
+            KNIVES & EQUIPMENT
+          </ListItem>
+        </NavLink>
+
+        <NavLink to="/collections/camping-furniture">
+          <ListItem className="cursor-pointer  rounded-none">
+            CAMPING FURNITURE
+          </ListItem>
+        </NavLink>
+
+        <NavLink to="/collections/cooking">
+          <ListItem className="cursor-pointer  rounded-none">COOKING</ListItem>
+        </NavLink>
+
+        <NavLink to="/collections/sleeping">
+          <ListItem className="cursor-pointer  rounded-none">SLEEPING</ListItem>
+        </NavLink>
+
+        <NavLink to="/collections/hygiene">
+          <ListItem className="cursor-pointer  rounded-none">HYGIENE</ListItem>
+        </NavLink>
+
+        <NavLink to="/collections/all-products">
+          <ListItem className="cursor-pointer  rounded-none">
+            ALL PRODUCTS
+          </ListItem>
+        </NavLink>
       </List>
     </Card>
   );

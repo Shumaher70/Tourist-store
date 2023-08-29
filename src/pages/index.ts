@@ -36,6 +36,11 @@ import FootherPrivacyPolicy from './FootherPrivacyPolicy';
 import FootherRevocationPage from './FootherRevocationPage';
 import ShopFinderPage from './ShopFinderPage';
 import AllProducts from './AllProducts';
+import KnivesPage from './KnivesPage';
+import CampingFurniturePage from './CampingFurniturePage';
+import CookingPage from './CookingPage';
+import SleepingPage from './SleepingPage';
+import HygienePage from './HygienePage';
 
 export {
   Colections,
@@ -76,4 +81,9 @@ export {
   FootherRevocationPage,
   ShopFinderPage,
   AllProducts,
+  KnivesPage,
+  CampingFurniturePage,
+  CookingPage,
+  SleepingPage,
+  HygienePage,
 };

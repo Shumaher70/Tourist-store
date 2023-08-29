@@ -1,4 +1,5 @@
 import { List, ListItem, Card } from '@material-tailwind/react';
+import { NavLink } from 'react-router-dom';
 
 const SidebarReStore = () => {
   return (
@@ -8,10 +9,16 @@ const SidebarReStore = () => {
       }
     >
       <List className="absolute top-[15%] pl-[10%]">
-        <ListItem className="cursor-pointer  rounded-none">LEARN MORE</ListItem>
-        <ListItem className="cursor-pointer  rounded-none">
-          ALL PRODUCTS
-        </ListItem>
+        <NavLink to="/collections/re-store">
+          <ListItem className="cursor-pointer  rounded-none">
+            LEARN MORE
+          </ListItem>
+        </NavLink>
+        <NavLink to="/collections/all-products">
+          <ListItem className="cursor-pointer  rounded-none">
+            ALL PRODUCTS
+          </ListItem>
+        </NavLink>
       </List>
     </Card>
   );

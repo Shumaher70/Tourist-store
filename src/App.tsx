@@ -41,6 +41,11 @@ import {
   ShopFinderPage,
   RegisterPage,
   AllProducts,
+  KnivesPage,
+  CampingFurniturePage,
+  CookingPage,
+  SleepingPage,
+  HygienePage,
 } from './pages/index';
 
 const App = () => {
@@ -84,6 +89,15 @@ const App = () => {
           <Route path="/collections/re-store" element={<ReStorePage />} />
           <Route path="/collections/tarps" element={<FootherTarpsPage />} />
           <Route path="/collections/gear" element={<FootherGearPage />} />
+          <Route path="/collections/knives" element={<KnivesPage />} />
+          <Route
+            path="/collections/camping-furniture"
+            element={<CampingFurniturePage />}
+          />
+          <Route path="/collections/cooking" element={<CookingPage />} />
+          <Route path="/collections/sleeping" element={<SleepingPage />} />
+          <Route path="/collections/hygiene" element={<HygienePage />} />
+
           <Route path="/collections/all-products" element={<AllProducts />} />
 
           <Route path="/pages/blog" element={<ContributionsPage />} />
