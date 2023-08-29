@@ -38,6 +38,7 @@ import {
   FootherAgbPage,
   FootherPrivacyPolicy,
   FootherRevocationPage,
+  ShopFinderPage,
 } from './pages/index';
 
 const App = () => {
@@ -50,6 +51,7 @@ const App = () => {
           <Route path="/" element={<Main />} />
 
           <Route path="/pages" element={<PageMissed />} />
+          <Route path="/pages/shopfinder" element={<ShopFinderPage />} />
           <Route
             path="/pages/collab-maharishi-the-cave"
             element={<CollabMaharishi />}

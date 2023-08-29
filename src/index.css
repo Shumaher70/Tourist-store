@@ -46,3 +46,26 @@
   padding-left: 10%;
   padding-right: 10%;
 }
+
+/* mainSection */
+.gm-style-iw {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+/* textdiv */
+.gm-style-iw-d {
+  overflow: hidden !important;
+}
+/* button  */
+.gm-ui-hover-effect {
+  opacity: 1 !important;
+}
+.textContent {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px;
+  padding: 10px;
+}

@@ -4,7 +4,7 @@ interface CategoryCarousel {
 }
 
 export const dammyCategoryDiscription: CategoryCarousel[] = [
-  { img: 'Restore.webp', discription: 'Restore' },
+  { img: 'Restore.webp', discription: 'Re:store' },
   { img: 'Beanies&caps.webp', discription: 'Beanies & caps' },
   { img: 'HPTselected.webp', discription: 'HPT selected' },
   { img: 'Tents.webp', discription: 'Tents' },
