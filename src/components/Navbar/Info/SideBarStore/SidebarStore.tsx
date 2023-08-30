@@ -6,6 +6,7 @@ import {
 } from '../../../../store/redusers/sideBarReduser';
 
 import { List, ListItem, Card } from '@material-tailwind/react';
+import { NavLink } from 'react-router-dom';
 
 const SidebarStore = () => {
   const dispatch = useDispatch();
@@ -50,9 +51,11 @@ const SidebarStore = () => {
           GIFT VOUCHER
         </ListItem>
 
-        <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
-          TOP SELLER
-        </ListItem>
+        <NavLink to="/collections/topseller">
+          <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
+            TOP SELLER
+          </ListItem>
+        </NavLink>
       </List>
     </Card>
   );

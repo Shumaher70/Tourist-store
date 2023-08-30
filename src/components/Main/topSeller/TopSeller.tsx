@@ -31,8 +31,16 @@ const TopSeller = () => {
             className="rounded-none shadow-none cursor-pointer"
           >
             <div className="relative">
-              <div className="absolute w-full h-full bg-black opacity-5"></div>
-              <img src={require(`./topSellerImg/${item.img}`)} alt={item.img} />
+              <img
+                src={require(`./topSellerImg/${item.img2}`)}
+                alt={item.img2}
+                className=" brightness-[.9] absolute top-0 right-0 w-full h-full"
+              />
+              <img
+                src={require(`./topSellerImg/${item.img}`)}
+                alt={item.img}
+                className=" brightness-[.9] hover:opacity-0"
+              />
             </div>
 
             <Typography className="uppercase mt-3" variant="h5" color="black">
