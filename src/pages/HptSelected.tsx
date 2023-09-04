@@ -83,7 +83,6 @@ const HptSelected = () => {
       />
 
       <Filter
-        products={{}}
         typeProps={true}
         checkboxType={[
           {

@@ -3,7 +3,7 @@ import { RootState } from '../store';
 import Filter from '../components/Filter';
 import { cooking, knivesEquipment } from '../store/redusers/filterReduser';
 
-import { products } from '../dammyDB/dammyProducts';
+import { productCard } from '../dammyDB/dammyProducts';
 import TemplatePage from './TemplatePage';
 
 const CookingPage = () => {
@@ -32,7 +32,7 @@ const CookingPage = () => {
         buttonStyle="bg-black text-white"
       />
       <Filter
-        products={products.cotegory}
+        productCart={productCard}
         typeProps={true}
         checkboxType={[
           {

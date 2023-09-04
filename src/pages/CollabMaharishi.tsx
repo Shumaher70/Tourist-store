@@ -82,7 +82,6 @@ const CollabMaharishi = () => {
       />
 
       <Filter
-        products={{}}
         activityProps={true}
         checkboxActivity={[
           {

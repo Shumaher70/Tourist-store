@@ -1,5 +1,4 @@
 import withMT from '@material-tailwind/react/utils/withMT';
-
 export default withMT({
   content: [
     './index.html',
@@ -9,6 +8,9 @@ export default withMT({
 
   theme: {
     extend: {
+      content: {
+        link: "url('C:/Users/Oleg/Desktop/projects/react/02.tourist-shop/src/pages/img/arrow.svg')",
+      },
       screens: {
         sm: '640px',
 

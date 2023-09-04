@@ -31,7 +31,6 @@ const TransitLine = () => {
         buttonStyle="bg-black text-white"
       />
       <Filter
-        products={{}}
         typeProps={true}
         checkboxType={[
           {

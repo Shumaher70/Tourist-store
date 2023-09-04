@@ -55,7 +55,6 @@ const FootherTarps = () => {
         img="footherTarpsPageImg.webp"
       />
       <Filter
-        products={{}}
         typeProps={true}
         checkboxType={[
           {

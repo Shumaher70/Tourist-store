@@ -17,7 +17,7 @@ import {
   season3,
   season4,
 } from '../store/redusers/filterReduser';
-import { products } from '../dammyDB/dammyProducts';
+import { productCard } from '../dammyDB/dammyProducts';
 import TemplatePage from './TemplatePage';
 
 const Zelte = () => {
@@ -81,7 +81,7 @@ const Zelte = () => {
         buttonStyle="bg-black text-white"
       />
       <Filter
-        products={products.cotegory}
+        productCart={productCard}
         activityProps={true}
         checkboxActivity={[
           {

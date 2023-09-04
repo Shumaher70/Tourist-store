@@ -76,7 +76,6 @@ const TopSellerPage = () => {
       />
 
       <Filter
-        products={{}}
         activityProps={true}
         checkboxActivity={[
           {

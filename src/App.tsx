@@ -46,6 +46,7 @@ import {
   CookingPage,
   SleepingPage,
   HygienePage,
+  TentsFistalClassic,
 } from './pages/index';
 
 const App = () => {
@@ -156,6 +157,11 @@ const App = () => {
           <Route
             path="/blogs/unternehmen/affiliate-partner-programm"
             element={<FootherAffiliatePage />}
+          />
+
+          <Route
+            path="/products/fistral-classic"
+            element={<TentsFistalClassic />}
           />
         </Routes>
       </div>

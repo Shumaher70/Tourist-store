@@ -171,7 +171,7 @@ const FootherHelpFaqsPage = () => {
                   GENERAL
                 </Typography>
                 <Faq
-                  titile="PAYMENT METHODS"
+                  title="PAYMENT METHODS"
                   description="We offer the following payment options:
                 Credit card
                 A form will open where you can enter your credit card details. We will debit your account when we ship the ordered goods to you.    
@@ -191,31 +191,31 @@ const FootherHelpFaqsPage = () => {
                 Bancontact is a Belgian payment system through which consumers can make online transfers."
                 />
                 <Faq
-                  titile="STATUS OF MY ORDER"
+                  title="STATUS OF MY ORDER"
                   description="We will send you an order confirmation email after your successful order. You will also receive an email from us when your package is shipped and leaves our warehouse. If you have a customer account, you can view the status of your order at any time. If you do not have an account, you will find a link to your order confirmation page in the order confirmation email, where you will find all the details of your order again and also the tracking link once your order is shipped."
                 />
                 <Faq
-                  titile="SHIPPING"
+                  title="SHIPPING"
                   description="Innerhalb der EU erreicht Dich Deine Bestellung innerhalb von 2-10 Tagen (Versand aus unserem Lager in Deutschland). Sendungen außerhalb der EU benötigen in der Regel 5-14 Tage. Detaillierte Informationen zu der Versandlaufzeit der einzelnen Länder findest Du > hier <."
                 />
                 <Faq
-                  titile="CANCEL ORDER"
+                  title="CANCEL ORDER"
                   description="If you would like to cancel your order, please send an email as soon as possible to service[at]heimplanet.com with your order number. As long as the order has not been packed, we can cancel it. After the successful cancellation you will receive an infomail and we will refund your payment immediately. 
 
                   If your shipment has already been prepared for dispatch, we are unfortunately unable to cancel the order. You can exercise your right of cancellation within 14 days of receiving the goods and return them to us."
                 />
                 <Faq
-                  titile="EXCHANGE"
+                  title="EXCHANGE"
                   description="Unfortunately, a direct exchange is not possible, as we cannot guarantee the availability of the desired product. If you would like to exchange an item, simply reorder your desired item and return your first order to us. We will refund the purchase amount within 14 days of receiving your return."
                 />
                 <Faq
-                  titile="NEWSLETTER"
+                  title="NEWSLETTER"
                   description="Don't miss any news and become part of the community! Subscribe to our newsletter and be the first to know about new products, limited editions, promotions & much more!
                   Our newsletter is available in two language versions: for the English version click here - if you prefer the German version, just click here. 
                   You don't want to receive our newsletter anymore? Unsubscribe from our English newsletter here or from our German newsletter here. You can also click on the UNSUBSCRIBE button at the end of the last newsletter you received from us."
                 />
                 <Faq
-                  titile="DEFECTIVE PRODUCT"
+                  title="DEFECTIVE PRODUCT"
                   description="If your product is defective, please contact our service team by e-mail: service[at]@heimplanet.com
                   In order to process your request quickly, we need the following information from you:
                   Please send us a copy/picture of your invoice for the defective product.
@@ -223,7 +223,7 @@ const FootherHelpFaqsPage = () => {
                   3. please also send us your complete address in case the item needs to be exchanged."
                 />
                 <Faq
-                  titile="VOUCHERS"
+                  title="VOUCHERS"
                   description="If your product is defective, please contact our service team by e-mail: service[at]@heimplanet.com
                   In order to process your request quickly, we need the following information from you:
                   Please send us a copy/picture of your invoice for the defective product.
@@ -241,14 +241,14 @@ const FootherHelpFaqsPage = () => {
                   RETURN
                 </Typography>
                 <Faq
-                  titile="RETURN"
+                  title="RETURN"
                   description="We can only guarantee you a full refund if all items are returned in the condition they were in when they were delivered. Items must not be damaged, soiled, washed, altered or worn (except for fitting).
                   If items are returned, the purchase price will not be refunded and we will return the items to you. Please also note our return period of 14 days. Unfortunately, we cannot accept returns outside of this period.
                   If your ordered product(s) should have a defect, please contact our customer service immediately after you have received them. You can also send us photos of the defect directly so that we can find a solution for you as quickly as possible!
                   Here you can find our cancellation policy for consumers."
                 />
                 <Faq
-                  titile="RETURN CONDITIONS"
+                  title="RETURN CONDITIONS"
                   description="We can only guarantee you a full refund if all items are returned in the condition they were in when they were delivered. Items must not be damaged, soiled, washed, altered or worn (except for fitting).
                   If items are returned, the purchase price will not be refunded and we will return the items to you. Please also note our return period of 14 days. Unfortunately, we cannot accept returns outside of this period.
                   If your ordered product(s) should have a defect, please contact our customer service immediately after you have received them. You can also send us photos of the defect directly so that we can find a solution for you as quickly as possible!
@@ -265,7 +265,7 @@ const FootherHelpFaqsPage = () => {
                   USEFUL
                 </Typography>
                 <Faq
-                  titile="OPERATING INSTRUCTIONS"
+                  title="OPERATING INSTRUCTIONS"
                   description="We offer the following payment options:
                 Credit card
                 A form will open where you can enter your credit card details. We will debit your account when we ship the ordered goods to you.    
@@ -276,7 +276,7 @@ const FootherHelpFaqsPage = () => {
                 Instant bank transfer"
                 />
                 <Faq
-                  titile="INITIAL SETUP"
+                  title="INITIAL SETUP"
                   description="In this video you can see how the first assembly of your new tent is done."
                 />
               </div>

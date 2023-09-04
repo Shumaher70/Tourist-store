@@ -2,11 +2,13 @@ import { Button, Typography } from '@material-tailwind/react';
 import { useState } from 'react';
 
 interface FaqProps {
-  description: string;
-  titile: string;
+  description?: string;
+  title: string;
+  titleStyle?: string;
+  children?: React.ReactNode;
 }
 
-const Faq = ({ description, titile }: FaqProps) => {
+const Faq = ({ description, title, titleStyle, children }: FaqProps) => {
   const [trigger, setTrigger] = useState<boolean>(false);
 
   const handlerClick = () => {
@@ -18,9 +20,9 @@ const Faq = ({ description, titile }: FaqProps) => {
       <div className="relative">
         <Typography
           onClick={handlerClick}
-          className="font-normal text-[1.4rem]"
+          className={`font-normal ${titleStyle ? titleStyle : 'text-[1.4rem]'}`}
         >
-          {titile}
+          {title}
         </Typography>
         <div
           className="w-[26px] h-[26px]"
@@ -53,7 +55,12 @@ const Faq = ({ description, titile }: FaqProps) => {
           </Button>
         </div>
 
-        {trigger && <Typography className="mt-5">{description}</Typography>}
+        {trigger && (
+          <Typography className="mt-5">
+            {description}
+            {children}
+          </Typography>
+        )}
       </div>
     </div>
   );

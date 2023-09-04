@@ -12,7 +12,7 @@ const CampingFurniturePage = () => {
         buttonTitle="Discover products"
         buttonStyle="bg-black text-white"
       />
-      <Filter products={{}} />
+      <Filter />
     </>
   );
 };

@@ -44,7 +44,7 @@ import {
   motionSeries,
   transitLine,
 } from '../store/redusers/filterReduser';
-import { products } from '../dammyDB/dammyProducts';
+import { productCard } from '../dammyDB/dammyProducts';
 import TemplatePage from './TemplatePage';
 
 const AllProducts = () => {
@@ -189,7 +189,7 @@ const AllProducts = () => {
         buttonStyle="bg-black text-white"
       />
       <Filter
-        products={products.cotegory}
+        productCart={productCard}
         activityProps={true}
         checkboxActivity={[
           {

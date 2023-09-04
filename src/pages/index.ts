@@ -41,6 +41,8 @@ import CampingFurniturePage from './CampingFurniturePage';
 import CookingPage from './CookingPage';
 import SleepingPage from './SleepingPage';
 import HygienePage from './HygienePage';
+import TentsFistalClassic from './products/TentsFistalClassic';
+import NavProducts from './products/NavProducts';
 
 export {
   Colections,
@@ -86,4 +88,6 @@ export {
   CookingPage,
   SleepingPage,
   HygienePage,
+  TentsFistalClassic,
+  NavProducts,
 };

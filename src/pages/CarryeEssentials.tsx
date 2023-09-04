@@ -91,7 +91,6 @@ const CarryeEssentials = () => {
         buttonStyle="bg-black text-white"
       />
       <Filter
-        products={{}}
         activityProps={true}
         checkboxActivity={[
           {

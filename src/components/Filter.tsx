@@ -11,6 +11,7 @@ import {
   CardFooter,
 } from '@material-tailwind/react';
 import { nanoid } from '@reduxjs/toolkit';
+import { NavLink } from 'react-router-dom';
 
 interface IconProps {
   open: boolean;
@@ -43,11 +44,7 @@ interface FilterProps {
     checked: boolean;
   }[];
   checkedHandler?: (event: string) => any;
-  products?: {
-    tentsAccessories?: {
-      [name: string]: any;
-    };
-  };
+  productCart?: object[];
 }
 
 function Icon({ open }: IconProps) {
@@ -81,7 +78,7 @@ const Filter = ({
   checkboxCollection,
   checkboxBrend,
   checkedHandler,
-  products,
+  productCart,
 }: FilterProps) => {
   const [activity, setActivity] = React.useState<boolean>(false);
   const [type, setType] = React.useState<boolean>(false);
@@ -90,7 +87,6 @@ const Filter = ({
   const [brand, setBrand] = React.useState<boolean>(false);
   const [width, setWidth] = React.useState(false);
   const sizeSlice = useSelector((state: RootState) => state.size.widthNav);
-
   React.useEffect(() => {
     Number(sizeSlice) > 768 ? setWidth(true) : setWidth(false);
   }, [sizeSlice]);
@@ -320,38 +316,40 @@ const Filter = ({
           ))}
         </div>
       )}
-      {Object.entries({ ...products }).length > 0 ? (
-        <div className="flex flex-wrap md:justify-between justify-center gap-5 my-5">
-          {products?.tentsAccessories?.map((product: any) => {
-            return (
-              <Card key={nanoid()} className="rounded-none cursor-pointer">
-                <div className="md:max-w-[350px] w-full ">
-                  <img
-                    src={require(`../dammyDB/${product.mainImg[2]}`)}
-                    alt="tent"
-                    className="brightness-[95%]"
-                  />
-                  <img
-                    className="absolute top-0 opacity-0 hover:opacity-100 transition-all brightness-[95%]"
-                    src={require(`../dammyDB/${product.mainImg[3]}`)}
-                    alt="tent"
-                  />
-                </div>
-                <CardBody>
-                  <Typography variant="h5" className="uppercase text-black">
-                    {product.name}
-                  </Typography>
-                </CardBody>
-                <CardFooter className="flex justify-between capitalize  py-2">
-                  <Typography>{product.type}</Typography>
-                  <Typography className="text-black border-b-[1px] border-black">
-                    € {product.price}, 00
-                  </Typography>
-                </CardFooter>
-              </Card>
-            );
-          })}
-        </div>
+      {Object.entries({ ...productCart }).length > 0 ? (
+        productCart?.map((productCart: any) => {
+          return (
+            <div className="flex flex-wrap md:justify-between justify-center gap-5 my-5">
+              <NavLink to={String(productCart?.src)}>
+                <Card key={nanoid()} className="rounded-none cursor-pointer">
+                  <div className="md:max-w-[350px] w-full ">
+                    <img
+                      src={require(`../dammyDB/${productCart?.mainImg1}`)}
+                      alt="tent"
+                      className="brightness-[95%]"
+                    />
+                    <img
+                      className="absolute top-0 opacity-0 hover:opacity-100 transition-all brightness-[95%]"
+                      src={require(`../dammyDB/${productCart?.mainImg2}`)}
+                      alt="tent"
+                    />
+                  </div>
+                  <CardBody className="pb-0">
+                    <Typography variant="h5" className="uppercase text-black">
+                      {productCart?.title}
+                    </Typography>
+                  </CardBody>
+                  <CardFooter className="flex justify-between capitalize  py-2">
+                    <Typography>{productCart?.type}</Typography>
+                    <Typography className="text-black border-b-[1px] border-black">
+                      € {productCart?.price}, 00
+                    </Typography>
+                  </CardFooter>
+                </Card>
+              </NavLink>
+            </div>
+          );
+        })
       ) : (
         <div className="w-full flex justify-center py-[5%]">
           <Typography className="italic sm:text-2xl text-1xl">
