@@ -11,6 +11,17 @@
   opacity: 1 !important;
 }
 
+.product-dots {
+  display: flex !important;
+  justify-content: space-between;
+}
+
+.product-dots li button {
+  width: 35px !important;
+  height: 35px !important;
+  opacity: 0 !important;
+}
+
 .carousel-dots-active button:before {
   border-radius: 50%;
 }

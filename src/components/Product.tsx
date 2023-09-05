@@ -18,20 +18,35 @@ interface ProductProps {
 const Product = ({ product }: ProductProps) => {
   const mainNavHeight = useSelector((state: RootState) => state.size.heightNav);
 
-  const [widthScreen, setWidthScreen] = useState<boolean>(true);
-  const [bottomScreenCard, setBottomScreenCard] = useState<boolean>(false);
-  const [topScreenCard, setTopScreenCard] = useState<boolean>(false);
-
   const screenCardRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
+  const [clickImg, setClickImg] = useState<boolean>(false);
+  const [widthScreen, setWidthScreen] = useState<boolean>(false);
+  const [bottomScreenCard, setBottomScreenCard] = useState<boolean>(false);
+  const [topScreenCard, setTopScreenCard] = useState<boolean>(false);
+  const [cardSlide, setcardSlide] = useState<boolean>(false);
+  const [initialMainImg, setInitialMainImg] = useState<number>(0);
+  const [antimationMainImg, setAntimationMainImg] = useState<string>('');
+
   useEffect(() => {
+    setcardSlide(true);
+  }, []);
+
+  useEffect(() => {
+    window.innerWidth < 640 ? setWidthScreen(true) : setWidthScreen(false);
     window.addEventListener('resize', () => {
-      window.innerWidth < 640 ? setWidthScreen(false) : setWidthScreen(true);
+      window.innerWidth < 640 ? setWidthScreen(true) : setWidthScreen(false);
     });
   }, []);
 
   useEffect(() => {
+    if (screenCardRef.current?.getBoundingClientRect().bottom)
+      if (window.scrollY >= +mainNavHeight - 40) {
+        setTopScreenCard(true);
+      } else {
+        setTopScreenCard(false);
+      }
     window.addEventListener('scroll', () => {
       if (screenCardRef.current?.getBoundingClientRect().bottom)
         if (window.scrollY >= +mainNavHeight - 40) {
@@ -43,6 +58,19 @@ const Product = ({ product }: ProductProps) => {
   }, [mainNavHeight]);
 
   useEffect(() => {
+    if (screenCardRef.current?.getBoundingClientRect())
+      if (cardRef.current?.getBoundingClientRect())
+        if (
+          screenCardRef.current?.getBoundingClientRect().bottom -
+            +mainNavHeight <=
+          cardRef.current?.offsetHeight + 20
+        ) {
+          setBottomScreenCard(true);
+          setTopScreenCard(false);
+        } else {
+          setBottomScreenCard(false);
+        }
+
     window.addEventListener('scroll', () => {
       if (screenCardRef.current?.getBoundingClientRect())
         if (cardRef.current?.getBoundingClientRect())
@@ -59,19 +87,81 @@ const Product = ({ product }: ProductProps) => {
     });
   }, [mainNavHeight]);
 
+  useEffect(() => {
+    const animationOpenMainImg: string =
+      'h-full w-full top-0 left-0 opacity-100';
+    const animationCloseMainImg: string = 'h-0 w-0 top-[50%] left-0 opacity-0';
+
+    clickImg
+      ? setAntimationMainImg(animationOpenMainImg)
+      : setAntimationMainImg(animationCloseMainImg);
+  }, [clickImg]);
+
+  const clickMainImgHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+    const inititalSlide = Number(
+      event.currentTarget.getAttribute('data-initial_slide')
+    )
+      ? Number(event.currentTarget.getAttribute('data-initial_slide'))
+      : 0;
+
+    setInitialMainImg(inititalSlide);
+
+    setClickImg(true);
+  };
+
   return (
     <>
+      {clickImg && (
+        <div
+          className={`${antimationMainImg} ease-linear duration-[500ms] z-[99] flex items-center fixed bg-white my-auto `}
+        >
+          <Slider
+            slidesPerRow={1}
+            adaptiveHeight={true}
+            slidesToShow={1}
+            duration={200}
+            arrows={true}
+            initialSlide={initialMainImg}
+            className="w-full"
+            modeCenter={true}
+          >
+            {Array.isArray(product.mainImg)
+              ? product.mainImg.map((img) => {
+                  return (
+                    <div key={nanoid()}>
+                      <div className="flex justify-center max-h-[600px]">
+                        <div className="flex justify-center basis-4/6">
+                          <img
+                            src={require(`../dammyDB/${img}`)}
+                            alt={img}
+                            className="object-cover brightness-95"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })
+              : ''}
+          </Slider>
+        </div>
+      )}
+
       <div className="flex sm:flex-row flex-col gap-5 sm:pr-5 p-5">
-        <div className="flex flex-row sm:flex-wrap lg:basis-3/4 sm:basis-2/4 gap-3 px-3">
-          {widthScreen ? (
+        <div className="flex flex-row sm:flex-wrap lg:basis-3/5 sm:basis-2/4 gap-3 sm:px-3">
+          {!widthScreen ? (
             Array.isArray(product.mainImg) ? (
-              product.mainImg.map((img: string) => {
+              product.mainImg.map((img: string, index: number) => {
                 return (
-                  <div key={nanoid()} className="w-full lg:w-[48.5%]">
+                  <div
+                    onClick={clickMainImgHandler}
+                    key={nanoid()}
+                    className="w-full lg:w-[48.5%]"
+                    data-initial_slide={String(index)}
+                  >
                     <img
                       src={require(`../dammyDB/${img}`)}
                       alt={img}
-                      className=" brightness-[.95]"
+                      className=" brightness-[.95] cursor-pointer"
                     />
                   </div>
                 );
@@ -80,42 +170,53 @@ const Product = ({ product }: ProductProps) => {
               ''
             )
           ) : Array.isArray(product.mainImg) ? (
-            <div className="flex-col">
-              <Slider
-                className="py-10"
-                slidesPerRow={1}
-                adaptiveHeight={true}
-                slidesToShow={1}
-                duration={200}
-                arrows={false}
-              >
-                {product.mainImg.map((item) => {
-                  return (
-                    <div key={nanoid()}>
-                      <img
-                        className="cursor-pointer"
-                        src={require(`../dammyDB//${item}`)}
-                        alt={item}
-                      />
-                      <div className="flex justify-center"></div>
-                    </div>
-                  );
-                })}
-              </Slider>
-              <div className="flex gap-1 overflow-x-scroll ">
-                {product.mainImg.map((img: string, index) => {
-                  return (
-                    <div key={nanoid()} className="mt-2 flex-1">
-                      <img
-                        src={require(`../dammyDB/${img}`)}
-                        alt={img}
-                        datatype={String(index)}
-                        className="brightness-[.95] object-cover"
-                      />
-                    </div>
-                  );
-                })}
-              </div>
+            <div className="flex-col flex-1">
+              {cardSlide && (
+                <Slider
+                  className="py-10"
+                  slidesPerRow={1}
+                  adaptiveHeight={true}
+                  slidesToShow={1}
+                  duration={200}
+                  arrows={false}
+                  dots={true}
+                  dotsClass="product-dots"
+                  appendDots={(e: number) => {
+                    return (
+                      <ul style={{ position: 'relative' }}>
+                        {e}
+                        <div className="w-full flex justify-between absolute -z-10 gap-5">
+                          {Array.isArray(product.mainImg)
+                            ? product.mainImg.map((img) => (
+                                <li key={nanoid()} className="flex flex-1 ">
+                                  {
+                                    <img
+                                      src={require(`../dammyDB/${img}`)}
+                                      alt={img}
+                                      className="object-cover brightness-95"
+                                    />
+                                  }
+                                </li>
+                              ))
+                            : ''}
+                        </div>
+                      </ul>
+                    );
+                  }}
+                >
+                  {product.mainImg.map((item) => {
+                    return (
+                      <div onClick={clickMainImgHandler} key={nanoid()}>
+                        <img
+                          className="cursor-pointer brightness-95"
+                          src={require(`../dammyDB/${item}`)}
+                          alt={item}
+                        />
+                      </div>
+                    );
+                  })}
+                </Slider>
+              )}
             </div>
           ) : (
             ''
@@ -131,10 +232,12 @@ const Product = ({ product }: ProductProps) => {
           <div
             style={{
               position: `${
-                topScreenCard && !bottomScreenCard ? 'fixed' : 'static'
+                topScreenCard && !bottomScreenCard && !widthScreen
+                  ? 'fixed'
+                  : 'static'
               }`,
               top: `${
-                topScreenCard && !bottomScreenCard
+                topScreenCard && !bottomScreenCard && !widthScreen
                   ? `${20 + +mainNavHeight}px`
                   : ''
               }`,
@@ -171,7 +274,6 @@ const Product = ({ product }: ProductProps) => {
                 <img
                   src={require(`../dammyDB/${product.mainImg[0]}`)}
                   width={60}
-                  className=" brightness-[0.95] cursor-pointer border-[1px] border-black"
                   alt={String(product.tile)}
                 />
               </NavLink>
@@ -198,7 +300,7 @@ const Product = ({ product }: ProductProps) => {
             )}
             <Button
               size="lg"
-              className="bg-black rounded-none text-white mt-5 w-full"
+              className="bg-black text-white rounded-none w-full mt-5"
             >
               <Typography className="w-full">add to cart</Typography>
             </Button>
