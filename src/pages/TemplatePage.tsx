@@ -72,7 +72,7 @@ const TemplatePage = ({
           </div>
           <div className="flex mt-5">
             <Button
-              className={`sm:w-auto rounded-none w-full ${
+              className={`sm:w-auto  rounded-none w-full ${
                 buttonStyle ? buttonStyle : ''
               }`}
             >
@@ -80,7 +80,7 @@ const TemplatePage = ({
             </Button>
             {extraBtn && (
               <Button
-                className={`sm:w-auto rounded-none  w-full ml-2 ${extraButtonStyle}`}
+                className={`sm:w-auto rounded-none w-full ml-2 ${extraButtonStyle}`}
               >
                 <Typography>{extraButtonTitle}</Typography>
               </Button>

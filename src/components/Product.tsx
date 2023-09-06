@@ -8,7 +8,8 @@ import { useEffect, useState, useRef } from 'react';
 import { Button, Typography } from '@material-tailwind/react';
 
 import Faq from './Faq';
-import Slider from 'infinite-react-carousel';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import { RootState } from '../store';
 
 interface ProductProps {
@@ -109,21 +110,44 @@ const Product = ({ product }: ProductProps) => {
     setClickImg(true);
   };
 
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 7,
+      slidesToSlide: 7, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+      slidesToSlide: 3, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
+
   return (
     <>
       {clickImg && (
         <div
           className={`${antimationMainImg} ease-linear duration-[500ms] z-[99] flex items-center fixed bg-white my-auto `}
         >
-          <Slider
-            slidesPerRow={1}
-            adaptiveHeight={true}
-            slidesToShow={1}
-            duration={200}
-            arrows={true}
-            initialSlide={initialMainImg}
-            className="w-full"
-            modeCenter={true}
+          <Carousel
+            swipeable={false}
+            draggable={false}
+            showDots={true}
+            responsive={responsive}
+            ssr={true} // means to render carousel on server-side.
+            infinite={true}
+            keyBoardControl={true}
+            customTransition="all .5"
+            transitionDuration={500}
+            containerClass="carousel-container"
+            removeArrowOnDeviceType={['tablet', 'mobile']}
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
           >
             {Array.isArray(product.mainImg)
               ? product.mainImg.map((img) => {
@@ -142,7 +166,7 @@ const Product = ({ product }: ProductProps) => {
                   );
                 })
               : ''}
-          </Slider>
+          </Carousel>
         </div>
       )}
 
@@ -172,37 +196,29 @@ const Product = ({ product }: ProductProps) => {
           ) : Array.isArray(product.mainImg) ? (
             <div className="flex-col flex-1">
               {cardSlide && (
-                <Slider
-                  className="py-10"
-                  slidesPerRow={1}
-                  adaptiveHeight={true}
-                  slidesToShow={1}
-                  duration={200}
-                  arrows={false}
-                  dots={true}
-                  dotsClass="product-dots"
-                  appendDots={(e: number) => {
-                    return (
-                      <ul style={{ position: 'relative' }}>
-                        {e}
-                        <div className="w-full flex justify-between absolute -z-10 gap-5">
-                          {Array.isArray(product.mainImg)
-                            ? product.mainImg.map((img) => (
-                                <li key={nanoid()} className="flex flex-1 ">
-                                  {
-                                    <img
-                                      src={require(`../dammyDB/${img}`)}
-                                      alt={img}
-                                      className="object-cover brightness-95"
-                                    />
-                                  }
-                                </li>
-                              ))
-                            : ''}
-                        </div>
-                      </ul>
-                    );
-                  }}
+                <Carousel
+                  additionalTransfrom={0}
+                  arrows={true}
+                  centerMode={true}
+                  className=""
+                  containerClass="container min-w-full py-[5%] border-b-[1px] border-black bg-[#F2F2F2]"
+                  draggable
+                  focusOnSelect={false}
+                  infinite
+                  itemClass=""
+                  keyBoardControl
+                  minimumTouchDrag={80}
+                  pauseOnHover
+                  renderArrowsWhenDisabled={false}
+                  renderButtonGroupOutside={false}
+                  renderDotsOutside={false}
+                  responsive={responsive}
+                  rewind={false}
+                  rewindWithAnimation={false}
+                  rtl={false}
+                  sliderClass=""
+                  slidesToSlide={1}
+                  swipeable
                 >
                   {product.mainImg.map((item) => {
                     return (
@@ -215,7 +231,7 @@ const Product = ({ product }: ProductProps) => {
                       </div>
                     );
                   })}
-                </Slider>
+                </Carousel>
               )}
             </div>
           ) : (

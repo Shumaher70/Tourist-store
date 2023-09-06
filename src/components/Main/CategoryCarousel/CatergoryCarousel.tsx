@@ -1,138 +1,129 @@
-import { useLayoutEffect, useState } from 'react';
 import { Typography } from '@material-tailwind/react';
 import { dammyCategoryDiscription } from './dammyCategoryDiscription';
 import { nanoid } from 'nanoid';
-import Slider from 'infinite-react-carousel';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 
 const CatrgoryCarousel = () => {
-  const [screenLg, getScreenLg] = useState(false);
-  const [screenMd, getScreenMd] = useState(false);
-  const [screenMind, getScreenMind] = useState(true);
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 6,
+      slidesToSlide: 7, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
 
-  useLayoutEffect(() => {
-    if (window.innerWidth >= 1024) {
-      getScreenMind(false);
-      getScreenMd(false);
-      getScreenLg(true);
-    } else if (window.innerWidth < 1024 && window.innerWidth >= 768) {
-      getScreenMind(false);
-      getScreenLg(false);
-      getScreenMd(true);
-    } else if (window.innerWidth <= 768) {
-      getScreenMind(true);
-      getScreenLg(false);
-      getScreenMd(false);
-    }
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 1024) {
-        getScreenMind(false);
-        getScreenMd(false);
-        getScreenLg(true);
-      } else if (window.innerWidth < 1024 && window.innerWidth >= 768) {
-        getScreenMind(false);
-        getScreenLg(false);
-        getScreenMd(true);
-      } else if (window.innerWidth <= 768) {
-        getScreenMind(true);
-        getScreenLg(false);
-        getScreenMd(false);
-      }
-    });
-  }, []);
+  const CustomRightArrow = ({ ...rest }) => {
+    const { onClick } = rest;
+    return (
+      <button
+        className=" absolute right-0 rounded-full bg-white  mr-[10%] transition linear  duration-250 hover:bg-black hover:text-white border-[1px] border-black"
+        onClick={() => onClick()}
+      >
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="flex justify-center items-center"
+        >
+          <path
+            d="M6 3L11 8L6 13"
+            stroke="CurrentColor"
+            stroke-width="1"
+            className="block"
+          ></path>
+        </svg>
+      </button>
+    );
+  };
+  const CustomLeftArrow = ({ ...rest }) => {
+    const { onClick } = rest;
+    return (
+      <button
+        className=" absolute left-0 rounded-full  ml-[10%] rotate-180 transition linear  duration-250 hover:bg-black hover:text-white border-[1px] border-black"
+        onClick={() => onClick()}
+      >
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 3L11 8L6 13"
+            stroke="CurrentColor"
+            stroke-width="1"
+          ></path>
+        </svg>
+      </button>
+    );
+  };
 
   return (
-    <div className="border-b-[1px] border-black">
-      {screenLg && (
-        <Slider
-          className="py-10"
-          slidesPerRow={1}
-          adaptiveHeight={true}
-          slidesToShow={7}
-          duration={200}
-        >
-          {dammyCategoryDiscription.map((item) => {
-            return (
-              <div key={nanoid()}>
-                <img
-                  className="cursor-pointer"
-                  src={require(`./categoryImg/${item.img}`)}
-                  alt={item.img}
-                />
-                <div className="flex justify-center">
-                  <Typography
-                    variant="h2"
-                    className="uppercase font-normal text-2xl sm:text-3xl"
-                  >
-                    {item.discription}
-                  </Typography>
-                </div>
-              </div>
-            );
-          })}
-        </Slider>
-      )}
-
-      {screenMd && (
-        <Slider
-          className="py-10"
-          slidesPerRow={1}
-          adaptiveHeight={true}
-          arrows={true}
-          slidesToShow={3}
-          duration={200}
-        >
-          {dammyCategoryDiscription.map((item) => {
-            return (
-              <div key={nanoid()}>
+    <Carousel
+      additionalTransfrom={0}
+      arrows={true}
+      centerMode={true}
+      className=""
+      containerClass="container min-w-full py-[5%] border-b-[1px] border-black bg-[#F2F2F2]"
+      draggable
+      focusOnSelect={false}
+      infinite
+      itemClass=""
+      keyBoardControl
+      minimumTouchDrag={80}
+      pauseOnHover
+      renderArrowsWhenDisabled={false}
+      renderButtonGroupOutside={false}
+      customLeftArrow={<CustomLeftArrow />}
+      customRightArrow={<CustomRightArrow />}
+      renderDotsOutside={false}
+      responsive={responsive}
+      rewind={false}
+      rewindWithAnimation={false}
+      rtl={false}
+      sliderClass=""
+      slidesToSlide={1}
+      swipeable
+    >
+      {dammyCategoryDiscription.map((item) => {
+        return (
+          <div
+            key={nanoid()}
+            className="flex flex-col text-center h-full justify-between cursor-pointer brightness-95 "
+          >
+            <div>
+              <div>
                 <img
                   src={require(`./categoryImg/${item.img}`)}
                   alt={item.img}
+                  draggable="false"
                 />
-                <div className="flex justify-center items-center">
-                  <Typography
-                    variant="h4"
-                    className="uppercase font-normal text-2xl sm:text-2xl"
-                  >
-                    {item.discription}
-                  </Typography>
-                </div>
               </div>
-            );
-          })}
-        </Slider>
-      )}
-
-      {screenMind && (
-        <Slider
-          className="py-10 "
-          slidesPerRow={1}
-          adaptiveHeight={true}
-          arrows={true}
-          slidesToShow={1}
-          duration={200}
-        >
-          {dammyCategoryDiscription.map((item) => {
-            return (
-              <div key={nanoid()}>
-                <img
-                  className="cursor-pointer"
-                  src={require(`./categoryImg/${item.img}`)}
-                  alt={item.img}
-                />
-                <div className="flex justify-center">
-                  <Typography
-                    variant="h2"
-                    className="uppercase font-normal text-2xl sm:text-3xl"
-                  >
-                    {item.discription}
-                  </Typography>
-                </div>
-              </div>
-            );
-          })}
-        </Slider>
-      )}
-    </div>
+            </div>
+            <Typography
+              variant="h2"
+              className="uppercase font-normal lg:text-3xl sm:text-2xl text-1xl"
+            >
+              {item.discription}
+            </Typography>
+          </div>
+        );
+      })}
+    </Carousel>
   );
 };
 

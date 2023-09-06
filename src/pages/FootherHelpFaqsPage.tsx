@@ -1,25 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
+
 import { Button, Typography } from '@material-tailwind/react';
+
 import Faq from '../components/Faq';
-import Slider from 'infinite-react-carousel';
+
+import 'react-multi-carousel/lib/styles.css';
 
 const FootherHelpFaqsPage = () => {
   const navHeight = useSelector((state: RootState) => state.size.heightNav);
   const [stateGeneral, setStateGeneral] = useState(true);
   const [stateReturn, setStateReturn] = useState(false);
   const [stateUseful, setStateUseful] = useState(false);
-  const [slider, setSlider] = useState<boolean>(false);
-  const [widthSLider, setWidthSLider] = useState<number>(3);
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      window.innerWidth <= 768 ? setSlider(true) : setSlider(false);
-      window.innerWidth <= 768 && window.innerWidth >= 450
-        ? setWidthSLider(3)
-        : setWidthSLider(2);
-    });
-  }, []);
 
   const handleGeneralClick = () => {
     setStateGeneral(true);
@@ -47,122 +40,55 @@ const FootherHelpFaqsPage = () => {
         </Typography>
 
         <div className="flex md:px-[10%] md:flex-row flex-col gap-5 mt-10">
-          {slider && (
-            <Slider
-              className="flex flex-col"
-              slidesPerRow={1}
-              adaptiveHeight={true}
-              slidesToShow={widthSLider}
-              duration={200}
-              arrows={false}
+          <div className="flex flex-col">
+            <Button
+              onClick={handleGeneralClick}
+              size="lg"
+              color="white"
+              className="flex items-center md:justify-start justify-center rounded-none md:border-t-[1px] border-black  w-[250px] bg-transparent shadow-none focus:bg-white"
             >
-              <div>
-                <Button
-                  onClick={handleGeneralClick}
-                  size="lg"
-                  color="white"
-                  className="flex items-center md:justify-start justify-center rounded-none md:border-t-[1px] border-black bg-transparent shadow-none focus:bg-white"
-                >
-                  <img
-                    className="w-[25px]"
-                    src={require('./img/faqPageIcon1.webp')}
-                    alt="img"
-                  />
-                  <Typography className="ml-2 font-normal text-[1.4rem]">
-                    GENERAL
-                  </Typography>
-                </Button>
-              </div>
+              <img
+                className="w-[25px]"
+                src={require('./img/faqPageIcon1.webp')}
+                alt="img"
+              />
+              <Typography className="ml-2 font-normal text-[1.4rem]">
+                GENERAL
+              </Typography>
+            </Button>
 
-              <div>
-                <Button
-                  onClick={handleReturnClick}
-                  size="lg"
-                  color="white"
-                  className="flex items-center md:justify-start justify-center rounded-none border-x-[1px] md:border-y-[1px] md:border-x-0 border-black  bg-transparent shadow-none focus:bg-white"
-                >
-                  <img
-                    className="w-[25px]"
-                    src={require('./img/faqPageIcon2.webp')}
-                    alt="img"
-                  />
-                  <Typography className="ml-2 font-normal text-[1.4rem]">
-                    RETURN
-                  </Typography>
-                </Button>
-              </div>
+            <Button
+              onClick={handleReturnClick}
+              size="lg"
+              color="white"
+              className="flex items-center md:justify-start justify-center rounded-none border-x-[1px] md:border-y-[1px] md:border-x-0 border-black w-[250px] bg-transparent shadow-none focus:bg-white"
+            >
+              <img
+                className="w-[25px]"
+                src={require('./img/faqPageIcon2.webp')}
+                alt="img"
+              />
+              <Typography className="ml-2 font-normal text-[1.4rem]">
+                RETURN
+              </Typography>
+            </Button>
 
-              <div>
-                <Button
-                  onClick={handleUseFulClick}
-                  size="lg"
-                  color="white"
-                  className="flex items-center md:justify-start justify-center rounded-none md:border-b-[1px] border-black  bg-transparent shadow-none focus:bg-white"
-                >
-                  <img
-                    className="w-[25px]"
-                    src={require('./img/faqPageIcon3.png')}
-                    alt="img"
-                  />
-                  <Typography className="ml-2 font-normal text-[1.4rem]">
-                    USEFUL
-                  </Typography>
-                </Button>
-              </div>
-            </Slider>
-          )}
-
-          {!slider && (
-            <div className="flex flex-col">
-              <Button
-                onClick={handleGeneralClick}
-                size="lg"
-                color="white"
-                className="flex items-center md:justify-start justify-center rounded-none md:border-t-[1px] border-black  w-[250px] bg-transparent shadow-none focus:bg-white"
-              >
-                <img
-                  className="w-[25px]"
-                  src={require('./img/faqPageIcon1.webp')}
-                  alt="img"
-                />
-                <Typography className="ml-2 font-normal text-[1.4rem]">
-                  GENERAL
-                </Typography>
-              </Button>
-
-              <Button
-                onClick={handleReturnClick}
-                size="lg"
-                color="white"
-                className="flex items-center md:justify-start justify-center rounded-none border-x-[1px] md:border-y-[1px] md:border-x-0 border-black w-[250px] bg-transparent shadow-none focus:bg-white"
-              >
-                <img
-                  className="w-[25px]"
-                  src={require('./img/faqPageIcon2.webp')}
-                  alt="img"
-                />
-                <Typography className="ml-2 font-normal text-[1.4rem]">
-                  RETURN
-                </Typography>
-              </Button>
-
-              <Button
-                onClick={handleUseFulClick}
-                size="lg"
-                color="white"
-                className="flex items-center md:justify-start justify-center rounded-none md:border-b-[1px] border-black w-[250px] bg-transparent shadow-none focus:bg-white"
-              >
-                <img
-                  className="w-[25px]"
-                  src={require('./img/faqPageIcon3.png')}
-                  alt="img"
-                />
-                <Typography className="ml-2 font-normal text-[1.4rem]">
-                  USEFUL
-                </Typography>
-              </Button>
-            </div>
-          )}
+            <Button
+              onClick={handleUseFulClick}
+              size="lg"
+              color="white"
+              className="flex items-center md:justify-start justify-center rounded-none md:border-b-[1px] border-black w-[250px] bg-transparent shadow-none focus:bg-white"
+            >
+              <img
+                className="w-[25px]"
+                src={require('./img/faqPageIcon3.png')}
+                alt="img"
+              />
+              <Typography className="ml-2 font-normal text-[1.4rem]">
+                USEFUL
+              </Typography>
+            </Button>
+          </div>
 
           {stateGeneral && (
             <div className="flex-col w-full border-y-[1px] border-black bg-white px-[5%] py-[2%]">

@@ -1,115 +1,82 @@
-import { useEffect, useState } from 'react';
-
 import { Typography } from '@material-tailwind/react';
-import Slider from 'infinite-react-carousel';
+import { nanoid } from 'nanoid';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
+const dammyTamplateMagazineCarousele = [
+  { img: 'TemplateMagazineCarouselImg1.jpg', description: 'Adventure' },
+  { img: 'TemplateMagazineCarouselImg2.webp', description: 'Collaboration' },
+  { img: 'TemplateMagazineCarouselImg3.jpg', description: 'Projects' },
+  {
+    img: 'TemplateMagazineCarouselImg4.webp',
+    description: 'HPT GOURMET CAMPING',
+  },
+];
 
 const TemplateMagazineCarousel = (): JSX.Element => {
-  const [screen, getScreen] = useState(4);
-  const [isSlider, setisSlider] = useState(false);
-  useEffect(() => {
-    setisSlider(true);
-  }, []);
-
-  useEffect(() => {
-    if (window.innerWidth >= 1024) {
-      getScreen(4);
-    } else if (window.innerWidth < 1024 && window.innerWidth >= 768) {
-      getScreen(3);
-    } else if (window.innerWidth < 768 && window.innerWidth >= 480) {
-      getScreen(2);
-    } else if (window.innerWidth < 480) {
-      getScreen(1);
-    }
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 1024) {
-        getScreen(4);
-      } else if (window.innerWidth < 1024 && window.innerWidth >= 768) {
-        getScreen(3);
-      } else if (window.innerWidth < 768 && window.innerWidth >= 480) {
-        getScreen(2);
-      } else if (window.innerWidth < 480) {
-        getScreen(1);
-      }
-    });
-  }, []);
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 5,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 3,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+      slidesToSlide: 1, // optional, default to 1.
+    },
+  };
 
   return (
-    <div>
-      {isSlider && (
-        <div className="border-t-[1px] border-black">
-          <Slider
-            className="py-10"
-            adaptiveHeight={true}
-            slidesToShow={screen}
-            slidesPerRow={1}
-            duration={200}
-            centerMode={true}
-            arrows={false}
-          >
-            <div>
-              <img
-                className="cursor-pointer relative brightness-50 2xl:h-[350px] 2xl:w-[350px] xl:w-[290px] xl:h-[290px] lg:w-[220px] lg:h-[220px] md:h-[220px] md:w-[220px] h-[200px] w-[200px] ovject-cover"
-                src={require('./img/TemplateMagazineCarouselImg1.jpg')}
-                alt="TemplateMagazineCarouselImg1"
-              />
-              <div className="flex justify-center absolute bottom-5 left-5">
-                <Typography
-                  variant="h2"
-                  className="uppercase font-normal text-lg sm:text-1xl text-white"
-                >
-                  Adventure
-                </Typography>
-              </div>
-            </div>
-            <div>
-              <img
-                className="cursor-pointer relative brightness-50 2xl:h-[350px] 2xl:w-[350px] xl:w-[290px] xl:h-[290px] lg:w-[220px] lg:h-[220px] md:h-[220px] md:w-[220px] h-[200px] w-[200px] object-cover"
-                src={require('./img/TemplateMagazineCarouselImg2.webp')}
-                alt="TemplateMagazineCarouselImg1"
-              />
-              <div className="flex justify-center absolute bottom-5 left-5">
-                <Typography
-                  variant="h2"
-                  className="uppercase font-normal text-lg sm:text-1xl text-white"
-                >
-                  Collaboration
-                </Typography>
-              </div>
-            </div>
-            <div>
-              <img
-                className="cursor-pointer relative brightness-50 2xl:h-[350px] 2xl:w-[350px] xl:w-[290px] xl:h-[290px] lg:w-[220px] lg:h-[220px] md:h-[220px] md:w-[220px] h-[200px] w-[200px]"
-                src={require('./img/TemplateMagazineCarouselImg3.jpg')}
-                alt="TemplateMagazineCarouselImg1"
-              />
-              <div className="flex justify-center absolute bottom-5 left-5">
-                <Typography
-                  variant="h2"
-                  className="uppercase font-normal text-lg sm:text-1xl text-white"
-                >
-                  Projects
-                </Typography>
-              </div>
-            </div>
-            <div>
-              <img
-                className="cursor-pointer relative brightness-50 2xl:h-[350px] 2xl:w-[350px] xl:w-[290px] xl:h-[290px] lg:w-[220px] lg:h-[220px] md:h-[220px] md:w-[220px] h-[200px] w-[200px]"
-                src={require('./img/TemplateMagazineCarouselImg4.webp')}
-                alt="TemplateMagazineCarouselImg1"
-              />
-              <div className="flex justify-center absolute bottom-5 left-5">
-                <Typography
-                  variant="h2"
-                  className="uppercase font-normal text-lg sm:text-1xl text-white"
-                >
-                  HPT GOURMET CAMPING
-                </Typography>
-              </div>
-            </div>
-          </Slider>
+    <Carousel
+      additionalTransfrom={0}
+      arrows={true}
+      className=""
+      containerClass="container min-w-full border-b-[1px] border-black py-[5%] border-t-[1px] border-black"
+      draggable
+      focusOnSelect={false}
+      infinite
+      itemClass="p-1"
+      keyBoardControl
+      minimumTouchDrag={80}
+      pauseOnHover
+      renderArrowsWhenDisabled={false}
+      renderButtonGroupOutside={false}
+      renderDotsOutside={false}
+      responsive={responsive}
+      rewind={false}
+      rewindWithAnimation={false}
+      rtl={false}
+      sliderClass=""
+      slidesToSlide={1}
+      swipeable
+    >
+      <Typography className="h-full font-normal text-3xl flex justify-center items-center ">
+        Filter by categories
+      </Typography>
+      {dammyTamplateMagazineCarousele.map((item) => (
+        <div key={nanoid()} className="flex flex-col w-full h-full">
+          <div className="w-full h-full">
+            <img
+              className="cursor-pointer relative brightness-[.7] object-cove w-full h-full"
+              src={require(`./img/${item.img}`)}
+              draggable="false"
+              alt="TemplateMagazineCarouselImg1"
+            />
+          </div>
+          <div className="absolute bottom-5 left-5">
+            <Typography className="uppercase font-normal text-white ">
+              {item.description}
+            </Typography>
+          </div>
         </div>
-      )}
-    </div>
+      ))}
+    </Carousel>
   );
 };
 
