@@ -56,10 +56,10 @@ const Faq = ({ description, title, titleStyle, children }: FaqProps) => {
         </div>
 
         {trigger && (
-          <Typography className="mt-5">
-            {description}
+          <div className="mt-5">
+            <Typography>{description || ''}</Typography>
             {children}
-          </Typography>
+          </div>
         )}
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { Product } from '../../components';
+import { ProductSectionCart } from '../../components';
 
 import { products } from '../../dammyDB/dammyProducts';
 
@@ -23,7 +23,7 @@ const TentsFistalClassic = () => {
           },
         ]}
       />
-      <Product product={products.cotegory.tents.fistalClassic} />
+      <ProductSectionCart product={products.cotegory.tents.fistalClassic} />
     </>
   );
 };

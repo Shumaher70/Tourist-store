@@ -31,7 +31,7 @@ import FooterGarantee from './footer/FooterGarantee';
 import FooterInfo from './footer/FooterInfo';
 import FooterPayment from './footer/footerPayment/FooterPayment';
 import FooterCookies from './footer/FooterCookies';
-import Product from './Product';
+import ProductSectionCart from './product/ProductSectionCart';
 
 export {
   Cart,
@@ -67,5 +67,5 @@ export {
   FooterInfo,
   FooterPayment,
   FooterCookies,
-  Product,
+  ProductSectionCart,
 };

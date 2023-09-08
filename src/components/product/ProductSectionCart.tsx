@@ -2,21 +2,25 @@ import { nanoid } from 'nanoid';
 import { NavLink } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
-import { RootState } from '../store';
+import { RootState } from '../../store';
 
 import React, { useEffect, useState, useRef } from 'react';
 
 import { Button, Typography } from '@material-tailwind/react';
 
-import Faq from './Faq';
+import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
+
+import Faq from '../Faq';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
-interface ProductProps {
+import { CustomRightArrow, CustomLeftArrow } from '../arrowsCarousel';
+
+interface ProductSectionCartProps {
   product: { [key: string]: string | string[] };
 }
 
-const Product = ({ product }: ProductProps) => {
+const ProductSectionCart = ({ product }: ProductSectionCartProps) => {
   const productMainImg = (product.mainImg as string[]) || [];
   const mainNavHeight = useSelector((state: RootState) => state.size.heightNav);
 
@@ -94,6 +98,7 @@ const Product = ({ product }: ProductProps) => {
     const initialSlide: string[] = productMainImg;
 
     const index = initialSlide.indexOf(inititalSlide as string);
+
     const newArray = initialSlide
       .slice(index)
       .concat(initialSlide.slice(0, index));
@@ -112,55 +117,11 @@ const Product = ({ product }: ProductProps) => {
     const initialSlide: string[] = productMainImg;
 
     const index = initialSlide.indexOf(inititalSlide as string);
+
     const newArray = initialSlide
       .slice(index)
       .concat(initialSlide.slice(0, index));
     setInitialMobailImg(Array.isArray(newArray) ? newArray : []);
-  };
-
-  const CustomRightArrow = ({ ...rest }) => {
-    const { onClick } = rest;
-    return (
-      <button
-        className="absolute right-0 rounded-full   mr-[10%] transition linear  duration-250 hover:bg-black hover:text-white "
-        onClick={() => onClick()}
-      >
-        <svg
-          width="50"
-          height="50"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="flex justify-center items-center"
-        >
-          <path
-            d="M6 3L11 8L6 13"
-            stroke="CurrentColor"
-            strokeWidth="1"
-            className="block"
-          ></path>
-        </svg>
-      </button>
-    );
-  };
-  const CustomLeftArrow = ({ ...rest }) => {
-    const { onClick } = rest;
-    return (
-      <button
-        className=" absolute left-0 rounded-full  ml-[10%] rotate-180 transition linear  duration-250 hover:bg-black hover:text-white "
-        onClick={() => onClick()}
-      >
-        <svg
-          width="50"
-          height="50"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M6 3L11 8L6 13" stroke="CurrentColor" strokeWidth="1"></path>
-        </svg>
-      </button>
-    );
   };
 
   return (
@@ -169,7 +130,7 @@ const Product = ({ product }: ProductProps) => {
         <div
           className={`w-full h-full flex justify-center top-0 fixed bg-white z-[99]`}
         >
-          <div className="w-full h-full px-[10%] py-[5%]">
+          <div className="w-full h-full">
             <Carousel
               additionalTransfrom={0}
               arrows={true}
@@ -195,13 +156,20 @@ const Product = ({ product }: ProductProps) => {
             >
               {initialMainImg.map((img) => {
                 return (
-                  <div key={nanoid()} className="w-full h-full ">
-                    <img
-                      src={require(`../dammyDB/${img}`)}
-                      alt={img}
-                      className="w-full h-full object-contain"
-                      draggable="false"
-                    />
+                  <div
+                    key={nanoid()}
+                    className="w-full h-full flex items-center"
+                  >
+                    <TransformWrapper>
+                      <TransformComponent>
+                        <img
+                          src={require(`../../dammyDB/${img}`)}
+                          alt={img}
+                          className="w-full h-full object-cover px-[10%]"
+                          draggable="false"
+                        />
+                      </TransformComponent>
+                    </TransformWrapper>
                   </div>
                 );
               })}
@@ -222,7 +190,7 @@ const Product = ({ product }: ProductProps) => {
                   draggable="false"
                 >
                   <img
-                    src={require(`../dammyDB/${img}`)}
+                    src={require(`../../dammyDB/${img}`)}
                     alt={img}
                     className="brightness-[.95] cursor-pointer"
                   />
@@ -240,6 +208,8 @@ const Product = ({ product }: ProductProps) => {
                   minimumTouchDrag={80}
                   pauseOnHover
                   renderDotsOutside={true}
+                  customLeftArrow={<CustomLeftArrow />}
+                  customRightArrow={<CustomRightArrow />}
                   responsive={{
                     desktop: {
                       breakpoint: {
@@ -263,7 +233,7 @@ const Product = ({ product }: ProductProps) => {
                           >
                             <img
                               className="cursor-pointer brightness-95"
-                              src={require(`../dammyDB/${img}`)}
+                              src={require(`../../dammyDB/${img}`)}
                               alt={img}
                             />
                           </div>
@@ -278,7 +248,7 @@ const Product = ({ product }: ProductProps) => {
                           >
                             <img
                               className="cursor-pointer brightness-95"
-                              src={require(`../dammyDB/${img}`)}
+                              src={require(`../../dammyDB/${img}`)}
                               alt={img}
                             />
                           </div>
@@ -293,6 +263,8 @@ const Product = ({ product }: ProductProps) => {
                   itemClass="mx-1"
                   keyBoardControl
                   minimumTouchDrag={80}
+                  customLeftArrow={<CustomLeftArrow />}
+                  customRightArrow={<CustomRightArrow />}
                   pauseOnHover
                   renderDotsOutside={true}
                   responsive={{
@@ -317,7 +289,7 @@ const Product = ({ product }: ProductProps) => {
                       >
                         <img
                           className="cursor-pointer brightness-95"
-                          src={require(`../dammyDB/${img}`)}
+                          src={require(`../../dammyDB/${img}`)}
                           alt={img}
                           draggable="false"
                         />
@@ -379,7 +351,7 @@ const Product = ({ product }: ProductProps) => {
             <div className="flex border-y-[1px] py-5 mt-2 border-[#f6f6f6]">
               <NavLink to={String(product.src)}>
                 <img
-                  src={require(`../dammyDB/${product.mainImg[0]}`)}
+                  src={require(`../../dammyDB/${product.mainImg[0]}`)}
                   width={60}
                   alt={String(product.tile)}
                 />
@@ -389,20 +361,23 @@ const Product = ({ product }: ProductProps) => {
             {product.description && (
               <Faq
                 title="Show Description"
-                description={String(product.description)}
                 titleStyle="text-1xl"
+                description={product.description as string}
               />
             )}
 
             {product.scope && (
               <Faq title="Show scope of delivery" titleStyle="text-1xl">
-                <ul className="list-disc ml-5">
-                  {Array.isArray(product.scope)
-                    ? product.scope.map((item: string) => (
-                        <li key={nanoid()}>{item}</li>
-                      ))
-                    : []}
-                </ul>
+                {Array.isArray(product.scope)
+                  ? product.scope.map((item: string) => (
+                      <Typography
+                        className="flex items-center before:mr-2 before:content-[' '] before:w-2 before:h-2 before:bg-black before:rounded-full before:block"
+                        key={nanoid()}
+                      >
+                        {item}
+                      </Typography>
+                    ))
+                  : []}
               </Faq>
             )}
             <Button
@@ -418,4 +393,4 @@ const Product = ({ product }: ProductProps) => {
   );
 };
 
-export default Product;
+export default ProductSectionCart;
