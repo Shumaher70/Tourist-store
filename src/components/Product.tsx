@@ -1,38 +1,35 @@
-import { nanoid } from '@reduxjs/toolkit';
+import { nanoid } from 'nanoid';
 import { NavLink } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
+import { RootState } from '../store';
 
-import { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 import { Button, Typography } from '@material-tailwind/react';
 
 import Faq from './Faq';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { RootState } from '../store';
 
 interface ProductProps {
   product: { [key: string]: string | string[] };
 }
 
 const Product = ({ product }: ProductProps) => {
+  const productMainImg = (product.mainImg as string[]) || [];
   const mainNavHeight = useSelector((state: RootState) => state.size.heightNav);
 
   const screenCardRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
 
-  const [clickImg, setClickImg] = useState<boolean>(false);
+  const [showSlider, setShowSlider] = useState<boolean>(false);
   const [widthScreen, setWidthScreen] = useState<boolean>(false);
   const [bottomScreenCard, setBottomScreenCard] = useState<boolean>(false);
   const [topScreenCard, setTopScreenCard] = useState<boolean>(false);
-  const [cardSlide, setcardSlide] = useState<boolean>(false);
-  const [initialMainImg, setInitialMainImg] = useState<number>(0);
-  const [antimationMainImg, setAntimationMainImg] = useState<string>('');
 
-  useEffect(() => {
-    setcardSlide(true);
-  }, []);
+  const [initialMainImg, setInitialMainImg] = useState<string[]>([]);
+  const [initialMobailImg, setInitialMobailImg] = useState<string[]>([]);
 
   useEffect(() => {
     window.innerWidth < 640 ? setWidthScreen(true) : setWidthScreen(false);
@@ -88,154 +85,248 @@ const Product = ({ product }: ProductProps) => {
     });
   }, [mainNavHeight]);
 
-  useEffect(() => {
-    const animationOpenMainImg: string =
-      'h-full w-full top-0 left-0 opacity-100';
-    const animationCloseMainImg: string = 'h-0 w-0 top-[50%] left-0 opacity-0';
+  const clickMainImgHandlerShowSlider = (
+    event: React.MouseEvent<HTMLDivElement>
+  ) => {
+    const inititalSlide =
+      event.currentTarget.getAttribute('data-initial_slide');
 
-    clickImg
-      ? setAntimationMainImg(animationOpenMainImg)
-      : setAntimationMainImg(animationCloseMainImg);
-  }, [clickImg]);
+    const initialSlide: string[] = productMainImg;
 
-  const clickMainImgHandler = (event: React.MouseEvent<HTMLDivElement>) => {
-    const inititalSlide = Number(
-      event.currentTarget.getAttribute('data-initial_slide')
-    )
-      ? Number(event.currentTarget.getAttribute('data-initial_slide'))
-      : 0;
+    const index = initialSlide.indexOf(inititalSlide as string);
+    const newArray = initialSlide
+      .slice(index)
+      .concat(initialSlide.slice(0, index));
 
-    setInitialMainImg(inititalSlide);
+    setInitialMainImg(Array.isArray(newArray) ? newArray : []);
 
-    setClickImg(true);
+    setShowSlider(true);
   };
 
-  const responsive = {
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 7,
-      slidesToSlide: 7, // optional, default to 1.
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 3,
-      slidesToSlide: 3, // optional, default to 1.
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-      slidesToSlide: 1, // optional, default to 1.
-    },
+  const clickMobailImgHandlerShowSlider = (
+    event: React.MouseEvent<HTMLDivElement>
+  ) => {
+    const inititalSlide =
+      event.currentTarget.getAttribute('data-initial_slide');
+
+    const initialSlide: string[] = productMainImg;
+
+    const index = initialSlide.indexOf(inititalSlide as string);
+    const newArray = initialSlide
+      .slice(index)
+      .concat(initialSlide.slice(0, index));
+    setInitialMobailImg(Array.isArray(newArray) ? newArray : []);
+  };
+
+  const CustomRightArrow = ({ ...rest }) => {
+    const { onClick } = rest;
+    return (
+      <button
+        className="absolute right-0 rounded-full   mr-[10%] transition linear  duration-250 hover:bg-black hover:text-white "
+        onClick={() => onClick()}
+      >
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="flex justify-center items-center"
+        >
+          <path
+            d="M6 3L11 8L6 13"
+            stroke="CurrentColor"
+            strokeWidth="1"
+            className="block"
+          ></path>
+        </svg>
+      </button>
+    );
+  };
+  const CustomLeftArrow = ({ ...rest }) => {
+    const { onClick } = rest;
+    return (
+      <button
+        className=" absolute left-0 rounded-full  ml-[10%] rotate-180 transition linear  duration-250 hover:bg-black hover:text-white "
+        onClick={() => onClick()}
+      >
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M6 3L11 8L6 13" stroke="CurrentColor" strokeWidth="1"></path>
+        </svg>
+      </button>
+    );
   };
 
   return (
     <>
-      {clickImg && (
+      {showSlider && (
         <div
-          className={`${antimationMainImg} ease-linear duration-[500ms] z-[99] flex items-center fixed bg-white my-auto `}
+          className={`w-full h-full flex justify-center top-0 fixed bg-white z-[99]`}
         >
-          <Carousel
-            swipeable={false}
-            draggable={false}
-            showDots={true}
-            responsive={responsive}
-            ssr={true} // means to render carousel on server-side.
-            infinite={true}
-            keyBoardControl={true}
-            customTransition="all .5"
-            transitionDuration={500}
-            containerClass="carousel-container"
-            removeArrowOnDeviceType={['tablet', 'mobile']}
-            dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px"
-          >
-            {Array.isArray(product.mainImg)
-              ? product.mainImg.map((img) => {
-                  return (
-                    <div key={nanoid()}>
-                      <div className="flex justify-center max-h-[600px]">
-                        <div className="flex justify-center basis-4/6">
-                          <img
-                            src={require(`../dammyDB/${img}`)}
-                            alt={img}
-                            className="object-cover brightness-95"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })
-              : ''}
-          </Carousel>
+          <div className="w-full h-full px-[10%] py-[5%]">
+            <Carousel
+              additionalTransfrom={0}
+              arrows={true}
+              className="w-full h-full"
+              draggable
+              focusOnSelect={true}
+              infinite
+              keyBoardControl
+              minimumTouchDrag={80}
+              pauseOnHover
+              customLeftArrow={<CustomLeftArrow />}
+              customRightArrow={<CustomRightArrow />}
+              responsive={{
+                desktop: {
+                  breakpoint: { max: 3000, min: 0 },
+                  items: 1,
+                  slidesToSlide: 1, // optional, default to 1.
+                },
+              }}
+              sliderClass="h-full"
+              slidesToSlide={1}
+              swipeable
+            >
+              {initialMainImg.map((img) => {
+                return (
+                  <div key={nanoid()} className="w-full h-full ">
+                    <img
+                      src={require(`../dammyDB/${img}`)}
+                      alt={img}
+                      className="w-full h-full object-contain"
+                      draggable="false"
+                    />
+                  </div>
+                );
+              })}
+            </Carousel>
+          </div>
         </div>
       )}
 
       <div className="flex sm:flex-row flex-col gap-5 sm:pr-5 p-5">
-        <div className="flex flex-row sm:flex-wrap lg:basis-3/5 sm:basis-2/4 gap-3 sm:px-3">
+        <div className=" lg:columns-2 columns-1 space-y-5 lg:basis-4/5 sm:basis-2/4">
           {!widthScreen ? (
-            Array.isArray(product.mainImg) ? (
-              product.mainImg.map((img: string, index: number) => {
-                return (
-                  <div
-                    onClick={clickMainImgHandler}
-                    key={nanoid()}
-                    className="w-full lg:w-[48.5%]"
-                    data-initial_slide={String(index)}
-                  >
-                    <img
-                      src={require(`../dammyDB/${img}`)}
-                      alt={img}
-                      className=" brightness-[.95] cursor-pointer"
-                    />
-                  </div>
-                );
-              })
-            ) : (
-              ''
-            )
-          ) : Array.isArray(product.mainImg) ? (
+            productMainImg.map((img: string) => {
+              return (
+                <div
+                  onClick={clickMainImgHandlerShowSlider}
+                  key={nanoid()}
+                  data-initial_slide={img}
+                  draggable="false"
+                >
+                  <img
+                    src={require(`../dammyDB/${img}`)}
+                    alt={img}
+                    className="brightness-[.95] cursor-pointer"
+                  />
+                </div>
+              );
+            })
+          ) : (
             <div className="flex-col flex-1">
-              {cardSlide && (
+              <>
                 <Carousel
                   additionalTransfrom={0}
-                  arrows={true}
-                  centerMode={true}
-                  className=""
-                  containerClass="container min-w-full py-[5%] border-b-[1px] border-black bg-[#F2F2F2]"
                   draggable
-                  focusOnSelect={false}
                   infinite
-                  itemClass=""
                   keyBoardControl
                   minimumTouchDrag={80}
                   pauseOnHover
-                  renderArrowsWhenDisabled={false}
-                  renderButtonGroupOutside={false}
-                  renderDotsOutside={false}
-                  responsive={responsive}
-                  rewind={false}
-                  rewindWithAnimation={false}
-                  rtl={false}
-                  sliderClass=""
+                  renderDotsOutside={true}
+                  responsive={{
+                    desktop: {
+                      breakpoint: {
+                        max: 3000,
+                        min: 0,
+                      },
+                      items: 1,
+                      partialVisibilityGutter: 40,
+                    },
+                  }}
                   slidesToSlide={1}
                   swipeable
                 >
-                  {product.mainImg.map((item) => {
+                  {initialMobailImg.length === 0
+                    ? productMainImg.map((img) => {
+                        return (
+                          <div
+                            onClick={clickMainImgHandlerShowSlider}
+                            key={nanoid()}
+                            data-initial_slide={img}
+                          >
+                            <img
+                              className="cursor-pointer brightness-95"
+                              src={require(`../dammyDB/${img}`)}
+                              alt={img}
+                            />
+                          </div>
+                        );
+                      })
+                    : initialMobailImg.map((img) => {
+                        return (
+                          <div
+                            onClick={clickMainImgHandlerShowSlider}
+                            key={nanoid()}
+                            data-initial_slide={img}
+                          >
+                            <img
+                              className="cursor-pointer brightness-95"
+                              src={require(`../dammyDB/${img}`)}
+                              alt={img}
+                            />
+                          </div>
+                        );
+                      })}
+                </Carousel>
+                <Carousel
+                  centerMode={true}
+                  className="mt-1"
+                  draggable
+                  infinite
+                  itemClass="mx-1"
+                  keyBoardControl
+                  minimumTouchDrag={80}
+                  pauseOnHover
+                  renderDotsOutside={true}
+                  responsive={{
+                    desktop: {
+                      breakpoint: {
+                        max: 3000,
+                        min: 0,
+                      },
+                      items: 4,
+                      partialVisibilityGutter: 40,
+                    },
+                  }}
+                  slidesToSlide={1}
+                  swipeable
+                >
+                  {productMainImg.map((img) => {
                     return (
-                      <div onClick={clickMainImgHandler} key={nanoid()}>
+                      <div
+                        onClick={clickMobailImgHandlerShowSlider}
+                        key={nanoid()}
+                        data-initial_slide={img}
+                      >
                         <img
                           className="cursor-pointer brightness-95"
-                          src={require(`../dammyDB/${item}`)}
-                          alt={item}
+                          src={require(`../dammyDB/${img}`)}
+                          alt={img}
+                          draggable="false"
                         />
                       </div>
                     );
                   })}
                 </Carousel>
-              )}
+              </>
             </div>
-          ) : (
-            ''
           )}
         </div>
 
