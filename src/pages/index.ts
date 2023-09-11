@@ -42,7 +42,7 @@ import CookingPage from './CookingPage';
 import SleepingPage from './SleepingPage';
 import HygienePage from './HygienePage';
 import TentsFistalClassic from './products/TentsFistalClassic';
-import NavProducts from './products/NavProducts';
+import NavProducts from '../components/product/NavProducts';
 
 export {
   Colections,

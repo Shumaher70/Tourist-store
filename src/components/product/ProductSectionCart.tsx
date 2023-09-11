@@ -16,9 +16,13 @@ import 'react-multi-carousel/lib/styles.css';
 
 interface ProductSectionCartProps {
   product: { [key: string]: string | string[] };
+  elementBotton?: (element: number) => void;
 }
 
-const ProductSectionCart = ({ product }: ProductSectionCartProps) => {
+const ProductSectionCart = ({
+  product,
+  elementBotton,
+}: ProductSectionCartProps) => {
   const productMainImg = (product.mainImg as string[]) || [];
   const mainNavHeight = useSelector((state: RootState) => state.size.heightNav);
 
@@ -72,6 +76,9 @@ const ProductSectionCart = ({ product }: ProductSectionCartProps) => {
         }
 
     window.addEventListener('scroll', () => {
+      elementBotton?.(
+        screenCardRef.current?.getBoundingClientRect().bottom ?? 0
+      );
       if (screenCardRef.current?.getBoundingClientRect())
         if (cardRef.current?.getBoundingClientRect())
           if (
@@ -85,7 +92,7 @@ const ProductSectionCart = ({ product }: ProductSectionCartProps) => {
             setBottomScreenCard(false);
           }
     });
-  }, [mainNavHeight]);
+  }, [elementBotton, mainNavHeight]);
 
   const clickMainImgHandlerShowSlider = (
     event: React.MouseEvent<HTMLDivElement>

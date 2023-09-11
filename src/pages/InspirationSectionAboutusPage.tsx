@@ -64,12 +64,14 @@ const InspirationSectionAboutusPage = () => {
   }, [navHeightSlice, navMission, navNews, navStore]);
 
   useEffect(() => {
+    console.log(scrollTop);
+
     if (scrollTop < 0) {
       return setNavFixed(true);
     }
 
     setNavFixed(false);
-  }, [scrollTop, navFixed]);
+  }, [scrollTop]);
 
   const HandlerOffsetBottom = (element: number) => {
     setScrollTop(element - +navHeightSlice);
