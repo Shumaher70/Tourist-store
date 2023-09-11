@@ -76,9 +76,8 @@ const ProductSectionCart = ({
         }
 
     window.addEventListener('scroll', () => {
-      elementBotton?.(
-        screenCardRef.current?.getBoundingClientRect().bottom ?? 0
-      );
+      elementBotton?.(cardRef.current?.getBoundingClientRect().bottom ?? 0);
+
       if (screenCardRef.current?.getBoundingClientRect())
         if (cardRef.current?.getBoundingClientRect())
           if (

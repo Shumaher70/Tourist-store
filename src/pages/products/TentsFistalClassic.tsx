@@ -5,12 +5,13 @@ import { products } from '../../dammyDB/dammyProducts';
 
 import NavProducts from '../../components/product/NavProducts';
 import NavProductsNext from '../../components/product//NavProductsNext';
+import HighLightsSection from '../../components/product/HighLightsSection';
 
 const TentsFistalClassic = () => {
   const [bottomElement, setBottomElement] = useState<number>(0);
 
   const elementBotton = (element: number) => {
-    setBottomElement(element - 60);
+    setBottomElement(element - 65);
   };
   return (
     <>
@@ -38,6 +39,7 @@ const TentsFistalClassic = () => {
         beforeBottmElement={bottomElement}
         product={products.cotegory.tents.fistalClassic}
       />
+      <HighLightsSection product={products.cotegory.tents.fistalClassic} />
     </>
   );
 };

@@ -47,6 +47,17 @@ export const products: Product = {
           'mainImg/7.webp',
           'mainImg/8.webp',
         ],
+        maketMainTitle: 'COMPACT DESIGN & SMALL PACK SIZE.',
+        maketMainShortDescription: [
+          'FITS 1-2 PEOPLE',
+          'EXTREMELY STABLE WITH LITTLE WEIGHT',
+          'IDEAL FOR LIGHT TOURS',
+        ],
+        maketMainImg: [
+          'mainImg/FITS 1-2 PEOPLE.webp',
+          'mainImg/EXTREMELY STABLE WITH LITTLE WEIGHT.webp',
+          'mainImg/IDEAL FOR LIGHT TOURS.webp',
+        ],
         maketImg: [
           'maketImg/1.webp',
           'maketImg/2.webp',

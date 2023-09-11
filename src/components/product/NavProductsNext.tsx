@@ -124,7 +124,7 @@ const NavProductsNext = ({
       }
       className="px-[10%] flex justify-between items-center w-full h-[60px] bg-white z-10 border-y-[1px] border-[rgba(133,133,133,.2)]"
     >
-      <div className="lg:gap-10 sm:gap-5 md:flex hidden ">
+      <div className="lg:gap-10 sm:gap-5 md:flex hidden items-center">
         <AnchorLink href="#mission" offset={+navHeightSlice + 60}>
           <div
             style={
@@ -174,7 +174,7 @@ const NavProductsNext = ({
           </div>
         </AnchorLink>
       </div>
-      <div className="flex gap-5 md:justify-start justify-between w-full md:w-auto">
+      <div className="ml-5 flex gap-5 md:justify-start justify-between w-full md:w-auto">
         <div>
           <Typography className="uppercase sm:text-1xl text-sm">
             {product.title}
