@@ -30,7 +30,6 @@ const NavProductsNext = ({
   const [detailedInformation, setDetailedInformation] = useState(false);
   const [reviews, setReviews] = useState(false);
 
-  const [scrollTop, setScrollTop] = useState<number>(0);
   const [navFixed, setNavFixed] = useState<boolean>(false);
 
   useEffect(() => {
@@ -98,12 +97,6 @@ const NavProductsNext = ({
   }, [navHeightSlice]);
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      setScrollTop(scroll.current?.getBoundingClientRect().top ?? 0);
-    });
-  }, [scrollTop]);
-
-  useEffect(() => {
     if (beforeBottmElement < 0) {
       return setNavFixed(true);
     } else {
@@ -112,76 +105,82 @@ const NavProductsNext = ({
   }, [beforeBottmElement]);
 
   return (
-    <div
-      ref={scroll}
-      style={
-        navFixed
-          ? {
-              position: 'fixed',
-              top: `${navHeightSlice}px`,
-            }
-          : {}
-      }
-      className="px-[10%] flex justify-between items-center w-full h-[60px] bg-white z-10 border-y-[1px] border-[rgba(133,133,133,.2)]"
-    >
-      <div className="lg:gap-10 sm:gap-5 md:flex hidden items-center">
-        <AnchorLink href="#mission" offset={+navHeightSlice + 60}>
-          <div
-            style={
-              highlights
-                ? { borderBottom: '2px solid black' }
-                : { border: 'none' }
-            }
-          >
-            <Typography className="text-black font-normal cursor-pointer uppercase">
-              Highlights
-            </Typography>
-          </div>
-        </AnchorLink>
-        <AnchorLink href="#store" offset={+navHeightSlice + 60}>
-          <div
-            style={
-              videos ? { borderBottom: '2px solid black' } : { border: 'none' }
-            }
-          >
-            <Typography className="text-black font-normal cursor-pointer uppercase">
-              Videos
-            </Typography>
-          </div>
-        </AnchorLink>
-        <AnchorLink href="#news" offset={+navHeightSlice + 60}>
-          <div
-            style={
-              detailedInformation
-                ? { borderBottom: '2px solid black' }
-                : { border: 'none' }
-            }
-          >
-            <Typography className="text-black font-normal cursor-pointer uppercase">
-              Detailed information
-            </Typography>
-          </div>
-        </AnchorLink>
-        <AnchorLink href="#news" offset={+navHeightSlice + 60}>
-          <div
-            style={
-              reviews ? { borderBottom: '2px solid black' } : { border: 'none' }
-            }
-          >
-            <Typography className="text-black font-normal cursor-pointer uppercase">
-              Reviews
-            </Typography>
-          </div>
-        </AnchorLink>
-      </div>
-      <div className="ml-5 flex gap-5 md:justify-start justify-between w-full md:w-auto">
-        <div>
-          <Typography className="uppercase sm:text-1xl text-sm">
-            {product.title}
-          </Typography>
-          <Typography>€ {product.price},00</Typography>
+    <div className="relative w-full h-[60px]">
+      <div
+        ref={scroll}
+        style={
+          navFixed
+            ? {
+                position: 'fixed',
+                top: `${navHeightSlice}px`,
+              }
+            : { position: 'absolute' }
+        }
+        className="px-[10%] flex justify-between items-center w-full h-[60px] bg-white z-10 border-y-[1px] border-[rgba(133,133,133,.2)]"
+      >
+        <div className="lg:gap-10 sm:gap-5 md:flex hidden items-center">
+          <AnchorLink href="#mission" offset={+navHeightSlice + 60}>
+            <div
+              style={
+                highlights
+                  ? { borderBottom: '2px solid black' }
+                  : { border: 'none' }
+              }
+            >
+              <Typography className="text-black font-normal cursor-pointer uppercase">
+                Highlights
+              </Typography>
+            </div>
+          </AnchorLink>
+          <AnchorLink href="#store" offset={+navHeightSlice + 60}>
+            <div
+              style={
+                videos
+                  ? { borderBottom: '2px solid black' }
+                  : { border: 'none' }
+              }
+            >
+              <Typography className="text-black font-normal cursor-pointer uppercase">
+                Videos
+              </Typography>
+            </div>
+          </AnchorLink>
+          <AnchorLink href="#news" offset={+navHeightSlice + 60}>
+            <div
+              style={
+                detailedInformation
+                  ? { borderBottom: '2px solid black' }
+                  : { border: 'none' }
+              }
+            >
+              <Typography className="text-black font-normal cursor-pointer uppercase">
+                Detailed information
+              </Typography>
+            </div>
+          </AnchorLink>
+          <AnchorLink href="#news" offset={+navHeightSlice + 60}>
+            <div
+              style={
+                reviews
+                  ? { borderBottom: '2px solid black' }
+                  : { border: 'none' }
+              }
+            >
+              <Typography className="text-black font-normal cursor-pointer uppercase">
+                Reviews
+              </Typography>
+            </div>
+          </AnchorLink>
         </div>
-        <Button className="rounded-none bg-black">add to cart</Button>
+        <div className="ml-5 flex gap-5 md:justify-start justify-between w-full md:w-auto">
+          <div>
+            <Typography className="uppercase sm:text-1xl text-sm">
+              {product.title}
+            </Typography>
+            <Typography>€ {product.price},00</Typography>
+          </div>
+          <Button className="rounded-none bg-black">add to cart</Button>
+        </div>
       </div>
     </div>
   );
