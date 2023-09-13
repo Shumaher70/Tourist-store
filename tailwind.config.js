@@ -8,6 +8,25 @@ export default withMT({
 
   theme: {
     extend: {
+      animation: {
+        pulse: 'pulse 1.5s linear infinite',
+      },
+      keyframes: {
+        pulse: {
+          '0%': {
+            transform: 'scale(0)',
+            opacity: 0,
+          },
+          '75%': {
+            transform: 'scale(3.5)',
+            opacity: 1,
+          },
+          '100%': {
+            transform: 'scale(4)',
+            opacity: 0.5,
+          },
+        },
+      },
       content: {
         link: "url('C:/Users/Oleg/Desktop/projects/react/02.tourist-shop/src/pages/img/arrow.svg')",
       },
