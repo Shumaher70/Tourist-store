@@ -48,40 +48,15 @@ export const products: Product = {
           'mainImg/8.webp',
         ],
         maketMainTitle: 'COMPACT DESIGN & SMALL PACK SIZE.',
-        maketMainShortDescription: [
-          'FITS 1-2 PEOPLE',
-          'EXTREMELY STABLE WITH LITTLE WEIGHT',
-          'IDEAL FOR LIGHT TOURS',
-        ],
-        maketMainImg: [
-          'mainImg/FITS 1-2 PEOPLE.webp',
-          'mainImg/EXTREMELY STABLE WITH LITTLE WEIGHT.webp',
-          'mainImg/IDEAL FOR LIGHT TOURS.webp',
-        ],
-        maketImg: [
-          'maketImg/1.webp',
-          'maketImg/2.webp',
-          'maketImg/3.webp',
-          'maketImg/4.jpg',
-          'maketImg/5.webp',
-          'maketImg/6.webp',
-        ],
-        maketTitle: [
-          'LARGE VESTIBULES',
-          'MULTI-CHAMBER SAFETY SYSTEM',
-          'SMALL PACK SIZE',
-          'THE NEW MATERIAL',
-          'TWO-LAYER CONSTRUCTION',
-          'COLOR-CODING',
-        ],
-        maketDescription: [
-          'The Fistral has two large compartments to the left and right of the sleeping cabin. Thus, you can comfortably store the luggage outside the sleeping cabin and still have access to his equipment at any time. If you plan to camp on wet ground, you can also use the separately available  to protect the ground underneath the sleeping compartments and your luggage from moisture.',
-          'Our patented multi-chamber safety system allows you to inflate the entire Airframe (IDG) in a single step. After inflation, the Airframe can be divided into individual chambers, which ensures sufficient emergency stability in case one part is damaged, as all other struts remain stable. In addition, it is very easy to locate the defective part in order to repair or replace it.',
-          'The Fistral is our tent with the smallest pack size (38 x 20 x 20 cm). Especially in combination with our mini pump (sold separately), the Fistral is the perfect choice for bikepacking, hiking or solo camping.',
-          'We have significantly improved the fabric quality of our tents. From now on, we use 40D High Tenacity Polyester with Double Ripstop throughout all our tents. This fabric has a higher tensile strength than regular polyester yarns. Accordingly, our new tent fabric has a higher tear strength. In addition, it is lighter, falls better, rustles less and is softer to the touch.',
-          'The air struts feature a durable two-layer construction: an extra airtight TPU bladder keeps the air inside and the outer jacket made of high-strength polyester fabric provides support and stability. Before an Airframe leaves production, every single bladder and every single Strut is inflated and checked for pressure loss.',
-          'Your Heimplanet tent initially consists of three parts: Inner tent, Flysheet and Airframe. Before the first use, the so-called First Assembly is carried out. This involves hooking the Flysheet into the Airframe and then attaching the inner tent to the flysheet. Dont worry, the included instructions will help you with this! To simplify this process, we use color coding that tells you which connections go where. After the first assembly the whole tent forms one unit and there are no disturbing single parts. From then on its simply roll out, inflate and ready!',
-        ],
+
+        maketMainShortDescription1: 'FITS 1-2 PEOPLE',
+        maketMainShortDescription2: 'EXTREMELY STABLE WITH LITTLE WEIGHT',
+        maketMainShortDescription3: 'IDEAL FOR LIGHT TOURS',
+
+        maketMainImg1: 'maketImg/FITS_1-2_PEOPLE.webp',
+        maketMainImg2: 'maketImg/EXTREMELY_STABLE_WITH_LITTLE_WEIGHT.webp',
+        maketMainImg3: 'maketImg/IDEAL_FOR_LIGHT_TOURS.webp',
+
         videoDescription: ['FISTRAL - RELAUNCH', 'FISTRAL - SET UP'],
         video: [
           'https://www.youtube.com/watch?v=1BDhIBw6guM',
@@ -115,5 +90,48 @@ export const products: Product = {
         ],
       },
     },
+  },
+};
+
+export const maketProduct = {
+  fistalClassic: {
+    maket: [
+      {
+        img: 'maketImg/1.webp',
+        title: 'LARGE VESTIBULES',
+        description:
+          'The Fistral has two large compartments to the left and right of the sleeping cabin. Thus, you can comfortably store the luggage outside the sleeping cabin and still have access to his equipment at any time. If you plan to camp on wet ground, you can also use the separately available  to protect the ground underneath the sleeping compartments and your luggage from moisture.',
+      },
+      {
+        img: 'maketImg/2.webp',
+        title: 'MULTI-CHAMBER SAFETY SYSTEM',
+        description:
+          'Our patented multi-chamber safety system allows you to inflate the entire Airframe (IDG) in a single step. After inflation, the Airframe can be divided into individual chambers, which ensures sufficient emergency stability in case one part is damaged, as all other struts remain stable. In addition, it is very easy to locate the defective part in order to repair or replace it.',
+      },
+      {
+        img: 'maketImg/3.webp',
+        title: 'SMALL PACK SIZE',
+        description:
+          'The Fistral is our tent with the smallest pack size (38 x 20 x 20 cm). Especially in combination with our mini pump (sold separately), the Fistral is the perfect choice for bikepacking, hiking or solo camping.',
+      },
+      {
+        img: 'maketImg/4.jpg',
+        title: 'THE NEW MATERIAL',
+        description:
+          'We have significantly improved the fabric quality of our tents. From now on, we use 40D High Tenacity Polyester with Double Ripstop throughout all our tents. This fabric has a higher tensile strength than regular polyester yarns. Accordingly, our new tent fabric has a higher tear strength. In addition, it is lighter, falls better, rustles less and is softer to the touch.',
+      },
+      {
+        img: 'maketImg/5.webp',
+        title: 'TWO-LAYER CONSTRUCTION',
+        description:
+          'The air struts feature a durable two-layer construction: an extra airtight TPU bladder keeps the air inside and the outer jacket made of high-strength polyester fabric provides support and stability. Before an Airframe leaves production, every single bladder and every single Strut is inflated and checked for pressure loss.',
+      },
+      {
+        img: 'maketImg/6.webp',
+        title: 'COLOR-CODING',
+        description:
+          'Your Heimplanet tent initially consists of three parts: Inner tent, Flysheet and Airframe. Before the first use, the so-called First Assembly is carried out. This involves hooking the Flysheet into the Airframe and then attaching the inner tent to the flysheet. Dont worry, the included instructions will help you with this! To simplify this process, we use color coding that tells you which connections go where. After the first assembly the whole tent forms one unit and there are no disturbing single parts. From then on its simply roll out, inflate and ready!',
+      },
+    ],
   },
 };

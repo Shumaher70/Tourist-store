@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { ProductSectionCart } from '../../components';
 
-import { products } from '../../dammyDB/dammyProducts';
+import { products, maketProduct } from '../../dammyDB/dammyProducts';
 
 import NavProducts from '../../components/product/NavProducts';
 import NavProductsNext from '../../components/product//NavProductsNext';
+
 import HighLightsSection from '../../components/product/HighLightsSection';
 
 const TentsFistalClassic = () => {
@@ -39,7 +40,10 @@ const TentsFistalClassic = () => {
         beforeBottmElement={bottomElement}
         product={products.cotegory.tents.fistalClassic}
       />
-      <HighLightsSection product={products.cotegory.tents.fistalClassic} />
+      <HighLightsSection
+        product={products.cotegory.tents.fistalClassic}
+        maketProduct={maketProduct.fistalClassic}
+      />
     </>
   );
 };
