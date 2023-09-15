@@ -175,7 +175,7 @@ const HighLightsSection = ({
           <PingElement />
           <div
             className={`absolute sm:w-3 sm:h-3 w-1.5 h-1.5 rounded-full ${
-              showCarousel.index1 ? 'bg-white' : 'bg-black'
+              showCarousel.index4 ? 'bg-white' : 'bg-black'
             }`}
           />
         </div>
