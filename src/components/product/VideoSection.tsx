@@ -39,30 +39,31 @@ const VideoSection = ({ videosProduct }: videoSectionProps) => {
         watch videos
       </Typography>
       <div className="mt-10 lg:columns-3 sm:columns-2 columns-1">
-        {video.map((item, index) => {
-          return (
-            <div
-              key={nanoid()}
-              data-index={index}
-              className="flex flex-col break-inside-avoid-column"
-            >
-              <div onClick={clickHandler} className="relative cursor-pointer">
-                <img
-                  src={require(`../../dammyDB/${item.videoImg}`)}
-                  alt={item.videoImg}
-                  className="w-full 2xl:h-[300px] xl:h-[250px] lg:h-[200px] sm:h-[200px] object-contein z-50"
-                />
-                <div className="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 ">
-                  <PlayButton />
+        {video &&
+          video.map((item, index) => {
+            return (
+              <div
+                key={nanoid()}
+                data-index={index}
+                className="flex flex-col break-inside-avoid-column"
+              >
+                <div onClick={clickHandler} className="relative cursor-pointer">
+                  <img
+                    src={require(`../../dammyDB/${item.videoImg}`)}
+                    alt={item.videoImg}
+                    className="w-full 2xl:h-[300px] xl:h-[250px] lg:h-[200px] sm:h-[200px] object-contein z-50"
+                  />
+                  <div className="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 ">
+                    <PlayButton />
+                  </div>
                 </div>
-              </div>
 
-              <Typography className="uppercase font-normal lg:text-1xl border-b-[1px] border-black mt-2 mb-5">
-                {item.description}
-              </Typography>
-            </div>
-          );
-        })}
+                <Typography className="uppercase font-normal lg:text-1xl border-b-[1px] border-black mt-2 mb-5">
+                  {item.description}
+                </Typography>
+              </div>
+            );
+          })}
       </div>
 
       <div
