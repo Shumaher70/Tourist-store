@@ -1,12 +1,17 @@
 import { useState } from 'react';
 import { ProductSectionCart } from '../../components';
 
-import { products, maketProduct } from '../../dammyDB/dammyProducts';
+import {
+  products,
+  maketProduct,
+  videosProduct,
+} from '../../dammyDB/dammyProducts';
 
 import NavProducts from '../../components/product/NavProducts';
 import NavProductsNext from '../../components/product//NavProductsNext';
 
 import HighLightsSection from '../../components/product/HighLightsSection';
+import VideoSection from '../../components/product/VideoSection';
 
 const TentsFistalClassic = () => {
   const [bottomElement, setBottomElement] = useState<number>(0);
@@ -14,6 +19,7 @@ const TentsFistalClassic = () => {
   const elementBotton = (element: number) => {
     setBottomElement(element - 65);
   };
+
   return (
     <>
       <NavProducts
@@ -44,6 +50,7 @@ const TentsFistalClassic = () => {
         product={products.cotegory.tents.fistalClassic}
         maketProduct={maketProduct.fistalClassic}
       />
+      <VideoSection videosProduct={videosProduct.fistalClassic} />
     </>
   );
 };

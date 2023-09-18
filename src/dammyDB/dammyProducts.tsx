@@ -57,11 +57,6 @@ export const products: Product = {
         maketMainImg2: 'maketImg/EXTREMELY_STABLE_WITH_LITTLE_WEIGHT.webp',
         maketMainImg3: 'maketImg/IDEAL_FOR_LIGHT_TOURS.webp',
 
-        videoDescription: ['FISTRAL - RELAUNCH', 'FISTRAL - SET UP'],
-        video: [
-          'https://www.youtube.com/watch?v=1BDhIBw6guM',
-          'https://www.youtube.com/watch?v=CBHHjZYIUkc',
-        ],
         details: [
           'Features',
           'Pack size',
@@ -131,6 +126,28 @@ export const maketProduct = {
         title: 'COLOR-CODING',
         description:
           'Your Heimplanet tent initially consists of three parts: Inner tent, Flysheet and Airframe. Before the first use, the so-called First Assembly is carried out. This involves hooking the Flysheet into the Airframe and then attaching the inner tent to the flysheet. Dont worry, the included instructions will help you with this! To simplify this process, we use color coding that tells you which connections go where. After the first assembly the whole tent forms one unit and there are no disturbing single parts. From then on its simply roll out, inflate and ready!',
+      },
+    ],
+  },
+};
+
+export const videosProduct = {
+  fistalClassic: {
+    video: [
+      {
+        videoImg: 'videoImg/fistalClassic1.jpg',
+        video: 'https://www.youtube.com/embed/1BDhIBw6guM',
+        description: 'FISTRAL - RELAUNCH',
+      },
+      {
+        videoImg: 'videoImg/fistalClassic3.webp',
+        video: 'https://www.youtube.com/embed/aMiyr0WYh10',
+        description: 'USER VIDEO - MATHIAS PETTERSEN (V1)',
+      },
+      {
+        videoImg: 'videoImg/fistalClassic2.webp',
+        video: 'https://www.youtube.com/embed/CBHHjZYIUkc',
+        description: 'FISTRAL - SET UP',
       },
     ],
   },

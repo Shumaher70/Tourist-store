@@ -319,9 +319,12 @@ const Filter = ({
       {Object.entries({ ...productCart }).length > 0 ? (
         productCart?.map((productCart: any) => {
           return (
-            <div className="flex flex-wrap md:justify-between justify-center gap-5 my-5">
+            <div
+              key={nanoid()}
+              className="flex flex-wrap md:justify-between justify-center gap-5 my-5"
+            >
               <NavLink to={String(productCart?.src)}>
-                <Card key={nanoid()} className="rounded-none cursor-pointer">
+                <Card className="rounded-none cursor-pointer">
                   <div className="md:max-w-[350px] w-full ">
                     <img
                       src={require(`../dammyDB/${productCart?.mainImg1}`)}
