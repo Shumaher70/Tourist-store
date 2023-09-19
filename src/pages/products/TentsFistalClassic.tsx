@@ -12,6 +12,7 @@ import NavProductsNext from '../../components/product//NavProductsNext';
 
 import HighLightsSection from '../../components/product/HighLightsSection';
 import VideoSection from '../../components/product/VideoSection';
+import DetailsSection from '../../components/product/DetailsSection';
 
 const TentsFistalClassic = () => {
   const [bottomElement, setBottomElement] = useState<number>(0);
@@ -51,6 +52,7 @@ const TentsFistalClassic = () => {
         maketProduct={maketProduct.fistalClassic}
       />
       <VideoSection videosProduct={videosProduct.fistalClassic} />
+      <DetailsSection />
     </>
   );
 };
