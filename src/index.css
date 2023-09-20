@@ -80,3 +80,7 @@
   gap: 5px;
   padding: 10px;
 }
+
+input[type='file'] {
+  display: none;
+}

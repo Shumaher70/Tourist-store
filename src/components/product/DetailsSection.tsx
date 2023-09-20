@@ -240,7 +240,7 @@ const DetailsSection = () => {
                 trigger ? 'bg-white text-black' : 'bg-black text-white'
               } m-2 py-3 px-5`}
             >
-              INSIDE
+              GROUND
             </button>
           </div>
         </div>
