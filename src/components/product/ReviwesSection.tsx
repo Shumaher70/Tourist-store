@@ -1,14 +1,35 @@
 import { Button, Typography } from '@material-tailwind/react';
-import { useState, useRef, useCallback } from 'react';
-import { AiOutlineStar, AiFillStar, AiOutlineDownload } from 'react-icons/ai';
+import { nanoid } from '@reduxjs/toolkit';
+import { useState, useRef, useCallback, useEffect } from 'react';
+import {
+  AiOutlineStar,
+  AiFillStar,
+  AiOutlineDownload,
+  AiOutlineClose,
+} from 'react-icons/ai';
 
 const ReviwesSection = () => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);
   const [maxLengthInput, setmaxLengthInput] = useState<null | number>(null);
   const [maxLengthArea, setmaxLengthArea] = useState<null | number>(null);
+  const [image, setImage] = useState<File>();
+  const [preview, setPreview] = useState<string[]>([]);
+  const [show, setShow] = useState(false);
+
   const valueTile = useRef<HTMLInputElement>(null);
   const valueArea = useRef<HTMLTextAreaElement>(null);
+  const valueFile = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (image) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPreview((prev) => [...prev!, String(reader.result)].slice(0, 4));
+      };
+      reader.readAsDataURL(image);
+    }
+  }, [image]);
 
   const onChangeInputHandler = useCallback(() => {
     const maxlengthInput = 100 - valueTile.current?.value.length!;
@@ -20,111 +41,147 @@ const ReviwesSection = () => {
     setmaxLengthArea(maxlengthArea);
   }, []);
 
+  const inputChangeHandler = useCallback(
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      const file = event.target.files?.[0];
+      if (file && file.type.substring(0, 5) === 'image') {
+        setImage(file);
+      } else {
+        setImage(null || undefined);
+      }
+    },
+    []
+  );
+
+  const closeHandler = useCallback(
+    (event: React.MouseEvent<SVGElement>) => {
+      const removeImg = preview?.filter(
+        (img, index) =>
+          index !==
+          Number(event.currentTarget.parentElement?.getAttribute('data-index'))
+      );
+      setPreview(removeImg);
+    },
+    [preview]
+  );
+
+  const clickShowHandler = useCallback(() => {
+    setShow((priv) => !priv);
+  }, []);
+
   return (
     <section className="wrapper">
       <Typography className="text-4xl">REVIEWS</Typography>
       <div
         className="
+        mt-5
         w-full
         flex
         flex-col
         items-center
         bg-[#f2f2f2]
-        p-10
+        2xl:px-[20%]
+        xl:px-[15%]
+        px-[10%]
+        py-[5%]
       "
       >
+        <Typography
+          className="
+            text-2xl 
+            font-normal
+          "
+        >
+          CUSTOMERS REVIEWS
+        </Typography>
         <div
           className="
           flex
           items-center 
           flex-col
+          lg:flex-row
+          w-full  
+          lg:mt-10
         "
         >
-          <Typography
-            className="
-            text-2xl 
-            font-normal
-          "
-          >
-            CUSTOMERS REVIEWS
-          </Typography>
           <div
             className="
-            flex 
-            flex-col 
-            justify-center 
-            items-center
+            w-full 
+            text-center
+            lg:border-r-[1px]
+            border-black/20
           "
           >
             <div
               className="
-              flex 
-              mt-5
-            "
+                flex 
+                flex-col 
+                justify-center 
+                items-center
+              "
             >
-              <AiOutlineStar
-                className="
-                h-[20px] 
-                w-[20px]
-              "
-              />
-              <AiOutlineStar
-                className="
-                h-[20px] 
-                w-[20px]
-              "
-              />
-              <AiOutlineStar
-                className="
-                h-[20px] 
-                w-[20px]
-              "
-              />
-              <AiOutlineStar
-                className="
-                h-[20px] 
-                w-[20px]
-              "
-              />
-              <AiOutlineStar
-                className="
-                h-[20px] 
-                w-[20px]
-              "
-              />
+              <div className="flex flex-col lg:items-start items-center">
+                <div
+                  className="
+                   flex 
+                   lg:mt-0
+                   mt-5
+                  "
+                >
+                  {[...Array(5)].map((img) => (
+                    <AiOutlineStar
+                      key={nanoid()}
+                      className="
+                        h-[20px] 
+                        w-[20px]
+                      "
+                    />
+                  ))}
+                </div>
+                <Typography
+                  className="
+                       text-sm
+                      "
+                >
+                  Be the first to write a review
+                </Typography>
+              </div>
             </div>
-            <Typography
-              className="
-              text-sm
-            "
-            >
-              Be the first to write a review
-            </Typography>
           </div>
-          <Button
-            color="gray"
-            className="
+
+          <div className="w-full text-center">
+            <Button
+              onClick={clickShowHandler}
+              color="gray"
+              className="
             rounded-none 
             bg-black
+            lg:mt-0
             mt-5
             px-10
           "
-          >
-            Write a review
-          </Button>
+            >
+              Write a review
+            </Button>
+          </div>
         </div>
 
         <form
-          className="
-          flex
-          flex-col
-          items-center
-          border-t-[1px]
-          border-black/20
-          w-full
-          mt-10
-          pt-5
-        "
+          className={`
+            flex
+            flex-col
+            items-center
+            border-t-[1px]
+            border-black/20
+            w-full
+            mt-10
+            pt-5
+            overflow-hidden
+            transition:h
+            duration-[2250ms]
+            ease-in
+            ${show ? 'h-full' : 'h-0'}
+          `}
         >
           <Typography
             className="
@@ -274,30 +331,178 @@ const ReviwesSection = () => {
               >
                 Picture/video (optional)
               </Typography>
-              <label
-                htmlFor="file"
+              <div
                 className="
-                  mt-5
+                flex
+                flex-wrap
+                justify-center
+                items-center
+                gap-2
+                mt-5
+              "
+              >
+                <button
+                  onClick={(event) => {
+                    event.preventDefault();
+                    valueFile.current?.click();
+                  }}
+                  className="
                   cursor-pointer
                 "
-              >
-                <AiOutlineDownload
-                  className="
+                >
+                  <AiOutlineDownload
+                    className="
                   w-[128px]
                   h-[128px]
                   text-gray-700
                   border-[1px]
                   border-black/20
+                  hover:opacity-90
                 "
-                />
-              </label>
+                  />
+                </button>
+                {preview &&
+                  preview.map((img, index) => (
+                    <div
+                      data-index={index}
+                      key={nanoid()}
+                      className="
+                      relative
+                    "
+                    >
+                      <img
+                        src={img}
+                        alt="1"
+                        className="
+                        w-[128px]
+                        h-[128px]
+                        object-cover
+                      "
+                      />
+                      <AiOutlineClose
+                        onClick={closeHandler}
+                        className="
+                          absolute
+                          top-2
+                          right-2
+                          bg-white
+                          rounded-full
+                          cursor-pointer
+                        "
+                      />
+                    </div>
+                  ))}
+              </div>
               <input
-                accept=".mp3,.mp4,.avi"
+                ref={valueFile}
+                accept="image/*"
                 type="file"
                 name="file"
                 id="file"
+                onChange={inputChangeHandler}
               />
             </div>
+
+            <Typography
+              className="
+                font-normal
+                mt-5
+                sm:block
+                hidden
+               "
+            >
+              Name (publicly displayed as
+              <select
+                className="
+                h-auto
+                bg-transparent
+                ml-1
+                outline-none
+              "
+              >
+                <option>Anonymous</option>
+                <option>John Smith</option>
+                <option>John S.</option>
+                <option>J.S</option>
+              </select>
+              )
+            </Typography>
+
+            <input
+              placeholder="Enter your name (public)"
+              type="text"
+              name="title"
+              id="name_public"
+              required
+              className="
+                w-full
+                text-white
+                p-3
+                bg-black
+                mt-3
+              "
+            />
+
+            <label
+              htmlFor="email"
+              className="
+                  mt-5
+                  font-normal
+                "
+            >
+              E-mail
+            </label>
+            <input
+              placeholder="Enter your email"
+              type="email"
+              name="email"
+              required
+              id="email"
+              className="
+                w-full
+                text-white
+                p-3
+                bg-black
+                mt-3
+              "
+            />
+          </div>
+          <div
+            className="
+              sm:flex 
+              sm:flex-row
+              flex
+              flex-col
+              gap-5
+              mt-5
+              
+            "
+          >
+            <button
+              type="button"
+              className="
+                bg-white
+                border-2
+                border-black
+                text-black
+                font-normal
+                py-2
+                px-5
+              "
+            >
+              Cancel rating
+            </button>
+            <button
+              className="
+                bg-black
+                text-white
+                font-normal
+                py-2
+                px-5
+              "
+            >
+              Send rating
+            </button>
           </div>
         </form>
       </div>
