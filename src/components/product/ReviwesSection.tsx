@@ -1,6 +1,7 @@
 import { Button, Typography } from '@material-tailwind/react';
 import { nanoid } from '@reduxjs/toolkit';
 import { useState, useRef, useCallback, useEffect } from 'react';
+import AnimateHeight from 'react-animate-height';
 import {
   AiOutlineStar,
   AiFillStar,
@@ -67,6 +68,10 @@ const ReviwesSection = () => {
 
   const clickShowHandler = useCallback(() => {
     setShow((priv) => !priv);
+  }, []);
+
+  const clickCloseHandler = useCallback(() => {
+    setShow(false);
   }, []);
 
   return (
@@ -151,23 +156,30 @@ const ReviwesSection = () => {
 
           <div className="w-full text-center">
             <Button
+              aria-controls="example-panel"
               onClick={clickShowHandler}
               color="gray"
               className="
-            rounded-none 
-            bg-black
-            lg:mt-0
-            mt-5
-            px-10
-          "
+                rounded-none 
+                bg-black
+                lg:mt-0
+                mt-5
+                w-[150px]
+              "
             >
-              Write a review
+              {show ? 'Cansetl rating' : 'Write a review'}
             </Button>
           </div>
         </div>
 
-        <form
-          className={`
+        <AnimateHeight
+          className="w-full"
+          id="example-panel"
+          duration={500}
+          height={show ? 'auto' : 0}
+        >
+          <form
+            className={`
             flex
             flex-col
             items-center
@@ -180,159 +192,158 @@ const ReviwesSection = () => {
             transition:h
             duration-[2250ms]
             ease-in
-            ${show ? 'h-full' : 'h-0'}
           `}
-        >
-          <Typography
-            className="
+          >
+            <Typography
+              className="
             text-2xl
             font-normal
           "
-          >
-            Write a review
-          </Typography>
+            >
+              Write a review
+            </Typography>
 
-          <div
-            className="
+            <div
+              className="
             flex
             flex-col
             items-center
             mt-5
             w-full
           "
-          >
-            <Typography
-              className="
+            >
+              <Typography
+                className="
               text-sm
               font-normal
             "
-            >
-              Evalution
-            </Typography>
-            <div
-              className="
+              >
+                Evalution
+              </Typography>
+              <div
+                className="
               flex
               mt-2
             "
-            >
-              {[...Array(5)].map((star, index) => {
-                index += 1;
-                return (
-                  <button
-                    type="button"
-                    key={index}
-                    onClick={() => setRating(index)}
-                    onMouseEnter={() => setHover(index)}
-                    onMouseLeave={() => setHover(rating)}
-                  >
-                    {index <= (hover || rating) ? (
-                      <AiFillStar className="w-[30px] h-[30px]" />
-                    ) : (
-                      <AiOutlineStar className="w-[30px] h-[30px]" />
-                    )}
-                  </button>
-                );
-              })}
-            </div>
+              >
+                {[...Array(5)].map((star, index) => {
+                  index += 1;
+                  return (
+                    <button
+                      type="button"
+                      key={index}
+                      onClick={() => setRating(index)}
+                      onMouseEnter={() => setHover(index)}
+                      onMouseLeave={() => setHover(rating)}
+                    >
+                      {index <= (hover || rating) ? (
+                        <AiFillStar className="w-[30px] h-[30px]" />
+                      ) : (
+                        <AiOutlineStar className="w-[30px] h-[30px]" />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
 
-            <div
-              className="
+              <div
+                className="
               w-full
               flex 
               flex-col
               items-center
             "
-            >
-              <label
-                htmlFor="title"
-                className="
+              >
+                <label
+                  htmlFor="title"
+                  className="
                   mt-5
                   font-normal
                 "
-              >
-                Rating title{' '}
-                <span
-                  className="
+                >
+                  Rating title{' '}
+                  <span
+                    className="
                   text-[14px]
                   font-normal
                 "
-                >{`${maxLengthInput ? `{${maxLengthInput}}` : ''}`}</span>
-              </label>
-              <input
-                onChange={onChangeInputHandler}
-                maxLength={100}
-                ref={valueTile}
-                placeholder="Give your a rating title"
-                type="text"
-                name="title"
-                id="title"
-                className="
+                  >{`${maxLengthInput ? `{${maxLengthInput}}` : ''}`}</span>
+                </label>
+                <input
+                  onChange={onChangeInputHandler}
+                  maxLength={100}
+                  ref={valueTile}
+                  placeholder="Give your a rating title"
+                  type="text"
+                  name="title"
+                  id="title"
+                  className="
                 w-full
                 text-white
                 p-3
                 bg-black
                 mt-3
               "
-              />
-            </div>
+                />
+              </div>
 
-            <div
-              className="
+              <div
+                className="
               w-full
               flex 
               flex-col
               items-center
             "
-            >
-              <label
-                htmlFor="texarea"
-                className="
+              >
+                <label
+                  htmlFor="texarea"
+                  className="
                   mt-5
                   font-normal
                 "
-              >
-                Rating title{' '}
-                <span
-                  className="
+                >
+                  Rating title{' '}
+                  <span
+                    className="
                   text-[14px]
                   font-normal
                 "
-                >{`${maxLengthArea ? `{${maxLengthArea}}` : ''}`}</span>
-              </label>
-              <textarea
-                ref={valueArea}
-                onChange={onChangeTextAreaHandler}
-                maxLength={100}
-                placeholder="Give your a rating title"
-                name="texarea"
-                id="texarea"
-                className="
+                  >{`${maxLengthArea ? `{${maxLengthArea}}` : ''}`}</span>
+                </label>
+                <textarea
+                  ref={valueArea}
+                  onChange={onChangeTextAreaHandler}
+                  maxLength={100}
+                  placeholder="Give your a rating title"
+                  name="texarea"
+                  id="texarea"
+                  className="
                 w-full
                 text-white
                 p-3
                 bg-black
                 mt-3
               "
-              />
-            </div>
+                />
+              </div>
 
-            <div
-              className="
+              <div
+                className="
               mt-5
               flex
               flex-col
               items-center
             "
-            >
-              <Typography
-                className="
+              >
+                <Typography
+                  className="
                 font-normal
               "
-              >
-                Picture/video (optional)
-              </Typography>
-              <div
-                className="
+                >
+                  Picture/video (optional)
+                </Typography>
+                <div
+                  className="
                 flex
                 flex-wrap
                 justify-center
@@ -340,18 +351,18 @@ const ReviwesSection = () => {
                 gap-2
                 mt-5
               "
-              >
-                <button
-                  onClick={(event) => {
-                    event.preventDefault();
-                    valueFile.current?.click();
-                  }}
-                  className="
+                >
+                  <button
+                    onClick={(event) => {
+                      event.preventDefault();
+                      valueFile.current?.click();
+                    }}
+                    className="
                   cursor-pointer
                 "
-                >
-                  <AiOutlineDownload
-                    className="
+                  >
+                    <AiOutlineDownload
+                      className="
                   w-[128px]
                   h-[128px]
                   text-gray-700
@@ -359,29 +370,29 @@ const ReviwesSection = () => {
                   border-black/20
                   hover:opacity-90
                 "
-                  />
-                </button>
-                {preview &&
-                  preview.map((img, index) => (
-                    <div
-                      data-index={index}
-                      key={nanoid()}
-                      className="
+                    />
+                  </button>
+                  {preview &&
+                    preview.map((img, index) => (
+                      <div
+                        data-index={index}
+                        key={nanoid()}
+                        className="
                       relative
                     "
-                    >
-                      <img
-                        src={img}
-                        alt="1"
-                        className="
+                      >
+                        <img
+                          src={img}
+                          alt="1"
+                          className="
                         w-[128px]
                         h-[128px]
                         object-cover
                       "
-                      />
-                      <AiOutlineClose
-                        onClick={closeHandler}
-                        className="
+                        />
+                        <AiOutlineClose
+                          onClick={closeHandler}
+                          className="
                           absolute
                           top-2
                           right-2
@@ -389,86 +400,86 @@ const ReviwesSection = () => {
                           rounded-full
                           cursor-pointer
                         "
-                      />
-                    </div>
-                  ))}
+                        />
+                      </div>
+                    ))}
+                </div>
+                <input
+                  ref={valueFile}
+                  accept="image/*"
+                  type="file"
+                  name="file"
+                  id="file"
+                  onChange={inputChangeHandler}
+                />
               </div>
-              <input
-                ref={valueFile}
-                accept="image/*"
-                type="file"
-                name="file"
-                id="file"
-                onChange={inputChangeHandler}
-              />
-            </div>
 
-            <Typography
-              className="
+              <Typography
+                className="
                 font-normal
                 mt-5
                 sm:block
                 hidden
                "
-            >
-              Name (publicly displayed as
-              <select
-                className="
+              >
+                Name (publicly displayed as
+                <select
+                  className="
                 h-auto
                 bg-transparent
                 ml-1
                 outline-none
               "
-              >
-                <option>Anonymous</option>
-                <option>John Smith</option>
-                <option>John S.</option>
-                <option>J.S</option>
-              </select>
-              )
-            </Typography>
+                >
+                  <option>Anonymous</option>
+                  <option>John Smith</option>
+                  <option>John S.</option>
+                  <option>J.S</option>
+                </select>
+                )
+              </Typography>
 
-            <input
-              placeholder="Enter your name (public)"
-              type="text"
-              name="title"
-              id="name_public"
-              required
-              className="
+              <input
+                placeholder="Enter your name (public)"
+                type="text"
+                name="title"
+                id="name_public"
+                required
+                className="
                 w-full
                 text-white
                 p-3
                 bg-black
                 mt-3
               "
-            />
+              />
 
-            <label
-              htmlFor="email"
-              className="
+              <label
+                htmlFor="email"
+                className="
                   mt-5
                   font-normal
                 "
-            >
-              E-mail
-            </label>
-            <input
-              placeholder="Enter your email"
-              type="email"
-              name="email"
-              required
-              id="email"
-              className="
+              >
+                E-mail
+              </label>
+              <input
+                placeholder="Enter your email"
+                type="email"
+                name="email"
+                required
+                id="email"
+                className="
                 w-full
                 text-white
                 p-3
                 bg-black
                 mt-3
               "
-            />
-          </div>
-          <div
-            className="
+              />
+            </div>
+            <div
+              className="
               sm:flex 
               sm:flex-row
               flex
@@ -477,10 +488,11 @@ const ReviwesSection = () => {
               mt-5
               
             "
-          >
-            <button
-              type="button"
-              className="
+            >
+              <button
+                onClick={clickCloseHandler}
+                type="button"
+                className="
                 bg-white
                 border-2
                 border-black
@@ -489,22 +501,23 @@ const ReviwesSection = () => {
                 py-2
                 px-5
               "
-            >
-              Cancel rating
-            </button>
-            <button
-              className="
+              >
+                Cancel rating
+              </button>
+              <button
+                className="
                 bg-black
                 text-white
                 font-normal
                 py-2
                 px-5
               "
-            >
-              Send rating
-            </button>
-          </div>
-        </form>
+              >
+                Send rating
+              </button>
+            </div>
+          </form>
+        </AnimateHeight>
       </div>
     </section>
   );
