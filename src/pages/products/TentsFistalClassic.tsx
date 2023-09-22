@@ -16,6 +16,7 @@ import DetailsSection from '../../components/product/DetailsSection';
 import ReviwesSection from '../../components/product/ReviwesSection';
 import ImgaesSection from '../../components/product/ImgaesSection';
 import SimilarProductSection from '../../components/product/SimilarProductSection';
+import MoreSection from '../../components/product/MoreSection';
 
 const TentsFistalClassic = () => {
    const [bottomElement, setBottomElement] = useState<number>(0);
@@ -59,6 +60,7 @@ const TentsFistalClassic = () => {
          <ReviwesSection />
          <ImgaesSection imges={products.cotegory.tents.fistalClassic.images} />
          <SimilarProductSection />
+         <MoreSection />
       </>
    );
 };

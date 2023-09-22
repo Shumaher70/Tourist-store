@@ -11,7 +11,7 @@ const SimilarProductSection = () => {
             <Typography className="text-4xl font-normal">
                SIMILAR PRODUCTS
             </Typography>
-            <NavLink to="/products/fistral-classic">
+            <NavLink className="sm:block hidden" to="/products/fistral-classic">
                <Button
                   color="gray"
                   size="lg"
