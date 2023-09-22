@@ -8,17 +8,6 @@ interface Product {
    };
 }
 
-export const productCard = [
-   {
-      title: 'fistal, classic',
-      price: '699',
-      type: 'tents',
-      mainImg1: 'mainImg/2.webp',
-      mainImg2: 'mainImg/3.webp',
-      src: '/products/fistral-classic',
-   },
-];
-
 export const products: Product = {
    cotegory: {
       tents: {
@@ -67,6 +56,19 @@ export const products: Product = {
          },
       },
    },
+};
+
+export const productCard = {
+   tetnts: [
+      {
+         title: 'fistal, classic',
+         price: '699',
+         type: 'tents',
+         mainImg1: 'mainImg/2.webp',
+         mainImg2: 'mainImg/3.webp',
+         src: '/products/fistral-classic',
+      },
+   ],
 };
 
 export const maketProduct = {
