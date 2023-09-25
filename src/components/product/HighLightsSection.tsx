@@ -132,7 +132,7 @@ const HighLightsSection = ({
          <div className="relative flex lg:basis-3/5 flex-col">
             <div className="lg:w-2/5">
                {product.maketMainTitle && (
-                  <Typography className="text-4xl font-normal">
+                  <Typography className="sm:text-4xl text-3xl font-normal">
                      {product.maketMainTitle}
                   </Typography>
                )}

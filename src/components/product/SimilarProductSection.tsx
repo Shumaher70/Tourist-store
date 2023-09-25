@@ -8,7 +8,7 @@ const SimilarProductSection = () => {
    return (
       <section className="wrapper">
          <div className="w-full flex justify-between items-center">
-            <Typography className="text-4xl font-normal">
+            <Typography className="sm:text-4xl text-3xl font-normal">
                SIMILAR PRODUCTS
             </Typography>
             <NavLink className="sm:block hidden" to="/products/fistral-classic">

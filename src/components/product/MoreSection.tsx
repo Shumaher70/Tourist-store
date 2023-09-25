@@ -6,7 +6,7 @@ const MoreSection = () => {
    return (
       <section className="wrapper grid md:grid-cols-2 grid-cols-1 bg-[#f2f2f2] gap-10">
          <div>
-            <Typography className="text-4xl font-normal">
+            <Typography className="sm:text-4xl text-3xl font-normal">
                MUCH MORE THAN JUST DETAILS. OUR BENEFITS:
             </Typography>
          </div>
