@@ -1,8 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Typography } from '@material-tailwind/react';
 import { nanoid } from '@reduxjs/toolkit';
 import PlayButton from '../../pages/img/PlayButton';
 import CustomButtonExit from '../CustomButtonExit';
+
+import { useInView } from 'react-intersection-observer';
 
 interface videoSectionProps {
    videosProduct: {
@@ -12,11 +14,26 @@ interface videoSectionProps {
          description: string;
       }[];
    };
+   videoSectionhandler: (element: boolean) => void;
 }
 
-const VideoSection = ({ videosProduct }: videoSectionProps) => {
+const VideoSection = ({
+   videosProduct,
+   videoSectionhandler,
+}: videoSectionProps) => {
    const [openVideo, setOpenVideo] = useState<boolean>(false);
    const [indexVideo, setindexVideo] = useState<number>(0);
+   const [isVisible, setIsVisible] = useState(false);
+   const { ref, inView } = useInView({ threshold: 0.5 });
+
+   useEffect(() => {
+      if (inView) {
+         setIsVisible(true);
+      } else {
+         setIsVisible(false);
+      }
+      videoSectionhandler(isVisible);
+   }, [inView, isVisible, videoSectionhandler]);
 
    const clickHandler = (event?: React.MouseEvent) => {
       const index =
@@ -34,8 +51,11 @@ const VideoSection = ({ videosProduct }: videoSectionProps) => {
 
    const video = videosProduct?.video;
    return (
-      <section className="relative wrapper">
-         <Typography className="uppercase sm:text-4xl text-3xl font-normal">
+      <section id="videos" className="relative wrapper">
+         <Typography
+            ref={ref}
+            className="uppercase sm:text-4xl text-3xl font-normal"
+         >
             watch videos
          </Typography>
          <div className="mt-10 lg:columns-3 sm:columns-2 columns-1">

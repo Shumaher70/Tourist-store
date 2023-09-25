@@ -20,6 +20,15 @@ import MoreSection from '../../components/product/MoreSection';
 
 const TentsFistalClassic = () => {
    const [bottomElement, setBottomElement] = useState<number>(0);
+   const [highLight, setHighLight] = useState(false);
+   const [videos, setVideos] = useState(false);
+   const [details, setDetails] = useState(false);
+   const [review, setReview] = useState(false);
+
+   const highLightsSectionHandler = (event: boolean) => setHighLight(event);
+   const videoSectionhandler = (event: boolean) => setVideos(event);
+   const detailsSectionHandler = (event: boolean) => setDetails(event);
+   const reviwesSectionHandler = (event: boolean) => setReview(event);
 
    const elementBotton = (element: number) => {
       setBottomElement(element - 65);
@@ -50,14 +59,23 @@ const TentsFistalClassic = () => {
          <NavProductsNext
             beforeBottmElement={bottomElement}
             product={products.cotegory.tents.fistalClassic}
+            highLight={highLight}
+            videos={videos}
+            details={details}
+            review={review}
          />
          <HighLightsSection
             product={products.cotegory.tents.fistalClassic}
             maketProduct={maketProduct.fistalClassic}
+            highLightsSectionHandler={highLightsSectionHandler}
          />
-         <VideoSection videosProduct={videosProduct.fistalClassic} />
-         <DetailsSection />
-         <ReviwesSection />
+         <VideoSection
+            videosProduct={videosProduct.fistalClassic}
+            videoSectionhandler={videoSectionhandler}
+         />
+         <DetailsSection detailsSectionHandler={detailsSectionHandler} />
+         <ReviwesSection reviwesSectionHandler={reviwesSectionHandler} />
+
          <ImgaesSection imges={products.cotegory.tents.fistalClassic.images} />
          <SimilarProductSection />
          <MoreSection />

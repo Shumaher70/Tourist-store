@@ -1,9 +1,27 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Typography } from '@material-tailwind/react';
+import { useInView } from 'react-intersection-observer';
 
-const DetailsSection = () => {
+interface detailsSectionProps {
+   detailsSectionHandler: (element: boolean) => void;
+}
+
+const DetailsSection: React.FC<detailsSectionProps> = ({
+   detailsSectionHandler,
+}) => {
    const [open, setOpen] = useState(false);
    const [trigger, setTrigger] = useState(true);
+   const [isVisible, setIsVisible] = useState(false);
+   const { ref, inView } = useInView({ threshold: 0.5 });
+
+   useEffect(() => {
+      if (inView) {
+         setIsVisible(true);
+      } else {
+         setIsVisible(false);
+      }
+      detailsSectionHandler(isVisible);
+   }, [detailsSectionHandler, inView, isVisible]);
 
    const clickHandler = useCallback(() => {
       setOpen((previous) => !previous);
@@ -22,8 +40,8 @@ const DetailsSection = () => {
    }, [open]);
 
    return (
-      <section className="wrapper bg-[#f2f2f2]">
-         <Typography className="font-normal sm:text-4xl text-3xl">
+      <section id="details" className="wrapper bg-[#f2f2f2]">
+         <Typography ref={ref} className="font-normal sm:text-4xl text-3xl">
             DETAILS
          </Typography>
          <div className="flex lg:flex-row flex-col">

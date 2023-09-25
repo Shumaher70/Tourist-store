@@ -5,6 +5,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { nanoid } from '@reduxjs/toolkit';
 import CustomButtonExit from '../CustomButtonExit';
+import { useInView } from 'react-intersection-observer';
 
 interface HighLightSectionProps {
    product: { [key: string]: string | string[] };
@@ -13,11 +14,13 @@ interface HighLightSectionProps {
          [key: string]: string;
       }[];
    };
+   highLightsSectionHandler: (event: boolean) => void;
 }
 
 const HighLightsSection = ({
    product,
    maketProduct,
+   highLightsSectionHandler,
 }: HighLightSectionProps) => {
    const [showCarousel, setShowCarousel] = useState<{ [key: string]: boolean }>(
       {
@@ -36,6 +39,18 @@ const HighLightsSection = ({
       }[]
    >([]);
    const maket = maketProduct?.maket;
+
+   const [isVisible, setIsVisible] = useState(false);
+   const { ref, inView } = useInView({ threshold: 0.5 });
+
+   useEffect(() => {
+      if (inView) {
+         setIsVisible(true);
+      } else {
+         setIsVisible(false);
+      }
+      highLightsSectionHandler(isVisible);
+   }, [highLightsSectionHandler, inView, isVisible]);
 
    const PingElement = () => {
       const [ping, setPing] = useState(false);
@@ -128,11 +143,17 @@ const HighLightsSection = ({
    };
 
    return (
-      <section className="relative flex flex-col lg:flex-row gap-5 items-center px-[10%] mt-2 py-[2%] bg-[#f2f2f2]">
+      <section
+         id="highlights"
+         className="relative flex flex-col lg:flex-row gap-5 items-center px-[10%] mt-2 py-[2%] bg-[#f2f2f2]"
+      >
          <div className="relative flex lg:basis-3/5 flex-col">
             <div className="lg:w-2/5">
                {product.maketMainTitle && (
-                  <Typography className="sm:text-4xl text-3xl font-normal">
+                  <Typography
+                     ref={ref}
+                     className="sm:text-4xl text-3xl font-normal"
+                  >
                      {product.maketMainTitle}
                   </Typography>
                )}

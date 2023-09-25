@@ -9,7 +9,15 @@ import {
    AiOutlineClose,
 } from 'react-icons/ai';
 
-const ReviwesSection = () => {
+import { useInView } from 'react-intersection-observer';
+
+interface reviwesSectionProps {
+   reviwesSectionHandler: (event: boolean) => void;
+}
+
+const ReviwesSection: React.FC<reviwesSectionProps> = ({
+   reviwesSectionHandler,
+}) => {
    const [rating, setRating] = useState(0);
    const [hover, setHover] = useState(0);
    const [maxLengthInput, setmaxLengthInput] = useState<null | number>(null);
@@ -18,9 +26,21 @@ const ReviwesSection = () => {
    const [preview, setPreview] = useState<string[]>([]);
    const [show, setShow] = useState(false);
 
+   const [isVisible, setIsVisible] = useState(false);
+   const { ref, inView } = useInView({ threshold: 0.5 });
+
    const valueTile = useRef<HTMLInputElement>(null);
    const valueArea = useRef<HTMLTextAreaElement>(null);
    const valueFile = useRef<HTMLInputElement>(null);
+
+   useEffect(() => {
+      if (inView) {
+         setIsVisible(true);
+      } else {
+         setIsVisible(false);
+      }
+      reviwesSectionHandler(isVisible);
+   }, [inView, isVisible, reviwesSectionHandler]);
 
    useEffect(() => {
       if (image) {
@@ -77,8 +97,8 @@ const ReviwesSection = () => {
    }, []);
 
    return (
-      <section className="wrapper">
-         <Typography className="sm:text-4xl text-3xl font-normal">
+      <section id="reviews" className="wrapper">
+         <Typography ref={ref} className="sm:text-4xl text-3xl font-normal">
             REVIEWS
          </Typography>
          <div
