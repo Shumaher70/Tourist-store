@@ -5,6 +5,10 @@ import { nanoid } from '@reduxjs/toolkit';
 import { NavLink } from 'react-router-dom';
 
 const SimilarProductSection = () => {
+   const clickHandler = () => {
+      window.scrollTo(0, 0);
+   };
+
    return (
       <section className="wrapper">
          <div className="w-full flex justify-between items-center">
@@ -13,6 +17,7 @@ const SimilarProductSection = () => {
             </Typography>
             <NavLink className="sm:block hidden" to="/products/fistral-classic">
                <Button
+                  onClick={clickHandler}
                   color="gray"
                   size="lg"
                   className="

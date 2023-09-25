@@ -186,7 +186,7 @@ const ProductSectionCart = ({
             <div
                className={`w-full h-full flex justify-center top-0 fixed bg-white z-[99]`}
             >
-               <div className="w-full h-full">
+               <div id="product" className="w-full h-full">
                   <CustomButtonExit
                      buttonStyle="top-5 right-5 cursor-pointer z-[999]"
                      onClick={() => setShowSlider(false)}

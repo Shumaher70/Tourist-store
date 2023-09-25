@@ -97,7 +97,17 @@ const NavProductsNext = ({
                     }
                   : { position: 'absolute' }
             }
-            className="px-[10%] flex justify-between items-center w-full h-[60px] bg-white z-10 border-y-[1px] border-[rgba(133,133,133,.2)]"
+            className="
+               px-[10%] 
+               flex 
+               justify-between 
+               items-center 
+               w-full 
+               h-[60px] 
+               bg-white 
+               z-10 
+               border-y-[1px] 
+               border-[rgba(133,133,133,.2)]"
          >
             <div className="lg:gap-10 sm:gap-5 md:flex hidden items-center">
                {highLight !== undefined && (
