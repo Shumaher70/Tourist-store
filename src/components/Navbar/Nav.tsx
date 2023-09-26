@@ -40,7 +40,19 @@ const Nav = () => {
    return (
       <Navbar
          ref={size}
-         className="z-30 fixed rounded-none bg-opacity-1 flex justify-between items-center max-w-full px-[10%]"
+         className="
+            z-30 
+            fixed 
+            rounded-none 
+            bg-opacity-1 
+            flex 
+            justify-between 
+            items-center 
+            max-w-full 
+            px-[10%] 
+            border-b-[1px]
+            border-[#f2f2f2]
+            shadow-none"
       >
          <NavLink
             className="flex justify-center items-center w-[150px] sm:w-[200px] lg:w-[20%]"
