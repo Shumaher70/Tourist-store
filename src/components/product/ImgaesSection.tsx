@@ -1,11 +1,11 @@
 import { nanoid } from '@reduxjs/toolkit';
 
 interface imagesSectionProps {
-   imges: string[] | string;
+   product: string[];
 }
 
-const ImgaesSection: React.FC<imagesSectionProps> = ({ imges }) => {
-   const img = imges as string[];
+const ImgaesSection: React.FC<imagesSectionProps> = ({ product }) => {
+   const img = product as string[];
 
    const getCustomStyle = (index: number) => {
       if (index === 0) {

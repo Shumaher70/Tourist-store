@@ -8,18 +8,25 @@ import CustomButtonExit from '../CustomButtonExit';
 import { useInView } from 'react-intersection-observer';
 
 interface HighLightSectionProps {
-   product: { [key: string]: string | string[] };
-   maketProduct?: {
+   product: {
+      maketMainTitle: string;
+      maketMainShortDescription1: string;
+      maketMainShortDescription2: string;
+      maketMainShortDescription3: string;
+      maketMainImg1: string;
+      maketMainImg2: string;
+      maketMainImg3: string;
+      mainImg: string;
       maket: {
          [key: string]: string;
       }[];
    };
+
    highLightsSectionHandler: (event: boolean) => void;
 }
 
 const HighLightsSection = ({
    product,
-   maketProduct,
    highLightsSectionHandler,
 }: HighLightSectionProps) => {
    const [showCarousel, setShowCarousel] = useState<{ [key: string]: boolean }>(
@@ -38,7 +45,6 @@ const HighLightsSection = ({
          [key: string]: string;
       }[]
    >([]);
-   const maket = maketProduct?.maket;
 
    const [isVisible, setIsVisible] = useState(false);
    const { ref, inView } = useInView({ threshold: 0.5 });
@@ -81,8 +87,8 @@ const HighLightsSection = ({
          index5: index === 5,
       });
 
-      const newArray = Array.isArray(maket)
-         ? maket.slice(index).concat(maket.slice(0, index))
+      const newArray = Array.isArray(product.maket)
+         ? product.maket.slice(index).concat(product.maket.slice(0, index))
          : [];
 
       setinitialCarousel(newArray);
@@ -189,7 +195,7 @@ const HighLightsSection = ({
 
          <div className="relative 2xl:w-[600px] xl:w-[430px] lg:w-[450px] md:w-[400px] sm:w-[512px] w-[250px]">
             <img
-               src={require(`../../dammyDB/${product.mainImg[0]}`)}
+               src={require(`../../dammyDB/${product.mainImg}`)}
                alt="tent"
                className="brightness-95"
             />
@@ -300,7 +306,7 @@ const HighLightsSection = ({
                   sliderClass="md:min-h-[450px] sm:min-h-[300px] sm:py-10"
                   itemClass="min-h-full sm:py-0 sm:px-0 py-10 px-10"
                >
-                  {maket &&
+                  {product &&
                      initialCarousel.map((item) => {
                         return (
                            <div
@@ -357,7 +363,7 @@ const HighLightsSection = ({
                   sliderClass="h-full"
                   itemClass="h-full"
                >
-                  {maket &&
+                  {product &&
                      initialCarousel.map((item) => {
                         return (
                            <div

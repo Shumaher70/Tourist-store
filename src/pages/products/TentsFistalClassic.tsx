@@ -1,11 +1,7 @@
 import { useState } from 'react';
 import { ProductSectionCart } from '../../components';
 
-import {
-   products,
-   maketProduct,
-   videosProduct,
-} from '../../dammyDB/dammyProducts';
+import { products } from '../../dammyDB/dammyProducts';
 
 import NavProducts from '../../components/product/NavProducts';
 import NavProductsNext from '../../components/product//NavProductsNext';
@@ -54,29 +50,30 @@ const TentsFistalClassic = () => {
          />
          <ProductSectionCart
             elementBotton={elementBotton}
-            product={products.cotegory.tents.fistalClassic}
+            product={products.cotegory.tents.fistalClassic.mainSection}
          />
          <NavProductsNext
             beforeBottmElement={bottomElement}
-            product={products.cotegory.tents.fistalClassic}
+            product={products.cotegory.tents.fistalClassic.mainSection}
             highLight={highLight}
             videos={videos}
             details={details}
             review={review}
          />
          <HighLightsSection
-            product={products.cotegory.tents.fistalClassic}
-            maketProduct={maketProduct.fistalClassic}
+            product={products.cotegory.tents.fistalClassic.maketSection}
             highLightsSectionHandler={highLightsSectionHandler}
          />
          <VideoSection
-            videosProduct={videosProduct.fistalClassic}
+            product={products.cotegory.tents.fistalClassic.video}
             videoSectionhandler={videoSectionhandler}
          />
          <DetailsSection detailsSectionHandler={detailsSectionHandler} />
          <ReviwesSection reviwesSectionHandler={reviwesSectionHandler} />
 
-         <ImgaesSection imges={products.cotegory.tents.fistalClassic.images} />
+         <ImgaesSection
+            product={products.cotegory.tents.fistalClassic.imgesSection}
+         />
          <SimilarProductSection />
          <MoreSection />
       </>

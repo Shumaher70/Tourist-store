@@ -38,7 +38,7 @@ const SimilarProductSection = () => {
             </NavLink>
          </div>
          <div className="w-full flex flex-wrap gap-5">
-            {productCard.tetnts.map((item) => (
+            {productCard.map((item) => (
                <ProductCard
                   key={nanoid()}
                   img1={item.mainImg2}

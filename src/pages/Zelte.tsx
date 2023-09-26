@@ -81,7 +81,7 @@ const Zelte = () => {
             buttonStyle="bg-black text-white"
          />
          <Filter
-            productCart={productCard.tetnts}
+            productCart={productCard}
             activityProps={true}
             checkboxActivity={[
                {

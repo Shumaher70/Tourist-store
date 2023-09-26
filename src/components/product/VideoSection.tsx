@@ -7,20 +7,16 @@ import CustomButtonExit from '../CustomButtonExit';
 import { useInView } from 'react-intersection-observer';
 
 interface videoSectionProps {
-   videosProduct: {
-      video: {
-         videoImg: string;
-         video: string;
-         description: string;
-      }[];
-   };
+   product: {
+      videoImg: string;
+      video: string;
+      description: string;
+   }[];
+
    videoSectionhandler: (element: boolean) => void;
 }
 
-const VideoSection = ({
-   videosProduct,
-   videoSectionhandler,
-}: videoSectionProps) => {
+const VideoSection = ({ product, videoSectionhandler }: videoSectionProps) => {
    const [openVideo, setOpenVideo] = useState<boolean>(false);
    const [indexVideo, setindexVideo] = useState<number>(0);
    const [isVisible, setIsVisible] = useState(false);
@@ -49,7 +45,7 @@ const VideoSection = ({
       }
    };
 
-   const video = videosProduct?.video;
+   const video = product;
    return (
       <section id="videos" className="relative wrapper">
          <Typography

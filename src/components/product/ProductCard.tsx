@@ -26,6 +26,7 @@ const ProductCard: React.FC<productCardProps> = ({
    const clickHandler = () => {
       window.scrollTo(0, 0);
    };
+
    return (
       <div
          onClick={clickHandler}
