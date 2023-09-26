@@ -18,8 +18,12 @@ const Nav = () => {
       const handleResize = () => {
          if (size.current) {
             window.innerWidth < 768 ? getInfo(false) : getInfo(true);
-            dispatch(heightNav(size.current.offsetHeight.toString()));
-            dispatch(widthNav(size.current.offsetWidth.toString()));
+            setTimeout(() => {
+               if (size.current) {
+                  dispatch(heightNav(size.current?.offsetHeight.toString()));
+                  dispatch(widthNav(size.current?.offsetWidth.toString()));
+               }
+            }, 1);
          }
       };
 
@@ -31,11 +35,6 @@ const Nav = () => {
          window.removeEventListener('resize', handleResize);
       };
    }, [dispatch]);
-
-   if (size.current) {
-      dispatch(heightNav(size.current.offsetHeight.toString()));
-      dispatch(widthNav(size.current.offsetWidth.toString()));
-   }
 
    return (
       <Navbar
@@ -52,7 +51,8 @@ const Nav = () => {
             px-[10%] 
             border-b-[1px]
             border-[#f2f2f2]
-            shadow-none"
+            shadow-none
+         "
       >
          <NavLink
             className="flex justify-center items-center w-[150px] sm:w-[200px] lg:w-[20%]"

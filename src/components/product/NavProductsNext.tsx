@@ -174,7 +174,7 @@ const NavProductsNext = ({
                   </AnchorLink>
                )}
             </div>
-            <div className="ml-5 flex gap-5 md:justify-start justify-between w-full md:w-auto">
+            <div className="flex gap-5 md:justify-start justify-between w-full md:w-auto">
                <div>
                   <Typography className="uppercase sm:text-1xl text-sm">
                      {product.title}
