@@ -102,6 +102,67 @@ export const products = {
                },
             ],
 
+            details: {
+               detailsDesctioption: [
+                  {
+                     title: 'Features',
+                     desctiption: [
+                        <a
+                           className="underline cursor-pointer"
+                           href="https://cdn.shopify.com/s/files/1/0533/4738/5504/files/Heimplanet-Fistral-Manual.pdf?v=1679586931"
+                        >
+                           Download: Fistral Guide
+                        </a>,
+                     ],
+                  },
+                  {
+                     title: 'Pack size',
+                     desctiption: [
+                        '20.0 x 38.0 x 20.0 cm / 7.87 x 14.96 x 7.87in',
+                     ],
+                  },
+                  {
+                     title: 'Weight',
+                     desctiption: ['2.9 kg / 6.44lbs'],
+                  },
+                  {
+                     title: 'Footprint',
+                     desctiption: [
+                        '4.3 m² / 0.4sq. ft. (Inner tent: 2.9 m² / 0.4sq. ft.)',
+                     ],
+                  },
+                  {
+                     title: 'Inner tent height',
+                     desctiption: ['112.0 cm / 44.09in'],
+                  },
+                  {
+                     title: 'Total height',
+                     desctiption: ['133.0 cm / 52.36in'],
+                  },
+                  {
+                     title: 'Tent floor',
+                     desctiption: ['70D Nylon DWR PU (water column: 5000 mm)'],
+                  },
+                  {
+                     title: 'Inner tent',
+                     desctiption: ['40D Nylon Ripstop DWR (breathable)'],
+                  },
+                  {
+                     title: 'Flysheet',
+                     desctiption: [
+                        '40D double ripstop HT polyester PU (water column: 3000 mm)',
+                     ],
+                  },
+                  {
+                     title: 'Airframe',
+                     desctiption: ['140 HPE Dacron (HT Polyester), TPU'],
+                  },
+               ],
+
+               detailsImg1: 'detailsImg/fistalClassic1.webp',
+               detailsImg2: 'detailsImg/fistalClassic2.webp',
+            },
+
             imgesSection: [
                'fistalClassic1.webp',
                'fistalClassic2.webp',
@@ -169,6 +230,26 @@ export const products = {
                         'In each of the corners of the tarp is a small compartment with Velcro. Here you can easily store the guy lines if you do not need them. We recommend to stow the guy lines in the respective corners especially before packing the tarp. This saves a lot of time during the next setup, because you do not have to untangle the lines first.',
                   },
                ],
+            },
+            details: {
+               detailsDesctioption: [
+                  {
+                     title: 'Dimension',
+                     desctiption: ['3,65 x 2,78 m / 10m²'],
+                  },
+                  {
+                     title: 'Material',
+                     desctiption: [
+                        '100% polyester 66D 210T ripstop, PU laminated 5000 mm water column',
+                     ],
+                  },
+                  {
+                     title: 'Weight',
+                     desctiption: ['1.0 kg / 2.22lbs'],
+                  },
+               ],
+
+               detailsImg1: 'detailsImg/dawnMTarpGray1.webp',
             },
          },
       },
@@ -261,6 +342,45 @@ export const products = {
                },
             ],
 
+            details: {
+               detailsDesctioption: [
+                  {
+                     title: 'Features',
+                     desctiption: [
+                        '- Waterproof',
+                        '- Several inside pockets',
+                        '- Different carrying options',
+                        '- Scratch-free front pocket',
+                        '- Sustainable - due to Dope Dyed fabrics',
+                     ],
+                  },
+                  {
+                     title: 'Volume',
+                     desctiption: ['approx. 2L'],
+                  },
+                  {
+                     title: 'Material',
+                     desctiption: [
+                        'DYECOSHELL',
+                        '800D x 660D Nylon PU',
+                        'YKK "Water-R" Zipper',
+                     ],
+                  },
+                  {
+                     title: 'Pack size',
+                     desctiption: [
+                        '25.0 x 15.0 x 8.0 cm / 9.84 x 5.91 x 3.15in',
+                     ],
+                  },
+                  {
+                     title: 'Weight',
+                     desctiption: ['0.3 kg / 0.67lbs'],
+                  },
+               ],
+
+               detailsImg1: 'detailsImg/transitLineSlingPocket1.jpeg',
+            },
+
             imgesSection: [
                'transitLineSlingPocket1.webp',
                'transitLineSlingPocket2.jpg',
@@ -269,6 +389,264 @@ export const products = {
                'transitLineSlingPocket5.jpg',
                'transitLineSlingPocket6.webp',
             ],
+         },
+      },
+
+      gears: {
+         hptXMizuCairoGrid750Ml_Silver_white: {
+            mainSection: {
+               title: 'hpt x mizu cairo grid 750 ml, silver, white',
+               type: 'gears',
+               price: '25',
+               src: '/products/hpt-x-mizu-cairo-grid-750-ml-silver-white',
+               description:
+                  'HEIMPLANET has teamed up with Mizu to bring you this 750 ML / 25.4 OZ stainless steel water bottle. A great reusable water bottle with the. HEIMPLANET Cairo Camo pattern print in white on the stainless steel background. It is the perfect companion for any of your travels. It does not matter if you are going to the office or to the mountains.',
+
+               mainImg: [
+                  'mainImg/hptXMizuCairoGrid750Ml_Silver_white1.webp',
+                  'mainImg/hptXMizuCairoGrid750Ml_Silver_white2.webp',
+               ],
+            },
+            details: {
+               detailsDesctioption: [
+                  {
+                     title: 'Weight',
+                     desctiption: ['0.21 kg / 0.47lbs'],
+                  },
+               ],
+
+               detailsImg1:
+                  'detailsImg/hptXMizuCairoGrid750Ml_Silver_white1.webp',
+            },
+         },
+      },
+
+      hpt: {
+         kniveJamesBrandTheElko: {
+            mainSection: {
+               title: 'james brand - the elko',
+               type: 'HPT Selected',
+               price: '65',
+               src: '/products/knive-james-brand-the-elko',
+               description:
+                  'Maximum utility in a minimum package. The Elko is equipped with a fully functional yet compact stainless steel blade and a chisel that doubles as a key ring, bottle opener, screwdriver and chisel - so you are ready for whatever the day throws at you. The slim shape is minimalist, while the functional design ensures it is always ready to use when you need it. Your keys now have a new best friend.',
+               mainImg: [
+                  'mainImg/kniveJamesBrandTheElko1.webp',
+                  'mainImg/kniveJamesBrandTheElko2.webp',
+                  'mainImg/kniveJamesBrandTheElko3.webp',
+                  'mainImg/kniveJamesBrandTheElko4.webp',
+               ],
+            },
+            details: {
+               detailsDesctioption: [
+                  {
+                     title: 'Features',
+                     desctiption: [
+                        'Blade length: 4.4 cm / 1.7 in',
+                        'Handle length: 6.58 cm / 2.7 in',
+                        'Overall length: 4.33 cm / 1.7 in',
+                        'Weight: 50g / 0.11lbs',
+                     ],
+                  },
+
+                  {
+                     title: 'Material',
+                     desctiption: ['Blade steel: Sandvik 12C27'],
+                  },
+                  {
+                     title: 'Weight',
+                     desctiption: ['0.06 kg / 0.13lbs'],
+                  },
+               ],
+
+               detailsImg1:
+                  'detailsImg/hptXMizuCairoGrid750Ml_Silver_white1.webp',
+            },
+         },
+
+         campingHelinoxTacticalChairOne: {
+            mainSection: {
+               title: 'HELINOX - TACTICAL CHAIR ONE',
+               type: 'HPT Selected',
+               price: '119',
+               src: '/products/camping-helinox-tactical-chair-one',
+               description:
+                  'Helinox Tactical Chair One with its foldable, lightweight and practical design offers maximum comfort and convenience wherever you are. It is made of high quality, durable materials that can withstand the rigors of the outdoors. With its clever folding mechanism, the Tactical Chair One can be assembled and disassembled in seconds. With a flick of the wrist, it thus transforms from a compact backpacking trailer into a cozy seat, so there is no need to waste valuable time with tedious assembly.',
+               mainImg: [
+                  'mainImg/campingHelinoxTacticalChairOne1.webp',
+                  'mainImg/campingHelinoxTacticalChairOne2.webp',
+                  'mainImg/campingHelinoxTacticalChairOne3.webp',
+                  'mainImg/campingHelinoxTacticalChairOne4.jpeg',
+                  'mainImg/campingHelinoxTacticalChairOne5.webp',
+                  'mainImg/campingHelinoxTacticalChairOne6.webp',
+                  'mainImg/campingHelinoxTacticalChairOne7.jpeg',
+                  'mainImg/campingHelinoxTacticalChairOne8.webp',
+               ],
+            },
+            details: {
+               detailsDesctioption: [
+                  {
+                     title: 'Dimension',
+                     desctiption: [
+                        'Pack size: 14 x 12 x 47cm (H/W/D)',
+                        'Built up: 98 x 59 x 72cm (H/W/D)',
+                     ],
+                  },
+
+                  {
+                     title: 'Material',
+                     desctiption: ['Durable 600D poly fabric'],
+                  },
+                  {
+                     title: 'Weight',
+                     desctiption: ['1.04 kg / 2.31lbs'],
+                  },
+               ],
+
+               detailsImg1: 'detailsImg/campingHelinoxTacticalChairOne1.webp',
+            },
+         },
+
+         coockingSotoStormbreaker: {
+            mainSection: {
+               title: 'SOTO STORMBREAKER',
+               type: 'HPT Selected',
+               price: '229',
+               src: '/products/cooking-soto-stormbreaker',
+               description:
+                  'The perfect cooker: The SOTO Storm Breaker gas cooker from Soto has the best prerequisites for this. The multiple award-winning multi-fuel cooker from the Japanese specialist burns just as reliably with gas as with liquid fuel. Two connections are supplied for this purpose, which can be mounted on the burner with a bayonet fitting. Gas can be used where available. It burns cleanly, efficiently and odourlessly.',
+               mainImg: [
+                  'mainImg/coockingSotoStormbreaker1.webp',
+                  'mainImg/coockingSotoStormbreaker2.jpeg',
+                  'mainImg/coockingSotoStormbreaker3.webp',
+                  'mainImg/coockingSotoStormbreaker4.jpeg',
+                  'mainImg/coockingSotoStormbreaker5.jpeg',
+                  'mainImg/coockingSotoStormbreaker6.webp',
+               ],
+            },
+            details: {
+               detailsDesctioption: [
+                  {
+                     title: 'Material',
+                     desctiption: ['Stainless steel, aluminum, copper'],
+                  },
+                  {
+                     title: 'Weight',
+                     desctiption: ['0.4 kg / 0.89lbs'],
+                  },
+               ],
+
+               detailsImg1: 'detailsImg/coockingSotoStormbreaker1.webp',
+            },
+         },
+
+         sleepingThermarestNeoairXlite: {
+            mainSection: {
+               title: 'THERMAREST NEOAIR XLITE',
+               type: 'HPT Selected',
+               price: '190',
+               src: '/products/sleeping-thermarest-neoair-xlite',
+               description:
+                  'The Therm-a-Rest NEOAIR XLITE is one of the lightest air mattresses (356g) and convinces with an extremely small pack size - perfect for tours where low weight plays a major role. The NeoAir series convinces with its triangular chambers, which lie on top of each other in two layers with a thickness of 6.4cm.',
+               mainImg: [
+                  'mainImg/sleepingThermarestNeoairXlite1.jpg',
+                  'mainImg/sleepingThermarestNeoairXlite2.jpeg',
+                  'mainImg/sleepingThermarestNeoairXlite3.webp',
+                  'mainImg/sleepingThermarestNeoairXlite4.jpeg',
+               ],
+            },
+            details: {
+               detailsDesctioption: [
+                  {
+                     title: 'Features',
+                     desctiption: [
+                        ' Multiple sizes:',
+                        'Normal: 51 x 183 cm',
+                        'Regular Wide: 63 x 183 cm',
+                        'Large: 63 x 196 cm',
+                        'Pack Size: 23 cm x 9 cm (small) to 28 cm x 12 cm (large)',
+                        '‍Supplied with: sleeping pad, packsack and repair kit.',
+                     ],
+                  },
+                  {
+                     title: 'Material',
+                     desctiption: ['Nylon, Polyurethane'],
+                  },
+                  {
+                     title: 'Weight',
+                     desctiption: ['0.23 kg / 0.51lbs'],
+                  },
+               ],
+
+               detailsImg1: 'detailsImg/sleepingThermarestNeoairXlite1.jpg',
+            },
+         },
+
+         hygieneBasicNatureFirstAidKitStandart: {
+            mainSection: {
+               title: 'BASIC NATURE FIRST AID KIT "STANDARD"',
+               type: 'HPT Selected',
+               price: '13',
+               src: '/products/hygiene-basic-nature-first-aid-kit-standart',
+               description:
+                  'The Standard First Aid Kit by Basic Nature is a must-have for all kinds of outdoor activities to take care of wounds in case of an emergency.',
+               mainImg: [
+                  'mainImg/hygieneBasicNatureFirstAidKitStandart1.webp',
+                  'mainImg/hygieneBasicNatureFirstAidKitStandart2.webp',
+               ],
+            },
+            details: {
+               detailsDesctioption: [
+                  {
+                     title: 'Features',
+                     desctiption: [
+                        'Contents: compresses, gloves, elastic bandage, gauze bandage, adhesive plaster, wound plaster, bandage pack, children is plaster, plaster strips, scissors',
+                        'Size: 15 x 10.5 x 6 cm / 5.9 x 4.17 x 2.36in',
+                        'Weight: 200 g / 0.44lb',
+                     ],
+                  },
+
+                  {
+                     title: 'Weight',
+                     desctiption: ['0.2 kg / 0.44lbs'],
+                  },
+               ],
+
+               detailsImg1:
+                  'detailsImg/hygieneBasicNatureFirstAidKitStandart1.webp',
+            },
+         },
+      },
+
+      giftCard: {
+         card: {
+            mainSection: {
+               title: 'GIFT CARD',
+               type: 'gift card',
+               price: '10',
+               src: '/products/gift-card',
+               description:
+                  'With our gift card you will always make the right choice - whether for a birthday, Christmas, anniversary or just because - with a gift voucher for our online shop you will make every HEIMPLANET fan happy!',
+
+               mainImg: ['mainImg/giftCard1.webp', 'mainImg/giftCard1.webp'],
+            },
+            details: {
+               detailsDesctioption: [
+                  {
+                     title: 'Features',
+                     desctiption: [
+                        'The gift certificate will be sent by email after successful order. The email will contain a link to your personal gift voucher. You can forward the email or the link to the gift voucher to the voucher recipient(s).',
+                        'The voucher code can then simply be copied and pasted into the shopping cart.',
+                     ],
+                  },
+                  {
+                     title: 'Weight',
+                     desctiption: ['0. 0kg / 0.0lbs'],
+                  },
+               ],
+
+               detailsImg1: 'detailsImg/giftCard1.webp',
+            },
          },
       },
    },
@@ -298,5 +676,53 @@ export const productCard = [
       type: 'bags',
       price: '79',
       src: '/products/transit-line-sling-pocket',
+   },
+   {
+      mainImg1: 'mainImg/hptXMizuCairoGrid750Ml_Silver_white2.webp',
+      mainImg2: 'mainImg/hptXMizuCairoGrid750Ml_Silver_white1.webp',
+      title: 'hpt x mizu cairo grid 750 ml, silver, white',
+      type: 'gears',
+      price: '25',
+      src: '/products/hpt-x-mizu-cairo-grid-750-ml-silver-white',
+   },
+   {
+      mainImg1: 'mainImg/kniveJamesBrandTheElko2.webp',
+      mainImg2: 'mainImg/kniveJamesBrandTheElko1.webp',
+      title: 'james brand - the elko',
+      type: 'HPT Selected',
+      price: '65',
+      src: '/products/knive-james-brand-the-elko',
+   },
+   {
+      mainImg1: 'mainImg/campingHelinoxTacticalChairOne2.webp',
+      mainImg2: 'mainImg/campingHelinoxTacticalChairOne1.webp',
+      title: 'HELINOX - TACTICAL CHAIR ONE',
+      type: 'HPT Selected',
+      price: '119',
+      src: '/products/camping-helinox-tactical-chair-one',
+   },
+   {
+      mainImg1: 'mainImg/sleepingThermarestNeoairXlite2.webp',
+      mainImg2: 'mainImg/sleepingThermarestNeoairXlite1.jpg',
+      title: 'THERMAREST NEOAIR XLITE',
+      type: 'HPT Selected',
+      price: '190',
+      src: '/products/sleeping-thermarest-neoair-xlite',
+   },
+   {
+      mainImg1: 'mainImg/hygieneBasicNatureFirstAidKitStandart2.webp',
+      mainImg2: 'mainImg/hygieneBasicNatureFirstAidKitStandart1.webp',
+      title: 'BASIC NATURE FIRST AID KIT "STANDARD"',
+      type: 'HPT Selected',
+      price: '13',
+      src: '/products/hygiene-basic-nature-first-aid-kit-standart',
+   },
+   {
+      mainImg1: 'mainImg/giftCard1.webp',
+      mainImg2: 'mainImg/giftCard1.webp',
+      title: 'GIFT CARD',
+      type: 'gift card',
+      price: '10',
+      src: '/products/gift-card',
    },
 ];

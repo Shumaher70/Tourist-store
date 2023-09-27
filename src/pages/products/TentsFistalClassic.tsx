@@ -20,6 +20,10 @@ import { NavLink } from 'react-router-dom';
 
 import { nanoid } from '@reduxjs/toolkit';
 
+interface SimilarProductProps {
+   children?: React.ReactNode;
+}
+
 const TentsFistalClassic = () => {
    const [bottomElement, setBottomElement] = useState<number>(0);
    const [highLight, setHighLight] = useState(false);
@@ -39,6 +43,38 @@ const TentsFistalClassic = () => {
    const clickHandler = () => {
       window.scrollTo(0, 0);
    };
+
+   const SimilarProduct: React.FC<SimilarProductProps> = ({ children }) => (
+      <section className="wrapper">
+         <div className="w-full flex justify-between items-center">
+            <Typography className="sm:text-4xl text-3xl font-normal">
+               SIMILAR PRODUCTS
+            </Typography>
+            <NavLink className="sm:block hidden" to="/products/fistral-classic">
+               <Button
+                  onClick={clickHandler}
+                  color="gray"
+                  size="lg"
+                  className="
+                  px-5 
+                  py-3 
+                  text-black 
+                  rounded-none 
+                  bg-white 
+                  border-[1px] 
+                  border-black
+                  transition
+                  hover:bg-black
+                  hover:text-white
+               "
+               >
+                  DISCOVER
+               </Button>
+            </NavLink>
+         </div>
+         {children}
+      </section>
+   );
 
    return (
       <>
@@ -78,58 +114,31 @@ const TentsFistalClassic = () => {
             product={products.cotegory.tents.fistalClassic.video}
             videoSectionhandler={videoSectionhandler}
          />
-         <DetailsSection detailsSectionHandler={detailsSectionHandler} />
+         <DetailsSection
+            detailsSectionHandler={detailsSectionHandler}
+            product={products.cotegory.tents.fistalClassic.details}
+         />
+
          <ReviwesSection reviwesSectionHandler={reviwesSectionHandler} />
 
          <ImgesSection
             product={products.cotegory.tents.fistalClassic.imgesSection}
          />
-         {
-            <section className="wrapper">
-               <div className="w-full flex justify-between items-center">
-                  <Typography className="sm:text-4xl text-3xl font-normal">
-                     SIMILAR PRODUCTS
-                  </Typography>
-                  <NavLink
-                     className="sm:block hidden"
-                     to="/products/fistral-classic"
-                  >
-                     <Button
-                        onClick={clickHandler}
-                        color="gray"
-                        size="lg"
-                        className="
-                        px-5 
-                        py-3 
-                        text-black 
-                        rounded-none 
-                        bg-white 
-                        border-[1px] 
-                        border-black
-                        transition
-                        hover:bg-black
-                        hover:text-white
-                     "
-                     >
-                        DISCOVER
-                     </Button>
-                  </NavLink>
-               </div>
-               <div className="w-full flex flex-wrap gap-5">
-                  {productCard.map((item) => (
-                     <ProductCard
-                        key={nanoid()}
-                        img1={item.mainImg2}
-                        img2={item.mainImg1}
-                        title={item.title}
-                        type={item.type}
-                        price={item.price}
-                        src={item.src}
-                     />
-                  ))}
-               </div>
-            </section>
-         }
+         <SimilarProduct>
+            <div className="w-full flex flex-wrap gap-5">
+               {productCard.map((item) => (
+                  <ProductCard
+                     key={nanoid()}
+                     img1={item.mainImg2}
+                     img2={item.mainImg1}
+                     title={item.title}
+                     type={item.type}
+                     price={item.price}
+                     src={item.src}
+                  />
+               ))}
+            </div>
+         </SimilarProduct>
          <MoreSection />
       </>
    );
