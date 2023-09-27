@@ -1,18 +1,24 @@
 import { useState } from 'react';
 import { ProductSectionCart } from '../../components';
+import { products, productCard } from '../../dammyDB/dammyProducts';
 
-import { products } from '../../dammyDB/dammyProducts';
+import {
+   NavProducts,
+   NavProductsNext,
+   HighLightsSection,
+   VideoSection,
+   DetailsSection,
+   ReviwesSection,
+   ImgesSection,
+   MoreSection,
+   ProductCard,
+} from '../../components/product/index';
 
-import NavProducts from '../../components/product/NavProducts';
-import NavProductsNext from '../../components/product//NavProductsNext';
+import { Button, Typography } from '@material-tailwind/react';
 
-import HighLightsSection from '../../components/product/HighLightsSection';
-import VideoSection from '../../components/product/VideoSection';
-import DetailsSection from '../../components/product/DetailsSection';
-import ReviwesSection from '../../components/product/ReviwesSection';
-import ImgaesSection from '../../components/product/ImgaesSection';
-import SimilarProductSection from '../../components/product/SimilarProductSection';
-import MoreSection from '../../components/product/MoreSection';
+import { NavLink } from 'react-router-dom';
+
+import { nanoid } from '@reduxjs/toolkit';
 
 const TentsFistalClassic = () => {
    const [bottomElement, setBottomElement] = useState<number>(0);
@@ -28,6 +34,10 @@ const TentsFistalClassic = () => {
 
    const elementBotton = (element: number) => {
       setBottomElement(element - 65);
+   };
+
+   const clickHandler = () => {
+      window.scrollTo(0, 0);
    };
 
    return (
@@ -71,10 +81,55 @@ const TentsFistalClassic = () => {
          <DetailsSection detailsSectionHandler={detailsSectionHandler} />
          <ReviwesSection reviwesSectionHandler={reviwesSectionHandler} />
 
-         <ImgaesSection
+         <ImgesSection
             product={products.cotegory.tents.fistalClassic.imgesSection}
          />
-         <SimilarProductSection />
+         {
+            <section className="wrapper">
+               <div className="w-full flex justify-between items-center">
+                  <Typography className="sm:text-4xl text-3xl font-normal">
+                     SIMILAR PRODUCTS
+                  </Typography>
+                  <NavLink
+                     className="sm:block hidden"
+                     to="/products/fistral-classic"
+                  >
+                     <Button
+                        onClick={clickHandler}
+                        color="gray"
+                        size="lg"
+                        className="
+                        px-5 
+                        py-3 
+                        text-black 
+                        rounded-none 
+                        bg-white 
+                        border-[1px] 
+                        border-black
+                        transition
+                        hover:bg-black
+                        hover:text-white
+                     "
+                     >
+                        DISCOVER
+                     </Button>
+                  </NavLink>
+               </div>
+               <div className="w-full flex flex-wrap gap-5">
+                  {productCard.map((item) => (
+                     <ProductCard
+                        key={nanoid()}
+                        img1={item.mainImg2}
+                        img2={item.mainImg1}
+                        title={item.title}
+                        type={item.type}
+                        price={item.price}
+                        src={item.src}
+                     />
+                  ))}
+               </div>
+            </section>
+         }
          <MoreSection />
       </>
    );

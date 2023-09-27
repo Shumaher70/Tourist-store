@@ -30,10 +30,10 @@ const ProductCard: React.FC<productCardProps> = ({
    return (
       <div
          onClick={clickHandler}
-         className="md:max-w-[350px]' flex flex-wrap md:justify-between justify-center gap-5 my-5"
+         className="md:max-w-[350px] flex flex-wrap md:justify-between justify-center gap-5 my-5"
       >
          <NavLink to={src}>
-            <Card className="rounded-none cursor-pointer">
+            <Card className="rounded-none cursor-pointer shadow-none">
                <div className="md:max-w-[350px] w-full ">
                   <img
                      src={require(`../../dammyDB/${img1}`)}
