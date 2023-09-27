@@ -319,45 +319,55 @@ const Filter = ({
             </div>
          )}
          {Object.entries({ ...productCart }).length > 0 ? (
-            productCart?.map((productCart: any) => {
-               return (
-                  <div
-                     key={nanoid()}
-                     className="flex flex-wrap md:justify-between justify-center gap-5 my-5"
-                  >
-                     <NavLink to={String(productCart?.src)}>
-                        <Card className="rounded-none cursor-pointer">
-                           <div className="md:max-w-[350px] w-full ">
-                              <img
-                                 src={require(`../dammyDB/${productCart?.mainImg2}`)}
-                                 alt="tent"
-                                 className="brightness-[95%]"
-                              />
-                              <img
-                                 className="absolute top-0 opacity-0 hover:opacity-100 transition-all brightness-[95%]"
-                                 src={require(`../dammyDB/${productCart?.mainImg1}`)}
-                                 alt="tent"
-                              />
-                           </div>
-                           <CardBody className="pb-0">
-                              <Typography
-                                 variant="h5"
-                                 className="uppercase text-black"
-                              >
-                                 {productCart?.title}
-                              </Typography>
-                           </CardBody>
-                           <CardFooter className="flex justify-between capitalize  py-2">
-                              <Typography>{productCart?.type}</Typography>
-                              <Typography className="text-black border-b-[1px] border-black">
-                                 € {productCart?.price}, 00
-                              </Typography>
-                           </CardFooter>
-                        </Card>
-                     </NavLink>
-                  </div>
-               );
-            })
+            <div className="flex flex-wrap gap-5">
+               {productCart?.map((productCart: any) => {
+                  return (
+                     <div
+                        key={nanoid()}
+                        className="flex flex-wrap md:justify-between justify-center gap-5 my-5"
+                     >
+                        <NavLink to={String(productCart?.src)}>
+                           <Card
+                              className="
+                              md:max-w-[350px] 
+                              w-full 
+                              rounded-none 
+                              cursor-pointer
+                              shadow-none
+                           "
+                           >
+                              <div className="relative md:max-w-[350px] w-full ">
+                                 <img
+                                    src={require(`../dammyDB/${productCart?.mainImg2}`)}
+                                    alt="tent"
+                                    className="brightness-[95%]"
+                                 />
+                                 <img
+                                    className="absolute top-0 opacity-0 hover:opacity-100 transition-all brightness-[95%]"
+                                    src={require(`../dammyDB/${productCart?.mainImg1}`)}
+                                    alt="tent"
+                                 />
+                              </div>
+                              <CardBody className="pb-0 pt-2 px-0">
+                                 <Typography
+                                    variant="h5"
+                                    className="uppercase text-black"
+                                 >
+                                    {productCart?.title}
+                                 </Typography>
+                              </CardBody>
+                              <CardFooter className="flex justify-between capitalize py-2 px-0">
+                                 <Typography>{productCart?.type}</Typography>
+                                 <Typography className="text-black border-b-[1px] border-black">
+                                    € {productCart?.price}, 00
+                                 </Typography>
+                              </CardFooter>
+                           </Card>
+                        </NavLink>
+                     </div>
+                  );
+               })}
+            </div>
          ) : (
             <div className="w-full flex justify-center py-[5%]">
                <Typography className="italic sm:text-2xl text-1xl">

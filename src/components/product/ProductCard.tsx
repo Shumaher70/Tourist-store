@@ -30,7 +30,7 @@ const ProductCard: React.FC<productCardProps> = ({
    return (
       <div
          onClick={clickHandler}
-         className="flex flex-wrap md:justify-between justify-center gap-5 my-5"
+         className="md:max-w-[350px]' flex flex-wrap md:justify-between justify-center gap-5 my-5"
       >
          <NavLink to={src}>
             <Card className="rounded-none cursor-pointer">
@@ -46,12 +46,12 @@ const ProductCard: React.FC<productCardProps> = ({
                      alt="tent"
                   />
                </div>
-               <CardBody className="pb-0">
+               <CardBody className="pb-0 px-0 pt-2">
                   <Typography variant="h5" className="uppercase text-black">
                      {title}
                   </Typography>
                </CardBody>
-               <CardFooter className="flex justify-between capitalize  py-2">
+               <CardFooter className="flex justify-between capitalize py-2 px-0">
                   <Typography>{type}</Typography>
                   <Typography className="text-black border-b-[1px] border-black">
                      € {price}, 00
