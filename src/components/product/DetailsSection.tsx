@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Typography } from '@material-tailwind/react';
 import { useInView } from 'react-intersection-observer';
 import { nanoid } from '@reduxjs/toolkit';
@@ -11,8 +11,8 @@ interface detailsSectionProps {
          title: string;
          desctiption: string[] | JSX.Element[];
       }[];
-      detailsImg1: string;
-      detailsImg2: string;
+      detailsImg1?: string;
+      detailsImg2?: string;
    };
 }
 
@@ -59,15 +59,15 @@ const DetailsSection: React.FC<detailsSectionProps> = ({
          <div className="flex lg:flex-row flex-col">
             <div className="flex-1">
                <div
-                  className={`
-                     width-full 
+                  className="
+                     w-full 
                      p-5
                    bg-white
                      border-[1px]
                    border-black/10 py-5
                      mt-5
                      overflow-hidden
-                  `}
+                  "
                >
                   {children && children}
 
@@ -84,7 +84,7 @@ const DetailsSection: React.FC<detailsSectionProps> = ({
                                  {item.title}
                               </Typography>
                            </div>
-                           <div className="flex-1 flex items-center">
+                           <div className="flex-1 flex flex-col">
                               {item.desctiption.map((item) => (
                                  <Typography key={nanoid()}>{item}</Typography>
                               ))}
@@ -108,19 +108,19 @@ const DetailsSection: React.FC<detailsSectionProps> = ({
                            <button
                               onClick={clickHandler}
                               className="
-									border-[1px]
-									border-black
-									bg-transparent
-									rounded-none
-								text-black
-								hover:bg-black
-								hover:text-white
-								hover:border-white
-									py-4
-									px-5
-									text-sm
-									transition
-									"
+                                 border-[1px]
+                               border-black
+                                 bg-transparent
+                                 rounded-none
+                               text-black
+                               hover:bg-black
+                               hover:text-white
+                               hover:border-white
+                                 py-4
+                                 px-5
+                                 text-sm
+                                 transition
+									   "
                            >
                               {labelButton()}
                            </button>
@@ -141,17 +141,16 @@ const DetailsSection: React.FC<detailsSectionProps> = ({
             >
                {trigger && (
                   <img
-                     className="brightness-95"
+                     className="brightness-95 2xl:w-[600px] lg:w-full md:w-[450px]"
                      src={require(`../../dammyDB/${product.detailsImg1}`)}
                      alt="outside"
                   />
                )}
-
                {!trigger && (
                   <img
-                     className=" brightness-95"
+                     className="brightness-95 2xl:w-[600px] lg:w-full md:w-[450px]"
                      src={require(`../../dammyDB/${product.detailsImg2}`)}
-                     alt="outside"
+                     alt="inside"
                   />
                )}
                {product.detailsImg2 && (
@@ -168,11 +167,16 @@ const DetailsSection: React.FC<detailsSectionProps> = ({
                      </button>
                      <button
                         onClick={clickInsideHandler}
-                        className={`${
-                           trigger
-                              ? 'bg-white text-black'
-                              : 'bg-black text-white'
-                        } m-2 py-3 px-5`}
+                        className={`
+                           ${
+                              trigger
+                                 ? 'bg-white text-black'
+                                 : 'bg-black text-white'
+                           } 
+                           m-2 
+                           py-3 
+                           px-5
+                        `}
                      >
                         GROUND
                      </button>

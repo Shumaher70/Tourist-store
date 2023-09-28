@@ -248,11 +248,17 @@ const ProductSectionCart = ({
                            key={nanoid()}
                            data-initial_slide={img}
                            draggable="false"
+                           className="w-full h-[50vh]"
                         >
                            <img
                               src={require(`../../dammyDB/${img}`)}
                               alt={img}
-                              className="brightness-[.95] cursor-pointer"
+                              className="brightness-[.95] 
+                              cursor-pointer 
+                              w-full 
+                              h-full
+                              object-cover
+                           "
                            />
                         </div>
                      );

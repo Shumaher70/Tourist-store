@@ -68,6 +68,8 @@ const Zelte = () => {
       }
    };
 
+   const tentsFilter = productCard.filter((item) => item.type === 'tents');
+
    return (
       <>
          <TemplatePage
@@ -81,7 +83,7 @@ const Zelte = () => {
             buttonStyle="bg-black text-white"
          />
          <Filter
-            productCart={productCard}
+            productCart={tentsFilter}
             activityProps={true}
             checkboxActivity={[
                {

@@ -23,11 +23,24 @@ interface HighLightSectionProps {
    };
 
    highLightsSectionHandler: (event: boolean) => void;
+
+   pin0?: string;
+   pin1?: string;
+   pin2?: string;
+   pin3?: string;
+   pin4?: string;
+   pin5?: string;
 }
 
 const HighLightsSection = ({
    product,
    highLightsSectionHandler,
+   pin0,
+   pin1,
+   pin2,
+   pin3,
+   pin4,
+   pin5,
 }: HighLightSectionProps) => {
    const [showCarousel, setShowCarousel] = useState<{ [key: string]: boolean }>(
       {
@@ -200,83 +213,95 @@ const HighLightsSection = ({
                className="brightness-95"
             />
 
-            <div
-               onClick={() => handleCarouselClick(4)}
-               className="cursor-pointer absolute bsolute flex justify-center items-center sm:w-10 sm:h-10 w-6 h-6 bg-[#ffffff7c] border-[1px] border-[#b1b1b1] rounded-full md:top-[138px] md:left-[62px] sm:top-[168px] sm:left-[108px] 2xl:top-[213px] 2xl:left-[124px] top-[89px] left-[42px]"
-               data-index="4"
-            >
-               <PingElement />
+            {pin4 && (
                <div
-                  className={`absolute sm:w-3 sm:h-3 w-1.5 h-1.5 rounded-full ${
-                     showCarousel.index4 ? 'bg-white' : 'bg-black'
-                  }`}
-               />
-            </div>
+                  onClick={() => handleCarouselClick(4)}
+                  className={`cursor-pointer absolute bsolute flex justify-center items-center sm:w-10 sm:h-10 w-6 h-6 bg-[#ffffff7c] border-[1px] border-[#b1b1b1] rounded-full ${pin4}`}
+                  data-index="4"
+               >
+                  <PingElement />
+                  <div
+                     className={`absolute sm:w-3 sm:h-3 w-1.5 h-1.5 rounded-full ${
+                        showCarousel.index4 ? 'bg-white' : 'bg-black'
+                     }`}
+                  />
+               </div>
+            )}
 
-            <div
-               onClick={() => handleCarouselClick(1)}
-               className={`cursor-pointer absolute flex justify-center items-center sm:w-10 sm:h-10 w-6 h-6 bg-[#ffffff7c] border-[1px] border-[#b1b1b1] rounded-full  md:top-[243px] md:left-[10px] sm:top-[327px] sm:left-[38px] 2xl:top-[381px] 2xl:left-[60px] top-[158px] left-[19px]`}
-               data-index="1"
-            >
-               <PingElement />
+            {pin1 && (
                <div
-                  className={`absolute sm:w-3 sm:h-3 w-1.5 h-1.5 rounded-full ${
-                     showCarousel.index1 ? 'bg-white' : 'bg-black'
-                  }`}
-               />
-            </div>
+                  onClick={() => handleCarouselClick(1)}
+                  className={`cursor-pointer absolute flex justify-center items-center sm:w-10 sm:h-10 w-6 h-6 bg-[#ffffff7c] border-[1px] border-[#b1b1b1] rounded-full  ${pin1}`}
+                  data-index="1"
+               >
+                  <PingElement />
+                  <div
+                     className={`absolute sm:w-3 sm:h-3 w-1.5 h-1.5 rounded-full ${
+                        showCarousel.index1 ? 'bg-white' : 'bg-black'
+                     }`}
+                  />
+               </div>
+            )}
 
-            <div
-               onClick={() => handleCarouselClick(3)}
-               className={`cursor-pointer absolute flex justify-center items-center sm:w-10 sm:h-10 w-6 h-6 bg-[#ffffff7c] border-[1px] border-[#b1b1b1] rounded-full  md:top-[195px] md:left-[202px] sm:top-[260px] sm:left-[249px] 2xl:top-[317px] 2xl:left-[316px] top-[122px] left-[116px]`}
-               data-index="3"
-            >
-               <PingElement />
+            {pin3 && (
                <div
-                  className={`absolute sm:w-3 sm:h-3 w-1.5 h-1.5 rounded-full ${
-                     showCarousel.index3 ? 'bg-white' : 'bg-black'
-                  }`}
-               />
-            </div>
+                  onClick={() => handleCarouselClick(3)}
+                  className={`cursor-pointer absolute flex justify-center items-center sm:w-10 sm:h-10 w-6 h-6 bg-[#ffffff7c] border-[1px] border-[#b1b1b1] rounded-full ${pin3}`}
+                  data-index="3"
+               >
+                  <PingElement />
+                  <div
+                     className={`absolute sm:w-3 sm:h-3 w-1.5 h-1.5 rounded-full ${
+                        showCarousel.index3 ? 'bg-white' : 'bg-black'
+                     }`}
+                  />
+               </div>
+            )}
 
-            <div
-               onClick={() => handleCarouselClick(0)}
-               className={`cursor-pointer absolute flex justify-center items-center sm:w-10 sm:h-10 w-6 h-6 bg-[#ffffff7c] border-[1px] border-[#b1b1b1] rounded-full  md:top-[247px] md:left-[261px] sm:top-[312px] sm:left-[326px] 2xl:top-[368px] 2xl:left-[396px] top-[152px] left-[151px]`}
-               data-index="0"
-            >
-               <PingElement />
+            {pin0 && (
                <div
-                  className={`absolute sm:w-3 sm:h-3 w-1.5 h-1.5 rounded-full ${
-                     showCarousel.index0 ? 'bg-white' : 'bg-black'
-                  }`}
-               />
-            </div>
+                  onClick={() => handleCarouselClick(0)}
+                  className={`cursor-pointer absolute flex justify-center items-center sm:w-10 sm:h-10 w-6 h-6 bg-[#ffffff7c] border-[1px] border-[#b1b1b1] rounded-full  ${pin0}`}
+                  data-index="0"
+               >
+                  <PingElement />
+                  <div
+                     className={`absolute sm:w-3 sm:h-3 w-1.5 h-1.5 rounded-full ${
+                        showCarousel.index0 ? 'bg-white' : 'bg-black'
+                     }`}
+                  />
+               </div>
+            )}
 
-            <div
-               onClick={() => handleCarouselClick(5)}
-               className={`cursor-pointer absolute flex justify-center items-center sm:w-10 sm:h-10 w-6 h-6 bg-[#ffffff7c] border-[1px] border-[#b1b1b1] rounded-full  md:top-[238px] md:left-[353px] sm:top-[306px] sm:left-[449px] 2xl:top-[360px] 2xl:left-[507px] top-[152px] left-[224px]`}
-               data-index="5"
-            >
-               <PingElement />
+            {pin5 && (
                <div
-                  className={`absolute sm:w-3 sm:h-3 w-1.5 h-1.5 rounded-full ${
-                     showCarousel.index5 ? 'bg-white' : 'bg-black'
-                  }`}
-               />
-            </div>
+                  onClick={() => handleCarouselClick(5)}
+                  className={`cursor-pointer absolute flex justify-center items-center sm:w-10 sm:h-10 w-6 h-6 bg-[#ffffff7c] border-[1px] border-[#b1b1b1] rounded-full ${pin5}`}
+                  data-index="5"
+               >
+                  <PingElement />
+                  <div
+                     className={`absolute sm:w-3 sm:h-3 w-1.5 h-1.5 rounded-full ${
+                        showCarousel.index5 ? 'bg-white' : 'bg-black'
+                     }`}
+                  />
+               </div>
+            )}
 
-            <div
-               onClick={() => handleCarouselClick(2)}
-               className={`cursor-pointer absolute flex justify-center items-center sm:w-10 sm:h-10 w-6 h-6 bg-[#ffffff7c] border-[1px] border-[#b1b1b1] rounded-full  md:top-[105px] md:left-[257px] sm:top-[124px] sm:left-[303px] 2xl:top-[159px] 2xl:left-[376px] top-[59px] left-[148px]`}
-               data-index="2"
-            >
-               <PingElement />
+            {pin2 && (
                <div
-                  className={`absolute sm:w-3 sm:h-3 w-1.5 h-1.5 rounded-full ${
-                     showCarousel.index2 ? 'bg-white' : 'bg-black'
-                  }`}
-               />
-            </div>
+                  onClick={() => handleCarouselClick(2)}
+                  className={`cursor-pointer absolute flex justify-center items-center sm:w-10 sm:h-10 w-6 h-6 bg-[#ffffff7c] border-[1px] border-[#b1b1b1] rounded-full ${pin2}`}
+                  data-index="2"
+               >
+                  <PingElement />
+                  <div
+                     className={`absolute sm:w-3 sm:h-3 w-1.5 h-1.5 rounded-full ${
+                        showCarousel.index2 ? 'bg-white' : 'bg-black'
+                     }`}
+                  />
+               </div>
+            )}
          </div>
 
          {window.innerWidth < 1024 && (
@@ -318,7 +343,7 @@ const HighLightsSection = ({
                                     <img
                                        src={require(`../../dammyDB/${item.img}`)}
                                        alt={item.img}
-                                       className="object-cover w-full h-full"
+                                       className="object-cover md:w-[500px] md:min-h-[300px] sm:w-[400px] sm:min-h-[250px] w-[300px] h-[200px]"
                                        draggable={false}
                                     />
                                  </div>

@@ -24,7 +24,7 @@ interface SimilarProductProps {
    children?: React.ReactNode;
 }
 
-const TentsFistalClassic = () => {
+const BagsTransitLineSlingPocket = () => {
    const [bottomElement, setBottomElement] = useState<number>(0);
    const [highLight, setHighLight] = useState(false);
    const [videos, setVideos] = useState(false);
@@ -50,7 +50,10 @@ const TentsFistalClassic = () => {
             <Typography className="sm:text-4xl text-3xl font-normal">
                SIMILAR PRODUCTS
             </Typography>
-            <NavLink className="sm:block hidden" to="/products/fistral-classic">
+            <NavLink
+               className="sm:block hidden"
+               to="/products/transit-line-sling-pocket"
+            >
                <Button
                   onClick={clickHandler}
                   color="gray"
@@ -85,80 +88,84 @@ const TentsFistalClassic = () => {
                   link: '/',
                },
                {
-                  title: 'Tents',
+                  title: 'Bags',
                   link: '/collections/zelte',
                },
                {
-                  title: 'Fistral, classic',
-                  link: '/products/fistral-classic',
+                  title: 'Transit Line Sling Pocket, castlerock',
+                  link: '/products/transit-line-sling-pocket',
                },
             ]}
          />
          <ProductSectionCart
             elementBotton={elementBotton}
-            product={products.cotegory.tents.fistalClassic.mainSection}
+            product={products.cotegory.bags.transitLineSlingPocket.mainSection}
          />
          <NavProductsNext
             beforeBottmElement={bottomElement}
-            product={products.cotegory.tents.fistalClassic.mainSection}
+            product={products.cotegory.bags.transitLineSlingPocket.mainSection}
             highLight={highLight}
             videos={videos}
             details={details}
             review={review}
          />
          <HighLightsSection
-            product={products.cotegory.tents.fistalClassic.maketSection}
+            product={products.cotegory.bags.transitLineSlingPocket.maketSection}
             highLightsSectionHandler={highLightsSectionHandler}
             pin0="
-               md:top-[247px] md:left-[261px] 
-               sm:top-[312px] sm:left-[326px] 
-               2xl:top-[368px] 2xl:left-[396px] 
-               top-[152px] left-[151px]
+            2xl:top-[370px] 2xl:left-[273px] 
+            xl:top-[271px] xl:left-[200px]
+            lg:top-[232px] lg:left-[166px]
+            md:top-[240px] md:left-[162px] 
+            sm:top-[321px] sm:left-[215px] 
+            top-[155px] left-[113px]
             "
             pin1="
-               md:top-[243px] md:left-[10px] 
-               sm:top-[327px] sm:left-[38px] 
-               2xl:top-[381px] 2xl:left-[60px] 
-               top-[158px] left-[19px]
+            2xl:top-[278px] 2xl:left-[271px] 
+            xl:top-[190px] xl:left-[196px]
+            lg:top-[166px] lg:left-[166px]
+            md:top-[178px] md:left-[161px] 
+            sm:top-[228px] sm:left-[215px] 
+            top-[111px] left-[113px]
             "
             pin2="
-               md:top-[105px] md:left-[257px] 
-               sm:top-[124px] sm:left-[303px] 
-               2xl:top-[159px] 2xl:left-[376px] 
-               top-[59px] left-[148px]
+            2xl:top-[368px] 2xl:left-[414px] 
+            xl:top-[271px] xl:left-[289px]
+            lg:top-[231px] lg:left-[250px]
+            md:top-[243px] md:left-[268px] 
+            sm:top-[321px] sm:left-[345px] 
+            top-[155px] left-[172px]
             "
             pin3="
-               md:top-[195px] md:left-[202px] 
-               sm:top-[260px] sm:left-[249px] 
-               2xl:top-[317px] 2xl:left-[316px] 
-               top-[122px] left-[116px]
-            "
+            2xl:top-[303px] 2xl:left-[102px] 
+            xl:top-[204px] xl:left-[60px]
+            lg:top-[182px] lg:left-[49px]
+            md:top-[204px] md:left-[54px] 
+            sm:top-[263px] sm:left-[73px] 
+            top-[125px] left-[37px]
+         "
             pin4="
-               md:top-[138px] md:left-[62px] 
-               sm:top-[168px] sm:left-[108px] 
-               2xl:top-[213px] 2xl:left-[124px] 
-               top-[89px] left-[42px]
-            "
-            pin5="
-              md:top-[238px] md:left-[353px] 
-              sm:top-[306px] sm:left-[449px] 
-              2xl:top-[360px] 2xl:left-[507px] 
-              top-[152px] left-[224px]
-            "
+            2xl:top-[285px] 2xl:left-[457px] 
+            xl:top-[199px] xl:left-[318px]
+            lg:top-[186px] lg:left-[291px]
+            md:top-[200px] md:left-[299px] 
+            sm:top-[263px] sm:left-[399px] 
+            top-[125px] left-[189px]
+         "
          />
          <VideoSection
-            product={products.cotegory.tents.fistalClassic.video}
+            product={products.cotegory.bags.transitLineSlingPocket.video}
             videoSectionhandler={videoSectionhandler}
          />
          <DetailsSection
             detailsSectionHandler={detailsSectionHandler}
-            product={products.cotegory.tents.fistalClassic.details}
+            product={products.cotegory.bags.transitLineSlingPocket.details}
          />
 
          <ReviwesSection reviwesSectionHandler={reviwesSectionHandler} />
 
          <ImgesSection
-            product={products.cotegory.tents.fistalClassic.imgesSection}
+            product={products.cotegory.bags.transitLineSlingPocket.imgesSection}
          />
          <SimilarProduct>
             <div className="w-full flex flex-wrap gap-5">
@@ -185,4 +192,4 @@ const TentsFistalClassic = () => {
    );
 };
 
-export default TentsFistalClassic;
+export default BagsTransitLineSlingPocket;

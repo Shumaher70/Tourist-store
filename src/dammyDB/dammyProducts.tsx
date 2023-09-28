@@ -224,7 +224,7 @@ export const products = {
                         'At the Cord Loop Edge, which runs along the edge of the tarp, you can attach anything that comes to mind. The tarp is stable enough to mount lamps or hang clothes and towels to dry.',
                   },
                   {
-                     img: 'maketImg/dawnMTarpGray4.jpg',
+                     img: 'maketImg/dawnMTarpGray4.webp',
                      title: 'ORGANIZATION',
                      description:
                         'In each of the corners of the tarp is a small compartment with Velcro. Here you can easily store the guy lines if you do not need them. We recommend to stow the guy lines in the respective corners especially before packing the tarp. This saves a lot of time during the next setup, because you do not have to untangle the lines first.',
@@ -292,7 +292,7 @@ export const products = {
 
                maket: [
                   {
-                     img: 'maketImg/transitLineSlingPocket1.jpg',
+                     img: 'maketImg/transitLineSlingPocket1.webp',
                      title: 'DYECOSHELL™',
                      description:
                         'Our main fabric - called is a dope-dyed nylon yarn construction with excellent abrasion resistance and color fastness. Dope-dyed fabrics use a fraction of the water, CO2, energy and chemicals of conventional fabrics. This replaces the most environmentally damaging process in textile production - dyeing.',
@@ -316,7 +316,7 @@ export const products = {
                         'The strap is removable at both ends. So you can adjust the strap depending on which shoulder you usually want to wear the bag. Reminder: who wants in addition to the normal belt still the ',
                   },
                   {
-                     img: 'maketImg/fistalClassic5.webp',
+                     img: 'maketImg/transitLineSlingPocket5.jpg',
                      title: 'ALUMINUM HARDWARE',
                      description:
                         'All connectors of the bag are made of individual aluminum pieces. They are durable and provide a good feel.',
@@ -326,7 +326,7 @@ export const products = {
 
             video: [
                {
-                  videoImg: 'videoImg/transitLineSlingPocket1.jpg',
+                  videoImg: 'videoImg/transitLineSlingPocket1.webp',
                   video: 'https://www.youtube.com/embed/E2PZyJHHOUs',
                   description: 'USER VIDEO - Pack Hacker (V1)',
                },
@@ -378,15 +378,15 @@ export const products = {
                   },
                ],
 
-               detailsImg1: 'detailsImg/transitLineSlingPocket1.jpeg',
+               detailsImg1: 'detailsImg/transitLineSlingPocket1.jpg',
             },
 
             imgesSection: [
                'transitLineSlingPocket1.webp',
-               'transitLineSlingPocket2.jpg',
+               'transitLineSlingPocket2.webp',
                'transitLineSlingPocket3.webp',
                'transitLineSlingPocket4.webp',
-               'transitLineSlingPocket5.jpg',
+               'transitLineSlingPocket5.webp',
                'transitLineSlingPocket6.webp',
             ],
          },

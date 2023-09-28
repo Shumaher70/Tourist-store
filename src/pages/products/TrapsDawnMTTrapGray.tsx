@@ -6,10 +6,8 @@ import {
    NavProducts,
    NavProductsNext,
    HighLightsSection,
-   VideoSection,
    DetailsSection,
    ReviwesSection,
-   ImgesSection,
    MoreSection,
    ProductCard,
 } from '../../components/product/index';
@@ -24,15 +22,13 @@ interface SimilarProductProps {
    children?: React.ReactNode;
 }
 
-const TentsFistalClassic = () => {
+const TrapsDawnMTTrapGray = () => {
    const [bottomElement, setBottomElement] = useState<number>(0);
    const [highLight, setHighLight] = useState(false);
-   const [videos, setVideos] = useState(false);
    const [details, setDetails] = useState(false);
    const [review, setReview] = useState(false);
 
    const highLightsSectionHandler = (event: boolean) => setHighLight(event);
-   const videoSectionhandler = (event: boolean) => setVideos(event);
    const detailsSectionHandler = (event: boolean) => setDetails(event);
    const reviwesSectionHandler = (event: boolean) => setReview(event);
 
@@ -50,7 +46,10 @@ const TentsFistalClassic = () => {
             <Typography className="sm:text-4xl text-3xl font-normal">
                SIMILAR PRODUCTS
             </Typography>
-            <NavLink className="sm:block hidden" to="/products/fistral-classic">
+            <NavLink
+               className="sm:block hidden"
+               to="/products/dawn-m-tarp-grey"
+            >
                <Button
                   onClick={clickHandler}
                   color="gray"
@@ -85,99 +84,82 @@ const TentsFistalClassic = () => {
                   link: '/',
                },
                {
-                  title: 'Tents',
-                  link: '/collections/zelte',
+                  title: 'Traps',
+                  link: '/collections/tarps',
                },
                {
-                  title: 'Fistral, classic',
-                  link: '/products/fistral-classic',
+                  title: 'Dawn M Tarp, grey',
+                  link: '/products/dawn-m-tarp-grey',
                },
             ]}
          />
          <ProductSectionCart
             elementBotton={elementBotton}
-            product={products.cotegory.tents.fistalClassic.mainSection}
+            product={products.cotegory.tarps.dawnMTarpGray.mainSection}
          />
          <NavProductsNext
             beforeBottmElement={bottomElement}
-            product={products.cotegory.tents.fistalClassic.mainSection}
+            product={products.cotegory.tarps.dawnMTarpGray.mainSection}
             highLight={highLight}
-            videos={videos}
             details={details}
             review={review}
          />
          <HighLightsSection
-            product={products.cotegory.tents.fistalClassic.maketSection}
+            product={products.cotegory.tarps.dawnMTarpGray.maketSection}
             highLightsSectionHandler={highLightsSectionHandler}
             pin0="
-               md:top-[247px] md:left-[261px] 
-               sm:top-[312px] sm:left-[326px] 
-               2xl:top-[368px] 2xl:left-[396px] 
-               top-[152px] left-[151px]
-            "
+               2xl:top-[330px] 2xl:left-[321px] 
+               xl:top-[237px] xl:left-[256px]
+               lg:top-[194px] lg:left-[207px]
+               md:top-[207px] md:left-[216px] 
+               sm:top-[282px] sm:left-[290px] 
+               top-[139px] left-[140px]
+               "
             pin1="
-               md:top-[243px] md:left-[10px] 
-               sm:top-[327px] sm:left-[38px] 
-               2xl:top-[381px] 2xl:left-[60px] 
-               top-[158px] left-[19px]
-            "
+               2xl:top-[387px] 2xl:left-[182px] 
+               xl:top-[280px] xl:left-[128px]
+               lg:top-[236px] lg:left-[105px]
+               md:top-[253px] md:left-[116px] 
+               sm:top-[327px] sm:left-[150px] 
+               top-[158px] left-[71px]
+               "
             pin2="
-               md:top-[105px] md:left-[257px] 
-               sm:top-[124px] sm:left-[303px] 
-               2xl:top-[159px] 2xl:left-[376px] 
-               top-[59px] left-[148px]
-            "
+               2xl:top-[100px] 2xl:left-[388px] 
+               xl:top-[69px] xl:left-[267px]
+               lg:top-[54px] lg:left-[241px]
+               md:top-[55px] md:left-[257px] 
+               sm:top-[87px] sm:left-[323px] 
+               top-[41px] left-[157px]
+               "
             pin3="
-               md:top-[195px] md:left-[202px] 
-               sm:top-[260px] sm:left-[249px] 
-               2xl:top-[317px] 2xl:left-[316px] 
-               top-[122px] left-[116px]
+               2xl:top-[223px] 2xl:left-[197px] 
+               xl:top-[183px] xl:left-[153px]
+               lg:top-[153px] lg:left-[130px]
+               md:top-[158px] md:left-[133px] 
+               sm:top-[219px] sm:left-[184px] 
+               top-[104px] left-[87px]
             "
-            pin4="
-               md:top-[138px] md:left-[62px] 
-               sm:top-[168px] sm:left-[108px] 
-               2xl:top-[213px] 2xl:left-[124px] 
-               top-[89px] left-[42px]
-            "
-            pin5="
-              md:top-[238px] md:left-[353px] 
-              sm:top-[306px] sm:left-[449px] 
-              2xl:top-[360px] 2xl:left-[507px] 
-              top-[152px] left-[224px]
-            "
-         />
-         <VideoSection
-            product={products.cotegory.tents.fistalClassic.video}
-            videoSectionhandler={videoSectionhandler}
          />
          <DetailsSection
             detailsSectionHandler={detailsSectionHandler}
-            product={products.cotegory.tents.fistalClassic.details}
+            product={products.cotegory.tarps.dawnMTarpGray.details}
          />
 
          <ReviwesSection reviwesSectionHandler={reviwesSectionHandler} />
 
-         <ImgesSection
-            product={products.cotegory.tents.fistalClassic.imgesSection}
-         />
          <SimilarProduct>
             <div className="w-full flex flex-wrap gap-5">
-               {productCard
-                  .filter(
-                     (item) =>
-                        item.type !== 'tents' && item.type !== 'gift card'
-                  )
-                  .map((item) => (
-                     <ProductCard
-                        key={nanoid()}
-                        img1={item.mainImg2}
-                        img2={item.mainImg1}
-                        title={item.title}
-                        type={item.type}
-                        price={item.price}
-                        src={item.src}
-                     />
-                  ))}
+               {[productCard[2]].map((item) => (
+                  <ProductCard
+                     key={nanoid()}
+                     img1={item.mainImg2}
+                     img2={item.mainImg1}
+                     title={item.title}
+                     type={item.type}
+                     price={item.price}
+                     src={item.src}
+                  />
+               ))}
             </div>
          </SimilarProduct>
          <MoreSection />
@@ -185,4 +167,4 @@ const TentsFistalClassic = () => {
    );
 };
 
-export default TentsFistalClassic;
+export default TrapsDawnMTTrapGray;
