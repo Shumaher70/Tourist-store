@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { Button, Typography } from '@material-tailwind/react';
 
+import AnchorLink from '../components/AnchorLink';
+
 interface TamplatePageProps {
    title?: string;
    description?: string;
@@ -16,6 +18,7 @@ interface TamplatePageProps {
    extraButtonTitle?: string;
    extraButtonStyle?: string;
    scrollRefTop?: (element: number) => void;
+   id?: string;
 }
 
 const TemplatePage = ({
@@ -31,6 +34,7 @@ const TemplatePage = ({
    extraButtonTitle,
    extraButtonStyle,
    scrollRefTop,
+   id,
 }: TamplatePageProps) => {
    const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -73,13 +77,15 @@ const TemplatePage = ({
                   </Typography>
                </div>
                <div className="flex mt-5">
-                  <Button
-                     className={`sm:w-auto  rounded-none w-full ${
-                        buttonStyle ? buttonStyle : ''
-                     }`}
-                  >
-                     <Typography> {buttonTitle}</Typography>
-                  </Button>
+                  <AnchorLink href={`#${id}`}>
+                     <Button
+                        className={`sm:w-auto  rounded-none w-full ${
+                           buttonStyle ? buttonStyle : ''
+                        }`}
+                     >
+                        <Typography> {buttonTitle}</Typography>
+                     </Button>
+                  </AnchorLink>
                   {extraBtn && (
                      <Button
                         className={`sm:w-auto rounded-none w-full ml-2 ${extraButtonStyle}`}

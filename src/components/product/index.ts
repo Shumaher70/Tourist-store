@@ -8,6 +8,7 @@ import ProductCard from './ProductCard';
 import ProductSectionCart from './ProductSectionCart';
 import ReviwesSection from './ReviwesSection';
 import VideoSection from './VideoSection';
+import SimilarProduct from './SimilarProduct';
 
 export {
    DetailsSection,
@@ -20,4 +21,5 @@ export {
    ProductSectionCart,
    ReviwesSection,
    VideoSection,
+   SimilarProduct,
 };

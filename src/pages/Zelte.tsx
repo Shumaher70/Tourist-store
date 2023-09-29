@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store';
+import { useCallback, useState } from 'react';
 import Filter from '../components/Filter';
 
 import {
@@ -17,11 +18,13 @@ import {
    season3,
    season4,
 } from '../store/redusers/filterReduser';
+
 import { productCard } from '../dammyDB/dammyProducts';
 import TemplatePage from './TemplatePage';
 
 const Zelte = () => {
    const dispatch = useDispatch();
+   const [id, setId] = useState('');
 
    const filterSlice = useSelector((state: RootState) => state.filter);
    const handleChecked = (event: string) => {
@@ -70,6 +73,10 @@ const Zelte = () => {
 
    const tentsFilter = productCard.filter((item) => item.type === 'tents');
 
+   const idHandler = useCallback((id: string) => {
+      setId(id);
+   }, []);
+
    return (
       <>
          <TemplatePage
@@ -81,8 +88,10 @@ const Zelte = () => {
             img="zelteMineImg.webp"
             buttonTitle="descover now"
             buttonStyle="bg-black text-white"
+            id={id}
          />
          <Filter
+            id={idHandler}
             productCart={tentsFilter}
             activityProps={true}
             checkboxActivity={[

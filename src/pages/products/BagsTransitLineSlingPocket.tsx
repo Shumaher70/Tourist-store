@@ -12,17 +12,10 @@ import {
    ImgesSection,
    MoreSection,
    ProductCard,
+   SimilarProduct,
 } from '../../components/product/index';
 
-import { Button, Typography } from '@material-tailwind/react';
-
-import { NavLink } from 'react-router-dom';
-
 import { nanoid } from '@reduxjs/toolkit';
-
-interface SimilarProductProps {
-   children?: React.ReactNode;
-}
 
 const BagsTransitLineSlingPocket = () => {
    const [bottomElement, setBottomElement] = useState<number>(0);
@@ -39,45 +32,6 @@ const BagsTransitLineSlingPocket = () => {
    const elementBotton = (element: number) => {
       setBottomElement(element - 65);
    };
-
-   const clickHandler = () => {
-      window.scrollTo(0, 0);
-   };
-
-   const SimilarProduct: React.FC<SimilarProductProps> = ({ children }) => (
-      <section className="wrapper">
-         <div className="w-full flex justify-between items-center">
-            <Typography className="sm:text-4xl text-3xl font-normal">
-               SIMILAR PRODUCTS
-            </Typography>
-            <NavLink
-               className="sm:block hidden"
-               to="/products/transit-line-sling-pocket"
-            >
-               <Button
-                  onClick={clickHandler}
-                  color="gray"
-                  size="lg"
-                  className="
-                  px-5 
-                  py-3 
-                  text-black 
-                  rounded-none 
-                  bg-white 
-                  border-[1px] 
-                  border-black
-                  transition
-                  hover:bg-black
-                  hover:text-white
-               "
-               >
-                  DISCOVER
-               </Button>
-            </NavLink>
-         </div>
-         {children}
-      </section>
-   );
 
    return (
       <>
@@ -167,7 +121,9 @@ const BagsTransitLineSlingPocket = () => {
          <ImgesSection
             product={products.cotegory.bags.transitLineSlingPocket.imgesSection}
          />
-         <SimilarProduct>
+         <SimilarProduct
+            src={products.cotegory.bags.transitLineSlingPocket.mainSection.src}
+         >
             <div className="w-full flex flex-wrap gap-5">
                {productCard
                   .filter(

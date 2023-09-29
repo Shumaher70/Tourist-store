@@ -50,6 +50,11 @@ import {
 } from './pages/index';
 import TrapsDawnMTTrapGray from './pages/products/TrapsDawnMTTrapGray';
 import BagsTransitLineSlingPocket from './pages/products/BagsTransitLineSlingPocket';
+import GearHptXMizuCairoGrid750MlSilverWhite from './pages/products/GearHptXMizuCairoGrid750MlSilverWhite';
+import HptKniveJamesBrandTheElko from './pages/products/HptKniveJamesBrandTheElko';
+import HptHelinoxTacticalChairOne from './pages/products/HptHelinoxTacticalChairOne';
+import HptSleepingThermarestNeoairXlite from './pages/products/HptSleepingThermarestNeoairXlite';
+import HpthygieneBasicNatureFirstAidKitStandart from './pages/products/HpthygieneBasicNatureFirstAidKitStandart';
 
 const App = () => {
    return (
@@ -199,6 +204,26 @@ const App = () => {
                <Route
                   path="/products/transit-line-sling-pocket"
                   element={<BagsTransitLineSlingPocket />}
+               />
+               <Route
+                  path="/products/hpt-x-mizu-cairo-grid-750-ml-silver-white"
+                  element={<GearHptXMizuCairoGrid750MlSilverWhite />}
+               />
+               <Route
+                  path="/products/knive-james-brand-the-elko"
+                  element={<HptKniveJamesBrandTheElko />}
+               />
+               <Route
+                  path="/products/camping-helinox-tactical-chair-one"
+                  element={<HptHelinoxTacticalChairOne />}
+               />
+               <Route
+                  path="/products/sleeping-thermarest-neoair-xlite"
+                  element={<HptSleepingThermarestNeoairXlite />}
+               />
+               <Route
+                  path="/products/hygiene-basic-nature-first-aid-kit-standart"
+                  element={<HpthygieneBasicNatureFirstAidKitStandart />}
                />
             </Routes>
          </div>

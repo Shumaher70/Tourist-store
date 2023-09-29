@@ -44,7 +44,6 @@ import {
    motionSeries,
    transitLine,
 } from '../store/redusers/filterReduser';
-import { productCard } from '../dammyDB/dammyProducts';
 import TemplatePage from './TemplatePage';
 
 const AllProducts = () => {

@@ -3,8 +3,8 @@ import { RootState } from '../store';
 import Filter from '../components/Filter';
 import { hygiene, knivesEquipment } from '../store/redusers/filterReduser';
 
-import { productCard } from '../dammyDB/dammyProducts';
 import TemplatePage from './TemplatePage';
+import { productCard } from '../dammyDB/dammyProducts';
 
 const HygienePage = () => {
    const dispatch = useDispatch();
@@ -22,6 +22,10 @@ const HygienePage = () => {
       }
    };
 
+   const hygieneFilter = productCard.filter((item) =>
+      item.src.includes('hygiene')
+   );
+
    return (
       <>
          <TemplatePage
@@ -31,6 +35,7 @@ const HygienePage = () => {
             buttonStyle="bg-black text-white"
          />
          <Filter
+            productCart={hygieneFilter}
             typeProps={true}
             checkboxType={[
                {

@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
    Typography,
    Checkbox,
@@ -45,6 +45,7 @@ interface FilterProps {
    }[];
    checkedHandler?: (event: string) => any;
    productCart?: object[];
+   id?: (id: string) => void;
 }
 
 function Icon({ open }: IconProps) {
@@ -79,6 +80,7 @@ const Filter = ({
    checkboxBrend,
    checkedHandler,
    productCart,
+   id,
 }: FilterProps) => {
    const [activity, setActivity] = React.useState<boolean>(false);
    const [type, setType] = React.useState<boolean>(false);
@@ -87,7 +89,13 @@ const Filter = ({
    const [brand, setBrand] = React.useState<boolean>(false);
    const [width, setWidth] = React.useState(false);
    const sizeSlice = useSelector((state: RootState) => state.size.widthNav);
-   React.useEffect(() => {
+   const idRef = useRef<HTMLDivElement>(null);
+
+   useEffect(() => {
+      id?.(idRef.current?.getAttribute('id')!);
+   }, [id]);
+
+   useEffect(() => {
       Number(sizeSlice) > 768 ? setWidth(true) : setWidth(false);
    }, [sizeSlice]);
 
@@ -128,7 +136,11 @@ const Filter = ({
    };
 
    return (
-      <div className="px-[10%] py-[1%] border-y-[1px] border-[rgba(133,133,133,.2)] overflow-hidden">
+      <div
+         ref={idRef}
+         id="tents"
+         className="px-[10%] py-[1%] border-y-[1px] border-[rgba(133,133,133,.2)] overflow-hidden"
+      >
          {width && (
             <div className="flex justify-between items-center border-b-[1px]">
                <div className="flex">

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Typography } from '@material-tailwind/react';
 import { useInView } from 'react-intersection-observer';
 import { nanoid } from '@reduxjs/toolkit';
