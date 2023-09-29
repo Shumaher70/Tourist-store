@@ -21,8 +21,10 @@ import {
 } from '../store/redusers/filterReduser';
 import TemplatePage from './TemplatePage';
 import { productCard } from '../dammyDB/dammyProducts';
+import { useCallback, useState } from 'react';
 const CarryeEssentials = () => {
    const dispatch = useDispatch();
+   const [id, setId] = useState('');
    const filterSlice = useSelector((state: RootState) => state.filter);
 
    const handleChecked = (event: string) => {
@@ -80,9 +82,14 @@ const CarryeEssentials = () => {
 
    const bagsFilter = productCard.filter((item) => item.type === 'bags');
 
+   const idHandler = useCallback((id: string) => {
+      setId(id);
+   }, []);
+
    return (
       <>
          <TemplatePage
+            id={id}
             title="BAGS"
             description="
         Are you going on a trip or away for the weekend? Our bags and
@@ -94,6 +101,7 @@ const CarryeEssentials = () => {
             buttonStyle="bg-black text-white"
          />
          <Filter
+            id={idHandler}
             productCart={bagsFilter}
             activityProps={true}
             checkboxActivity={[

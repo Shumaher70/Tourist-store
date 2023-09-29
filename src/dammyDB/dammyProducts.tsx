@@ -517,10 +517,10 @@ export const products = {
                   'The perfect cooker: The SOTO Storm Breaker gas cooker from Soto has the best prerequisites for this. The multiple award-winning multi-fuel cooker from the Japanese specialist burns just as reliably with gas as with liquid fuel. Two connections are supplied for this purpose, which can be mounted on the burner with a bayonet fitting. Gas can be used where available. It burns cleanly, efficiently and odourlessly.',
                mainImg: [
                   'mainImg/coockingSotoStormbreaker1.webp',
-                  'mainImg/coockingSotoStormbreaker2.jpeg',
+                  'mainImg/coockingSotoStormbreaker2.jpg',
                   'mainImg/coockingSotoStormbreaker3.webp',
-                  'mainImg/coockingSotoStormbreaker4.jpeg',
-                  'mainImg/coockingSotoStormbreaker5.jpeg',
+                  'mainImg/coockingSotoStormbreaker4.jpg',
+                  'mainImg/coockingSotoStormbreaker5.jpg',
                   'mainImg/coockingSotoStormbreaker6.webp',
                ],
             },
@@ -708,6 +708,14 @@ export const productCard = [
       type: 'HPT Selected',
       price: '190',
       src: '/products/sleeping-thermarest-neoair-xlite',
+   },
+   {
+      mainImg1: 'mainImg/coockingSotoStormbreaker2.jpg',
+      mainImg2: 'mainImg/coockingSotoStormbreaker1.webp',
+      title: 'SOTO STORMBREAKER',
+      type: 'HPT Selected',
+      price: '229',
+      src: '/products/cooking-soto-stormbreaker',
    },
    {
       mainImg1: 'mainImg/hygieneBasicNatureFirstAidKitStandart2.webp',

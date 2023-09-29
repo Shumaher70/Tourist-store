@@ -79,7 +79,7 @@ const DetailsSection: React.FC<detailsSectionProps> = ({
                               index > 3 ? `${open ? 'flex' : 'hidden'}` : ''
                            } flex sm:flex-row flex-col border-b-[1px] border-black/10 py-5`}
                         >
-                           <div className="flex-1 flex items-center">
+                           <div className="flex-1 flex">
                               <Typography className="font-bold">
                                  {item.title}
                               </Typography>

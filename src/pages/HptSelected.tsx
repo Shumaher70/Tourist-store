@@ -19,9 +19,12 @@ import {
 } from '../store/redusers/filterReduser';
 import TemplatePage from './TemplatePage';
 import { productCard } from '../dammyDB/dammyProducts';
+import { useCallback, useState } from 'react';
 
 const HptSelected = () => {
    const dispatch = useDispatch();
+
+   const [id, setId] = useState('');
 
    const filterSlice = useSelector((state: RootState) => state.filter);
 
@@ -73,9 +76,14 @@ const HptSelected = () => {
       item.type.includes('HPT')
    );
 
+   const idHandler = useCallback((id: string) => {
+      setId(id);
+   }, []);
+
    return (
       <>
          <TemplatePage
+            id={id}
             title="HPT SELECTED"
             description="
         While traveling, we were often inspired to create new products
@@ -88,6 +96,7 @@ const HptSelected = () => {
          />
 
          <Filter
+            id={idHandler}
             productCart={hptTypeFilter}
             typeProps={true}
             checkboxType={[

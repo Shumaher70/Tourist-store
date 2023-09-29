@@ -61,7 +61,7 @@ const TemplatePage = ({
             style={{
                marginTop: `${sizeSlice}px`,
             }}
-            className="flex flex-col sm:flex-row  justify-between gap-5 px-[10%] py-[3%] bg-gray-100"
+            className="flex flex-col sm:flex-row justify-between gap-5 px-[10%] py-[3%] bg-gray-100"
          >
             <div className="flex flex-col justify-between flex-1 w-full">
                <div>
@@ -77,7 +77,17 @@ const TemplatePage = ({
                   </Typography>
                </div>
                <div className="flex mt-5">
-                  <AnchorLink href={`#${id}`}>
+                  {id ? (
+                     <AnchorLink href={`#${id}`}>
+                        <Button
+                           className={`sm:w-auto  rounded-none w-full ${
+                              buttonStyle ? buttonStyle : ''
+                           }`}
+                        >
+                           <Typography> {buttonTitle}</Typography>
+                        </Button>
+                     </AnchorLink>
+                  ) : (
                      <Button
                         className={`sm:w-auto  rounded-none w-full ${
                            buttonStyle ? buttonStyle : ''
@@ -85,7 +95,7 @@ const TemplatePage = ({
                      >
                         <Typography> {buttonTitle}</Typography>
                      </Button>
-                  </AnchorLink>
+                  )}
                   {extraBtn && (
                      <Button
                         className={`sm:w-auto rounded-none w-full ml-2 ${extraButtonStyle}`}

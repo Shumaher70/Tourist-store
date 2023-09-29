@@ -9,9 +9,11 @@ import {
 
 import TemplatePage from './TemplatePage';
 import { productCard } from '../dammyDB/dammyProducts';
+import { useCallback, useState } from 'react';
 
 const KnivesPage = () => {
    const dispatch = useDispatch();
+   const [id, setId] = useState('');
 
    const filterSlice = useSelector((state: RootState) => state.filter);
    const handleChecked = (event: string) => {
@@ -33,15 +35,21 @@ const KnivesPage = () => {
       item.src.includes('knive')
    );
 
+   const idHandler = useCallback((id: string) => {
+      setId(id);
+   }, []);
+
    return (
       <>
          <TemplatePage
+            id={id}
             title="KNIVES & EQUIPMENT"
             img="KnivesPageImg.webp"
             buttonTitle="descover products"
             buttonStyle="bg-black text-white"
          />
          <Filter
+            id={idHandler}
             productCart={KnivesFilter}
             typeProps={true}
             checkboxType={[

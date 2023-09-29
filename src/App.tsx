@@ -47,6 +47,8 @@ import {
    SleepingPage,
    HygienePage,
    TentsFistalClassic,
+   ProjectePage,
+   AmbassadorsPage,
 } from './pages/index';
 import TrapsDawnMTTrapGray from './pages/products/TrapsDawnMTTrapGray';
 import BagsTransitLineSlingPocket from './pages/products/BagsTransitLineSlingPocket';
@@ -55,6 +57,8 @@ import HptKniveJamesBrandTheElko from './pages/products/HptKniveJamesBrandTheElk
 import HptHelinoxTacticalChairOne from './pages/products/HptHelinoxTacticalChairOne';
 import HptSleepingThermarestNeoairXlite from './pages/products/HptSleepingThermarestNeoairXlite';
 import HpthygieneBasicNatureFirstAidKitStandart from './pages/products/HpthygieneBasicNatureFirstAidKitStandart';
+import GiftCard from './pages/products/GiftCard';
+import HptSotoStormbreaker from './pages/products/HptSotoStormbreaker';
 
 const App = () => {
    return (
@@ -66,6 +70,7 @@ const App = () => {
                <Route path="/" element={<Main />} />
 
                <Route path="/pages" element={<PageMissed />} />
+               <Route path="/pages/blog" element={<ContributionsPage />} />
                <Route path="/pages/shopfinder" element={<ShopFinderPage />} />
                <Route
                   path="/pages/collab-maharishi-the-cave"
@@ -96,6 +101,7 @@ const App = () => {
                   element={<FootherRevocationPage />}
                />
                <Route path="/pages/register" element={<RegisterPage />} />
+               <Route path="/pages/ambassador" element={<AmbassadorsPage />} />
 
                <Route path="/collections" element={<Colections />} />
                <Route path="/collections/zelte" element={<Zelte />} />
@@ -148,6 +154,7 @@ const App = () => {
                   path="/blogs/collabs"
                   element={<MagazineSectionProductCallabsPage />}
                />
+               <Route path="/blogs/projekte" element={<ProjectePage />} />
                <Route
                   path="/blogs/projekte/lebenslanger-support-garantie"
                   element={<LifetimeGuaranteePage />}
@@ -225,6 +232,11 @@ const App = () => {
                   path="/products/hygiene-basic-nature-first-aid-kit-standart"
                   element={<HpthygieneBasicNatureFirstAidKitStandart />}
                />
+               <Route
+                  path="/products/cooking-soto-stormbreaker"
+                  element={<HptSotoStormbreaker />}
+               />
+               <Route path="/products/gift-card" element={<GiftCard />} />
             </Routes>
          </div>
          <Footer />

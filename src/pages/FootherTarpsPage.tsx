@@ -13,9 +13,11 @@ import {
 } from '../store/redusers/filterReduser';
 import TemplatePage from './TemplatePage';
 import { productCard } from '../dammyDB/dammyProducts';
+import { useCallback, useState } from 'react';
 
 const FootherTarps = () => {
    const dispatch = useDispatch();
+   const [id, setId] = useState('');
 
    const filterSlice = useSelector((state: RootState) => state.filter);
 
@@ -48,9 +50,14 @@ const FootherTarps = () => {
 
    const tarpsFilter = productCard.filter((item) => item.type === 'tarps');
 
+   const idHandler = useCallback((id: string) => {
+      setId(id);
+   }, []);
+
    return (
       <>
          <TemplatePage
+            id={id}
             title="TARPS"
             description="Whenever you set up camp in nature, a tarp can be x. Tarps offer many possibilities to create additional protected areas when bikepacking or trekking tours, camping trips or even traveling with a caravan. They extend your tent with a covered area in front of the entrance, offering protection from rain or sun. They even give you the option to leave your tent at home - if you want to travel ultralight."
             buttonTitle="DISCOVER PRODUCTS"
@@ -58,6 +65,7 @@ const FootherTarps = () => {
             img="footherTarpsPageImg.webp"
          />
          <Filter
+            id={idHandler}
             productCart={tarpsFilter}
             typeProps={true}
             checkboxType={[

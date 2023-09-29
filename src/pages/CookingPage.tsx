@@ -4,9 +4,12 @@ import Filter from '../components/Filter';
 import { cooking, knivesEquipment } from '../store/redusers/filterReduser';
 
 import TemplatePage from './TemplatePage';
+import { useCallback, useState } from 'react';
+import { productCard } from '../dammyDB/dammyProducts';
 
 const CookingPage = () => {
    const dispatch = useDispatch();
+   const [id, setId] = useState('');
 
    const filterSlice = useSelector((state: RootState) => state.filter);
    const handleChecked = (event: string) => {
@@ -21,9 +24,18 @@ const CookingPage = () => {
       }
    };
 
+   const cookingFilter = productCard.filter((item) =>
+      item.src.includes('cooking')
+   );
+
+   const idHandler = useCallback((id: string) => {
+      setId(id);
+   }, []);
+
    return (
       <>
          <TemplatePage
+            id={id}
             title="COOKING"
             description="If you are looking for quality camping cooking equipment, then you heve come to the right place. Our assortment includes a wide range of premium products that will elevate your camping kitchen experience to a new level."
             img="CookingPageImg.webp"
@@ -31,6 +43,8 @@ const CookingPage = () => {
             buttonStyle="bg-black text-white"
          />
          <Filter
+            productCart={cookingFilter}
+            id={idHandler}
             typeProps={true}
             checkboxType={[
                {

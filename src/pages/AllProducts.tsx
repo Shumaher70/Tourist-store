@@ -45,9 +45,12 @@ import {
    transitLine,
 } from '../store/redusers/filterReduser';
 import TemplatePage from './TemplatePage';
+import { useCallback, useState } from 'react';
+import { productCard } from '../dammyDB/dammyProducts';
 
 const AllProducts = () => {
    const dispatch = useDispatch();
+   const [id, setId] = useState('');
 
    const filterSlice = useSelector((state: RootState) => state.filter);
 
@@ -179,15 +182,22 @@ const AllProducts = () => {
       }
    };
 
+   const idHandler = useCallback((id: string) => {
+      setId(id);
+   }, []);
+
    return (
       <>
          <TemplatePage
+            id={id}
             title="ALL PRODUCTS"
             img="zelteMineImg.webp"
             buttonTitle="descover now"
             buttonStyle="bg-black text-white"
          />
          <Filter
+            id={idHandler}
+            productCart={productCard}
             activityProps={true}
             checkboxActivity={[
                {
