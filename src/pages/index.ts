@@ -46,6 +46,7 @@ import NavProducts from '../components/product/NavProducts';
 import ProjectePage from './ProjectePage';
 import AmbassadorsPage from './AmbassadorsPage';
 import MagazineNavBlogMavericksTour from './MagazineNavBlogMavericksTour';
+import MagazineNavBlogPilgrimageInEasternTibet from './MagazineNavBlogPilgrimageInEasternTibet';
 
 export {
    Colections,
@@ -96,4 +97,5 @@ export {
    ProjectePage,
    AmbassadorsPage,
    MagazineNavBlogMavericksTour,
+   MagazineNavBlogPilgrimageInEasternTibet,
 };

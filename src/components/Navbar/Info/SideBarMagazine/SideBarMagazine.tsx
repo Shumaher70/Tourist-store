@@ -65,9 +65,11 @@ const SideBarMagazine = () => {
                </NavLink>
             </li>
             <li>
-               <ListItem className="cursor-pointer p-1 pl-[12px] text-[0.7rem]">
-                  BLOG: PILGRIMAGE IN EASTERN TIBET
-               </ListItem>
+               <NavLink to="/blogs/abenteuer/auf-pilgerreise-in-osttibet">
+                  <ListItem className="cursor-pointer p-1 pl-[12px] text-[0.7rem]">
+                     BLOG: PILGRIMAGE IN EASTERN TIBET
+                  </ListItem>
+               </NavLink>
             </li>
          </ul>
       </Card>

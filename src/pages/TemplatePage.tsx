@@ -66,12 +66,23 @@ const TemplatePage = ({
             <div className="flex flex-col justify-between flex-1">
                <div className="w-full">
                   <Typography
-                     className={` break-all text-black sm:py-5 py-2 w-full sm:text-7xl text-3xl border-y-[1px] border-black font-medium ${
-                        titleStyle ? titleStyle : ''
-                     }`}
+                     className={`
+                        text-black 
+                        xl:py-5 
+                        py-2 
+                        w-full 
+                        xl:sm:text-7xl 
+                        lg:text-5xl 
+                        md:text-4xl 
+                        sm:text-4xl 
+                        text-3xl
+                        border-y-[1px] 
+                        border-black 
+                        font-medium ${titleStyle && titleStyle}`}
                   >
-                     {title}
+                     {title ? title : ''}
                   </Typography>
+
                   <Typography className={`text-black mt-2 ${descriptionStyle}`}>
                      {description ? description : ''}
                   </Typography>
@@ -81,19 +92,24 @@ const TemplatePage = ({
                      <AnchorLink href={`#${id}`}>
                         <Button
                            className={`sm:w-auto  rounded-none w-full ${
-                              buttonStyle ? buttonStyle : ''
+                              buttonStyle && buttonStyle
                            }`}
                         >
-                           <Typography> {buttonTitle}</Typography>
+                           <Typography>
+                              {buttonTitle ? buttonTitle : ''}
+                           </Typography>
                         </Button>
                      </AnchorLink>
                   ) : (
                      <Button
                         className={`sm:w-auto  rounded-none w-full ${
-                           buttonStyle ? buttonStyle : ''
+                           buttonStyle && buttonStyle
                         }`}
                      >
-                        <Typography> {buttonTitle}</Typography>
+                        <Typography>
+                           {' '}
+                           {buttonTitle ? buttonTitle : ''}
+                        </Typography>
                      </Button>
                   )}
                   {extraBtn && (
@@ -107,7 +123,12 @@ const TemplatePage = ({
             </div>
             <div className="flex flex-1 sm:min-h-[80vh]">
                <img
-                  className={`h-full w-full object-cover brightness-10 ${imgStyle}`}
+                  className={`
+                     h-full 
+                     w-full 
+                     object-cover 
+                     brightness-10 ${imgStyle}
+                  `}
                   src={`${
                      img ? require(`./img/${img}`) : require('./img/error.jpg')
                   }`}

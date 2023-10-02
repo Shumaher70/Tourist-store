@@ -50,6 +50,7 @@ import {
    ProjectePage,
    AmbassadorsPage,
    MagazineNavBlogMavericksTour,
+   MagazineNavBlogPilgrimageInEasternTibet,
 } from './pages/index';
 import TrapsDawnMTTrapGray from './pages/products/TrapsDawnMTTrapGray';
 import BagsTransitLineSlingPocket from './pages/products/BagsTransitLineSlingPocket';
@@ -195,6 +196,10 @@ const App = () => {
                <Route
                   path="/blogs/abenteuer/mavericks-eishockey-tour"
                   element={<MagazineNavBlogMavericksTour />}
+               />
+               <Route
+                  path="/blogs/abenteuer/auf-pilgerreise-in-osttibet"
+                  element={<MagazineNavBlogPilgrimageInEasternTibet />}
                />
                <Route
                   path="/blogs/unternehmen/pressekontakt"
