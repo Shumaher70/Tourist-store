@@ -49,6 +49,7 @@ import {
    TentsFistalClassic,
    ProjectePage,
    AmbassadorsPage,
+   MagazineNavBlogMavericksTour,
 } from './pages/index';
 import TrapsDawnMTTrapGray from './pages/products/TrapsDawnMTTrapGray';
 import BagsTransitLineSlingPocket from './pages/products/BagsTransitLineSlingPocket';
@@ -190,6 +191,10 @@ const App = () => {
                <Route
                   path="/blogs/abenteuer/camping-in-deutschland"
                   element={<ContributionsCampingPage />}
+               />
+               <Route
+                  path="/blogs/abenteuer/mavericks-eishockey-tour"
+                  element={<MagazineNavBlogMavericksTour />}
                />
                <Route
                   path="/blogs/unternehmen/pressekontakt"

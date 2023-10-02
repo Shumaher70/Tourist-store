@@ -49,15 +49,20 @@ const SideBarMagazine = () => {
                   </ListItem>
                </NavLink>
             </li>
+
             <li>
-               <ListItem className="cursor-pointer rounded-none mt-5 p-1 pl-[12px] text-[0.7rem]">
-                  BLOG: LIGHTWEIGHT LUGGAGE
-               </ListItem>
+               <NavLink to="/blogs/abenteuer/sup-abenteuer-direkt-vor-der-haustur">
+                  <ListItem className="cursor-pointer rounded-none mt-5 p-1 pl-[12px] text-[0.7rem]">
+                     BLOG: LIGHTWEIGHT LUGGAGE
+                  </ListItem>
+               </NavLink>
             </li>
             <li>
-               <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
-                  BLOG: MAVERICKS TOUR
-               </ListItem>
+               <NavLink to="/blogs/abenteuer/mavericks-eishockey-tour">
+                  <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
+                     BLOG: MAVERICKS TOUR
+                  </ListItem>
+               </NavLink>
             </li>
             <li>
                <ListItem className="cursor-pointer p-1 pl-[12px] text-[0.7rem]">

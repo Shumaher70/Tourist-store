@@ -45,6 +45,7 @@ import TentsFistalClassic from './products/TentsFistalClassic';
 import NavProducts from '../components/product/NavProducts';
 import ProjectePage from './ProjectePage';
 import AmbassadorsPage from './AmbassadorsPage';
+import MagazineNavBlogMavericksTour from './MagazineNavBlogMavericksTour';
 
 export {
    Colections,
@@ -94,4 +95,5 @@ export {
    NavProducts,
    ProjectePage,
    AmbassadorsPage,
+   MagazineNavBlogMavericksTour,
 };
