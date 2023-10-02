@@ -74,8 +74,8 @@ const TemplateMagazineCarousel = (): JSX.Element => {
             Filter by categories
          </Typography>
          {dammyTamplateMagazineCarousele.map((item) => (
-            <NavLink to={item.src}>
-               <div key={nanoid()} className="flex flex-col w-full h-full">
+            <NavLink key={nanoid()} to={item.src}>
+               <div className="flex flex-col w-full h-full">
                   <div className="w-full h-full">
                      <img
                         className="cursor-pointer relative brightness-[.7] object-cove w-full h-full"

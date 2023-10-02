@@ -1,6 +1,5 @@
 import { Typography } from '@material-tailwind/react';
 import TemplatePage from './TemplatePage';
-import ContributionsCampingPage from './ContributionsCampingPage';
 import ContribuionsCardWrapper from './ContribuionsCardWrapper';
 import ContributionsCard from './ContributionsCard';
 
@@ -13,8 +12,12 @@ const MagazineNavBlogMavericksTour = () => {
             buttonTitle="LEARN MORE"
             buttonStyle="bg-black text-white"
             img="MagazineNavBlogMavericksTourMainImg.webp"
+            id="mavericks"
          />
-         <div className="wrapper w-screen flex flex-col items-center ">
+         <div
+            id="mavericks"
+            className="wrapper w-screen flex flex-col items-center "
+         >
             <div
                className="
                2xl:w-[40vw] 

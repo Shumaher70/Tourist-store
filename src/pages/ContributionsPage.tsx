@@ -12,6 +12,7 @@ const ContributionsPage = () => {
             img="ContributionsPageImg.jpg"
             buttonTitle="To the article"
             buttonStyle="bg-black text-white"
+            src="/blogs/collabs/maharishi-x-heimplanet-the-cave"
          />
          <TemplateMagazineCarousel />
 

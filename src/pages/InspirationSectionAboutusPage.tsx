@@ -89,6 +89,9 @@ const InspirationSectionAboutusPage = () => {
             extraButton={true}
             extraButtonStyle="border-[1px] border-black bg-white text-black hover:bg-black hover:text-white"
             extraButtonTitle="jobs"
+            id="mission"
+            extraBtnId="job"
+            offsetAnchorLinkExtraBtn={180}
          />
          <div
             style={
@@ -307,7 +310,7 @@ const InspirationSectionAboutusPage = () => {
             </div>
          </div>
 
-         <div className="px-[10%] py-[5%] w-full">
+         <div id="job" className="px-[10%] py-[5%] w-full">
             <div className="flex justify-between">
                <Typography className="font-normal sm:text-4xl text-2xl">
                   CAREER & JOBS

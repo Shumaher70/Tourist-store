@@ -4,6 +4,7 @@ import { RootState } from '../store';
 import { Button, Typography } from '@material-tailwind/react';
 
 import AnchorLink from '../components/AnchorLink';
+import { NavLink } from 'react-router-dom';
 
 interface TamplatePageProps {
    title?: string;
@@ -19,6 +20,10 @@ interface TamplatePageProps {
    extraButtonStyle?: string;
    scrollRefTop?: (element: number) => void;
    id?: string;
+   src?: string;
+   extraBtnId?: string;
+   offsetAnchorLinkMianBtn?: number;
+   offsetAnchorLinkExtraBtn?: number;
 }
 
 const TemplatePage = ({
@@ -35,6 +40,10 @@ const TemplatePage = ({
    extraButtonStyle,
    scrollRefTop,
    id,
+   src,
+   extraBtnId,
+   offsetAnchorLinkMianBtn = 70,
+   offsetAnchorLinkExtraBtn = 70,
 }: TamplatePageProps) => {
    const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -55,6 +64,7 @@ const TemplatePage = ({
       });
    }, [scrollRefTop]);
 
+   console.log(src);
    return (
       <div ref={scrollRef} className="flex flex-col">
          <div
@@ -88,8 +98,11 @@ const TemplatePage = ({
                   </Typography>
                </div>
                <div className="flex mt-5">
-                  {id ? (
-                     <AnchorLink href={`#${id}`}>
+                  {id && (
+                     <AnchorLink
+                        href={`#${id}`}
+                        offset={offsetAnchorLinkMianBtn}
+                     >
                         <Button
                            className={`sm:w-auto  rounded-none w-full ${
                               buttonStyle && buttonStyle
@@ -100,24 +113,47 @@ const TemplatePage = ({
                            </Typography>
                         </Button>
                      </AnchorLink>
-                  ) : (
-                     <Button
-                        className={`sm:w-auto  rounded-none w-full ${
-                           buttonStyle && buttonStyle
-                        }`}
-                     >
-                        <Typography>
-                           {' '}
-                           {buttonTitle ? buttonTitle : ''}
-                        </Typography>
-                     </Button>
                   )}
-                  {extraBtn && (
-                     <Button
-                        className={`sm:w-auto rounded-none w-full ml-2 ${extraButtonStyle}`}
-                     >
-                        <Typography>{extraButtonTitle}</Typography>
-                     </Button>
+                  {!id && (
+                     <NavLink to={src ? src : '#'}>
+                        <Button
+                           className={`sm:w-auto  rounded-none w-full ${
+                              buttonStyle && buttonStyle
+                           }`}
+                        >
+                           <Typography>
+                              {buttonTitle ? buttonTitle : ''}
+                           </Typography>
+                        </Button>
+                     </NavLink>
+                  )}
+
+                  {extraBtn && id && (
+                     <NavLink to={src ? src : '#'}>
+                        <AnchorLink
+                           href={`#${extraBtnId}`}
+                           offset={offsetAnchorLinkExtraBtn}
+                        >
+                           <Button
+                              className={`sm:w-auto rounded-none w-full ml-2 ${extraButtonStyle}`}
+                           >
+                              <Typography>
+                                 {extraButtonTitle ? extraButtonTitle : ''}
+                              </Typography>
+                           </Button>
+                        </AnchorLink>
+                     </NavLink>
+                  )}
+                  {extraBtn && !id && (
+                     <NavLink to={src ? src : '#'}>
+                        <Button
+                           className={`sm:w-auto rounded-none w-full ml-2 ${extraButtonStyle}`}
+                        >
+                           <Typography>
+                              {extraButtonTitle ? extraButtonTitle : ''}
+                           </Typography>
+                        </Button>
+                     </NavLink>
                   )}
                </div>
             </div>

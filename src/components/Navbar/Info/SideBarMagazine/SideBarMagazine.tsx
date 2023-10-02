@@ -51,7 +51,7 @@ const SideBarMagazine = () => {
             </li>
 
             <li>
-               <NavLink to="/blogs/abenteuer/sup-abenteuer-direkt-vor-der-haustur">
+               <NavLink to="/blogs/abenteuer/unsere-tipps-fur-reisen-mit-leichtem-gepack">
                   <ListItem className="cursor-pointer rounded-none mt-5 p-1 pl-[12px] text-[0.7rem]">
                      BLOG: LIGHTWEIGHT LUGGAGE
                   </ListItem>

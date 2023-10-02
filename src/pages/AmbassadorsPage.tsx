@@ -77,8 +77,12 @@ const AmbassadorsPage = () => {
             img="ambassadorMain.webp"
             buttonTitle="learn more"
             buttonStyle="bg-black"
+            id="ambassador"
          />
-         <div className="wrapper grid sm:grid-cols-2 grid-cols-1 gap-5">
+         <div
+            id="ambassador"
+            className="wrapper grid sm:grid-cols-2 grid-cols-1 gap-5"
+         >
             <AmbassadorCard
                img="ambassadorsCard1.jpg"
                title="MAX MÜNCH"
