@@ -105,7 +105,7 @@ const TemplatePage = ({
                   )}
                </div>
             </div>
-            <div className="flex flex-1 sm:min-h-[60vh]">
+            <div className="flex flex-1 sm:min-h-[80vh]">
                <img
                   className={`h-full w-full object-cover brightness-10 ${imgStyle}`}
                   src={`${
