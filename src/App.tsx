@@ -51,6 +51,11 @@ import {
    AmbassadorsPage,
    MagazineNavBlogMavericksTour,
    MagazineNavBlogPilgrimageInEasternTibet,
+   HptStoreHamburgPage,
+   TentTechnologyPage,
+   CooleverTechnologyPage,
+   DesignSpacePage,
+   GreatMakeoverPage,
 } from './pages/index';
 import TrapsDawnMTTrapGray from './pages/products/TrapsDawnMTTrapGray';
 import BagsTransitLineSlingPocket from './pages/products/BagsTransitLineSlingPocket';
@@ -165,10 +170,21 @@ const App = () => {
                   path="/blogs/projekte/1-for-the-planet"
                   element={<OnePercentPage />}
                />
+
+               <Route path="/blogs/designraum" element={<DesignSpacePage />} />
                <Route
                   path="/blogs/designraum/dyecoshell™"
                   element={<Dyecoshell />}
                />
+               <Route
+                  path="/blogs/designraum/zelttechnik"
+                  element={<TentTechnologyPage />}
+               />
+               <Route
+                  path="/blogs/designraum/coolever-technologie"
+                  element={<CooleverTechnologyPage />}
+               />
+
                <Route
                   path="/blogs/versand/versand"
                   element={<FootherShippingPage />}
@@ -208,6 +224,10 @@ const App = () => {
                <Route
                   path="/blogs/unternehmen/affiliate-partner-programm"
                   element={<FootherAffiliatePage />}
+               />
+               <Route
+                  path="/blogs/unternehmen/hpt-store-hamburg"
+                  element={<HptStoreHamburgPage />}
                />
 
                <Route
@@ -250,6 +270,16 @@ const App = () => {
             </Routes>
          </div>
          <Footer />
+
+         <div>
+            <Routes>
+               <Route
+                  path="/pages/the-great-makeover"
+                  element={<GreatMakeoverPage />}
+               />
+            </Routes>
+            <Footer />
+         </div>
       </>
    );
 };

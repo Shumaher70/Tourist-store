@@ -21,6 +21,7 @@ interface TamplatePageProps {
    scrollRefTop?: (element: number) => void;
    id?: string;
    src?: string;
+   extraSrc?: string;
    extraBtnId?: string;
    offsetAnchorLinkMianBtn?: number;
    offsetAnchorLinkExtraBtn?: number;
@@ -41,6 +42,7 @@ const TemplatePage = ({
    scrollRefTop,
    id,
    src,
+   extraSrc,
    extraBtnId,
    offsetAnchorLinkMianBtn = 70,
    offsetAnchorLinkExtraBtn = 70,
@@ -64,7 +66,6 @@ const TemplatePage = ({
       });
    }, [scrollRefTop]);
 
-   console.log(src);
    return (
       <div ref={scrollRef} className="flex flex-col">
          <div
@@ -128,24 +129,22 @@ const TemplatePage = ({
                      </NavLink>
                   )}
 
-                  {extraBtn && id && (
-                     <NavLink to={src ? src : '#'}>
-                        <AnchorLink
-                           href={`#${extraBtnId}`}
-                           offset={offsetAnchorLinkExtraBtn}
+                  {extraBtn && extraBtnId && (
+                     <AnchorLink
+                        href={`#${extraBtnId}`}
+                        offset={offsetAnchorLinkExtraBtn}
+                     >
+                        <Button
+                           className={`sm:w-auto rounded-none w-full ml-2 ${extraButtonStyle}`}
                         >
-                           <Button
-                              className={`sm:w-auto rounded-none w-full ml-2 ${extraButtonStyle}`}
-                           >
-                              <Typography>
-                                 {extraButtonTitle ? extraButtonTitle : ''}
-                              </Typography>
-                           </Button>
-                        </AnchorLink>
-                     </NavLink>
+                           <Typography>
+                              {extraButtonTitle ? extraButtonTitle : ''}
+                           </Typography>
+                        </Button>
+                     </AnchorLink>
                   )}
-                  {extraBtn && !id && (
-                     <NavLink to={src ? src : '#'}>
+                  {extraBtn && !extraBtnId && (
+                     <NavLink to={extraSrc ? extraSrc : '#'}>
                         <Button
                            className={`sm:w-auto rounded-none w-full ml-2 ${extraButtonStyle}`}
                         >

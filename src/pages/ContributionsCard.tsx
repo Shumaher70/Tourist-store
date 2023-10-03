@@ -38,7 +38,7 @@ const ContributionsCard = ({
                />
             </CardHeader>
          </NavLink>
-         <CardBody className="p-0 mt-5">
+         <CardBody className="p-0 mt-2">
             <Typography
                variant="h4"
                color="black"
@@ -47,7 +47,7 @@ const ContributionsCard = ({
                {title}
             </Typography>
          </CardBody>
-         <CardFooter className="p-0 mt-5">
+         <CardFooter className="p-0 mt-2">
             <Typography
                variant="paragraph"
                color="black"

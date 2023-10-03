@@ -47,6 +47,11 @@ import ProjectePage from './ProjectePage';
 import AmbassadorsPage from './AmbassadorsPage';
 import MagazineNavBlogMavericksTour from './MagazineNavBlogMavericksTour';
 import MagazineNavBlogPilgrimageInEasternTibet from './MagazineNavBlogPilgrimageInEasternTibet';
+import HptStoreHamburgPage from './HptStoreHamburgPage';
+import TentTechnologyPage from './TentTechnologyPage';
+import CooleverTechnologyPage from './CooleverTechnologyPage';
+import DesignSpacePage from './DesignSpacePage';
+import GreatMakeoverPage from './GreatMakeoverPage';
 
 export {
    Colections,
@@ -98,4 +103,9 @@ export {
    AmbassadorsPage,
    MagazineNavBlogMavericksTour,
    MagazineNavBlogPilgrimageInEasternTibet,
+   HptStoreHamburgPage,
+   TentTechnologyPage,
+   CooleverTechnologyPage,
+   DesignSpacePage,
+   GreatMakeoverPage,
 };

@@ -6,6 +6,7 @@ import TemplatePage from './TemplatePage';
 import ContribuionsCardWrapper from './ContribuionsCardWrapper';
 import ContributionsCard from './ContributionsCard';
 import AnchorLink from '../components/AnchorLink';
+import { NavLink } from 'react-router-dom';
 
 const InspirationSectionAboutusPage = () => {
    const navHeightSlice = useSelector(
@@ -287,18 +288,23 @@ const InspirationSectionAboutusPage = () => {
                   </div>
                </div>
                <div className="flex gap-5 mt-10">
-                  <Button
-                     color="white"
-                     className="bg-black text-white rounded-none"
-                  >
-                     Learn More
-                  </Button>
-                  <Button
-                     color="white"
-                     className="border-[1px] rounded-none border-black"
-                  >
-                     Storefinder
-                  </Button>
+                  <NavLink to="/blogs/unternehmen/hpt-store-hamburg">
+                     <Button
+                        color="white"
+                        className="bg-black text-white rounded-none"
+                     >
+                        Learn More
+                     </Button>
+                  </NavLink>
+
+                  <NavLink to="/pages/shopfinder">
+                     <Button
+                        color="white"
+                        className="border-[1px] rounded-none border-black"
+                     >
+                        Storefinder
+                     </Button>
+                  </NavLink>
                </div>
             </div>
             <div className="flex flex-1 md:px-0 md:py-0 pr-[10%] md: pb-[5%]">
@@ -316,6 +322,7 @@ const InspirationSectionAboutusPage = () => {
                   CAREER & JOBS
                </Typography>
                <Button
+                  onClick={() => window.scrollTo(0, 0)}
                   color="white"
                   className="hidden sm:block border-[1px] rounded-none border-black"
                >
@@ -368,12 +375,14 @@ const InspirationSectionAboutusPage = () => {
                         <Typography className="font-normal xl:text-2xl lg:text-1xl uppercase">
                            NO SUITABLE JOB THERE? APPLY WITH PLEASURE INIATIV
                         </Typography>
-                        <Button
-                           color="white"
-                           className="border-[1px] border-black rounded-none"
-                        >
-                           unsolicited Application
-                        </Button>
+                        <a href="mailto:jobs@heimplanet.com">
+                           <Button
+                              color="white"
+                              className="border-[1px] border-black rounded-none"
+                           >
+                              unsolicited Application
+                           </Button>
+                        </a>
                      </div>
                   </div>
                </div>
@@ -392,18 +401,23 @@ const InspirationSectionAboutusPage = () => {
                but also yourself.
             </Typography>
             <div className="flex gap-5">
-               <Button
-                  color="white"
-                  className="bg-white rounded-none text-black"
-               >
-                  TENTS
-               </Button>
-               <Button
-                  color="white"
-                  className="bg-transparent rounded-none text-white border-[1px] border-whiter"
-               >
-                  Bags
-               </Button>
+               <NavLink to="/collections/zelte">
+                  <Button
+                     color="white"
+                     className="bg-white rounded-none text-black"
+                  >
+                     TENTS
+                  </Button>
+               </NavLink>
+
+               <NavLink to="/collections/carry-essentials">
+                  <Button
+                     color="white"
+                     className="bg-transparent rounded-none text-white border-[1px] border-whiter"
+                  >
+                     Bags
+                  </Button>
+               </NavLink>
             </div>
             <img
                src={require('./img/InspirationSectionAboutusPageHeimplanetImg.webp')}
@@ -412,18 +426,11 @@ const InspirationSectionAboutusPage = () => {
             />
          </div>
          <div ref={navNewsRef} id="news" className="px-[10%] py-[5%]">
-            <div className="flex justify-between">
-               <Typography className="font-normal sm:text-4xl text-2xl">
-                  MORE CONTRIBUTIONS
-               </Typography>
-               <Button
-                  color="white"
-                  className="hidden sm:block border-[1px] rounded-none border-black"
-               >
-                  Discover
-               </Button>
-            </div>
-            <ContribuionsCardWrapper>
+            <ContribuionsCardWrapper
+               title="MORE CONTRIBUTIONS"
+               hideButton
+               buttonTitle="discover"
+            >
                <ContributionsCard
                   title="SUP ADVENTURES - DOORSTEP TO OCEAN IN ONE DAY"
                   description="It was a sunny day when we decided to explore the pristine nature right outside our doorstep."
