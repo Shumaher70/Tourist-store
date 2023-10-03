@@ -1,4 +1,5 @@
 import { ListItem, Card } from '@material-tailwind/react';
+import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
 const SideBarMagazine = () => {
@@ -8,11 +9,11 @@ const SideBarMagazine = () => {
       >
          <ul className="absolute top-[15%] pl-[10%]">
             <li>
-               <NavLink to="/pages/blog">
+               <Link to="/pages/blog">
                   <ListItem className="cursor-pointer rounded-none">
                      OVERVIEW
                   </ListItem>
-               </NavLink>
+               </Link>
             </li>
             <li>
                <NavLink to="/blogs/abenteuer">

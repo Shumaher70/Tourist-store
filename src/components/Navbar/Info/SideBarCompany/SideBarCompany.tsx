@@ -51,9 +51,11 @@ const SideBarCompany = () => {
                DESIGN SPACE
             </ListItem>
 
-            <ListItem className="cursor-pointer rounded-none mt-5 p-1 pl-[12px] text-[0.7rem]">
-               THE GREAT MAKEOVER
-            </ListItem>
+            <NavLink to="/pages/the-great-makeover">
+               <ListItem className="cursor-pointer rounded-none mt-5 p-1 pl-[12px] text-[0.7rem]">
+                  THE GREAT MAKEOVER
+               </ListItem>
+            </NavLink>
 
             <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
                NEW TENT: KIRRA

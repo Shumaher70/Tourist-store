@@ -1,6 +1,4 @@
 import { Routes, Route } from 'react-router-dom';
-import Footer from './components/Footer';
-import Header from './components/Header';
 import Main from './components/Main';
 import {
    Colections,
@@ -66,18 +64,20 @@ import HptSleepingThermarestNeoairXlite from './pages/products/HptSleepingTherma
 import HpthygieneBasicNatureFirstAidKitStandart from './pages/products/HpthygieneBasicNatureFirstAidKitStandart';
 import GiftCard from './pages/products/GiftCard';
 import HptSotoStormbreaker from './pages/products/HptSotoStormbreaker';
+import Layout from './Layout';
 
 const App = () => {
    return (
       <>
-         <Header />
-         <div className="pt-[1px]">
-            <Routes>
-               <Route path="*" element={<PageMissed />} />
+         <Routes>
+            <Route element={<Layout />}>
                <Route path="/" element={<Main />} />
+               <Route path="*" element={<PageMissed />} />
 
                <Route path="/pages" element={<PageMissed />} />
+
                <Route path="/pages/blog" element={<ContributionsPage />} />
+
                <Route path="/pages/shopfinder" element={<ShopFinderPage />} />
                <Route
                   path="/pages/collab-maharishi-the-cave"
@@ -267,19 +267,14 @@ const App = () => {
                   element={<HptSotoStormbreaker />}
                />
                <Route path="/products/gift-card" element={<GiftCard />} />
-            </Routes>
-         </div>
-         <Footer />
-
-         <div>
-            <Routes>
+            </Route>
+            <Route path="pages">
                <Route
-                  path="/pages/the-great-makeover"
+                  path="the-great-makeover"
                   element={<GreatMakeoverPage />}
                />
-            </Routes>
-            <Footer />
-         </div>
+            </Route>
+         </Routes>
       </>
    );
 };

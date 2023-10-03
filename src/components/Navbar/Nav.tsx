@@ -58,7 +58,7 @@ const Nav = () => {
             className="flex justify-center items-center w-[150px] sm:w-[200px] lg:w-[20%]"
             to="/"
          >
-            {<img src={require('./logo/logo.png')} alt="logo" />}
+            <img src={require('./logo/logo.png')} alt="logo" />
          </NavLink>
          {showInfo && <NavInfo />}
          <div className="w-auto flex items-center gap-5">

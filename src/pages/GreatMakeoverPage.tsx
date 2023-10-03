@@ -1,5 +1,13 @@
+import Footer from '../components/Footer';
+import NavBar from '../components/extraPage/NavBar';
+
 const GreatMakeoverPage = () => {
-   return <div>GreatMakeoverPage</div>;
+   return (
+      <>
+         <NavBar />
+         <Footer />
+      </>
+   );
 };
 
 export default GreatMakeoverPage;
