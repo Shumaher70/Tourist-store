@@ -1,6 +1,7 @@
 import Footer from '../components/Footer';
 import NavBar from '../components/extraPage/NavBar';
 import HeroSection from '../components/extraPage/HeroSection';
+import ProductPresentation from '../components/extraPage/ProductPresentation';
 
 const GreatMakeoverPage = () => {
    return (
@@ -13,6 +14,13 @@ const GreatMakeoverPage = () => {
             btnStyle="bg-black text-white"
             img="GreatMakeoverPageMainImg.jpg"
             src="collections/zelte"
+         />
+         <ProductPresentation
+            img1="GreatMakeoverPageProductPresentation1.webp"
+            img2="GreatMakeoverPageProductPresentation2.webp"
+            img3="GreatMakeoverPageProductPresentation3.webp"
+            title="OUR TENTS"
+            description="Finally we can reveal the secret: we are taking a step towards the future with our tents! In the past months, we have questioned the status quo and worked hard to make our tents even better for you. In concrete terms, this means that in addition to a new look, we have significantly improved the material and added small but fine details that improve usability."
          />
 
          <Footer />
