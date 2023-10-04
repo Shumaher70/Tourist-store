@@ -1,8 +1,12 @@
-import { Button } from '@material-tailwind/react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import ButtonCustom from './ButtonCustom';
 
-const NavBar = () => {
+interface NavBarProps {
+   src: string;
+}
+
+const NavBar: React.FC<NavBarProps> = ({ src }) => {
    const [scroll, setScroll] = useState(0);
 
    useEffect(() => {
@@ -12,7 +16,7 @@ const NavBar = () => {
    }, []);
 
    return (
-      <div
+      <nav
          style={{ backgroundColor: `rgb(255 255 255 / ${scroll}%)` }}
          className="
             px-[10%]
@@ -23,6 +27,9 @@ const NavBar = () => {
             items-center
             fixed
             scroll-smooth
+            border-b-[1px]
+            border-[#f2f2f275]
+            z-10
          "
       >
          <div className="w-[150px] sm:w-[200px] lg:w-[20%]">
@@ -35,18 +42,11 @@ const NavBar = () => {
             </Link>
          </div>
          <div>
-            <Link to="/collections/zelte">
-               <Button
-                  style={{ filter: `invert(${scroll}%)` }}
-                  color="gray"
-                  size="lg"
-                  className="rounded-none bg-white text-black"
-               >
-                  Discover now
-               </Button>
+            <Link to={`${src}`}>
+               <ButtonCustom />
             </Link>
          </div>
-      </div>
+      </nav>
    );
 };
 

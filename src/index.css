@@ -2,85 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+   overflow-x: hidden;
+}
+
 .carousel-dots li button:before {
-  width: 15px !important;
-  height: 15px !important;
-  color: transparent !important;
-  border: 2px solid white;
-  border-radius: 50%;
-  opacity: 1 !important;
+   width: 15px !important;
+   height: 15px !important;
+   color: transparent !important;
+   border: 2px solid white;
+   border-radius: 50%;
+   opacity: 1 !important;
 }
 
 .product-dots {
-  display: flex !important;
-  justify-content: space-between;
+   display: flex !important;
+   justify-content: space-between;
 }
 
 .product-dots li button {
-  width: 35px !important;
-  height: 35px !important;
-  opacity: 0 !important;
+   width: 35px !important;
+   height: 35px !important;
+   opacity: 0 !important;
 }
 
 .carousel-dots-active button:before {
-  border-radius: 50%;
+   border-radius: 50%;
 }
 
 .carousel-dots li.carousel-dots-active button:before {
-  color: transparent !important;
-  background-color: white !important;
-  opacity: 1 !important;
+   color: transparent !important;
+   background-color: white !important;
+   opacity: 1 !important;
 }
 
 .carousel-prev:before,
 .carousel-next:before {
-  background-image: url('/src/components/main/categoryCarousel/categoryImg/back.png') !important;
-  width: 40px !important;
-  height: 40px !important;
+   background-image: url('/src/components/main/categoryCarousel/categoryImg/back.png') !important;
+   width: 40px !important;
+   height: 40px !important;
 }
 
 .carousel-next:before {
-  background-image: url('/src/components/main/categoryCarousel/categoryImg/next.png') !important;
+   background-image: url('/src/components/main/categoryCarousel/categoryImg/next.png') !important;
 }
 
 .carousel-prev {
-  left: 30px !important;
+   left: 30px !important;
 }
 
 .carousel-next {
-  right: 30px !important;
+   right: 30px !important;
 }
 
 .wrapper {
-  padding-top: 5%;
-  padding-bottom: 5%;
-  padding-left: 10%;
-  padding-right: 10%;
+   padding-top: 5%;
+   padding-bottom: 5%;
+   padding-left: 10%;
+   padding-right: 10%;
 }
 
 /* mainSection */
 .gm-style-iw {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
+   display: flex !important;
+   justify-content: center !important;
+   align-items: center !important;
+   padding: 0 !important;
+   border-radius: 0 !important;
 }
 /* textdiv */
 .gm-style-iw-d {
-  overflow: hidden !important;
+   overflow: hidden !important;
 }
 /* button  */
 .gm-ui-hover-effect {
-  opacity: 1 !important;
+   opacity: 1 !important;
 }
 .textContent {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 5px;
-  padding: 10px;
+   display: flex !important;
+   flex-direction: column !important;
+   gap: 5px;
+   padding: 10px;
 }
 
 input[type='file'] {
-  display: none;
+   display: none;
 }
