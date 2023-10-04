@@ -14,8 +14,7 @@ const ColorWaysSection: React.FC<ColorWaysSectionProps> = ({
          sm:flex-row 
          flex-col 
          gap-[10%]
-         sm:h-[90vh]
-         bg-[#f2f2f2]
+         sm:h-[60vh]
       "
       >
          <div className="flex-1">
@@ -37,18 +36,16 @@ const ColorWaysSection: React.FC<ColorWaysSectionProps> = ({
             "
             >
                <Typography className="sm:text-4xl text-[8vw] font-normal uppercase">
-                  The Material
+                  COLORWAYS
                </Typography>
                <Typography className="border-t-[1px] border-black mt-5 pt-5">
-                  For the new outer tent fabric, we specifically looked for a
-                  material that should be more resilient but also lighter than
-                  before. That's why we chose a high tenacity polyester with 40D
-                  yarn and a double ripstop construction. High tenacity
-                  polyester yarn has a higher tensile strength than regular
-                  polyester yarns. Accordingly, our new tent fabric also has a
-                  higher tensile strength. For us, polyester is still the best
-                  tent fabric for our tent constructions, especially with a high
-                  tenacity polyester yarn.
+                  All tents now have a new & uniform colour scheme. For the
+                  inner tent, we use a black mesh that harmonises better with
+                  the new colour concept. We have also unified the colour of the
+                  airframes, so that they are now all in a very dark anthracite,
+                  which fits perfectly with all three colourways. The tents are
+                  now available in three colourways Classic (Light Grey),
+                  4-Season (Dark Red) & Cairo Camo (Signature Pattern).
                </Typography>
             </div>
          </div>

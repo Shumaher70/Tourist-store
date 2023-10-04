@@ -4,6 +4,7 @@ import HeroSection from '../components/extraPage/HeroSection';
 import ProductPresentation from '../components/extraPage/ProductPresentation';
 import MaterialSection from '../components/extraPage/MaterialSection';
 import ColorWaysSection from '../components/extraPage/ColorWaysSection';
+import MoreSpaceSection from '../components/extraPage/MoreSpaceSection';
 
 const GreatMakeoverPage = () => {
    return (
@@ -26,6 +27,7 @@ const GreatMakeoverPage = () => {
          />
          <MaterialSection />
          <ColorWaysSection />
+         <MoreSpaceSection />
          <Footer />
       </>
    );
