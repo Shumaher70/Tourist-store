@@ -3,6 +3,7 @@ import NavBar from '../components/extraPage/NavBar';
 import HeroSection from '../components/extraPage/HeroSection';
 import ProductPresentation from '../components/extraPage/ProductPresentation';
 import MaterialSection from '../components/extraPage/MaterialSection';
+import ColorWaysSection from '../components/extraPage/ColorWaysSection';
 
 const GreatMakeoverPage = () => {
    return (
@@ -24,7 +25,7 @@ const GreatMakeoverPage = () => {
             description="Finally we can reveal the secret: we are taking a step towards the future with our tents! In the past months, we have questioned the status quo and worked hard to make our tents even better for you. In concrete terms, this means that in addition to a new look, we have significantly improved the material and added small but fine details that improve usability."
          />
          <MaterialSection />
-
+         <ColorWaysSection />
          <Footer />
       </>
    );
