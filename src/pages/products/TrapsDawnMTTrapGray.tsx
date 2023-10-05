@@ -15,10 +15,6 @@ import {
 
 import { nanoid } from '@reduxjs/toolkit';
 
-interface SimilarProductProps {
-   children?: React.ReactNode;
-}
-
 const TrapsDawnMTTrapGray = () => {
    const [bottomElement, setBottomElement] = useState<number>(0);
    const [highLight, setHighLight] = useState(false);
