@@ -5,6 +5,7 @@ import ProductPresentation from '../components/extraPage/ProductPresentation';
 import MaterialSection from '../components/extraPage/MaterialSection';
 import ColorWaysSection from '../components/extraPage/ColorWaysSection';
 import MoreSpaceSection from '../components/extraPage/MoreSpaceSection';
+import VariantSection from '../components/extraPage/VariantSection';
 
 const GreatMakeoverPage = () => {
    return (
@@ -28,6 +29,13 @@ const GreatMakeoverPage = () => {
          <MaterialSection />
          <ColorWaysSection />
          <MoreSpaceSection />
+         <VariantSection
+            img1="GreatMakeoverPageVarianImg1.jpg"
+            img2="GreatMakeoverPageVarianImg2.jpg"
+            season1="3-Season"
+            season2="4-Season"
+            details={['4-Season', 'CairoCamo']}
+         />
          <Footer />
       </>
    );

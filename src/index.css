@@ -88,3 +88,24 @@ body {
 input[type='file'] {
    display: none;
 }
+
+.range input[type='range'] {
+   -webkit-appearance: none;
+   width: 100%;
+   height: 100%;
+   background: rgba(255, 255, 255, 0);
+}
+
+.range input[type='range']::-webkit-slider-thumb {
+   position: relative;
+   -webkit-appearance: none;
+   width: 10px;
+   height: 10px;
+}
+
+.range input[type='range']::-webkit-slider-runnable-track {
+   -webkit-appearance: none;
+   box-shadow: none;
+   border: none;
+   background: transparent;
+}
