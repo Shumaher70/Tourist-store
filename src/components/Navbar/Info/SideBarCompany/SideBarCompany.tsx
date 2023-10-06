@@ -62,9 +62,12 @@ const SideBarCompany = () => {
                   NEW TENT: KIRRA
                </ListItem>
             </NavLink>
-            <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
-               HEIMPLANET X 66°NORTH
-            </ListItem>
+
+            <NavLink to="/pages/collab-66-north-cave-xl-4-season">
+               <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
+                  HEIMPLANET X 66°NORTH
+               </ListItem>
+            </NavLink>
          </List>
       </Card>
    );

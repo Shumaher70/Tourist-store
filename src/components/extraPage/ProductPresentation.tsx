@@ -6,6 +6,7 @@ interface ProductPresentationProps {
    img3: string;
    title: string;
    description: string;
+   id?: string;
 }
 
 const ProductPresentation = ({
@@ -14,9 +15,10 @@ const ProductPresentation = ({
    img3,
    title,
    description,
+   id,
 }: ProductPresentationProps) => {
    return (
-      <section className="w-full pb-[5%]">
+      <section id={id ? id : '#'} className="w-full pb-[5%]">
          <div className="sm:p-10 sm:mt-0 mt-5">
             <img
                src={require(`./img/${img1}`)}

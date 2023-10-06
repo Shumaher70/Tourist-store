@@ -1,15 +1,17 @@
 import { Typography } from '@material-tailwind/react';
 import ButtonCustom from './ButtonCustom';
 import { Link } from 'react-router-dom';
+import AnchorLink from '../AnchorLink';
 
 interface HeroSectionProps {
    img: string;
    title: string;
    subtitle?: string;
    description?: string;
-   src: string;
+   src?: string;
    btnTitle?: string;
    btnStyle?: string;
+   id?: string;
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
@@ -20,6 +22,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
    src,
    btnTitle,
    btnStyle,
+   id,
 }) => {
    return (
       <section
@@ -72,9 +75,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <Typography className="font-normal text-white sm:text-xl text-sm text-center mt-5">
                {description}
             </Typography>
-            <Link to={src} className="mt-5">
-               <ButtonCustom btnStyle={btnStyle} btnTitle={btnTitle} />
-            </Link>
+            {src && (
+               <Link to={src ? src : '/'} className="mt-5">
+                  <ButtonCustom btnStyle={btnStyle} btnTitle={btnTitle} />
+               </Link>
+            )}
+
+            {id && (
+               <AnchorLink className="mt-5" href={`#${id}`} offset={100}>
+                  <ButtonCustom btnStyle={btnStyle} btnTitle={btnTitle} />
+               </AnchorLink>
+            )}
          </div>
       </section>
    );

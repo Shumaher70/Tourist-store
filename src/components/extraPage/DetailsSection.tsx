@@ -4,8 +4,12 @@ import React from 'react';
 import Carousel from 'react-multi-carousel';
 
 interface DetailsSectionProps {
-   slide1: string[];
+   slide1: {
+      img: string;
+      description: string;
+   }[];
    slide2?: string[];
+   imgDescription?: string[];
 }
 
 const DetailsSection: React.FC<DetailsSectionProps> = ({ slide1, slide2 }) => {
@@ -46,7 +50,7 @@ const DetailsSection: React.FC<DetailsSectionProps> = ({ slide1, slide2 }) => {
          </Typography>
          <div className="relative w-full h-full">
             <Carousel
-               centerMode={true}
+               centerMode={false}
                containerClass="mt-5 cursor-pointer mb-10 "
                draggable
                minimumTouchDrag={100}
@@ -56,23 +60,23 @@ const DetailsSection: React.FC<DetailsSectionProps> = ({ slide1, slide2 }) => {
                         max: 3000,
                         min: 1024,
                      },
-                     items: 3,
+                     items: 3.5,
                      partialVisibilityGutter: 40,
-                  },
-                  mobile: {
-                     breakpoint: {
-                        max: 464,
-                        min: 0,
-                     },
-                     items: 1,
-                     partialVisibilityGutter: 30,
                   },
                   tablet: {
                      breakpoint: {
                         max: 1024,
                         min: 464,
                      },
-                     items: 1.5,
+                     items: 2.3,
+                     partialVisibilityGutter: 30,
+                  },
+                  mobile: {
+                     breakpoint: {
+                        max: 464,
+                        min: 0,
+                     },
+                     items: 1.2,
                      partialVisibilityGutter: 30,
                   },
                }}
@@ -84,14 +88,20 @@ const DetailsSection: React.FC<DetailsSectionProps> = ({ slide1, slide2 }) => {
                showDots={true}
                dotListClass="bottom-[-15px] px-10"
             >
-               {slide1.map((img, index) => (
-                  <div key={nanoid()} className="w-full h-full">
+               {slide1.map((item, index) => (
+                  <div key={nanoid()} className="relative w-full h-full">
                      <img
-                        src={require(`./img/${img}`)}
+                        src={require(`./img/${item.img}`)}
                         alt={'slide' + index}
                         draggable={false}
                         className="w-full h-full object-cover p-2"
                      />
+
+                     <div className="absolute bottom-0 left-0 w-full h-full flex items-end  p-[10%]">
+                        <Typography className="text-md xl:text-2xl lg:text-xl md:text-[20px] sm:text-[18px] font-bold text-white">
+                           {item.description}
+                        </Typography>
+                     </div>
                   </div>
                ))}
             </Carousel>

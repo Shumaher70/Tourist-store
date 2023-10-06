@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
 
 interface VarianSectionProps {
+   title?: string;
    img1: string;
    img2: string;
    details: string[];
@@ -17,6 +18,7 @@ const VariantSection: React.FC<VarianSectionProps> = ({
    season1,
    season2,
    details,
+   title = 'VARIANTS',
 }) => {
    const widthSectionRef = useRef<HTMLImageElement>(null);
 
@@ -44,7 +46,7 @@ const VariantSection: React.FC<VarianSectionProps> = ({
       "
       >
          <Typography className="sm:text-4xl text-[8vw] font-normal uppercase">
-            VARIANTS
+            {title}
          </Typography>
          <div className="mt-10 flex flex-wrap gap-5">
             {details.map((item) => (
@@ -72,13 +74,15 @@ const VariantSection: React.FC<VarianSectionProps> = ({
                   bg-[#f2f2f2d8] 
                   px-2 
                   py-1 
-                  rounded-md 
+                  rounded-sm
                   sm:top-5 
                   sm:right-5
                   top-2 
                   right-2
                   sm:text-sm
-                  text-[13px]"
+                  text-[13px]
+                  whitespace-nowrap
+               "
                >
                   {season1}
                </Typography>
@@ -100,13 +104,14 @@ const VariantSection: React.FC<VarianSectionProps> = ({
                   bg-[#f2f2f2d8] 
                   px-2 
                   py-1 
-                  rounded-md 
+                  rounded-sm 
                   sm:top-5 
                   sm:left-5
                   top-2 
                   left-2
                   sm:text-sm
                   text-[13px]
+                  whitespace-nowrap
                "
                   >
                      {season2}

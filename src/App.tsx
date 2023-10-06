@@ -55,6 +55,7 @@ import {
    DesignSpacePage,
    GreatMakeoverPage,
    NewTentKirraPage,
+   HelmplanetX66NorthPage,
 } from './pages/index';
 import TrapsDawnMTTrapGray from './pages/products/TrapsDawnMTTrapGray';
 import BagsTransitLineSlingPocket from './pages/products/BagsTransitLineSlingPocket';
@@ -275,6 +276,10 @@ const App = () => {
                   element={<GreatMakeoverPage />}
                />
                <Route path="kirra" element={<NewTentKirraPage />} />
+               <Route
+                  path="collab-66-north-cave-xl-4-season"
+                  element={<HelmplanetX66NorthPage />}
+               />
             </Route>
          </Routes>
       </>

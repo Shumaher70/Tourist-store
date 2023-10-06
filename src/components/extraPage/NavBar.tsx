@@ -4,9 +4,10 @@ import ButtonCustom from './ButtonCustom';
 
 interface NavBarProps {
    src: string;
+   title?: string;
 }
 
-const NavBar: React.FC<NavBarProps> = ({ src }) => {
+const NavBar: React.FC<NavBarProps> = ({ src, title = 'descover now' }) => {
    const [scroll, setScroll] = useState(0);
    const [calculScrol, setcCalculScrol] = useState(0);
 
@@ -31,7 +32,7 @@ const NavBar: React.FC<NavBarProps> = ({ src }) => {
             scroll-smooth
             border-b-[1px]
             border-[#f2f2f275]
-            z-20
+            z-[99]
          "
       >
          <div className="w-[150px] sm:w-[200px] lg:w-[20%]">
@@ -45,7 +46,7 @@ const NavBar: React.FC<NavBarProps> = ({ src }) => {
          </div>
          <div>
             <Link to={`${src}`}>
-               <ButtonCustom />
+               <ButtonCustom btnTitle={title} />
             </Link>
          </div>
       </nav>

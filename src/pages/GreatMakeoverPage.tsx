@@ -10,10 +10,10 @@ import DetailsSection from '../components/extraPage/DetailsSection';
 import SaleSection from '../components/extraPage/SaleSection';
 
 const temporarySlide1 = [
-   'GreatMakeoverPageProductPresentationSlide1-1.jpg',
-   'GreatMakeoverPageProductPresentationSlide1-2.jpg',
-   'GreatMakeoverPageProductPresentationSlide1-3.jpg',
-   'GreatMakeoverPageProductPresentationSlide1-4.jpg',
+   { img: 'GreatMakeoverPageProductPresentationSlide1-1.jpg', description: '' },
+   { img: 'GreatMakeoverPageProductPresentationSlide1-2.jpg', description: '' },
+   { img: 'GreatMakeoverPageProductPresentationSlide1-3.jpg', description: '' },
+   { img: 'GreatMakeoverPageProductPresentationSlide1-4.jpg', description: '' },
 ];
 
 const temporarySlide2 = [

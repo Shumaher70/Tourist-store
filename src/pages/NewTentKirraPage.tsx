@@ -10,15 +10,18 @@ import DetailsSection from '../components/extraPage/DetailsSection';
 import SaleSection from '../components/extraPage/SaleSection';
 
 const temporarySlide1 = [
-   'NewTentKirraPageProductPresentationSlide1-1.webp',
-   'NewTentKirraPageProductPresentationSlide1-2.webp',
-   'NewTentKirraPageProductPresentationSlide1-3.jpg',
-   'NewTentKirraPageProductPresentationSlide1-5.webp',
-   'NewTentKirraPageProductPresentationSlide1-6.webp',
-   'NewTentKirraPageProductPresentationSlide1-7.webp',
-   'NewTentKirraPageProductPresentationSlide1-8.webp',
-   'NewTentKirraPageProductPresentationSlide1-9.webp',
-   'NewTentKirraPageProductPresentationSlide1-10.webp',
+   { img: 'NewTentKirraPageProductPresentationSlide1-1.webp', description: '' },
+   { img: 'NewTentKirraPageProductPresentationSlide1-2.webp', description: '' },
+   { img: 'NewTentKirraPageProductPresentationSlide1-3.jpg', description: '' },
+   { img: 'NewTentKirraPageProductPresentationSlide1-5.webp', description: '' },
+   { img: 'NewTentKirraPageProductPresentationSlide1-6.webp', description: '' },
+   { img: 'NewTentKirraPageProductPresentationSlide1-7.webp', description: '' },
+   { img: 'NewTentKirraPageProductPresentationSlide1-8.webp', description: '' },
+   { img: 'NewTentKirraPageProductPresentationSlide1-9.webp', description: '' },
+   {
+      img: 'NewTentKirraPageProductPresentationSlide1-10.webp',
+      description: '',
+   },
 ];
 
 const NewTentKirraPage = () => {

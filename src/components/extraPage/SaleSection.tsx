@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 interface SaleSectionProps {
    img: string;
-   title: string;
-   description: string;
+   title?: string;
+   description?: string;
    src?: string;
 }
 
@@ -15,7 +15,7 @@ const SaleSection: React.FC<SaleSectionProps> = ({
    src,
 }) => {
    return (
-      <section className="wrapper bg-[#f2f2f2] flex flex-col sm:flex-row gap-10">
+      <section className="wrapper bg-[#f2f2f2] flex flex-col lg:flex-row gap-10">
          <div className="basis-2/4">
             <img
                className="w-full h-full objeccover"
@@ -25,12 +25,16 @@ const SaleSection: React.FC<SaleSectionProps> = ({
          </div>
          <div className="basis-2/5 flex flex-col justify-center">
             <div className="flex flex-col p-10 bg-white">
-               <Typography className="sm:text-4xl text-[8vw] font-normal text-center sm:text-start ">
-                  {title}
-               </Typography>
-               <Typography className="text-center sm:text-start">
-                  {description}
-               </Typography>
+               {title && (
+                  <Typography className="xl:text-4xl sm:text-4xl text-3xl font-normal text-center lg:text-start ">
+                     {title}
+                  </Typography>
+               )}
+               {description && (
+                  <Typography className="text-center lg:text-start mt-5">
+                     {description}
+                  </Typography>
+               )}
                <hr className="border-[#2f2f2f2]" />
                <Link
                   className="lg:mt-10 mt-5"

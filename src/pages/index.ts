@@ -53,6 +53,7 @@ import CooleverTechnologyPage from './CooleverTechnologyPage';
 import DesignSpacePage from './DesignSpacePage';
 import GreatMakeoverPage from './GreatMakeoverPage';
 import NewTentKirraPage from './NewTentKirraPage';
+import HelmplanetX66NorthPage from './HelmplanetX66NorthPage';
 
 export {
    Colections,
@@ -110,4 +111,5 @@ export {
    DesignSpacePage,
    GreatMakeoverPage,
    NewTentKirraPage,
+   HelmplanetX66NorthPage,
 };
