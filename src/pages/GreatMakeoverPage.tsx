@@ -7,6 +7,7 @@ import ColorWaysSection from '../components/extraPage/ColorWaysSection';
 import MoreSpaceSection from '../components/extraPage/MoreSpaceSection';
 import VariantSection from '../components/extraPage/VariantSection';
 import DetailsSection from '../components/extraPage/DetailsSection';
+import SaleSection from '../components/extraPage/SaleSection';
 
 const temporarySlide1 = [
    'GreatMakeoverPageProductPresentationSlide1-1.jpg',
@@ -30,7 +31,7 @@ const GreatMakeoverPage = () => {
             subtitle="our new tents"
             title="the great makeover"
             btnTitle="to the tents"
-            btnStyle="bg-black text-white"
+            btnStyle="bg-black text-white px-8 py-4 text-md"
             img="GreatMakeoverPageMainImg.jpg"
             src="collections/zelte"
          />
@@ -52,6 +53,12 @@ const GreatMakeoverPage = () => {
             details={['4-Season', 'CairoCamo']}
          />
          <DetailsSection slide1={temporarySlide1} slide2={temporarySlide2} />
+         <SaleSection
+            img="GreatMakeoverPageSaleSectionImg.webp"
+            title="THE GREAT MAKEOVER"
+            description="Our new tents are available now!"
+            src="/collections/zelte"
+         />
          <Footer />
       </>
    );

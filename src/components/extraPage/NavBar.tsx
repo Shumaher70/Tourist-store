@@ -8,12 +8,14 @@ interface NavBarProps {
 
 const NavBar: React.FC<NavBarProps> = ({ src }) => {
    const [scroll, setScroll] = useState(0);
+   const [calculScrol, setcCalculScrol] = useState(0);
 
    useEffect(() => {
       window.addEventListener('scroll', () => {
-         setScroll(window.scrollY < 100 ? window.scrollY : 100);
+         setcCalculScrol(window.scrollY / 3);
+         setScroll(calculScrol < 100 ? calculScrol : 100);
       });
-   }, []);
+   }, [calculScrol]);
 
    return (
       <nav

@@ -29,7 +29,7 @@ const DetailsSection: React.FC<DetailsSectionProps> = ({ slide1, slide2 }) => {
 
       return (
          <button
-            className={`w-[15px] h-[15px] rounded-full m-2 border-2 ${
+            className={`md:w-[15px] md:h-[15px] w-[10px] h-[10px]  rounded-full md:m-2 m-1 border-2 ${
                active ? 'bg-white' : ''
             }`}
             onClick={() => onClick()}
@@ -40,7 +40,7 @@ const DetailsSection: React.FC<DetailsSectionProps> = ({ slide1, slide2 }) => {
    };
 
    return (
-      <section className="py-[5%] border-t-[1px] border-[#f2f2f2]">
+      <section className="pt-[5%] border-t-[1px] border-[#f2f2f2]">
          <Typography className="px-[10%] sm:text-4xl text-[8vw] font-normal uppercase">
             DETAILS
          </Typography>
