@@ -5,7 +5,7 @@ import Carousel from 'react-multi-carousel';
 
 interface DetailsSectionProps {
    slide1: string[];
-   slide2: string[];
+   slide2?: string[];
 }
 
 const DetailsSection: React.FC<DetailsSectionProps> = ({ slide1, slide2 }) => {
@@ -47,7 +47,7 @@ const DetailsSection: React.FC<DetailsSectionProps> = ({ slide1, slide2 }) => {
          <div className="relative w-full h-full">
             <Carousel
                centerMode={true}
-               containerClass="mt-5 cursor-pointer"
+               containerClass="mt-5 cursor-pointer mb-10 "
                draggable
                minimumTouchDrag={100}
                responsive={{
@@ -72,7 +72,7 @@ const DetailsSection: React.FC<DetailsSectionProps> = ({ slide1, slide2 }) => {
                         max: 1024,
                         min: 464,
                      },
-                     items: 2,
+                     items: 1.5,
                      partialVisibilityGutter: 30,
                   },
                }}
@@ -123,40 +123,42 @@ const DetailsSection: React.FC<DetailsSectionProps> = ({ slide1, slide2 }) => {
             </div>
          </div>
 
-         <Carousel
-            centerMode={true}
-            containerClass="mt-10 cursor-pointer ring-1 ring-[#f2f2f2]"
-            draggable
-            minimumTouchDrag={100}
-            responsive={{
-               desktop: {
-                  breakpoint: {
-                     max: 3000,
-                     min: 1,
+         {slide2 && (
+            <Carousel
+               centerMode={true}
+               containerClass="cursor-pointer ring-1 ring-[#f2f2f2]"
+               draggable
+               minimumTouchDrag={100}
+               responsive={{
+                  desktop: {
+                     breakpoint: {
+                        max: 3000,
+                        min: 1,
+                     },
+                     items: 1,
+                     partialVisibilityGutter: 40,
                   },
-                  items: 1,
-                  partialVisibilityGutter: 40,
-               },
-            }}
-            slidesToSlide={1}
-            swipeable
-            arrows={false}
-            customDot={<CustomDotSlide2 />}
-            renderDotsOutside={false}
-            showDots={true}
-            dotListClass=""
-         >
-            {slide2.map((img, index) => (
-               <div key={nanoid()} className="w-full h-full">
-                  <img
-                     src={require(`./img/${img}`)}
-                     alt={'slide' + index}
-                     draggable={false}
-                     className="w-full h-full object-cover"
-                  />
-               </div>
-            ))}
-         </Carousel>
+               }}
+               slidesToSlide={1}
+               swipeable
+               arrows={false}
+               customDot={<CustomDotSlide2 />}
+               renderDotsOutside={false}
+               showDots={true}
+               dotListClass=""
+            >
+               {slide2.map((img, index) => (
+                  <div key={nanoid()} className="w-full h-full">
+                     <img
+                        src={require(`./img/${img}`)}
+                        alt={'slide' + index}
+                        draggable={false}
+                        className="w-full h-full object-cover"
+                     />
+                  </div>
+               ))}
+            </Carousel>
+         )}
       </section>
    );
 };

@@ -42,7 +42,20 @@ const GreatMakeoverPage = () => {
             title="OUR TENTS"
             description="Finally we can reveal the secret: we are taking a step towards the future with our tents! In the past months, we have questioned the status quo and worked hard to make our tents even better for you. In concrete terms, this means that in addition to a new look, we have significantly improved the material and added small but fine details that improve usability."
          />
-         <MaterialSection />
+         <MaterialSection
+            title="The Material"
+            description="
+         For the new outer tent fabric, we specifically looked for a
+         material that should be more resilient but also lighter than
+         before. That is why we chose a high tenacity polyester with 40D
+         yarn and a double ripstop construction. High tenacity
+         polyester yarn has a higher tensile strength than regular
+         polyester yarns. Accordingly, our new tent fabric also has a
+         higher tensile strength. For us, polyester is still the best
+         tent fabric for our tent constructions, especially with a high
+         tenacity polyester yarn.
+         "
+         />
          <ColorWaysSection />
          <MoreSpaceSection />
          <VariantSection

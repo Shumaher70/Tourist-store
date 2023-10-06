@@ -14,7 +14,7 @@ const MoreSpaceSection: React.FC<MoreSpaceSectionProps> = ({
          sm:flex-row 
          flex-col 
          gap-[10%]
-         sm:h-[60vh]
+         sm:h-[80vh]
          bg-[#f2f2f2]
       "
       >

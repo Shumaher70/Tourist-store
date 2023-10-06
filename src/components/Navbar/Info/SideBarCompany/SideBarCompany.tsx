@@ -57,10 +57,11 @@ const SideBarCompany = () => {
                </ListItem>
             </NavLink>
 
-            <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
-               NEW TENT: KIRRA
-            </ListItem>
-
+            <NavLink to="/pages/kirra">
+               <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
+                  NEW TENT: KIRRA
+               </ListItem>
+            </NavLink>
             <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
                HEIMPLANET X 66°NORTH
             </ListItem>

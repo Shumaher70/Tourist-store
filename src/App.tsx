@@ -54,6 +54,7 @@ import {
    CooleverTechnologyPage,
    DesignSpacePage,
    GreatMakeoverPage,
+   NewTentKirraPage,
 } from './pages/index';
 import TrapsDawnMTTrapGray from './pages/products/TrapsDawnMTTrapGray';
 import BagsTransitLineSlingPocket from './pages/products/BagsTransitLineSlingPocket';
@@ -273,6 +274,7 @@ const App = () => {
                   path="the-great-makeover"
                   element={<GreatMakeoverPage />}
                />
+               <Route path="kirra" element={<NewTentKirraPage />} />
             </Route>
          </Routes>
       </>

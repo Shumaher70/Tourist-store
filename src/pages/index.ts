@@ -52,6 +52,7 @@ import TentTechnologyPage from './TentTechnologyPage';
 import CooleverTechnologyPage from './CooleverTechnologyPage';
 import DesignSpacePage from './DesignSpacePage';
 import GreatMakeoverPage from './GreatMakeoverPage';
+import NewTentKirraPage from './NewTentKirraPage';
 
 export {
    Colections,
@@ -108,4 +109,5 @@ export {
    CooleverTechnologyPage,
    DesignSpacePage,
    GreatMakeoverPage,
+   NewTentKirraPage,
 };

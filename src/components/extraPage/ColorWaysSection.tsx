@@ -14,7 +14,7 @@ const ColorWaysSection: React.FC<ColorWaysSectionProps> = ({
          sm:flex-row 
          flex-col 
          gap-[10%]
-         sm:h-[60vh]
+         sm:h-[80vh]
       "
       >
          <div className="flex-1">

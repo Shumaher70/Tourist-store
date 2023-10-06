@@ -77,7 +77,7 @@ const VariantSection: React.FC<VarianSectionProps> = ({
                   sm:right-5
                   top-2 
                   right-2
-                  sm:text-lg
+                  sm:text-sm
                   text-[13px]"
                >
                   {season1}
@@ -105,7 +105,7 @@ const VariantSection: React.FC<VarianSectionProps> = ({
                   sm:left-5
                   top-2 
                   left-2
-                  sm:text-lg
+                  sm:text-sm
                   text-[13px]
                "
                   >
@@ -150,8 +150,8 @@ const VariantSection: React.FC<VarianSectionProps> = ({
                z-10
             "
             >
-               <div className="sm:w-[10px] sm:h-[10px] w-[5px] h-[5px]  border-l-[1px] border-b-[1px] border-white rotate-[45deg]" />
-               <div className="sm:w-[10px] sm:h-[10px] w-[5px] h-[5px]  border-l-[1px] border-b-[1px] border-white rotate-[225deg]" />
+               <div className="sm:w-[10px] sm:h-[10px] w-[5px] h-[5px] border-l-[1px] border-b-[1px] border-white rotate-[45deg]" />
+               <div className="sm:w-[10px] sm:h-[10px] w-[5px] h-[5px] border-l-[1px] border-b-[1px] border-white rotate-[225deg]" />
             </div>
          </div>
       </section>
