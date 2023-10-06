@@ -29,7 +29,7 @@ const NavBar: React.FC<NavBarProps> = ({ src }) => {
             scroll-smooth
             border-b-[1px]
             border-[#f2f2f275]
-            z-10
+            z-20
          "
       >
          <div className="w-[150px] sm:w-[200px] lg:w-[20%]">

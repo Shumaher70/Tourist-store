@@ -6,6 +6,14 @@ import MaterialSection from '../components/extraPage/MaterialSection';
 import ColorWaysSection from '../components/extraPage/ColorWaysSection';
 import MoreSpaceSection from '../components/extraPage/MoreSpaceSection';
 import VariantSection from '../components/extraPage/VariantSection';
+import DetailsSection from '../components/extraPage/DetailsSection';
+
+const temporaryImg = [
+   'GreatMakeoverPageDetailsSection1.jpg',
+   'GreatMakeoverPageDetailsSection2.jpg',
+   'GreatMakeoverPageDetailsSection3.jpg',
+   'GreatMakeoverPageDetailsSection4.jpg',
+];
 
 const GreatMakeoverPage = () => {
    return (
@@ -36,6 +44,7 @@ const GreatMakeoverPage = () => {
             season2="4-Season"
             details={['4-Season', 'CairoCamo']}
          />
+         <DetailsSection images={temporaryImg} />
          <Footer />
       </>
    );
