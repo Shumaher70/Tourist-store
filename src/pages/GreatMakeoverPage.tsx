@@ -8,11 +8,18 @@ import MoreSpaceSection from '../components/extraPage/MoreSpaceSection';
 import VariantSection from '../components/extraPage/VariantSection';
 import DetailsSection from '../components/extraPage/DetailsSection';
 
-const temporaryImg = [
-   'GreatMakeoverPageDetailsSection1.jpg',
-   'GreatMakeoverPageDetailsSection2.jpg',
-   'GreatMakeoverPageDetailsSection3.jpg',
-   'GreatMakeoverPageDetailsSection4.jpg',
+const temporarySlide1 = [
+   'GreatMakeoverPageProductPresentationSlide1-1.jpg',
+   'GreatMakeoverPageProductPresentationSlide1-2.jpg',
+   'GreatMakeoverPageProductPresentationSlide1-3.jpg',
+   'GreatMakeoverPageProductPresentationSlide1-4.jpg',
+];
+
+const temporarySlide2 = [
+   'GreatMakeoverPageProductPresentationSlide2-1.webp',
+   'GreatMakeoverPageProductPresentationSlide2-2.webp',
+   'GreatMakeoverPageProductPresentationSlide2-3.webp',
+   'GreatMakeoverPageProductPresentationSlide2-4.webp',
 ];
 
 const GreatMakeoverPage = () => {
@@ -44,7 +51,7 @@ const GreatMakeoverPage = () => {
             season2="4-Season"
             details={['4-Season', 'CairoCamo']}
          />
-         <DetailsSection images={temporaryImg} />
+         <DetailsSection slide1={temporarySlide1} slide2={temporarySlide2} />
          <Footer />
       </>
    );
