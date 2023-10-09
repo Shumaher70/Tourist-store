@@ -10,7 +10,7 @@ const CatrgoryCarousel = () => {
       desktop: {
          breakpoint: { max: 3000, min: 1024 },
          items: 5,
-         slidesToSlide: 7, // optional, default to 1.
+         slidesToSlide: 1, // optional, default to 1.
       },
       tablet: {
          breakpoint: { max: 1024, min: 464 },
@@ -32,8 +32,8 @@ const CatrgoryCarousel = () => {
             onClick={() => onClick()}
          >
             <svg
-               width="50"
-               height="50"
+               width="35"
+               height="35"
                viewBox="0 0 16 16"
                fill="none"
                xmlns="http://www.w3.org/2000/svg"
@@ -57,8 +57,8 @@ const CatrgoryCarousel = () => {
             onClick={() => onClick()}
          >
             <svg
-               width="50"
-               height="50"
+               width="35"
+               height="35"
                viewBox="0 0 16 16"
                fill="none"
                xmlns="http://www.w3.org/2000/svg"
@@ -105,23 +105,20 @@ const CatrgoryCarousel = () => {
                <Link
                   to={item.src ? item.src : '/'}
                   onClick={() => window.scrollTo(0, 0)}
+                  draggable="false"
+                  key={nanoid()}
                >
-                  <div
-                     key={nanoid()}
-                     className="flex flex-col text-center h-full justify-between cursor-pointer brightness-95 "
-                  >
+                  <div className="relative w-full flex flex-col text-center h-full justify-between cursor-pointer brightness-95 hover:scale-110 hover:shadow-xl transition-all">
                      <div>
-                        <div>
-                           <img
-                              src={require(`./categoryImg/${item.img}`)}
-                              alt={item.img}
-                              draggable="false"
-                           />
-                        </div>
+                        <img
+                           src={require(`./categoryImg/${item.img}`)}
+                           alt={item.img}
+                           draggable="false"
+                        />
                      </div>
                      <Typography
                         variant="h2"
-                        className="uppercase font-normal lg:text-3xl sm:text-2xl text-1xl"
+                        className="absolute bottom-0 right-2/4 translate-x-2/4 uppercase font-normal lg:text-3xl sm:text-2xl text-1xl w-full"
                      >
                         {item.discription}
                      </Typography>

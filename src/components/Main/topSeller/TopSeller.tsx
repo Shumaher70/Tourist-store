@@ -32,16 +32,14 @@ const TopSeller = () => {
                productCard[2],
                productCard[3],
             ].map((item) => (
-               <div className="p-2">
-                  <ProductCard
-                     img1={item.mainImg2}
-                     img2={item.mainImg1}
-                     title={item.title}
-                     type={item.type}
-                     price={item.price}
-                     src={item.src}
-                  />
-               </div>
+               <ProductCard
+                  img1={item.mainImg2}
+                  img2={item.mainImg1}
+                  title={item.title}
+                  type={item.type}
+                  price={item.price}
+                  src={item.src}
+               />
             ))}
          </div>
       </div>

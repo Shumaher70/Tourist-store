@@ -13,8 +13,9 @@ const ContributionsAdventuresPage = () => {
             buttonTitle="LEARN MORE"
             buttonStyle="bg-black text-white"
             img="contributions-2.webp"
+            id="dis"
          />
-         <div className="px-[10%] py-[5%]">
+         <div id="dis" className="px-[10%] py-[5%]">
             <Typography>
                Our good friend Andy, a passionate surfboard and SUP shaper,
                invited us on one of his mini adventures, and we couldn't wait to

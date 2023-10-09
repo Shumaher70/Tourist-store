@@ -50,7 +50,7 @@ const ContribuionsCardWrapper = ({
                </NavLink>
             )}
          </div>
-         <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 mt-[5%]">
+         <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 mt-[5%]">
             {children}
          </div>
       </>

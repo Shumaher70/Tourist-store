@@ -105,6 +105,7 @@ const TemplatePage = ({
                         offset={offsetAnchorLinkMianBtn}
                      >
                         <Button
+                           color="gray"
                            className={`sm:w-auto  rounded-none w-full ${
                               buttonStyle && buttonStyle
                            }`}
@@ -118,6 +119,7 @@ const TemplatePage = ({
                   {!id && (
                      <NavLink to={src ? src : '#'}>
                         <Button
+                           color="gray"
                            className={`sm:w-auto  rounded-none w-full ${
                               buttonStyle && buttonStyle
                            }`}
@@ -135,6 +137,7 @@ const TemplatePage = ({
                         offset={offsetAnchorLinkExtraBtn}
                      >
                         <Button
+                           color="gray"
                            className={`sm:w-auto rounded-none w-full ml-2 ${extraButtonStyle}`}
                         >
                            <Typography>
@@ -146,6 +149,7 @@ const TemplatePage = ({
                   {extraBtn && !extraBtnId && (
                      <NavLink to={extraSrc ? extraSrc : '#'}>
                         <Button
+                           color="gray"
                            className={`sm:w-auto rounded-none w-full ml-2 ${extraButtonStyle}`}
                         >
                            <Typography>

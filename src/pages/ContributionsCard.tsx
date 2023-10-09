@@ -34,7 +34,7 @@ const ContributionsCard = ({
                      img ? require(`./img/${img}`) : require('./img/error.jpg')
                   }`}
                   alt={img}
-                  className="w-full h-[30vh] object-cover cursor-pointer"
+                  className="w-full object-cover cursor-pointer"
                />
             </CardHeader>
          </NavLink>
