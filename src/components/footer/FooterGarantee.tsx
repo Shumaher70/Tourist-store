@@ -22,7 +22,10 @@ const FooterGarantee = () => {
                      strokeWidth="2"
                   />
                </svg>
-               <Link to="/blogs/projekte/1-for-the-planet">
+               <Link
+                  onClick={() => window.scrollTo(0, 0)}
+                  to="/blogs/projekte/1-for-the-planet"
+               >
                   <Typography
                      variant="h5"
                      color="white"
@@ -76,7 +79,10 @@ const FooterGarantee = () => {
                      strokeWidth="2"
                   />
                </svg>
-               <Link to="/collections/all-products">
+               <Link
+                  onClick={() => window.scrollTo(0, 0)}
+                  to="/collections/all-products"
+               >
                   <Typography
                      variant="h5"
                      color="white"

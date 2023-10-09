@@ -100,7 +100,10 @@ const MainCarousel = () => {
                                  {item.discription}
                               </Typography>
                            </div>
-                           <NavLink to={`${item.link}`}>
+                           <NavLink
+                              onClick={() => window.scrollTo(0, 0)}
+                              to={`${item.link}`}
+                           >
                               <Button
                                  className="rounded-none sm:w-[124px] h-[48px]"
                                  color="white"

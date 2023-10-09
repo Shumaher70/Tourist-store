@@ -9,17 +9,23 @@ const SidebarAboutUs = () => {
          }
       >
          <List className="absolute top-[15%] pl-[10%]">
-            <NavLink to="/pages/unternehmen-store">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/pages/unternehmen-store"
+            >
                <ListItem className="cursor-pointer rounded-none">
                   OUR HISTORY
                </ListItem>
             </NavLink>
-            <NavLink to="/pages/unternehmen-store">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/pages/unternehmen-store"
+            >
                <ListItem className="cursor-pointer rounded-none">
                   HPT - HAMBURG
                </ListItem>
             </NavLink>
-            <NavLink to="/pages/karriere">
+            <NavLink onClick={() => window.scrollTo(0, 0)} to="/pages/karriere">
                <ListItem className="cursor-pointer rounded-none">
                   CAREER / JOBS
                </ListItem>

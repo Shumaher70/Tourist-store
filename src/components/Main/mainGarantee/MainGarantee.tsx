@@ -77,7 +77,10 @@ const MainGarantee = () => {
                         {item.description}
                      </Typography>
                      <div className="flex gap-2">
-                        <NavLink to={`${item.src}`}>
+                        <NavLink
+                           onClick={() => window.scrollTo(0, 0)}
+                           to={`${item.src}`}
+                        >
                            <Button
                               size="lg"
                               color="white"

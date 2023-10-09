@@ -36,7 +36,7 @@ const NavBar: React.FC<NavBarProps> = ({ src, title = 'descover now' }) => {
          "
       >
          <div className="w-[150px] sm:w-[200px] lg:w-[20%]">
-            <Link to="/">
+            <Link onClick={() => window.scrollTo(0, 0)} to="/">
                <img
                   src={require('../../components/navbar/logo/logoWhite.png')}
                   alt="logo"
@@ -45,7 +45,7 @@ const NavBar: React.FC<NavBarProps> = ({ src, title = 'descover now' }) => {
             </Link>
          </div>
          <div>
-            <Link to={`${src}`}>
+            <Link onClick={() => window.scrollTo(0, 0)} to={`${src}`}>
                <ButtonCustom btnTitle={title} />
             </Link>
          </div>

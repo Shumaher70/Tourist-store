@@ -288,7 +288,10 @@ const InspirationSectionAboutusPage = () => {
                   </div>
                </div>
                <div className="flex gap-5 mt-10">
-                  <NavLink to="/blogs/unternehmen/hpt-store-hamburg">
+                  <NavLink
+                     onClick={() => window.scrollTo(0, 0)}
+                     to="/blogs/unternehmen/hpt-store-hamburg"
+                  >
                      <Button
                         color="white"
                         className="bg-black text-white rounded-none"
@@ -297,7 +300,10 @@ const InspirationSectionAboutusPage = () => {
                      </Button>
                   </NavLink>
 
-                  <NavLink to="/pages/shopfinder">
+                  <NavLink
+                     onClick={() => window.scrollTo(0, 0)}
+                     to="/pages/shopfinder"
+                  >
                      <Button
                         color="white"
                         className="border-[1px] rounded-none border-black"
@@ -401,7 +407,10 @@ const InspirationSectionAboutusPage = () => {
                but also yourself.
             </Typography>
             <div className="flex gap-5">
-               <NavLink to="/collections/zelte">
+               <NavLink
+                  onClick={() => window.scrollTo(0, 0)}
+                  to="/collections/zelte"
+               >
                   <Button
                      color="white"
                      className="bg-white rounded-none text-black"
@@ -410,7 +419,10 @@ const InspirationSectionAboutusPage = () => {
                   </Button>
                </NavLink>
 
-               <NavLink to="/collections/carry-essentials">
+               <NavLink
+                  onClick={() => window.scrollTo(0, 0)}
+                  to="/collections/carry-essentials"
+               >
                   <Button
                      color="white"
                      className="bg-transparent rounded-none text-white border-[1px] border-whiter"

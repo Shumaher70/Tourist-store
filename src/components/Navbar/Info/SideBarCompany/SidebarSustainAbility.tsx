@@ -9,25 +9,37 @@ const SidebarSustainAbility = () => {
          }
       >
          <List className="absolute top-[15%] pl-[10%]">
-            <NavLink to="/blogs/projekte/1-for-the-planet">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/blogs/projekte/1-for-the-planet"
+            >
                <ListItem className="cursor-pointer  rounded-none">
                   1% FOR THE PLANET
                </ListItem>
             </NavLink>
 
-            <NavLink to="/blogs/projekte/lebenslanger-support-garantie">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/blogs/projekte/lebenslanger-support-garantie"
+            >
                <ListItem className="cursor-pointer  rounded-none">
                   LIFETIME WARRANTY
                </ListItem>
             </NavLink>
 
-            <NavLink to="/collections/re-store">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/collections/re-store"
+            >
                <ListItem className="cursor-pointer  rounded-none">
                   RE-STORE PROGRAM
                </ListItem>
             </NavLink>
 
-            <NavLink to="/blogs/designraum/dyecoshell™">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/blogs/designraum/dyecoshell™"
+            >
                <ListItem className="cursor-pointer  rounded-none">
                   DYECOSHELL
                </ListItem>

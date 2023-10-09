@@ -15,7 +15,10 @@ const TopSeller = () => {
             >
                top seller
             </Typography>
-            <NavLink to="/collections/topseller">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/collections/topseller"
+            >
                <Button
                   color="white"
                   className="rounded-none border-[1px] border-[#000000]"

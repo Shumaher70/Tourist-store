@@ -338,7 +338,10 @@ const Filter = ({
                         key={nanoid()}
                         className="flex flex-wrap md:justify-between justify-center gap-5 my-5"
                      >
-                        <NavLink to={String(productCart?.src)}>
+                        <NavLink
+                           onClick={() => window.scrollTo(0, 0)}
+                           to={String(productCart?.src)}
+                        >
                            <Card
                               className="
                               md:max-w-[350px] 

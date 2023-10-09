@@ -32,14 +32,12 @@ const SidebarStore = () => {
             >
                PRODUCTS
             </ListItem>
-
             <ListItem
                onClick={() => clickHptSelectedHandler()}
                className="cursor-pointer rounded-none"
             >
                HPT SELECTED
             </ListItem>
-
             <ListItem
                onClick={() => clickReStoreHandler()}
                className="cursor-pointer rounded-none"
@@ -47,13 +45,18 @@ const SidebarStore = () => {
                RE:STORE
             </ListItem>
 
-            <NavLink to="/products/gift-card">
+            <NavLink
+               to="/products/gift-card"
+               onClick={() => window.scrollTo(0, 0)}
+            >
                <ListItem className="cursor-pointer rounded-none mt-5 p-1 pl-[12px] text-[0.7rem]">
                   GIFT VOUCHER
                </ListItem>
             </NavLink>
-
-            <NavLink to="/collections/topseller">
+            <NavLink
+               to="/collections/topseller"
+               onClick={() => window.scrollTo(0, 0)}
+            >
                <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
                   TOP SELLER
                </ListItem>

@@ -117,7 +117,10 @@ const TemplatePage = ({
                      </AnchorLink>
                   )}
                   {!id && (
-                     <NavLink to={src ? src : '#'}>
+                     <NavLink
+                        onClick={() => window.scrollTo(0, 0)}
+                        to={src ? src : '#'}
+                     >
                         <Button
                            color="gray"
                            className={`sm:w-auto  rounded-none w-full ${
@@ -147,7 +150,10 @@ const TemplatePage = ({
                      </AnchorLink>
                   )}
                   {extraBtn && !extraBtnId && (
-                     <NavLink to={extraSrc ? extraSrc : '#'}>
+                     <NavLink
+                        onClick={() => window.scrollTo(0, 0)}
+                        to={extraSrc ? extraSrc : '#'}
+                     >
                         <Button
                            color="gray"
                            className={`sm:w-auto rounded-none w-full ml-2 ${extraButtonStyle}`}

@@ -32,7 +32,10 @@ const Magazine = () => {
 
          <div className="mt-5 grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 gap-5">
             <Card className="rounded-none shadow-none">
-               <NavLink to="/blogs/gourmet-camping">
+               <NavLink
+                  onClick={() => window.scrollTo(0, 0)}
+                  to="/blogs/gourmet-camping"
+               >
                   <CardHeader
                      floated={false}
                      shadow={false}
@@ -58,7 +61,10 @@ const Magazine = () => {
             </Card>
 
             <Card className="rounded-none shadow-none">
-               <NavLink to="/blogs/abenteuer">
+               <NavLink
+                  onClick={() => window.scrollTo(0, 0)}
+                  to="/blogs/abenteuer"
+               >
                   <CardHeader
                      floated={false}
                      shadow={false}
@@ -83,7 +89,10 @@ const Magazine = () => {
                </NavLink>
             </Card>
             <Card className="rounded-none shadow-none">
-               <NavLink to="/blogs/collabs">
+               <NavLink
+                  onClick={() => window.scrollTo(0, 0)}
+                  to="/blogs/collabs"
+               >
                   <CardHeader
                      floated={false}
                      shadow={false}

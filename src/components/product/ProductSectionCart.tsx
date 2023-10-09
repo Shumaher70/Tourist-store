@@ -418,7 +418,10 @@ const ProductSectionCart = ({
                   )}
 
                   <div className="flex border-y-[1px] py-5 mt-2 border-[#f6f6f6]">
-                     <NavLink to={String(product.src)}>
+                     <NavLink
+                        onClick={() => window.scrollTo(0, 0)}
+                        to={String(product.src)}
+                     >
                         <img
                            src={require(`../../dammyDB/${product.mainImg[0]}`)}
                            width={60}

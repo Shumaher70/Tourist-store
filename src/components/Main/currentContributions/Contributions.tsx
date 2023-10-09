@@ -14,7 +14,7 @@ const Contributions = () => {
                >
                   CURRENT CONTRIBUTIONS
                </Typography>
-               <NavLink to="/pages/blog">
+               <NavLink onClick={() => window.scrollTo(0, 0)} to="/pages/blog">
                   <Button
                      color="white"
                      className="border-[1px] border-black rounded-none"
@@ -48,7 +48,10 @@ const Contributions = () => {
                   </div>
 
                   <div>
-                     <NavLink to="/blogs/collabs/maharishi-x-heimplanet-the-cave">
+                     <NavLink
+                        onClick={() => window.scrollTo(0, 0)}
+                        to="/blogs/collabs/maharishi-x-heimplanet-the-cave"
+                     >
                         <Button
                            color="white"
                            size="lg"

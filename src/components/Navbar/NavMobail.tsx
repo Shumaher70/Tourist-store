@@ -159,7 +159,10 @@ const NavMobail = () => {
                   Magazine
                </AccordionHeader>
                <AccordionBody className="text-black bg-[#f6f6f6] px-[10%]">
-                  <NavLink to="/pages/blog">
+                  <NavLink
+                     onClick={() => window.scrollTo(0, 0)}
+                     to="/pages/blog"
+                  >
                      <ListItem className="rounded-none pl-0 py-4 border-b border-b-blue-gray-100 text-xl text-black font-normal uppercase">
                         Overview
                      </ListItem>

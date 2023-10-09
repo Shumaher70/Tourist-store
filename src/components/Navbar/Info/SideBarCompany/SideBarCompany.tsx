@@ -31,7 +31,7 @@ const SideBarCompany = () => {
                ABOUT US
             </ListItem>
 
-            <NavLink to="/pages/karriere">
+            <NavLink onClick={() => window.scrollTo(0, 0)} to="/pages/karriere">
                <ListItem className="cursor-pointer rounded-none">
                   CAREER
                </ListItem>
@@ -51,19 +51,25 @@ const SideBarCompany = () => {
                DESIGN SPACE
             </ListItem>
 
-            <NavLink to="/pages/the-great-makeover">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/pages/the-great-makeover"
+            >
                <ListItem className="cursor-pointer rounded-none mt-5 p-1 pl-[12px] text-[0.7rem]">
                   THE GREAT MAKEOVER
                </ListItem>
             </NavLink>
 
-            <NavLink to="/pages/kirra">
+            <NavLink onClick={() => window.scrollTo(0, 0)} to="/pages/kirra">
                <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
                   NEW TENT: KIRRA
                </ListItem>
             </NavLink>
 
-            <NavLink to="/pages/collab-66-north-cave-xl-4-season">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/pages/collab-66-north-cave-xl-4-season"
+            >
                <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
                   HEIMPLANET X 66°NORTH
                </ListItem>

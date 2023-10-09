@@ -29,7 +29,7 @@ const AmbassadorsPage = () => {
             <Typography className="mt-3">{description}</Typography>
             <div>
                {src ? (
-                  <NavLink to={src}>
+                  <NavLink onClick={() => window.scrollTo(0, 0)} to={src}>
                      <Button
                         className="
                   rounded-none

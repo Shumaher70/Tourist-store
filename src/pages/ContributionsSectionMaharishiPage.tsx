@@ -122,7 +122,7 @@ const ContributionsSectionMaharishiPage = () => {
                >
                   CURRENT CONTRIBUTIONS
                </Typography>
-               <NavLink to="/pages/blog">
+               <NavLink onClick={() => window.scrollTo(0, 0)} to="/pages/blog">
                   <Button
                      color="white"
                      className="border-[1px] border-black rounded-none"

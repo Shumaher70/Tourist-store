@@ -22,7 +22,10 @@ const ContributionsCard = ({
 }: ContributionsCardProps) => {
    return (
       <Card className="shadow-none rounded-none min-w-[250px] flex-1 bg-transparent">
-         <NavLink to={`${path ? path : '/'}`}>
+         <NavLink
+            onClick={() => window.scrollTo(0, 0)}
+            to={`${path ? path : '/'}`}
+         >
             <CardHeader
                floated={false}
                shadow={false}

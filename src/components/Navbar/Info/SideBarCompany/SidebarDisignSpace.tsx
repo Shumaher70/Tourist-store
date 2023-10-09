@@ -9,25 +9,37 @@ const SidebarDisignSpace = () => {
          }
       >
          <List className="absolute top-[15%] pl-[10%]">
-            <NavLink to="/blogs/designraum/zelttechnik">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/blogs/designraum/zelttechnik"
+            >
                <ListItem className="cursor-pointer  rounded-none">
                   TENT TECHNOLOGY
                </ListItem>
             </NavLink>
 
-            <NavLink to="/blogs/designraum/dyecoshell™">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/blogs/designraum/dyecoshell™"
+            >
                <ListItem className="cursor-pointer  rounded-none">
                   DYECOSHELL™
                </ListItem>
             </NavLink>
 
-            <NavLink to="/blogs/designraum/coolever-technologie">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/blogs/designraum/coolever-technologie"
+            >
                <ListItem className="cursor-pointer  rounded-none">
                   COOLEVER TECHNOLOGY
                </ListItem>
             </NavLink>
 
-            <NavLink to="/blogs/designraum">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/blogs/designraum"
+            >
                <ListItem className="cursor-pointer  rounded-none">
                   ALL CONTRIBUTIONS
                </ListItem>

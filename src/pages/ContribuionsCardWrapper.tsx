@@ -38,7 +38,13 @@ const ContribuionsCardWrapper = ({
                {title ? title : ''}
             </Typography>
             {showButton && (
-               <NavLink to={path ? path : ''} onClick={() => topScreen()}>
+               <NavLink
+                  to={path ? path : ''}
+                  onClick={() => {
+                     topScreen();
+                     window.scrollTo(0, 0);
+                  }}
+               >
                   <Button
                      color="white"
                      className={`rounded-none border-[1px] border-[#000000] ${

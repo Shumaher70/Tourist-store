@@ -51,7 +51,10 @@ const FootherAffiliatePage = () => {
                <Typography className="sm:text-4xl text-2xl ">
                   MORE CONTRIBUTIONS
                </Typography>
-               <NavLink to="/blogs/collabs/maharishi-x-heimplanet-the-cave">
+               <NavLink
+                  onClick={() => window.scrollTo(0, 0)}
+                  to="/blogs/collabs/maharishi-x-heimplanet-the-cave"
+               >
                   <Button
                      color="white"
                      size="lg"

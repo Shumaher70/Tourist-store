@@ -32,7 +32,7 @@ const ProductCard: React.FC<productCardProps> = ({
          onClick={clickHandler}
          className="md:max-w-[350px] flex flex-wrap md:justify-between justify-center gap-5 my-5 p-2"
       >
-         <NavLink to={src}>
+         <NavLink onClick={() => window.scrollTo(0, 0)} to={src}>
             <Card className="rounded-none cursor-pointer shadow-none">
                <div className="md:max-w-[350px] w-full ">
                   <img

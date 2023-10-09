@@ -80,7 +80,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                {description}
             </Typography>
             {src && (
-               <Link to={src ? src : '/'} className="mt-5">
+               <Link
+                  onClick={() => window.scrollTo(0, 0)}
+                  to={src ? src : '/'}
+                  className="mt-5"
+               >
                   <ButtonCustom btnStyle={btnStyle} btnTitle={btnTitle} />
                </Link>
             )}

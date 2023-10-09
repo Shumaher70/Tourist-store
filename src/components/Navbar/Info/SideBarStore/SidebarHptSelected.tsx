@@ -9,37 +9,55 @@ const SidebarHptSelected = () => {
          }
       >
          <List className="absolute top-[15%] pl-[10%]">
-            <NavLink to="/collections/knives">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/collections/knives"
+            >
                <ListItem className="cursor-pointer  rounded-none">
                   KNIVES & EQUIPMENT
                </ListItem>
             </NavLink>
 
-            <NavLink to="/collections/camping-furniture">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/collections/camping-furniture"
+            >
                <ListItem className="cursor-pointer  rounded-none">
                   CAMPING FURNITURE
                </ListItem>
             </NavLink>
 
-            <NavLink to="/collections/cooking">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/collections/cooking"
+            >
                <ListItem className="cursor-pointer  rounded-none">
                   COOKING
                </ListItem>
             </NavLink>
 
-            <NavLink to="/collections/sleeping">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/collections/sleeping"
+            >
                <ListItem className="cursor-pointer  rounded-none">
                   SLEEPING
                </ListItem>
             </NavLink>
 
-            <NavLink to="/collections/hygiene">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/collections/hygiene"
+            >
                <ListItem className="cursor-pointer  rounded-none">
                   HYGIENE
                </ListItem>
             </NavLink>
 
-            <NavLink to="/collections/hpt-selected">
+            <NavLink
+               onClick={() => window.scrollTo(0, 0)}
+               to="/collections/hpt-selected"
+            >
                <ListItem className="cursor-pointer  rounded-none">
                   ALL PRODUCTS
                </ListItem>
