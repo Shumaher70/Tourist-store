@@ -33,7 +33,7 @@ const GreatMakeoverPage = () => {
             btnTitle="to the tents"
             btnStyle="bg-black text-white px-8 py-4 text-md"
             img="GreatMakeoverPageMainImg.jpg"
-            src="collections/zelte"
+            src="/collections/zelte"
          />
          <ProductPresentation
             img1="GreatMakeoverPageProductPresentation1.webp"

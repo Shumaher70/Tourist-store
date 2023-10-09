@@ -3,6 +3,7 @@ import { dammyCategoryDiscription } from './dammyCategoryDiscription';
 import { nanoid } from 'nanoid';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { Link } from 'react-router-dom';
 
 const CatrgoryCarousel = () => {
    const responsive = {
@@ -101,26 +102,31 @@ const CatrgoryCarousel = () => {
       >
          {dammyCategoryDiscription.map((item) => {
             return (
-               <div
-                  key={nanoid()}
-                  className="flex flex-col text-center h-full justify-between cursor-pointer brightness-95 "
+               <Link
+                  to={item.src ? item.src : '/'}
+                  onClick={() => window.scrollTo(0, 0)}
                >
-                  <div>
-                     <div>
-                        <img
-                           src={require(`./categoryImg/${item.img}`)}
-                           alt={item.img}
-                           draggable="false"
-                        />
-                     </div>
-                  </div>
-                  <Typography
-                     variant="h2"
-                     className="uppercase font-normal lg:text-3xl sm:text-2xl text-1xl"
+                  <div
+                     key={nanoid()}
+                     className="flex flex-col text-center h-full justify-between cursor-pointer brightness-95 "
                   >
-                     {item.discription}
-                  </Typography>
-               </div>
+                     <div>
+                        <div>
+                           <img
+                              src={require(`./categoryImg/${item.img}`)}
+                              alt={item.img}
+                              draggable="false"
+                           />
+                        </div>
+                     </div>
+                     <Typography
+                        variant="h2"
+                        className="uppercase font-normal lg:text-3xl sm:text-2xl text-1xl"
+                     >
+                        {item.discription}
+                     </Typography>
+                  </div>
+               </Link>
             );
          })}
       </Carousel>

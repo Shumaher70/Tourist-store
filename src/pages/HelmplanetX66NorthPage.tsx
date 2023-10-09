@@ -53,6 +53,7 @@ const HelmplanetX66NorthPage = () => {
             img3="HelmplanetX66NorthProductPresentation3.webp"
             title="THE CAVE XL 4-SEASON"
             description="The tent was designed and tested to withstand all seasons in Iceland - a country known for its dramatic weather conditions and temperatures. The Cave XL 4-Season owes its superior strength to its geodesic dome construction with ten crossing points and high-quality weatherproof, durable materials that withstand wind, snow and rain. The bright orange color is inspired by the shelters in the Icelandic highlands and designed to stand out against the Icelandic landscape."
+            id="productPresent"
          />
          <MoreSpaceSection
             title="BAGS+BACKPACKS"

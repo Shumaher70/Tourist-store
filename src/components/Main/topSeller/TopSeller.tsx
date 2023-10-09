@@ -1,8 +1,9 @@
-import { Typography, Button, Card } from '@material-tailwind/react';
-import { nanoid } from 'nanoid';
+import { productCard } from '../../../dammyDB/dammyProducts';
 
-import { dammyTopSellerDiscription } from './dammyTopSellerDicription';
+import { Typography, Button, Card } from '@material-tailwind/react';
+
 import { NavLink } from 'react-router-dom';
+import ProductCard from '../../product/ProductCard';
 
 const TopSeller = () => {
    return (
@@ -24,47 +25,23 @@ const TopSeller = () => {
             </NavLink>
          </div>
 
-         <div className="columns-1 pt-10 lg:columns-4 md:columns-2">
-            {dammyTopSellerDiscription.map((item) => (
-               <Card
-                  key={nanoid()}
-                  className="rounded-none shadow-none cursor-pointer"
-               >
-                  <div className="relative">
-                     <img
-                        src={require(`./topSellerImg/${item.img2}`)}
-                        alt={item.img2}
-                        className=" brightness-[.9] absolute top-0 right-0 w-full h-full"
-                     />
-                     <img
-                        src={require(`./topSellerImg/${item.img}`)}
-                        alt={item.img}
-                        className=" brightness-[.9] hover:opacity-0"
-                     />
-                  </div>
-
-                  <Typography
-                     className="uppercase mt-3"
-                     variant="h5"
-                     color="black"
-                  >
-                     {item.discription}
-                  </Typography>
-
-                  <div className="flex justify-between pb-10">
-                     <Typography variant="paragraph">
-                        {item.category}
-                     </Typography>
-
-                     <Typography
-                        className="border-b-[1px] border-black"
-                        variant="paragraph"
-                        color="black"
-                     >
-                        {`€${item.prise}`}
-                     </Typography>
-                  </div>
-               </Card>
+         <div className="grid grid-cols-1 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2">
+            {[
+               productCard[0],
+               productCard[1],
+               productCard[2],
+               productCard[3],
+            ].map((item) => (
+               <div className="p-2">
+                  <ProductCard
+                     img1={item.mainImg2}
+                     img2={item.mainImg1}
+                     title={item.title}
+                     type={item.type}
+                     price={item.price}
+                     src={item.src}
+                  />
+               </div>
             ))}
          </div>
       </div>

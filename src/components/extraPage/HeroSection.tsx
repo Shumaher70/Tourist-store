@@ -54,11 +54,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             px-[10%]
          "
          >
-            <Typography className="uppercase text-sm font-bold text-white">
-               {subtitle}
-            </Typography>
-            <Typography
-               className="
+            {subtitle && (
+               <Typography className="uppercase text-sm font-bold text-white">
+                  {subtitle}
+               </Typography>
+            )}
+            {title && (
+               <Typography
+                  className="
                xl:text-8xl 
                lg:text-7xl 
                md:text-6xl 
@@ -68,9 +71,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                text-white 
                font-normal 
                mt-3"
-            >
-               {title}
-            </Typography>
+               >
+                  {title}
+               </Typography>
+            )}
 
             <Typography className="font-normal text-white sm:text-xl text-sm text-center mt-5">
                {description}

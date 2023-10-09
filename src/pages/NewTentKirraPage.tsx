@@ -35,7 +35,7 @@ const NewTentKirraPage = () => {
             btnTitle="to the tents"
             btnStyle="bg-black text-white px-8 py-4 text-md"
             img="NewTentKirraPageMainImg.webp"
-            src="collections/zelte"
+            src="/collections/zelte"
          />
          <ProductPresentation
             img1="NewTentKirraPageProductPresentation1.webp"
