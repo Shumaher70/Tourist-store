@@ -1,9 +1,10 @@
 import { productCard } from '../../../dammyDB/dammyProducts';
 
-import { Typography, Button, Card } from '@material-tailwind/react';
+import { Typography, Button } from '@material-tailwind/react';
 
 import { NavLink } from 'react-router-dom';
 import ProductCard from '../../product/ProductCard';
+import { nanoid } from '@reduxjs/toolkit';
 
 const TopSeller = () => {
    return (
@@ -36,6 +37,7 @@ const TopSeller = () => {
                productCard[3],
             ].map((item) => (
                <ProductCard
+                  key={nanoid()}
                   img1={item.mainImg2}
                   img2={item.mainImg1}
                   title={item.title}

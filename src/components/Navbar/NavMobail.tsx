@@ -10,6 +10,7 @@ import {
    aboutUsAction,
    sustainabilityAction,
    disignSpaceAction,
+   hiddeAction,
 } from '../../store/redusers/mobailNavAccordionReducer';
 import {
    Accordion,
@@ -17,7 +18,7 @@ import {
    AccordionBody,
    ListItem,
 } from '@material-tailwind/react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 interface IconProps {
    open: boolean;
@@ -86,6 +87,7 @@ const NavMobail = () => {
                >
                   Shop
                </AccordionHeader>
+
                <AccordionBody className="bg-[#f6f6f6] px-[10%]">
                   <Accordion open={products} icon={<Icon open={products} />}>
                      <AccordionHeader
@@ -94,17 +96,66 @@ const NavMobail = () => {
                      >
                         PRODUCTS
                      </AccordionHeader>
+
                      <AccordionBody className="text-black">
-                        <ListItem className="rounded-none">
-                           Tents & Accessories
-                        </ListItem>
-                        <ListItem className="rounded-none">Tarps</ListItem>
-                        <ListItem className="rounded-none">Bags</ListItem>
-                        <ListItem className="rounded-none">Apparel</ListItem>
-                        <ListItem className="rounded-none">Gear</ListItem>
-                        <ListItem className="rounded-none">
-                           All products
-                        </ListItem>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/collections/zelte"
+                        >
+                           <ListItem className="rounded-none">
+                              Tents & Accessories
+                           </ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/collections/tarps"
+                        >
+                           <ListItem className="rounded-none">Tarps</ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/collections/carry-essentials"
+                        >
+                           <ListItem className="rounded-none">Bags</ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/collections/carry-essentials"
+                        >
+                           <ListItem className="rounded-none">Apparel</ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/collections/gear"
+                        >
+                           <ListItem className="rounded-none">Gear</ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/collections/all-products"
+                        >
+                           <ListItem className="rounded-none">
+                              All products
+                           </ListItem>
+                        </Link>
                      </AccordionBody>
                   </Accordion>
 
@@ -119,18 +170,68 @@ const NavMobail = () => {
                         HPT SELECTED
                      </AccordionHeader>
                      <AccordionBody>
-                        <ListItem className="rounded-none">
-                           Knives & Equipment
-                        </ListItem>
-                        <ListItem className="rounded-none">
-                           Camping furniture
-                        </ListItem>
-                        <ListItem className="rounded-none">Cooking</ListItem>
-                        <ListItem className="rounded-none">Sleeping</ListItem>
-                        <ListItem className="rounded-none">Hygiene</ListItem>
-                        <ListItem className="rounded-none">
-                           All products
-                        </ListItem>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/collections/knives"
+                        >
+                           <ListItem className="rounded-none">
+                              Knives & Equipment
+                           </ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/collections/camping-furniture"
+                        >
+                           <ListItem className="rounded-none">
+                              Camping furniture
+                           </ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/collections/cooking"
+                        >
+                           <ListItem className="rounded-none">Cooking</ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/collections/sleeping"
+                        >
+                           <ListItem className="rounded-none">
+                              Sleeping
+                           </ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/collections/hygiene"
+                        >
+                           <ListItem className="rounded-none">Hygiene</ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/collections/hpt-selected"
+                        >
+                           <ListItem className="rounded-none">
+                              All products
+                           </ListItem>
+                        </Link>
                      </AccordionBody>
                   </Accordion>
 
@@ -142,10 +243,28 @@ const NavMobail = () => {
                         RE:STORE
                      </AccordionHeader>
                      <AccordionBody>
-                        <ListItem className="rounded-none">Learn more</ListItem>
-                        <ListItem className="rounded-none">
-                           All products
-                        </ListItem>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/collections/re-store"
+                        >
+                           <ListItem className="rounded-none">
+                              Learn more
+                           </ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/collections/all-products"
+                        >
+                           <ListItem className="rounded-none">
+                              All products
+                           </ListItem>
+                        </Link>
                      </AccordionBody>
                   </Accordion>
                </AccordionBody>
@@ -159,26 +278,72 @@ const NavMobail = () => {
                   Magazine
                </AccordionHeader>
                <AccordionBody className="text-black bg-[#f6f6f6] px-[10%]">
-                  <NavLink
-                     onClick={() => window.scrollTo(0, 0)}
+                  <Link
+                     onClick={() => {
+                        dispatch(hiddeAction());
+                        window.scrollTo(0, 0);
+                     }}
                      to="/pages/blog"
                   >
                      <ListItem className="rounded-none pl-0 py-4 border-b border-b-blue-gray-100 text-xl text-black font-normal uppercase">
                         Overview
                      </ListItem>
-                  </NavLink>
-                  <ListItem className="rounded-none pl-0 py-4 border-b border-b-blue-gray-100 text-xl text-black font-normal uppercase">
-                     Adventure
-                  </ListItem>
-                  <ListItem className="rounded-none pl-0 py-4 border-b border-b-blue-gray-100 text-xl text-black font-normal uppercase">
-                     Collaborations
-                  </ListItem>
-                  <ListItem className="rounded-none pl-0 py-4 border-b border-b-blue-gray-100 text-xl text-black font-normal uppercase">
-                     HPT Gourmet Camping
-                  </ListItem>
-                  <ListItem className="rounded-none pl-0 py-4 border-b border-b-blue-gray-100 text-xl text-black font-normal uppercase">
-                     Ambassadors
-                  </ListItem>
+                  </Link>
+                  <Link
+                     onClick={() => {
+                        window.scrollTo(0, 0);
+                        dispatch(hiddeAction());
+                     }}
+                     to="/blogs/abenteuer"
+                  >
+                     <ListItem className="rounded-none pl-0 py-4 border-b border-b-blue-gray-100 text-xl text-black font-normal uppercase">
+                        Adventure
+                     </ListItem>
+                  </Link>
+                  <Link
+                     onClick={() => {
+                        window.scrollTo(0, 0);
+                        dispatch(hiddeAction());
+                     }}
+                     to="/blogs/collabs"
+                  >
+                     <ListItem className="rounded-none pl-0 py-4 border-b border-b-blue-gray-100 text-xl text-black font-normal uppercase">
+                        Collaborations
+                     </ListItem>
+                  </Link>
+                  <Link
+                     onClick={() => {
+                        window.scrollTo(0, 0);
+                        dispatch(hiddeAction());
+                     }}
+                     to="/blogs/projekte"
+                  >
+                     <ListItem className="rounded-none pl-0 py-4 border-b border-b-blue-gray-100 text-xl text-black font-normal uppercase">
+                        Projects
+                     </ListItem>
+                  </Link>
+                  <Link
+                     onClick={() => {
+                        window.scrollTo(0, 0);
+                        dispatch(hiddeAction());
+                     }}
+                     to="/blogs/gourmet-camping"
+                  >
+                     <ListItem className="rounded-none pl-0 py-4 border-b border-b-blue-gray-100 text-xl text-black font-normal uppercase">
+                        HPT Gourmet Camping
+                     </ListItem>
+                  </Link>
+                  <Link
+                     onClick={() => {
+                        window.scrollTo(0, 0);
+                        dispatch(hiddeAction());
+                     }}
+                     to="/pages/ambassador"
+                  >
+                     <ListItem className="rounded-none pl-0 py-4 border-b border-b-blue-gray-100 text-xl text-black font-normal uppercase">
+                        Ambassadors
+                     </ListItem>
+                  </Link>
                </AccordionBody>
             </Accordion>
 
@@ -198,21 +363,53 @@ const NavMobail = () => {
                         ABOUT US
                      </AccordionHeader>
                      <AccordionBody className="text-black">
-                        <ListItem className="rounded-none">
-                           Our history
-                        </ListItem>
-                        <ListItem className="rounded-none">
-                           HPT - Hamburg
-                        </ListItem>
-                        <ListItem className="rounded-none">
-                           Career / Jobs
-                        </ListItem>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/pages/unternehmen-store"
+                        >
+                           <ListItem className="rounded-none">
+                              Our history
+                           </ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/pages/unternehmen-store"
+                        >
+                           <ListItem className="rounded-none">
+                              HPT - Hamburg
+                           </ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/pages/karriere"
+                        >
+                           <ListItem className="rounded-none">
+                              Career / Jobs
+                           </ListItem>
+                        </Link>
                      </AccordionBody>
                   </Accordion>
 
-                  <ListItem className="rounded-none pl-0 py-4 border-b border-b-blue-gray-100 text-xl text-black font-normal uppercase">
-                     Career
-                  </ListItem>
+                  <Link
+                     onClick={() => {
+                        window.scrollTo(0, 0);
+                        dispatch(hiddeAction());
+                     }}
+                     to="/pages/karriere"
+                  >
+                     <ListItem className="rounded-none pl-0 py-4 border-b border-b-blue-gray-100 text-xl text-black font-normal uppercase">
+                        Career
+                     </ListItem>
+                  </Link>
 
                   <Accordion
                      open={sustainability}
@@ -225,16 +422,50 @@ const NavMobail = () => {
                         Sustainability
                      </AccordionHeader>
                      <AccordionBody>
-                        <ListItem className="rounded-none">
-                           1% for the Planet
-                        </ListItem>
-                        <ListItem className="rounded-none">
-                           Lifetime warranty
-                        </ListItem>
-                        <ListItem className="rounded-none">
-                           Re-Store Program
-                        </ListItem>
-                        <ListItem className="rounded-none">Dyecoshell</ListItem>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/blogs/projekte/1-for-the-planet"
+                        >
+                           <ListItem className="rounded-none">
+                              1% for the Planet
+                           </ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/blogs/projekte/lebenslanger-support-garantie"
+                        >
+                           <ListItem className="rounded-none">
+                              Lifetime warranty
+                           </ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/collections/re-store"
+                        >
+                           <ListItem className="rounded-none">
+                              Re-Store Program
+                           </ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/blogs/designraum/dyecoshell™"
+                        >
+                           <ListItem className="rounded-none">
+                              Dyecoshell
+                           </ListItem>
+                        </Link>
                      </AccordionBody>
                   </Accordion>
 
@@ -249,18 +480,50 @@ const NavMobail = () => {
                         Design space
                      </AccordionHeader>
                      <AccordionBody>
-                        <ListItem className="rounded-none">
-                           Tent technology
-                        </ListItem>
-                        <ListItem className="rounded-none uppercase">
-                           DYECOSHELL™
-                        </ListItem>
-                        <ListItem className="rounded-none uppercase">
-                           COOLEVER TECHNOLOGY
-                        </ListItem>
-                        <ListItem className="rounded-none">
-                           All products
-                        </ListItem>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/blogs/designraum/zelttechnik"
+                        >
+                           <ListItem className="rounded-none">
+                              Tent technology
+                           </ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/blogs/designraum/dyecoshell™"
+                        >
+                           <ListItem className="rounded-none uppercase">
+                              DYECOSHELL™
+                           </ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/blogs/designraum/coolever-technologie"
+                        >
+                           <ListItem className="rounded-none uppercase">
+                              COOLEVER TECHNOLOGY
+                           </ListItem>
+                        </Link>
+                        <Link
+                           onClick={() => {
+                              window.scrollTo(0, 0);
+                              dispatch(hiddeAction());
+                           }}
+                           to="/blogs/designraum"
+                        >
+                           <ListItem className="rounded-none">
+                              All products
+                           </ListItem>
+                        </Link>
                      </AccordionBody>
                   </Accordion>
                </AccordionBody>
