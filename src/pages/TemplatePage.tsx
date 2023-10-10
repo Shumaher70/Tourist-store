@@ -166,7 +166,7 @@ const TemplatePage = ({
                   )}
                </div>
             </div>
-            <div className="flex flex-1 sm:min-h-[80vh]">
+            <div className="flex flex-1 sm:min-h-[60vh]">
                <img
                   className={`
                      h-full 

@@ -2,6 +2,19 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store';
 import Filter from '../components/Filter';
 import {
+   expeditions,
+   extremeWeather,
+   familiesGroups,
+   trekkingBikepacking,
+   tentSpareParts,
+   tents,
+   accessories,
+   people1_2,
+   people2_3,
+   people3_4,
+   groups,
+   season3,
+   season4,
    everydayUse,
    sportsActivities,
    travel,
@@ -9,7 +22,6 @@ import {
    washBags,
    organizer,
    backpacks,
-   accessories,
    L1_4,
    L5_18,
    L19_35,
@@ -18,64 +30,202 @@ import {
    monolithSeries,
    motionSeries,
    transitLine,
+   aeroPress,
+   basicNature,
+   blaek,
+   coghlans,
+   drBronners,
+   eoe,
+   fiskars,
+   heimplanet,
+   campingfurniture,
+   hygiene,
+   cooking,
+   knivesEquipment,
+   sleeping,
+   tarps,
+   dawn,
+   dusk,
+   beaniesCaps,
+   hoodies,
+   longsleeves,
+   sweater,
+   tshirts,
 } from '../store/redusers/filterReduser';
 import TemplatePage from './TemplatePage';
 import { productCard } from '../dammyDB/dammyProducts';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+
 const CarryeEssentials = () => {
    const dispatch = useDispatch();
    const [id, setId] = useState('');
    const filterSlice = useSelector((state: RootState) => state.filter);
 
+   useEffect(() => {
+      dispatch(expeditions(false));
+      dispatch(extremeWeather(false));
+      dispatch(familiesGroups(false));
+      dispatch(trekkingBikepacking(false));
+      dispatch(tentSpareParts(false));
+      dispatch(tents(false));
+      dispatch(accessories(false));
+      dispatch(people1_2(false));
+      dispatch(people2_3(false));
+      dispatch(people3_4(false));
+      dispatch(groups(false));
+      dispatch(season3(false));
+      dispatch(season4(false));
+      dispatch(everydayUse(false));
+      dispatch(sportsActivities(false));
+      dispatch(travel(false));
+      dispatch(waistPacks(false));
+      dispatch(washBags(false));
+      dispatch(organizer(false));
+      dispatch(backpacks(false));
+      dispatch(L1_4(false));
+      dispatch(L5_18(false));
+      dispatch(L19_35(false));
+      dispatch(morethan35L(false));
+      dispatch(carryEssentials(false));
+      dispatch(monolithSeries(false));
+      dispatch(motionSeries(false));
+      dispatch(transitLine(false));
+      dispatch(aeroPress(false));
+      dispatch(basicNature(false));
+      dispatch(blaek(false));
+      dispatch(coghlans(false));
+      dispatch(drBronners(false));
+      dispatch(eoe(false));
+      dispatch(fiskars(false));
+      dispatch(heimplanet(false));
+      dispatch(campingfurniture(false));
+      dispatch(hygiene(false));
+      dispatch(cooking(false));
+      dispatch(knivesEquipment(false));
+      dispatch(sleeping(false));
+      dispatch(tarps(false));
+      dispatch(dawn(false));
+      dispatch(dusk(false));
+      dispatch(beaniesCaps(false));
+      dispatch(hoodies(false));
+      dispatch(longsleeves(false));
+      dispatch(sweater(false));
+      dispatch(tshirts(false));
+   }, [dispatch]);
+
    const handleChecked = (event: string) => {
       switch (event) {
          case 'Everyday Use':
-            dispatch(everydayUse());
+            if (filterSlice.EverydayUse === true) {
+               dispatch(everydayUse(false));
+            } else {
+               dispatch(everydayUse(true));
+            }
             break;
          case 'Sports Activities':
-            dispatch(sportsActivities());
+            if (filterSlice.SportsActivities === true) {
+               dispatch(sportsActivities(false));
+            } else {
+               dispatch(sportsActivities(true));
+            }
             break;
          case 'Travel':
-            dispatch(travel());
+            if (filterSlice.Travel === true) {
+               dispatch(travel(false));
+            } else {
+               dispatch(travel(true));
+            }
             break;
          case 'Waist Packs':
-            dispatch(waistPacks());
+            if (filterSlice.WaistPacks === true) {
+               dispatch(waistPacks(false));
+            } else {
+               dispatch(waistPacks(true));
+            }
             break;
          case 'Wash Bags':
-            dispatch(washBags());
+            if (filterSlice.WashBags === true) {
+               dispatch(washBags(false));
+            } else {
+               dispatch(washBags(true));
+            }
             break;
          case 'Organizer':
-            dispatch(organizer());
+            if (filterSlice.Organizer === true) {
+               dispatch(organizer(false));
+            } else {
+               dispatch(organizer(true));
+            }
             break;
          case 'Backpacks':
-            dispatch(backpacks());
+            if (filterSlice.Backpacks === true) {
+               dispatch(backpacks(false));
+            } else {
+               dispatch(backpacks(true));
+            }
             break;
          case 'Accessories':
-            dispatch(accessories());
+            if (filterSlice.Accessories === true) {
+               dispatch(accessories(false));
+            } else {
+               dispatch(accessories(true));
+            }
             break;
          case '1-4L':
-            dispatch(L1_4());
+            if (filterSlice.L_1_4 === true) {
+               dispatch(L1_4(false));
+            } else {
+               dispatch(L1_4(true));
+            }
             break;
          case '5-18L':
-            dispatch(L5_18());
+            if (filterSlice.L_5_18 === true) {
+               dispatch(L5_18(false));
+            } else {
+               dispatch(L5_18(true));
+            }
             break;
          case '19-35L':
-            dispatch(L19_35());
+            if (filterSlice.L_19_35 === true) {
+               dispatch(L19_35(false));
+            } else {
+               dispatch(L19_35(true));
+            }
             break;
          case 'More than 35L':
-            dispatch(morethan35L());
+            if (filterSlice.Morethan35L === true) {
+               dispatch(morethan35L(false));
+            } else {
+               dispatch(morethan35L(true));
+            }
             break;
          case 'Carry Essentials':
-            dispatch(carryEssentials());
+            if (filterSlice.CarryEssentials === true) {
+               dispatch(carryEssentials(false));
+            } else {
+               dispatch(carryEssentials(true));
+            }
             break;
          case 'Monolith Series':
-            dispatch(monolithSeries());
+            if (filterSlice.MonolithSeries === true) {
+               dispatch(monolithSeries(false));
+            } else {
+               dispatch(monolithSeries(true));
+            }
             break;
          case 'Motion Series':
-            dispatch(motionSeries());
+            if (filterSlice.MotionSeries === true) {
+               dispatch(motionSeries(false));
+            } else {
+               dispatch(motionSeries(true));
+            }
             break;
          case 'Transit Line':
-            dispatch(transitLine());
+            if (filterSlice.TransitLine === true) {
+               dispatch(transitLine(false));
+            } else {
+               dispatch(transitLine(true));
+            }
             break;
       }
    };

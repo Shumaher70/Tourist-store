@@ -36,7 +36,7 @@ const Contributions = () => {
                      <Typography
                         varian="h2"
                         color="black"
-                        className="sm:text-4xl text-2xl border-t-[1px] border-b-[1px] border-black w-auto font-normal"
+                        className="sm:text-4xl text-2xl py-2 border-t-[1px] border-b-[1px] border-black w-auto font-normal"
                      >
                         MAHARISHI X HEIMPLANET
                      </Typography>

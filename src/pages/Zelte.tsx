@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Filter from '../components/Filter';
 
 import {
@@ -17,6 +17,42 @@ import {
    groups,
    season3,
    season4,
+   everydayUse,
+   sportsActivities,
+   travel,
+   waistPacks,
+   washBags,
+   organizer,
+   backpacks,
+   L1_4,
+   L5_18,
+   L19_35,
+   morethan35L,
+   carryEssentials,
+   monolithSeries,
+   motionSeries,
+   transitLine,
+   aeroPress,
+   basicNature,
+   blaek,
+   coghlans,
+   drBronners,
+   eoe,
+   fiskars,
+   heimplanet,
+   campingfurniture,
+   hygiene,
+   cooking,
+   knivesEquipment,
+   sleeping,
+   tarps,
+   dawn,
+   dusk,
+   beaniesCaps,
+   hoodies,
+   longsleeves,
+   sweater,
+   tshirts,
 } from '../store/redusers/filterReduser';
 
 import { productCard } from '../dammyDB/dammyProducts';
@@ -27,46 +63,151 @@ const Zelte = () => {
    const [id, setId] = useState('');
 
    const filterSlice = useSelector((state: RootState) => state.filter);
+
+   useEffect(() => {
+      dispatch(expeditions(false));
+      dispatch(extremeWeather(false));
+      dispatch(familiesGroups(false));
+      dispatch(trekkingBikepacking(false));
+      dispatch(tentSpareParts(false));
+      dispatch(tents(false));
+      dispatch(accessories(false));
+      dispatch(people1_2(false));
+      dispatch(people2_3(false));
+      dispatch(people3_4(false));
+      dispatch(groups(false));
+      dispatch(season3(false));
+      dispatch(season4(false));
+      dispatch(everydayUse(false));
+      dispatch(sportsActivities(false));
+      dispatch(travel(false));
+      dispatch(waistPacks(false));
+      dispatch(washBags(false));
+      dispatch(organizer(false));
+      dispatch(backpacks(false));
+      dispatch(L1_4(false));
+      dispatch(L5_18(false));
+      dispatch(L19_35(false));
+      dispatch(morethan35L(false));
+      dispatch(carryEssentials(false));
+      dispatch(monolithSeries(false));
+      dispatch(motionSeries(false));
+      dispatch(transitLine(false));
+      dispatch(aeroPress(false));
+      dispatch(basicNature(false));
+      dispatch(blaek(false));
+      dispatch(coghlans(false));
+      dispatch(drBronners(false));
+      dispatch(eoe(false));
+      dispatch(fiskars(false));
+      dispatch(heimplanet(false));
+      dispatch(campingfurniture(false));
+      dispatch(hygiene(false));
+      dispatch(cooking(false));
+      dispatch(knivesEquipment(false));
+      dispatch(sleeping(false));
+      dispatch(tarps(false));
+      dispatch(dawn(false));
+      dispatch(dusk(false));
+      dispatch(beaniesCaps(false));
+      dispatch(hoodies(false));
+      dispatch(longsleeves(false));
+      dispatch(sweater(false));
+      dispatch(tshirts(false));
+   }, [dispatch]);
+
    const handleChecked = (event: string) => {
       switch (event) {
          case 'Expeditions':
-            dispatch(expeditions());
+            if (filterSlice.Expeditions === true) {
+               dispatch(expeditions(false));
+            } else {
+               dispatch(expeditions(true));
+            }
             break;
          case 'Extreme Weather':
-            dispatch(extremeWeather());
+            if (filterSlice.ExtremeWeather === true) {
+               dispatch(extremeWeather(false));
+            } else {
+               dispatch(extremeWeather(true));
+            }
             break;
          case 'Families & Groups':
-            dispatch(familiesGroups());
+            if (filterSlice.FamiliesGroups === true) {
+               dispatch(familiesGroups(false));
+            } else {
+               dispatch(familiesGroups(true));
+            }
             break;
          case 'Trekking & Bikepacking':
-            dispatch(trekkingBikepacking());
+            if (filterSlice.TrekkingBikepacking === true) {
+               dispatch(trekkingBikepacking(false));
+            } else {
+               dispatch(trekkingBikepacking(true));
+            }
             break;
          case 'Tent Spare Parts':
-            dispatch(tentSpareParts());
+            if (filterSlice.TentSpareParts === true) {
+               dispatch(tentSpareParts(false));
+            } else {
+               dispatch(tentSpareParts(true));
+            }
             break;
          case 'Tents':
-            dispatch(tents());
+            if (filterSlice.Tents === true) {
+               dispatch(tents(false));
+            } else {
+               dispatch(tents(true));
+            }
             break;
          case 'Accessories':
-            dispatch(accessories());
+            if (filterSlice.Accessories === true) {
+               dispatch(accessories(false));
+            } else {
+               dispatch(accessories(true));
+            }
             break;
          case '1-2 people':
-            dispatch(people1_2());
+            if (filterSlice.People1_2 === true) {
+               dispatch(people1_2(false));
+            } else {
+               dispatch(people1_2(true));
+            }
             break;
          case '2-3 people':
-            dispatch(people2_3());
+            if (filterSlice.People2_3 === true) {
+               dispatch(people2_3(false));
+            } else {
+               dispatch(people2_3(true));
+            }
             break;
          case '3-4 people':
-            dispatch(people3_4());
+            if (filterSlice.People3_4 === true) {
+               dispatch(people3_4(false));
+            } else {
+               dispatch(people3_4(true));
+            }
             break;
          case 'Groups':
-            dispatch(groups());
+            if (filterSlice.Groups === true) {
+               dispatch(groups(false));
+            } else {
+               dispatch(groups(true));
+            }
             break;
          case '3-Season':
-            dispatch(season3());
+            if (filterSlice.Season3 === true) {
+               dispatch(season3(false));
+            } else {
+               dispatch(season3(true));
+            }
             break;
          case '4-Season':
-            dispatch(season4());
+            if (filterSlice.Season4 === true) {
+               dispatch(season4(false));
+            } else {
+               dispatch(season4(true));
+            }
             break;
       }
    };

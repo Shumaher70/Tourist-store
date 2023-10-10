@@ -27,43 +27,95 @@ const CollabMaharishi = () => {
    const handleChecked = (event: string) => {
       switch (event) {
          case 'Expeditions':
-            dispatch(expeditions());
+            if (filterSlice.Expeditions === true) {
+               dispatch(expeditions(false));
+            } else {
+               dispatch(expeditions(true));
+            }
             break;
          case 'Extreme Weather':
-            dispatch(extremeWeather());
+            if (filterSlice.ExtremeWeather === true) {
+               dispatch(extremeWeather(false));
+            } else {
+               dispatch(extremeWeather(true));
+            }
             break;
          case 'Families & Groups':
-            dispatch(familiesGroups());
+            if (filterSlice.FamiliesGroups === true) {
+               dispatch(familiesGroups(false));
+            } else {
+               dispatch(familiesGroups(true));
+            }
             break;
          case 'Trekking & Bikepacking':
-            dispatch(trekkingBikepacking());
+            if (filterSlice.TrekkingBikepacking === true) {
+               dispatch(trekkingBikepacking(false));
+            } else {
+               dispatch(trekkingBikepacking(true));
+            }
             break;
          case 'Tent Spare Parts':
-            dispatch(tentSpareParts());
+            if (filterSlice.TentSpareParts === true) {
+               dispatch(tentSpareParts(false));
+            } else {
+               dispatch(tentSpareParts(true));
+            }
             break;
          case 'Tents':
-            dispatch(tents());
+            if (filterSlice.Tents === true) {
+               dispatch(tents(false));
+            } else {
+               dispatch(tents(true));
+            }
             break;
          case 'Accessories':
-            dispatch(accessories());
+            if (filterSlice.Accessories === true) {
+               dispatch(accessories(false));
+            } else {
+               dispatch(accessories(true));
+            }
             break;
          case '1-2 people':
-            dispatch(people1_2());
+            if (filterSlice.People1_2 === true) {
+               dispatch(people1_2(false));
+            } else {
+               dispatch(people1_2(true));
+            }
             break;
          case '2-3 people':
-            dispatch(people2_3());
+            if (filterSlice.People2_3 === true) {
+               dispatch(people2_3(false));
+            } else {
+               dispatch(people2_3(true));
+            }
             break;
          case '3-4 people':
-            dispatch(people3_4());
+            if (filterSlice.People3_4 === true) {
+               dispatch(people3_4(false));
+            } else {
+               dispatch(people3_4(true));
+            }
             break;
          case 'Groups':
-            dispatch(groups());
+            if (filterSlice.Groups === true) {
+               dispatch(groups(false));
+            } else {
+               dispatch(groups(true));
+            }
             break;
          case '3-Season':
-            dispatch(season3());
+            if (filterSlice.Season3 === true) {
+               dispatch(season3(false));
+            } else {
+               dispatch(season3(true));
+            }
             break;
          case '4-Season':
-            dispatch(season4());
+            if (filterSlice.Season4 === true) {
+               dispatch(season4(false));
+            } else {
+               dispatch(season4(true));
+            }
             break;
       }
    };

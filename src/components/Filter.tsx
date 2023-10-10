@@ -99,35 +99,35 @@ const Filter = ({
       Number(sizeSlice) > 768 ? setWidth(true) : setWidth(false);
    }, [sizeSlice]);
 
-   const handleActivity = (_value: React.MouseEvent) => {
+   const handleActivity = () => {
       setActivity((priv) => !priv);
       setType(false);
       setSize(false);
       setCollection(false);
       setBrand(false);
    };
-   const handleType = (_value: React.MouseEvent) => {
+   const handleType = () => {
       setType((priv) => !priv);
       setActivity(false);
       setSize(false);
       setCollection(false);
       setBrand(false);
    };
-   const handleSize = (_value: React.MouseEvent) => {
+   const handleSize = () => {
       setSize((priv) => !priv);
       setActivity(false);
       setType(false);
       setCollection(false);
       setBrand(false);
    };
-   const handleCollection = (_value: React.MouseEvent) => {
+   const handleCollection = () => {
       setCollection((priv) => !priv);
       setActivity(false);
       setType(false);
       setSize(false);
       setBrand(false);
    };
-   const handleBrand = (_value: React.MouseEvent) => {
+   const handleBrand = () => {
       setBrand((priv) => !priv);
       setActivity(false);
       setType(false);
