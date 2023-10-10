@@ -61,7 +61,7 @@ const AllProducts = () => {
    const dispatch = useDispatch();
    const [id, setId] = useState('');
 
-   const filterSlice = useSelector((state: RootState) => state.filter);
+   const filterSlice: any = useSelector((state: RootState) => state.filter);
 
    useEffect(() => {
       dispatch(expeditions(false));
@@ -407,6 +407,13 @@ const AllProducts = () => {
       setId(id);
    }, []);
 
+   const filterProducts = productCard.filter((item) => {
+      return Object.keys(filterSlice)
+         .filter((key) => filterSlice[key])
+         .map((key) => key.toLowerCase())
+         .includes(item.type);
+   });
+
    return (
       <>
          <TemplatePage
@@ -418,7 +425,9 @@ const AllProducts = () => {
          />
          <Filter
             id={idHandler}
-            productCart={productCard}
+            productCart={
+               filterProducts.length !== 0 ? filterProducts : productCard
+            }
             activityProps={true}
             checkboxActivity={[
                {
