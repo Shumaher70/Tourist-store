@@ -1,14 +1,24 @@
 import { ListItem, Card } from '@material-tailwind/react';
 import { Link } from 'react-router-dom';
+import { toggleMagazine } from '../../../../store/redusers/sideBarReduser';
+import { useDispatch } from 'react-redux';
 
 const SideBarMagazine = () => {
+   const dispatch = useDispatch();
+
    return (
       <Card
          className={'fixed rounded-none xl:w-1/6 lg:w-1/4 w-2/6 h-full z-20'}
       >
          <ul className="absolute top-[15%] pl-[10%]">
             <li>
-               <Link onClick={() => window.scrollTo(0, 0)} to="/pages/blog">
+               <Link
+                  onClick={() => {
+                     window.scrollTo(0, 0);
+                     dispatch(toggleMagazine());
+                  }}
+                  to="/pages/blog"
+               >
                   <ListItem className="cursor-pointer rounded-none">
                      OVERVIEW
                   </ListItem>
@@ -16,7 +26,10 @@ const SideBarMagazine = () => {
             </li>
             <li>
                <Link
-                  onClick={() => window.scrollTo(0, 0)}
+                  onClick={() => {
+                     window.scrollTo(0, 0);
+                     dispatch(toggleMagazine());
+                  }}
                   to="/blogs/abenteuer"
                >
                   <ListItem className="cursor-pointer rounded-none">
@@ -25,14 +38,26 @@ const SideBarMagazine = () => {
                </Link>
             </li>
             <li>
-               <Link onClick={() => window.scrollTo(0, 0)} to="/blogs/collabs">
+               <Link
+                  onClick={() => {
+                     window.scrollTo(0, 0);
+                     dispatch(toggleMagazine());
+                  }}
+                  to="/blogs/collabs"
+               >
                   <ListItem className="cursor-pointer rounded-none">
                      COLLABORATIONS
                   </ListItem>
                </Link>
             </li>
             <li>
-               <Link onClick={() => window.scrollTo(0, 0)} to="/blogs/projekte">
+               <Link
+                  onClick={() => {
+                     window.scrollTo(0, 0);
+                     dispatch(toggleMagazine());
+                  }}
+                  to="/blogs/projekte"
+               >
                   <ListItem className="cursor-pointer rounded-none">
                      PROJECTS
                   </ListItem>
@@ -40,7 +65,10 @@ const SideBarMagazine = () => {
             </li>
             <li>
                <Link
-                  onClick={() => window.scrollTo(0, 0)}
+                  onClick={() => {
+                     window.scrollTo(0, 0);
+                     dispatch(toggleMagazine());
+                  }}
                   to="/blogs/gourmet-camping"
                >
                   <ListItem className="cursor-pointer rounded-none">
@@ -50,7 +78,10 @@ const SideBarMagazine = () => {
             </li>
             <li>
                <Link
-                  onClick={() => window.scrollTo(0, 0)}
+                  onClick={() => {
+                     window.scrollTo(0, 0);
+                     dispatch(toggleMagazine());
+                  }}
                   to="/pages/ambassador"
                >
                   <ListItem className="cursor-pointer rounded-none">
@@ -61,7 +92,10 @@ const SideBarMagazine = () => {
 
             <li>
                <Link
-                  onClick={() => window.scrollTo(0, 0)}
+                  onClick={() => {
+                     window.scrollTo(0, 0);
+                     dispatch(toggleMagazine());
+                  }}
                   to="/blogs/abenteuer/unsere-tipps-fur-reisen-mit-leichtem-gepack"
                >
                   <ListItem className="cursor-pointer rounded-none mt-5 p-1 pl-[12px] text-[0.7rem]">
@@ -71,7 +105,10 @@ const SideBarMagazine = () => {
             </li>
             <li>
                <Link
-                  onClick={() => window.scrollTo(0, 0)}
+                  onClick={() => {
+                     window.scrollTo(0, 0);
+                     dispatch(toggleMagazine());
+                  }}
                   to="/blogs/abenteuer/mavericks-eishockey-tour"
                >
                   <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
@@ -81,7 +118,10 @@ const SideBarMagazine = () => {
             </li>
             <li>
                <Link
-                  onClick={() => window.scrollTo(0, 0)}
+                  onClick={() => {
+                     window.scrollTo(0, 0);
+                     dispatch(toggleMagazine());
+                  }}
                   to="/blogs/abenteuer/auf-pilgerreise-in-osttibet"
                >
                   <ListItem className="cursor-pointer p-1 pl-[12px] text-[0.7rem]">

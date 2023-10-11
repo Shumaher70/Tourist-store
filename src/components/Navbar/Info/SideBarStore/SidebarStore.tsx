@@ -3,6 +3,7 @@ import {
    sidebarStoreProduct,
    sidebarStoreHptSelected,
    sidebarStoreReStore,
+   toggleStore,
 } from '../../../../store/redusers/sideBarReduser';
 
 import { List, ListItem, Card } from '@material-tailwind/react';
@@ -47,7 +48,10 @@ const SidebarStore = () => {
 
             <NavLink
                to="/products/gift-card"
-               onClick={() => window.scrollTo(0, 0)}
+               onClick={() => {
+                  window.scrollTo(0, 0);
+                  dispatch(toggleStore());
+               }}
             >
                <ListItem className="cursor-pointer rounded-none mt-5 p-1 pl-[12px] text-[0.7rem]">
                   GIFT VOUCHER
@@ -55,7 +59,10 @@ const SidebarStore = () => {
             </NavLink>
             <NavLink
                to="/collections/topseller"
-               onClick={() => window.scrollTo(0, 0)}
+               onClick={() => {
+                  window.scrollTo(0, 0);
+                  dispatch(toggleStore());
+               }}
             >
                <ListItem className="cursor-pointer rounded-none p-1 pl-[12px] text-[0.7rem]">
                   TOP SELLER

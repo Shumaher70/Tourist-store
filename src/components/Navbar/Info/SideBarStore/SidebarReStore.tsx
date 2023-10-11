@@ -1,7 +1,10 @@
 import { List, ListItem, Card } from '@material-tailwind/react';
 import { NavLink } from 'react-router-dom';
+import { toggleStore } from '../../../../store/redusers/sideBarReduser';
+import { useDispatch } from 'react-redux';
 
 const SidebarReStore = () => {
+   const dispatch = useDispatch();
    return (
       <Card
          className={
@@ -10,7 +13,10 @@ const SidebarReStore = () => {
       >
          <List className="absolute top-[15%] pl-[10%]">
             <NavLink
-               onClick={() => window.scrollTo(0, 0)}
+               onClick={() => {
+                  window.scrollTo(0, 0);
+                  dispatch(toggleStore());
+               }}
                to="/collections/re-store"
             >
                <ListItem className="cursor-pointer  rounded-none">
@@ -18,7 +24,10 @@ const SidebarReStore = () => {
                </ListItem>
             </NavLink>
             <NavLink
-               onClick={() => window.scrollTo(0, 0)}
+               onClick={() => {
+                  window.scrollTo(0, 0);
+                  dispatch(toggleStore());
+               }}
                to="/collections/all-products"
             >
                <ListItem className="cursor-pointer  rounded-none">

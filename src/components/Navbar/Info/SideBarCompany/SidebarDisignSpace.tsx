@@ -1,7 +1,10 @@
 import { Card, List, ListItem } from '@material-tailwind/react';
 import { NavLink } from 'react-router-dom';
+import { toggleCompany } from '../../../../store/redusers/sideBarReduser';
+import { useDispatch } from 'react-redux';
 
 const SidebarDisignSpace = () => {
+   const dispatch = useDispatch();
    return (
       <Card
          className={
@@ -10,7 +13,10 @@ const SidebarDisignSpace = () => {
       >
          <List className="absolute top-[15%] pl-[10%]">
             <NavLink
-               onClick={() => window.scrollTo(0, 0)}
+               onClick={() => {
+                  window.scrollTo(0, 0);
+                  dispatch(toggleCompany());
+               }}
                to="/blogs/designraum/zelttechnik"
             >
                <ListItem className="cursor-pointer  rounded-none">
@@ -19,7 +25,10 @@ const SidebarDisignSpace = () => {
             </NavLink>
 
             <NavLink
-               onClick={() => window.scrollTo(0, 0)}
+               onClick={() => {
+                  window.scrollTo(0, 0);
+                  dispatch(toggleCompany());
+               }}
                to="/blogs/designraum/dyecoshell™"
             >
                <ListItem className="cursor-pointer  rounded-none">
@@ -28,7 +37,10 @@ const SidebarDisignSpace = () => {
             </NavLink>
 
             <NavLink
-               onClick={() => window.scrollTo(0, 0)}
+               onClick={() => {
+                  window.scrollTo(0, 0);
+                  dispatch(toggleCompany());
+               }}
                to="/blogs/designraum/coolever-technologie"
             >
                <ListItem className="cursor-pointer  rounded-none">
@@ -37,7 +49,10 @@ const SidebarDisignSpace = () => {
             </NavLink>
 
             <NavLink
-               onClick={() => window.scrollTo(0, 0)}
+               onClick={() => {
+                  window.scrollTo(0, 0);
+                  dispatch(toggleCompany());
+               }}
                to="/blogs/designraum"
             >
                <ListItem className="cursor-pointer  rounded-none">

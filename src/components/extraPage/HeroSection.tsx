@@ -34,6 +34,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       flex-col
       justify-center
       items-center
+      text-center
    "
       >
          <div className="w-full h-full">
@@ -62,15 +63,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             {title && (
                <Typography
                   className="
-               xl:text-8xl 
-               lg:text-7xl 
-               md:text-6xl 
-               sm:text-5xl 
-               text-[8vw]
+               text-[8.5vw]
                uppercase 
                text-white 
                font-normal 
-               mt-3"
+               mt-3
+               whitespace-nowrap
+               "
                >
                   {title}
                </Typography>

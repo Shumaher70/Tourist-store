@@ -28,7 +28,7 @@ const CatrgoryCarousel = () => {
       const { onClick } = rest;
       return (
          <button
-            className=" absolute right-0 rounded-full bg-white  mr-[10%] transition linear  duration-250 hover:bg-black hover:text-white border-[1px] border-black"
+            className="hover:scale-[1.4] absolute right-0 rounded-full bg-white  mr-[10%] transition linear  duration-250 hover:bg-black hover:text-white border-[1px] border-black"
             onClick={() => onClick()}
          >
             <svg
@@ -53,7 +53,7 @@ const CatrgoryCarousel = () => {
       const { onClick } = rest;
       return (
          <button
-            className=" absolute left-0 rounded-full  ml-[10%] rotate-180 transition linear  duration-250 hover:bg-black hover:text-white border-[1px] border-black"
+            className="hover:scale-[1.4] absolute left-0 rounded-full  ml-[10%] rotate-180 transition linear  duration-250 hover:bg-black hover:text-white border-[1px] border-black"
             onClick={() => onClick()}
          >
             <svg

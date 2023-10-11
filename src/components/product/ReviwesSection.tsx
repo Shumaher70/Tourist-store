@@ -534,12 +534,12 @@ const ReviwesSection: React.FC<reviwesSectionProps> = ({
                      </button>
                      <button
                         className="
-                bg-black
-                text-white
-                font-normal
-                py-2
-                px-5
-              "
+                        bg-black
+                        text-white
+                        font-normal
+                        py-2
+                        px-5
+                         "
                      >
                         Send rating
                      </button>

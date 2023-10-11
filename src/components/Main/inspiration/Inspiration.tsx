@@ -7,7 +7,7 @@ const Inspiration = () => {
          <img
             src={require('./inspiration-bg.webp')}
             alt="inspiration"
-            className="absolute z-[-1] w-full h-full object-cover"
+            className="absolute z-[-1] w-full h-full object-cover brightness-[0.9]"
          />
          <div className="absolute w-full h-full bg-black opacity-30" />
          <div className="relative flex-col py-[5%] px-[10%]  xl:w-2/4 sm:w-3/4 w-full">

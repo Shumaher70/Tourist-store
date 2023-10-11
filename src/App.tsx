@@ -67,8 +67,18 @@ import HpthygieneBasicNatureFirstAidKitStandart from './pages/products/Hpthygien
 import GiftCard from './pages/products/GiftCard';
 import HptSotoStormbreaker from './pages/products/HptSotoStormbreaker';
 import Layout from './Layout';
+import { useDispatch } from 'react-redux';
+import { hideInfo } from './store/redusers/sideBarReduser';
 
 const App = () => {
+   const dispatch = useDispatch();
+
+   window.addEventListener('resize', () => {
+      if (window.innerWidth < 768) {
+         dispatch(hideInfo());
+      }
+   });
+
    return (
       <>
          <Routes>

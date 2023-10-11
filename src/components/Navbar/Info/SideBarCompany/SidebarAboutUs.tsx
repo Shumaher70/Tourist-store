@@ -1,7 +1,10 @@
 import { Card, List, ListItem } from '@material-tailwind/react';
 import { NavLink } from 'react-router-dom';
+import { toggleCompany } from '../../../../store/redusers/sideBarReduser';
+import { useDispatch } from 'react-redux';
 
 const SidebarAboutUs = () => {
+   const dispatch = useDispatch();
    return (
       <Card
          className={
@@ -10,7 +13,10 @@ const SidebarAboutUs = () => {
       >
          <List className="absolute top-[15%] pl-[10%]">
             <NavLink
-               onClick={() => window.scrollTo(0, 0)}
+               onClick={() => {
+                  window.scrollTo(0, 0);
+                  dispatch(toggleCompany());
+               }}
                to="/pages/unternehmen-store"
             >
                <ListItem className="cursor-pointer rounded-none">
@@ -18,14 +24,23 @@ const SidebarAboutUs = () => {
                </ListItem>
             </NavLink>
             <NavLink
-               onClick={() => window.scrollTo(0, 0)}
+               onClick={() => {
+                  window.scrollTo(0, 0);
+                  dispatch(toggleCompany());
+               }}
                to="/pages/unternehmen-store"
             >
                <ListItem className="cursor-pointer rounded-none">
                   HPT - HAMBURG
                </ListItem>
             </NavLink>
-            <NavLink onClick={() => window.scrollTo(0, 0)} to="/pages/karriere">
+            <NavLink
+               onClick={() => {
+                  window.scrollTo(0, 0);
+                  dispatch(toggleCompany());
+               }}
+               to="/pages/karriere"
+            >
                <ListItem className="cursor-pointer rounded-none">
                   CAREER / JOBS
                </ListItem>
