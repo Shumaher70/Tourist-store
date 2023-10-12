@@ -1,4 +1,5 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../../store';
 import { toggleSearch } from '../../../store/redusers/sideBarReduser';
 
 import { Card, Typography, Input } from '@material-tailwind/react';
@@ -10,6 +11,9 @@ import { useEffect, useState } from 'react';
 
 export default function SideBarSearch() {
    const dispatch = useDispatch();
+   const toggleSearchSelector = useSelector(
+      (state: RootState) => state.sideBar.toggleSearch
+   );
 
    const [filter, setFilter] = useState([
       { mainImg1: '', mainImg2: '', title: '', type: '', price: '', src: '' },
@@ -39,7 +43,12 @@ export default function SideBarSearch() {
 
    return (
       <Card
-         className={`z-40 fixed w-[100%] rounded-none right-0 h-full xl:w-[30%] lg:w-[40%] md:w-[50%] overflow-y-auto`}
+         style={{
+            transform: `${
+               toggleSearchSelector ? 'translateX(0)' : 'translateX(105%)'
+            }`,
+         }}
+         className={`z-40 fixed w-[100%] rounded-none right-0 h-full xl:w-[30%] lg:w-[40%] md:w-[50%] overflow-y-auto transition`}
       >
          <div className="mb-2 flex justify-between items-center gap-4 p-4">
             <Typography variant="h5" color="blue-gray">
@@ -74,6 +83,15 @@ export default function SideBarSearch() {
 
          {inputValue.length > 0 && (
             <div className="flex flex-col px-[10%]">
+               {filter.length > 1 ? (
+                  <Typography className="border-b-[1px] border-[#f2f2f2]">
+                     Products
+                  </Typography>
+               ) : (
+                  <Typography className="border-b-[1px] border-[#f2f2f2]">
+                     Product
+                  </Typography>
+               )}
                {filter.map((product) => (
                   <Link
                      key={nanoid()}
