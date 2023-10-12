@@ -73,7 +73,7 @@ const Header = () => {
          )}
          <Nav />
          {InititalWidth && toggleSlice && <NavMobail />}
-         {toggleCart && <SideBarCart />}
+         <SideBarCart />
          <SideBarSearch />
       </header>
    );

@@ -1,19 +1,17 @@
+import React, { useEffect, useState, useRef } from 'react';
 import { nanoid } from 'nanoid';
 import { NavLink } from 'react-router-dom';
-
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
-
-import React, { useEffect, useState, useRef } from 'react';
-
 import { Button, Typography } from '@material-tailwind/react';
-
 import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
-
-import Faq from '../Faq';
 import Carousel from 'react-multi-carousel';
 import CustomButtonExit from '../CustomButtonExit';
+import Faq from '../Faq';
 import 'react-multi-carousel/lib/styles.css';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../store/redusers/cartReduser';
+import { toggleCart } from '../../store/redusers/sideBarReduser';
 
 interface ProductSectionCartProps {
    product: { [key: string]: string | string[] };
@@ -25,9 +23,20 @@ const ProductSectionCart = ({
    elementBotton,
 }: ProductSectionCartProps) => {
    const productMainImg = (product.mainImg as string[]) || [];
+
+   const productCart = {
+      mainImg: product.mainImg[0] as string,
+      title: product.title as string,
+      price: +product.price as number,
+      quantity: 1,
+      totalPriceProduct: +product.price as number,
+   };
+
    const mainNavHeight = useSelector(
       (state: RootState) => state.size.heightNav
    );
+
+   const dispatch = useDispatch();
 
    const screenCardRef = useRef<HTMLDivElement>(null);
    const cardRef = useRef<HTMLDivElement>(null);
@@ -453,6 +462,10 @@ const ProductSectionCart = ({
                      </Faq>
                   )}
                   <Button
+                     onClick={() => {
+                        dispatch(addToCart(productCart));
+                        dispatch(toggleCart());
+                     }}
                      size="lg"
                      className="bg-black text-white rounded-none w-full mt-5"
                   >
