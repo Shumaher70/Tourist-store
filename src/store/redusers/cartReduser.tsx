@@ -6,6 +6,7 @@ interface Product {
    price: number;
    quantity: number;
    totalPriceProduct: number;
+   src: string;
 }
 
 interface Cart {
@@ -28,23 +29,61 @@ export const productCart = createSlice({
          const productExist = state.products.find(
             (p) => p.title === action.payload.title
          );
-         const productTotalQuantity = state.products
-            .map((product) => product.quantity)
-            .reduce((sum, product) => sum + product, 1);
-
-         state.totalQuantity = productTotalQuantity;
-
          if (productExist) {
-            productExist.quantity += action.payload.quantity;
+            productExist.quantity! += 1;
+
             productExist.totalPriceProduct =
-               productExist.price * productExist.quantity;
+               productExist.price * productExist.quantity!;
          } else {
             state.products.push(action.payload);
          }
       },
+
+      decreaseSingleProductQuantity: (
+         state,
+         action: PayloadAction<Product>
+      ) => {
+         const productExist = state.products.find(
+            (p) => p.title === action.payload.title
+         );
+
+         if (productExist) {
+            productExist.quantity! -= 1;
+            productExist.totalPriceProduct =
+               productExist.totalPriceProduct - productExist.price!;
+         } else {
+            state.products.push(action.payload);
+         }
+      },
+
+      updateProductQuantity: (state, action: PayloadAction<Product>) => {
+         const productExist = state.products.find(
+            (p) => p.title === action.payload.title
+         );
+         if (productExist) {
+            productExist.quantity! = action.payload.quantity;
+            productExist.totalPriceProduct =
+               productExist.price * productExist.quantity;
+         }
+      },
+
+      totalCart: (state) => {
+         state.totalQuantity = state.products
+            .map((item) => item.quantity)
+            .reduce((sum, acc) => sum + acc, 0);
+
+         state.totalPrice = state.products
+            .map((item) => item.totalPriceProduct)
+            .reduce((sum, acc) => sum + acc, 0);
+      },
    },
 });
 
-export const { addToCart } = productCart.actions;
+export const {
+   addToCart,
+   decreaseSingleProductQuantity,
+   totalCart,
+   updateProductQuantity,
+} = productCart.actions;
 
 export default productCart.reducer;

@@ -30,6 +30,7 @@ const ProductSectionCart = ({
       price: +product.price as number,
       quantity: 1,
       totalPriceProduct: +product.price as number,
+      src: product.src as string,
    };
 
    const mainNavHeight = useSelector(

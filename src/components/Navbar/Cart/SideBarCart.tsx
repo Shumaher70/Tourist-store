@@ -1,16 +1,21 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { Card, Typography } from '@material-tailwind/react';
+import { Button, Card, Typography } from '@material-tailwind/react';
 
 import { toggleCart } from '../../../store/redusers/sideBarReduser';
 import { RootState } from '../../../store';
-import { AiOutlinePlus, AiOutlineMinus } from 'react-icons/ai';
-import { useState } from 'react';
+import SingleCart from './shoppingCart/SingleCart';
+import { nanoid } from '@reduxjs/toolkit';
+import { BsBoxSeam } from 'react-icons/bs';
+import { BiMedal } from 'react-icons/bi';
 
 const SideBarCart = () => {
-   const [quantity, setQuantity] = useState(1);
    const dispatch = useDispatch();
    const toggleCartSelector = useSelector(
       (state: RootState) => state.sideBar.toggleCart
+   );
+
+   const totalPriceSelector = useSelector(
+      (state: RootState) => state.cart.totalPrice
    );
 
    const product = useSelector((state: RootState) => state.cart.products);
@@ -47,7 +52,7 @@ const SideBarCart = () => {
             </svg>
          </div>
 
-         <div className="w-full h-full flex flex-col gap-5 border-t-[1px] border-[#d3d2d2]">
+         <div className="w-full h-full flex flex-col gap-5 border-t-[1px] border-[#d3d2d2] overflow-y-auto">
             {product.length === 0 && (
                <Typography
                   color="black"
@@ -61,67 +66,66 @@ const SideBarCart = () => {
             {product &&
                product.map((product, index) => {
                   return (
-                     <div key={index} className="px-5">
-                        <div className="w-full flex justify-between border-b-[1px] py-5 border-[#d3d2d2] gap-5">
-                           <div className="basis-2/6">
-                              <img
-                                 src={require(`../../../dammyDB/${product.mainImg}`)}
-                                 alt={product.mainImg}
-                                 className="brightness-90"
-                              />
-                           </div>
-
-                           <div className="flex flex-col flex-1 gap-5">
-                              <div className="flex flex-col flex-1">
-                                 <Typography className="text-black font-normal">
-                                    {product.title}
-                                 </Typography>
-                                 <Typography className="text-black underline">
-                                    €{product.price},00
-                                 </Typography>
-                              </div>
-
-                              <div className="flex justify-between items-center">
-                                 <div className="flex items-center border-[1px] border-black p-1 gap-1">
-                                    <AiOutlinePlus
-                                       onClick={() =>
-                                          setQuantity((priv) => priv + 1)
-                                       }
-                                       className="h-5 w-5 text-black"
-                                    />
-                                    <input
-                                       min="1"
-                                       max="10"
-                                       step="1"
-                                       className="bg-white text-center text-black flex w-auto"
-                                       type="number"
-                                       onChange={(e) =>
-                                          setQuantity(+e.target.value)
-                                       }
-                                       value={quantity}
-                                    />
-                                    <AiOutlineMinus
-                                       onClick={() => {
-                                          if (quantity > 1)
-                                             setQuantity((priv) => priv - 1);
-                                       }}
-                                       className="h-5 w-5 text-black"
-                                    />
-                                 </div>
-
-                                 <button
-                                    type="button"
-                                    className="uppercase text-gray-400 text-[14px] cursor-pointer"
-                                 >
-                                    ENTFERNEN
-                                 </button>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
+                     <SingleCart
+                        key={nanoid()}
+                        id={index}
+                        img={product.mainImg}
+                        title={product.title}
+                        price={product.price}
+                        quantityProduct={product.quantity!}
+                        totalPriceProduct={product.totalPriceProduct}
+                        src={product.src}
+                     />
                   );
                })}
          </div>
+
+         {product.length !== 0 && (
+            <div className="w-full min-h-auto">
+               <div className="p-5 border-[1px] border-t-[1px] border-[#d3d2d2] flex justify-between items-center sm:gap-5">
+                  <div className="flex items-center gap-3">
+                     <BsBoxSeam className="text-4xl text-black" />
+                     <Typography className="text-sm sm:text-lg text-black font-bold">
+                        FREE SHIPPING FROM 50€
+                     </Typography>
+                  </div>
+                  <div className="flex items-center gap-3">
+                     <BiMedal className="text-4xl text-black" />
+                     <Typography className="text-sm sm:text-lg text-black font-bold">
+                        LIFETIME WARRANTY
+                     </Typography>
+                  </div>
+               </div>
+
+               <div className="p-5">
+                  <div className="flex justify-between items-center">
+                     <Typography className="uppercase font-bold text-2xl text-black">
+                        total
+                     </Typography>
+                     <Typography className="uppercase font-normal text-2xl text-black">
+                        €{totalPriceSelector},00
+                     </Typography>
+                  </div>
+               </div>
+
+               <div className="p-5 flex flex-col gap-5">
+                  <Button
+                     size="lg"
+                     color="gray"
+                     className="rounded-none bg-black text-white"
+                  >
+                     to the checkout
+                  </Button>
+                  <Button
+                     size="lg"
+                     color="gray"
+                     className="rounded-none bg-white text-black border-[1px] border-black"
+                  >
+                     to shopping cart
+                  </Button>
+               </div>
+            </div>
+         )}
       </Card>
    );
 };
