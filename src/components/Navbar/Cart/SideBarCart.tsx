@@ -102,6 +102,7 @@ const SideBarCart = () => {
                      <Typography className="uppercase font-bold text-2xl text-black">
                         total
                      </Typography>
+
                      <Typography className="uppercase font-normal text-2xl text-black">
                         €{totalPriceSelector},00
                      </Typography>

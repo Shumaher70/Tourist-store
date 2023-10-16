@@ -1,8 +1,11 @@
+import { nanoid } from '@reduxjs/toolkit';
+
 export const products = {
    cotegory: {
       tents: {
          fistalClassic: {
             mainSection: {
+               id: '1',
                title: 'fistal, classic',
                type: 'tents',
                price: '699',
@@ -177,6 +180,7 @@ export const products = {
       tarps: {
          dawnMTarpGray: {
             mainSection: {
+               id: '2',
                title: 'dawn m tarp, grey',
                type: 'tarps',
                price: '159',
@@ -257,6 +261,7 @@ export const products = {
       bags: {
          transitLineSlingPocket: {
             mainSection: {
+               id: '3',
                title: 'transit line sling pocket, castlerock',
                type: 'bags',
                price: '79',
@@ -395,6 +400,7 @@ export const products = {
       gears: {
          hptXMizuCairoGrid750Ml_Silver_white: {
             mainSection: {
+               id: '4',
                title: 'hpt x mizu cairo grid 750 ml, silver, white',
                type: 'gears',
                price: '25',
@@ -424,6 +430,7 @@ export const products = {
       hpt: {
          kniveJamesBrandTheElko: {
             mainSection: {
+               id: '5',
                title: 'james brand - the elko',
                type: 'HPT Selected',
                price: '65',
@@ -466,6 +473,7 @@ export const products = {
 
          campingHelinoxTacticalChairOne: {
             mainSection: {
+               id: '6',
                title: 'HELINOX - TACTICAL CHAIR ONE',
                type: 'HPT Selected',
                price: '119',
@@ -509,6 +517,7 @@ export const products = {
 
          coockingSotoStormbreaker: {
             mainSection: {
+               id: '7',
                title: 'SOTO STORMBREAKER',
                type: 'HPT Selected',
                price: '229',
@@ -542,6 +551,7 @@ export const products = {
 
          sleepingThermarestNeoairXlite: {
             mainSection: {
+               id: '8',
                title: 'THERMAREST NEOAIR XLITE',
                type: 'HPT Selected',
                price: '190',
@@ -584,6 +594,7 @@ export const products = {
 
          hygieneBasicNatureFirstAidKitStandart: {
             mainSection: {
+               id: '9',
                title: 'BASIC NATURE FIRST AID KIT "STANDARD"',
                type: 'HPT Selected',
                price: '13',
@@ -621,6 +632,7 @@ export const products = {
       giftCard: {
          card: {
             mainSection: {
+               id: '10',
                title: 'GIFT CARD',
                type: 'gift card',
                price: '10',

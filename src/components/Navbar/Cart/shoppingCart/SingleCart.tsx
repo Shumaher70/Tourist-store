@@ -33,8 +33,6 @@ const SingleCart: React.FC<singleCartProps> = ({
 }) => {
    const [quantity, setQuantity] = useState(quantityProduct);
 
-   console.log(totalPriceProduct);
-
    const dispatch = useDispatch();
    useEffect(() => {
       dispatch(totalCart());
@@ -87,7 +85,7 @@ const SingleCart: React.FC<singleCartProps> = ({
                                  quantity: quantity,
                                  totalPriceProduct,
                                  src,
-                                 id: nanoid(),
+                                 id,
                               })
                            );
                         }}

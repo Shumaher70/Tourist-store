@@ -24,6 +24,10 @@ const ProductSectionCart = ({
 }: ProductSectionCartProps) => {
    const productMainImg = (product.mainImg as string[]) || [];
 
+   const mainNavHeight = useSelector(
+      (state: RootState) => state.size.heightNav
+   );
+
    const productCart = {
       mainImg: product.mainImg[0] as string,
       title: product.title as string,
@@ -31,12 +35,8 @@ const ProductSectionCart = ({
       quantity: 1,
       totalPriceProduct: +product.price as number,
       src: product.src as string,
-      id: nanoid(),
+      id: product.id as string,
    };
-
-   const mainNavHeight = useSelector(
-      (state: RootState) => state.size.heightNav
-   );
 
    const dispatch = useDispatch();
 
