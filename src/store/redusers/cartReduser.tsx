@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface Product {
+   id: string;
    mainImg: string;
    title: string;
    price: number;
@@ -76,6 +77,12 @@ export const productCart = createSlice({
             .map((item) => item.totalPriceProduct)
             .reduce((sum, acc) => sum + acc, 0);
       },
+
+      removeCart: (state, action: PayloadAction<Product>) => {
+         state.products = state.products.filter(
+            (item) => item.id !== action.payload.id
+         );
+      },
    },
 });
 
@@ -84,6 +91,7 @@ export const {
    decreaseSingleProductQuantity,
    totalCart,
    updateProductQuantity,
+   removeCart,
 } = productCart.actions;
 
 export default productCart.reducer;

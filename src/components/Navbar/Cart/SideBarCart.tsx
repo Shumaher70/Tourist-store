@@ -64,11 +64,11 @@ const SideBarCart = () => {
             )}
 
             {product &&
-               product.map((product, index) => {
+               product.map((product) => {
                   return (
                      <SingleCart
                         key={nanoid()}
-                        id={index}
+                        id={product.id}
                         img={product.mainImg}
                         title={product.title}
                         price={product.price}

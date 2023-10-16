@@ -5,13 +5,15 @@ import { useDispatch } from 'react-redux';
 import {
    addToCart,
    decreaseSingleProductQuantity,
+   removeCart,
    totalCart,
    updateProductQuantity,
 } from '../../../../store/redusers/cartReduser';
 import { Link } from 'react-router-dom';
+import { nanoid } from '@reduxjs/toolkit';
 
 interface singleCartProps {
-   id: number;
+   id: string;
    img: string;
    title: string;
    price: number;
@@ -31,6 +33,8 @@ const SingleCart: React.FC<singleCartProps> = ({
 }) => {
    const [quantity, setQuantity] = useState(quantityProduct);
 
+   console.log(totalPriceProduct);
+
    const dispatch = useDispatch();
    useEffect(() => {
       dispatch(totalCart());
@@ -42,9 +46,10 @@ const SingleCart: React.FC<singleCartProps> = ({
             quantity,
             totalPriceProduct: totalPriceProduct,
             src,
+            id,
          })
       );
-   }, [dispatch, img, price, quantity, src, title, totalPriceProduct]);
+   }, [dispatch, id, img, price, quantity, src, title, totalPriceProduct]);
 
    return (
       <div key={id} className="px-5">
@@ -82,6 +87,7 @@ const SingleCart: React.FC<singleCartProps> = ({
                                  quantity: quantity,
                                  totalPriceProduct,
                                  src,
+                                 id: nanoid(),
                               })
                            );
                         }}
@@ -108,6 +114,7 @@ const SingleCart: React.FC<singleCartProps> = ({
                                     quantity: quantity,
                                     totalPriceProduct,
                                     src,
+                                    id,
                                  })
                               );
                            }
@@ -117,6 +124,20 @@ const SingleCart: React.FC<singleCartProps> = ({
                   </div>
 
                   <button
+                     onClick={() => {
+                        dispatch(
+                           removeCart({
+                              mainImg: img,
+                              title: title,
+                              price: price,
+                              quantity,
+                              totalPriceProduct: totalPriceProduct,
+                              src,
+                              id,
+                           })
+                        );
+                        dispatch(totalCart());
+                     }}
                      type="button"
                      className="uppercase text-gray-400 text-[14px] cursor-pointer"
                   >

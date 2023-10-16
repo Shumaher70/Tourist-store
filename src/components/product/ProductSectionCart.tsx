@@ -31,6 +31,7 @@ const ProductSectionCart = ({
       quantity: 1,
       totalPriceProduct: +product.price as number,
       src: product.src as string,
+      id: nanoid(),
    };
 
    const mainNavHeight = useSelector(
