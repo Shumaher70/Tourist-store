@@ -10,7 +10,6 @@ import {
    updateProductQuantity,
 } from '../../../../store/redusers/cartReduser';
 import { Link } from 'react-router-dom';
-import { nanoid } from '@reduxjs/toolkit';
 
 interface singleCartProps {
    id: string;
@@ -39,8 +38,8 @@ const SingleCart: React.FC<singleCartProps> = ({
       dispatch(
          updateProductQuantity({
             mainImg: img,
-            title: title,
-            price: price,
+            title,
+            price,
             quantity,
             totalPriceProduct: totalPriceProduct,
             src,

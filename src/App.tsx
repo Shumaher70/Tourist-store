@@ -56,6 +56,7 @@ import {
    GreatMakeoverPage,
    NewTentKirraPage,
    HelmplanetX66NorthPage,
+   ShoppingCartPage,
 } from './pages/index';
 import TrapsDawnMTTrapGray from './pages/products/TrapsDawnMTTrapGray';
 import BagsTransitLineSlingPocket from './pages/products/BagsTransitLineSlingPocket';
@@ -87,6 +88,7 @@ const App = () => {
                <Route path="*" element={<PageMissed />} />
 
                <Route path="/pages" element={<PageMissed />} />
+               <Route path="/cart" element={<ShoppingCartPage />} />
 
                <Route path="/pages/blog" element={<ContributionsPage />} />
 

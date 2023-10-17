@@ -7,6 +7,7 @@ import SingleCart from './shoppingCart/SingleCart';
 import { nanoid } from '@reduxjs/toolkit';
 import { BsBoxSeam } from 'react-icons/bs';
 import { BiMedal } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 const SideBarCart = () => {
    const dispatch = useDispatch();
@@ -117,13 +118,19 @@ const SideBarCart = () => {
                   >
                      to the checkout
                   </Button>
-                  <Button
-                     size="lg"
-                     color="gray"
-                     className="rounded-none bg-white text-black border-[1px] border-black"
-                  >
-                     to shopping cart
-                  </Button>
+                  <Link to="/cart">
+                     <Button
+                        size="lg"
+                        color="gray"
+                        className="w-full rounded-none bg-white text-black border-[1px] border-black hover:text-white hover:bg-black transition-all"
+                        onClick={() => {
+                           dispatch(toggleCart());
+                           window.scrollTo(0, 0);
+                        }}
+                     >
+                        to shopping cart
+                     </Button>
+                  </Link>
                </div>
             </div>
          )}

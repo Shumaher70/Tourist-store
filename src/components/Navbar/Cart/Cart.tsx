@@ -9,10 +9,10 @@ const Cart = () => {
       (state: RootState) => state.cart.totalQuantity
    );
 
-   const clickHanlder = () => dispatch(toggleCart());
+   const clickHandler = () => dispatch(toggleCart());
 
    return (
-      <div onClick={clickHanlder} className="relative cursor-pointer ">
+      <div onClick={clickHandler} className="relative cursor-pointer ">
          <span className="flex justify-center items-center rounded-[50%]  w-[20px] h-[20px] text-center text-white bg-black absolute text-xs top-3.5 right-2 ">
             {productSelector}
          </span>

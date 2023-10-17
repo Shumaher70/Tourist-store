@@ -133,6 +133,27 @@ export const productCart = createSlice({
          );
       },
 
+      totalSingleCart: (state, action: PayloadAction<Product>) => {
+         const productExist = state.products.find(
+            (p) => p.title === action.payload.title
+         );
+
+         if (productExist) {
+            productExist.quantity = action.payload.quantity;
+         }
+
+         localStorage.setItem(
+            'cartItems',
+            JSON.stringify(state.products.map((item) => item))
+         );
+
+         localStorage.setItem('totalPrice', JSON.stringify(state.totalPrice));
+         localStorage.setItem(
+            'totalQuantity',
+            JSON.stringify(state.totalQuantity)
+         );
+      },
+
       removeCart: (state, action: PayloadAction<Product>) => {
          state.products = state.products.filter(
             (item) => item.id !== action.payload.id
@@ -155,6 +176,7 @@ export const {
    addToCart,
    decreaseSingleProductQuantity,
    totalCart,
+   totalSingleCart,
    updateProductQuantity,
    removeCart,
 } = productCart.actions;

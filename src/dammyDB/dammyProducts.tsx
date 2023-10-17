@@ -1,5 +1,3 @@
-import { nanoid } from '@reduxjs/toolkit';
-
 export const products = {
    cotegory: {
       tents: {
