@@ -76,7 +76,7 @@ const GearHptXMizuCairoGrid750Ml_Silver_white = () => {
                   .mainSection.src
             }
          >
-            <div className="w-full flex flex-wrap gap-5">
+            <div className="w-full justify-between flex flex-wrap gap-5">
                {productCard
                   .filter((item) => item.type !== 'gears')
                   .map((item) => (

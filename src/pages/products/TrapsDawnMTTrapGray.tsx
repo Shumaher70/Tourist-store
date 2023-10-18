@@ -104,7 +104,7 @@ const TrapsDawnMTTrapGray = () => {
          <SimilarProduct
             src={products.cotegory.tarps.dawnMTarpGray.mainSection.src}
          >
-            <div className="w-full flex flex-wrap gap-5">
+            <div className="w-full justify-between flex flex-wrap gap-5">
                {[productCard[2]].map((item) => (
                   <ProductCard
                      key={nanoid()}

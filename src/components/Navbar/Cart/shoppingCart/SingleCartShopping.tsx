@@ -83,86 +83,88 @@ const SingleCartShopping = ({
    ]);
 
    return (
-      <div className="w-full sm:flex justify-between p-5 border-t-[1px] border-black">
-         <div className="basis-3/5 flex items-center gap-2">
-            <Link to={src}>
-               <img
-                  src={require(`../../../../dammyDB/${img}`)}
-                  alt={title}
-                  className="object-cover w-32 h-32"
-               />
-            </Link>
-            <Typography className="text-black font-normal">{title}</Typography>
-         </div>
+      <div className="flex items-center sm:px-5 sm:pb-5 p-5 gap-2 border-t-[1px] border-black">
+         <Link to={src} className="sm:basis-1/5 basis-2/5">
+            <img
+               src={require(`../../../../dammyDB/${img}`)}
+               alt={title}
+               className="object-cover"
+            />
+         </Link>
 
-         <div className="basis-2/5 flex justify-center items-center gap-[70px]">
-            <div className="flex min-w-[80px] items-center flex-col gap-1">
-               <div className="flex border-[1px] border-black/50 group">
-                  <input
-                     onChange={(e) => {
-                        setValueInput(+e.target.value);
-                     }}
-                     type="number"
-                     className="bg-white w-[30px] h-[30px] border-[1px outline-none text-center"
-                     value={valueInput}
-                  />
-                  <div className="opacity-0 group-hover:opacity-[100] flex flex-col">
-                     <AiOutlineArrowUp
-                        onClick={() =>
-                           dispatch(
-                              addToCart({
-                                 id,
-                                 mainImg: img,
-                                 title,
-                                 price,
-                                 quantity: quantityProduct,
-                                 totalPriceProduct,
-                                 src,
-                              })
-                           )
-                        }
-                        className="h-[14px] cursor-pointer"
-                     />
-                     <AiOutlineArrowDown
-                        onClick={() => {
-                           if (valueInput === 1) return;
-                           dispatch(
-                              decreaseSingleProductQuantity({
-                                 id,
-                                 mainImg: img,
-                                 title,
-                                 price,
-                                 quantity: quantityProduct,
-                                 totalPriceProduct,
-                                 src,
-                              })
-                           );
+         <div className="flex sm:flex-row gap-2 flex-col basis-4/5">
+            <Typography className="text-black font-normal basis-2/4">
+               {title}
+            </Typography>
+            <div className="basis-1/4 flex-col gap-1">
+               <div className="w-min flex flex-col items-center">
+                  <div className="flex border-[1px] border-black/50 p-2">
+                     <input
+                        onChange={(e) => {
+                           setValueInput(+e.target.value);
                         }}
-                        className="h-[14px] cursor-pointer"
+                        type="number"
+                        className="bg-white flex w-[30px] h-[30px] outline-none"
+                        value={valueInput}
                      />
+                     <div className="flex flex-col">
+                        <AiOutlineArrowUp
+                           onClick={() =>
+                              dispatch(
+                                 addToCart({
+                                    id,
+                                    mainImg: img,
+                                    title,
+                                    price,
+                                    quantity: quantityProduct,
+                                    totalPriceProduct,
+                                    src,
+                                 })
+                              )
+                           }
+                           className="h-[14px] cursor-pointer"
+                        />
+                        <AiOutlineArrowDown
+                           onClick={() => {
+                              if (valueInput === 1) return;
+                              dispatch(
+                                 decreaseSingleProductQuantity({
+                                    id,
+                                    mainImg: img,
+                                    title,
+                                    price,
+                                    quantity: quantityProduct,
+                                    totalPriceProduct,
+                                    src,
+                                 })
+                              );
+                           }}
+                           className="h-[14px] cursor-pointer"
+                        />
+                     </div>
                   </div>
+                  <Typography
+                     onClick={() => {
+                        dispatch(
+                           removeCart({
+                              id,
+                              mainImg: img,
+                              title,
+                              price,
+                              quantity: quantityProduct,
+                              totalPriceProduct,
+                              src,
+                           })
+                        );
+                        dispatch(totalCart());
+                     }}
+                     className="text-black text-[12px] mt-1 cursor-pointer uppercase"
+                  >
+                     remove
+                  </Typography>
                </div>
-               <Typography
-                  onClick={() => {
-                     dispatch(
-                        removeCart({
-                           id,
-                           mainImg: img,
-                           title,
-                           price,
-                           quantity: quantityProduct,
-                           totalPriceProduct,
-                           src,
-                        })
-                     );
-                     dispatch(totalCart());
-                  }}
-                  className="text-black text-[10px] cursor-pointer uppercase"
-               >
-                  remove
-               </Typography>
             </div>
-            <Typography className="min-w-[80px] flex justify-center text-md font-normal underline text-black uppercase">
+            <Typography className="flex basis-1/4 text-md font-normal underline text-black uppercase">
                €{totalPriceProduct},00
             </Typography>
          </div>

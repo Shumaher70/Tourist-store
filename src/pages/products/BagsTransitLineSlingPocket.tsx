@@ -124,7 +124,7 @@ const BagsTransitLineSlingPocket = () => {
          <SimilarProduct
             src={products.cotegory.bags.transitLineSlingPocket.mainSection.src}
          >
-            <div className="w-full flex flex-wrap gap-5">
+            <div className="w-full flex flex-wrap justify-between gap-5">
                {productCard
                   .filter(
                      (item) =>

@@ -59,7 +59,7 @@ const GiftCard = () => {
          <ReviwesSection reviwesSectionHandler={reviwesSectionHandler} />
 
          <SimilarProduct src={products.cotegory.giftCard.card.mainSection.src}>
-            <div className="w-full flex flex-wrap gap-5">
+            <div className="w-full flex justify-between flex-wrap gap-5">
                {productCard
                   .filter((item) => !item.type.includes('gift card'))
                   .map((item) => (

@@ -65,7 +65,7 @@ const HptKniveJamesBrandTheElko = () => {
          <SimilarProduct
             src={products.cotegory.hpt.kniveJamesBrandTheElko.mainSection.src}
          >
-            <div className="w-full flex flex-wrap gap-5">
+            <div className="w-full justify-between flex flex-wrap gap-5">
                {productCard
                   .filter(
                      (item) => !item.mainImg1.includes('kniveJamesBrandTheElko')

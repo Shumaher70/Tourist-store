@@ -120,7 +120,7 @@ const TentsFistalClassic = () => {
          <SimilarProduct
             src={products.cotegory.tents.fistalClassic.mainSection.src}
          >
-            <div className="w-full flex flex-wrap gap-5">
+            <div className="w-full flex justify-between flex-wrap gap-5">
                {productCard
                   .filter(
                      (item) =>
