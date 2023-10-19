@@ -112,13 +112,15 @@ const ShoppingCartPage = () => {
                   </div>
 
                   <div className="w-full px-5 pb-5 py-2">
-                     <Button
-                        size="lg"
-                        color="gray"
-                        className="w-full rounded-none bg-black font-normal"
-                     >
-                        to the checkout
-                     </Button>
+                     <Link to="/payment" className="w-full">
+                        <Button
+                           size="lg"
+                           color="gray"
+                           className="w-full rounded-none bg-black font-normal"
+                        >
+                           to the checkout
+                        </Button>
+                     </Link>
 
                      <Button
                         type="submit"

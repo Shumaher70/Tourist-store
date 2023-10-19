@@ -70,6 +70,7 @@ import HptSotoStormbreaker from './pages/products/HptSotoStormbreaker';
 import Layout from './Layout';
 import { useDispatch } from 'react-redux';
 import { hideInfo } from './store/redusers/sideBarReduser';
+import ShoppingPaymentPage from './components/navbar/cart/shoppingCart/ShoppingPaymentPage';
 
 const App = () => {
    const dispatch = useDispatch();
@@ -293,6 +294,7 @@ const App = () => {
                   element={<HelmplanetX66NorthPage />}
                />
             </Route>
+            <Route path="payment" element={<ShoppingPaymentPage />} />
          </Routes>
       </>
    );

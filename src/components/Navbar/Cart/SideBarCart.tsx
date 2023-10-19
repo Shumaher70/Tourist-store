@@ -111,13 +111,15 @@ const SideBarCart = () => {
                </div>
 
                <div className="p-5 flex flex-col gap-5">
-                  <Button
-                     size="lg"
-                     color="gray"
-                     className="rounded-none bg-black text-white"
-                  >
-                     to the checkout
-                  </Button>
+                  <Link to="/payment" className="w-full">
+                     <Button
+                        size="lg"
+                        color="gray"
+                        className="rounded-none w-full bg-black text-white"
+                     >
+                        to the checkout
+                     </Button>
+                  </Link>
                   <Link to="/cart">
                      <Button
                         size="lg"
