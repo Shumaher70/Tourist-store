@@ -1,5 +1,5 @@
 import { Button } from '@material-tailwind/react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 interface ButtonCustomProps {
    btnTitle?: string;
@@ -11,14 +11,19 @@ const ButtonCustom: React.FC<ButtonCustomProps> = ({
    btnStyle = 'bg-white text-black',
 }) => {
    const [scroll, setScroll] = useState(0);
-   const [calculScrol, setcCalculScrol] = useState(0);
+
+   const scrollHandler = useCallback(() => {
+      const scrollPercentage = window.scrollY / 3;
+      setScroll(scrollPercentage < 100 ? scrollPercentage : 100);
+   }, []);
 
    useEffect(() => {
-      window.addEventListener('scroll', () => {
-         setcCalculScrol(window.scrollY / 3);
-         setScroll(calculScrol < 100 ? calculScrol : 100);
-      });
-   }, [calculScrol]);
+      window.addEventListener('scroll', scrollHandler);
+
+      return () => {
+         window.removeEventListener('scroll', scrollHandler);
+      };
+   }, [scrollHandler]);
 
    return (
       <Button

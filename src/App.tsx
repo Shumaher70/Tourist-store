@@ -71,15 +71,24 @@ import Layout from './Layout';
 import { useDispatch } from 'react-redux';
 import { hideInfo } from './store/redusers/sideBarReduser';
 import ShoppingPaymentPage from './components/navbar/cart/shoppingCart/ShoppingPaymentPage';
+import { useEffect } from 'react';
 
 const App = () => {
    const dispatch = useDispatch();
 
-   window.addEventListener('resize', () => {
-      if (window.innerWidth < 768) {
-         dispatch(hideInfo());
-      }
-   });
+   useEffect(() => {
+      const handleResize = () => {
+         if (window.innerWidth < 768) {
+            dispatch(hideInfo());
+         }
+      };
+
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+         window.removeEventListener('resize', handleResize);
+      };
+   }, [dispatch]);
 
    return (
       <>

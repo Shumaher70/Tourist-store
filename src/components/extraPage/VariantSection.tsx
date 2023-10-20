@@ -26,14 +26,18 @@ const VariantSection: React.FC<VarianSectionProps> = ({
    const [rangeInput, setRangeInput] = useState('50');
 
    useEffect(() => {
-      if (widthSectionRef.current?.offsetWidth) {
-         setWidthSection(widthSectionRef.current?.offsetWidth);
-      }
-
-      window.addEventListener('resize', () => {
-         if (widthSectionRef.current?.offsetWidth)
+      const widthHandler = () => {
+         if (widthSectionRef.current?.offsetWidth) {
             setWidthSection(widthSectionRef.current?.offsetWidth);
-      });
+         }
+      };
+      widthHandler();
+
+      window.addEventListener('resize', widthHandler);
+
+      return () => {
+         window.removeEventListener('resize', widthHandler);
+      };
    }, []);
 
    return (

@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Navbar } from '@material-tailwind/react';
 import {
@@ -14,19 +14,19 @@ const Nav = () => {
    const size = useRef<HTMLDivElement>(null);
    const dispatch = useDispatch();
 
-   useEffect(() => {
-      const handleResize = () => {
-         if (size.current) {
-            window.innerWidth < 768 ? getInfo(false) : getInfo(true);
-            setTimeout(() => {
-               if (size.current) {
-                  dispatch(heightNav(size.current?.offsetHeight.toString()));
-                  dispatch(widthNav(size.current?.offsetWidth.toString()));
-               }
-            }, 1);
-         }
-      };
+   const handleResize = useCallback(() => {
+      if (size.current) {
+         window.innerWidth < 768 ? getInfo(false) : getInfo(true);
+         setTimeout(() => {
+            if (size.current) {
+               dispatch(heightNav(size.current?.offsetHeight.toString()));
+               dispatch(widthNav(size.current?.offsetWidth.toString()));
+            }
+         }, 1);
+      }
+   }, [dispatch]);
 
+   useEffect(() => {
       window.addEventListener('resize', handleResize);
 
       handleResize();
@@ -34,7 +34,7 @@ const Nav = () => {
       return () => {
          window.removeEventListener('resize', handleResize);
       };
-   }, [dispatch]);
+   }, [handleResize]);
 
    return (
       <Navbar

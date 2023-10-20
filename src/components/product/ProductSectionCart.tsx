@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { nanoid } from 'nanoid';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -51,33 +51,24 @@ const ProductSectionCart = ({
    const [initialMainImg, setInitialMainImg] = useState<string[]>([]);
    const [initialMobailImg, setInitialMobailImg] = useState<string[]>([]);
 
-   useEffect(() => {
+   const widthHandler = useCallback(() => {
       window.innerWidth < 640 ? setWidthScreen(true) : setWidthScreen(false);
-      window.addEventListener('resize', () => {
-         window.innerWidth < 640 ? setWidthScreen(true) : setWidthScreen(false);
-      });
    }, []);
 
-   useEffect(() => {
-      if (screenCardRef.current?.getBoundingClientRect().bottom)
+   const topHandler = useCallback(() => {
+      if (screenCardRef.current?.getBoundingClientRect().bottom) {
          if (window.scrollY >= +mainNavHeight - 40) {
             setTopScreenCard(true);
          } else {
             setTopScreenCard(false);
          }
-      window.addEventListener('scroll', () => {
-         if (screenCardRef.current?.getBoundingClientRect().bottom)
-            if (window.scrollY >= +mainNavHeight - 40) {
-               setTopScreenCard(true);
-            } else {
-               setTopScreenCard(false);
-            }
-      });
+      }
    }, [mainNavHeight]);
 
-   useEffect(() => {
-      if (screenCardRef.current?.getBoundingClientRect())
-         if (cardRef.current?.getBoundingClientRect())
+   const bottomHandler = useCallback(() => {
+      elementBotton?.(cardRef.current?.getBoundingClientRect().bottom ?? 0);
+      if (screenCardRef.current?.getBoundingClientRect()) {
+         if (cardRef.current?.getBoundingClientRect()) {
             if (
                screenCardRef.current?.getBoundingClientRect().bottom -
                   +mainNavHeight <=
@@ -88,24 +79,26 @@ const ProductSectionCart = ({
             } else {
                setBottomScreenCard(false);
             }
-
-      window.addEventListener('scroll', () => {
-         elementBotton?.(cardRef.current?.getBoundingClientRect().bottom ?? 0);
-
-         if (screenCardRef.current?.getBoundingClientRect())
-            if (cardRef.current?.getBoundingClientRect())
-               if (
-                  screenCardRef.current?.getBoundingClientRect().bottom -
-                     +mainNavHeight <=
-                  cardRef.current?.offsetHeight + 20
-               ) {
-                  setBottomScreenCard(true);
-                  setTopScreenCard(false);
-               } else {
-                  setBottomScreenCard(false);
-               }
-      });
+         }
+      }
    }, [elementBotton, mainNavHeight]);
+
+   useEffect(() => {
+      widthHandler();
+      window.addEventListener('resize', widthHandler);
+
+      topHandler();
+      window.addEventListener('scroll', topHandler);
+
+      bottomHandler();
+      window.addEventListener('scroll', bottomHandler);
+
+      return () => {
+         window.removeEventListener('resize', widthHandler);
+         window.removeEventListener('scroll', topHandler);
+         window.removeEventListener('scroll', bottomHandler);
+      };
+   }, [bottomHandler, topHandler, widthHandler]);
 
    const clickMainImgHandlerShowSlider = (
       event: React.MouseEvent<HTMLDivElement>

@@ -2,7 +2,7 @@ import { Typography } from '@material-tailwind/react';
 import { useEffect, useState } from 'react';
 import { AiOutlineQuestionCircle, AiOutlineClose } from 'react-icons/ai';
 const Shipping = ({ className }: { className?: string }) => {
-   const [show, setShow] = useState(true);
+   const [show, setShow] = useState(false);
    const [init, setInit] = useState(true);
    useEffect(() => {
       if (init) {

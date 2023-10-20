@@ -21,7 +21,7 @@ const Discount = ({ className }: DiscountProps) => {
    };
 
    return (
-      <div className={`flex flex-col gap-1`}>
+      <div className={`flex flex-col gap-1 ${className}`}>
          <div className="flex gap-2 w-full">
             <Input
                error={error ? true : false}
@@ -37,7 +37,7 @@ const Discount = ({ className }: DiscountProps) => {
                   onClick={clickHandler}
                   color="gray"
                   size="sm"
-                  className="bg-black flex justify-center items-center capitalize font-normal h-[40px] w-[90px] text-1xl"
+                  className="bg-black flex justify-center items-center rounded-none capitalize font-normal h-[40px] w-[90px] text-1xl"
                >
                   {show ? (
                      <ImSpinner8 className="text-white w-4 h-4 animate-spin" />

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ButtonCustom from './ButtonCustom';
 
@@ -9,14 +9,18 @@ interface NavBarProps {
 
 const NavBar: React.FC<NavBarProps> = ({ src, title = 'descover now' }) => {
    const [scroll, setScroll] = useState(0);
-   const [calculScrol, setcCalculScrol] = useState(0);
+
+   const scrollHandler = useCallback(() => {
+      const calcScroll = window.scrollY / 3;
+      setScroll(calcScroll < 100 ? calcScroll : 100);
+   }, []);
 
    useEffect(() => {
-      window.addEventListener('scroll', () => {
-         setcCalculScrol(window.scrollY / 3);
-         setScroll(calculScrol < 100 ? calculScrol : 100);
-      });
-   }, [calculScrol]);
+      window.addEventListener('scroll', scrollHandler);
+      return () => {
+         window.removeEventListener('scroll', scrollHandler);
+      };
+   }, [scrollHandler]);
 
    return (
       <nav

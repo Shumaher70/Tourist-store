@@ -25,45 +25,25 @@ const InspirationSectionAboutusPage = () => {
 
    useEffect(() => {
       window.addEventListener('scroll', () => {
-         const offsetMission = Number(
-            '-' + navMissionRef.current?.offsetHeight
-         );
-         const offsetStore = Number('-' + navStoreRef.current?.offsetHeight);
-         const offsetNews = Number('-' + navNewsRef.current?.offsetHeight);
+         const navItems = [
+            { ref: navMissionRef, setFunc: setNavMission },
+            { ref: navStoreRef, setFunc: setNavStore },
+            { ref: navNewsRef, setFunc: setNavNews },
+         ];
 
-         if (
-            navMissionRef.current?.getBoundingClientRect().top &&
-            navStoreRef.current?.getBoundingClientRect().top &&
-            navNewsRef.current?.getBoundingClientRect().top
-         )
-            if (
-               navMissionRef.current?.getBoundingClientRect().top >=
-               offsetMission
-            ) {
-               setNavMission(true);
-               setNavStore(false);
-               setNavNews(false);
-            } else if (
-               navStoreRef.current?.getBoundingClientRect().top <
-                  +navHeightSlice + 70 &&
-               navStoreRef.current?.getBoundingClientRect().top >= offsetStore
-            ) {
-               setNavMission(false);
-               setNavStore(true);
-               setNavNews(false);
-            } else if (
-               navNewsRef.current?.getBoundingClientRect().top <
-                  +navHeightSlice + 70 &&
-               navNewsRef.current?.getBoundingClientRect().top >= offsetNews
-            ) {
-               setNavMission(false);
-               setNavStore(false);
-               setNavNews(true);
-            } else {
-               setNavMission(false);
-               setNavStore(false);
-               setNavNews(false);
+         for (let item of navItems) {
+            item.setFunc(false);
+         }
+
+         for (let item of navItems) {
+            const offset = Number('-' + item.ref.current?.offsetHeight);
+            const top = item.ref.current?.getBoundingClientRect().top;
+
+            if (top && top < +navHeightSlice + 70 && top >= offset) {
+               item.setFunc(true);
+               break;
             }
+         }
       });
    }, [navHeightSlice, navMission, navNews, navStore]);
 
@@ -94,51 +74,55 @@ const InspirationSectionAboutusPage = () => {
             extraBtnId="job"
             offsetAnchorLinkExtraBtn={180}
          />
-         <div
-            style={
-               navFixed ? { position: 'fixed', top: `${navHeightSlice}px` } : {}
-            }
-            className="flex justify-center items-center gap-5 w-full h-[60px] bg-white z-10 border-y-[1px] border-[rgba(133,133,133,.2)]"
-         >
-            <AnchorLink href="#mission" offset={+navHeightSlice + 60}>
-               <div
-                  style={
-                     navMission
-                        ? { borderBottom: '2px solid black' }
-                        : { border: 'none' }
-                  }
-               >
-                  <Typography className="text-black font-normal cursor-pointer">
-                     MISSION
-                  </Typography>
-               </div>
-            </AnchorLink>
-            <AnchorLink href="#store" offset={+navHeightSlice + 60}>
-               <div
-                  style={
-                     navStore
-                        ? { borderBottom: '2px solid black' }
-                        : { border: 'none' }
-                  }
-               >
-                  <Typography className="text-black font-normal cursor-pointer">
-                     STORE
-                  </Typography>
-               </div>
-            </AnchorLink>
-            <AnchorLink href="#news" offset={+navHeightSlice + 60}>
-               <div
-                  style={
-                     navNews
-                        ? { borderBottom: '2px solid black' }
-                        : { border: 'none' }
-                  }
-               >
-                  <Typography className="text-black font-normal cursor-pointer">
-                     NEWS
-                  </Typography>
-               </div>
-            </AnchorLink>
+         <div className="relative w-full h-[60px]">
+            <div
+               style={
+                  navFixed
+                     ? { position: 'fixed', top: `${navHeightSlice}px` }
+                     : { position: 'absolute' }
+               }
+               className="flex justify-center items-center gap-5 w-full h-[60px] bg-white z-10 border-y-[1px] border-[rgba(133,133,133,.2)]"
+            >
+               <AnchorLink href="#mission" offset={+navHeightSlice + 60}>
+                  <div
+                     style={
+                        navMission
+                           ? { borderBottom: '2px solid black' }
+                           : { border: 'none' }
+                     }
+                  >
+                     <Typography className="text-black font-normal cursor-pointer">
+                        MISSION
+                     </Typography>
+                  </div>
+               </AnchorLink>
+               <AnchorLink href="#store" offset={+navHeightSlice + 60}>
+                  <div
+                     style={
+                        navStore
+                           ? { borderBottom: '2px solid black' }
+                           : { border: 'none' }
+                     }
+                  >
+                     <Typography className="text-black font-normal cursor-pointer">
+                        STORE
+                     </Typography>
+                  </div>
+               </AnchorLink>
+               <AnchorLink href="#news" offset={+navHeightSlice + 60}>
+                  <div
+                     style={
+                        navNews
+                           ? { borderBottom: '2px solid black' }
+                           : { border: 'none' }
+                     }
+                  >
+                     <Typography className="text-black font-normal cursor-pointer">
+                        NEWS
+                     </Typography>
+                  </div>
+               </AnchorLink>
+            </div>
          </div>
 
          <div ref={navMissionRef} id="mission" className="px-[10%] py-[5%]">

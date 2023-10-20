@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { Button, Typography } from '@material-tailwind/react';
@@ -48,23 +48,23 @@ const TemplatePage = ({
    offsetAnchorLinkExtraBtn = 70,
 }: TamplatePageProps) => {
    const scrollRef = useRef<HTMLDivElement>(null);
-
    const sizeSlice = useSelector((state: RootState) => state.size.heightNav);
-
    const [extraBtn, setExtraBtn] = useState<boolean>(false);
+   const scrollHandler = useCallback(() => {
+      if (scrollRefTop)
+         scrollRefTop(scrollRef.current?.getBoundingClientRect().bottom ?? 0);
+   }, [scrollRefTop]);
 
    useEffect(() => {
       setExtraBtn(() => (extraButton ? extraButton : false));
    }, [extraButton]);
 
    useEffect(() => {
-      window.addEventListener('scroll', () => {
-         if (scrollRefTop)
-            scrollRefTop(
-               scrollRef.current?.getBoundingClientRect().bottom ?? 0
-            );
-      });
-   }, [scrollRefTop]);
+      window.addEventListener('scroll', scrollHandler);
+      return () => {
+         window.removeEventListener('scroll', scrollHandler);
+      };
+   }, [scrollHandler]);
 
    return (
       <div ref={scrollRef} className="flex flex-col">
