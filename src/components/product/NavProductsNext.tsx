@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
@@ -46,6 +46,19 @@ const NavProductsNext = ({
       return setNavHeight(scroll.current?.clientHeight!);
    }, []);
 
+   const productCart = useMemo(
+      () => ({
+         mainImg: product.mainImg[0] as string,
+         title: product.title as string,
+         price: +product.price as number,
+         quantity: 1,
+         totalPriceProduct: +product.price as number,
+         src: product.src as string,
+         id: product.id as string,
+      }),
+      [product]
+   );
+
    useEffect(() => {
       if (highLight) {
          setChanger({
@@ -83,34 +96,18 @@ const NavProductsNext = ({
             review: false,
          });
       }
-   }, [details, highLight, review, videos]);
 
-   useEffect(() => {
       heightHandler();
       window.addEventListener('resize', heightHandler);
 
       return () => {
          window.removeEventListener('resize', heightHandler);
       };
-   }, [heightHandler]);
+   }, [details, heightHandler, highLight, review, videos]);
 
    useEffect(() => {
-      if (beforeBottmElement < 0) {
-         return setNavFixed(true);
-      } else {
-         setNavFixed(false);
-      }
+      return setNavFixed(beforeBottmElement < 0);
    }, [beforeBottmElement]);
-
-   const productCart = {
-      mainImg: product.mainImg[0] as string,
-      title: product.title as string,
-      price: +product.price as number,
-      quantity: 1,
-      totalPriceProduct: +product.price as number,
-      src: product.src as string,
-      id: product.id as string,
-   };
 
    return (
       <div className="relative w-full">
