@@ -57,6 +57,7 @@ const Nav = () => {
          <NavLink
             className="flex justify-center items-center w-[150px] sm:w-[200px] lg:w-[20%]"
             to="/"
+            onClick={() => window.scrollTo(0, 0)}
          >
             <img src={require('./logo/logo.png')} alt="logo" />
          </NavLink>
