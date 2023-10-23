@@ -18,7 +18,7 @@ const SaleSection: React.FC<SaleSectionProps> = ({
       <section className="wrapper bg-[#f2f2f2] flex flex-col lg:flex-row gap-10">
          <div className="basis-2/4">
             <img
-               className="w-full h-full objeccover"
+               className="w-full h-full object-cover"
                src={require(`./img/${img}`)}
                alt={img}
             />

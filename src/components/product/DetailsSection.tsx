@@ -1,7 +1,6 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Typography } from '@material-tailwind/react';
 import { useInView } from 'react-intersection-observer';
-import { nanoid } from '@reduxjs/toolkit';
 
 interface detailsSectionProps {
    detailsSectionHandler: (element: boolean) => void;
@@ -47,7 +46,7 @@ const DetailsSection: React.FC<detailsSectionProps> = ({
       setTrigger(false);
    }, []);
 
-   const labelButton = useCallback(() => {
+   const labelButton = useMemo(() => {
       return open ? 'WENIGER ANZEIGEN' : 'MEHR ANZEIGEN';
    }, [open]);
 
@@ -74,7 +73,7 @@ const DetailsSection: React.FC<detailsSectionProps> = ({
                   {product.detailsDesctioption.map((item, index) => {
                      return (
                         <div
-                           key={nanoid()}
+                           key={index}
                            className={`w-full ${
                               index > 3 ? `${open ? 'flex' : 'hidden'}` : ''
                            } flex sm:flex-row flex-col border-b-[1px] border-black/10 py-5`}
@@ -85,8 +84,8 @@ const DetailsSection: React.FC<detailsSectionProps> = ({
                               </Typography>
                            </div>
                            <div className="flex-1 flex flex-col">
-                              {item.desctiption.map((item) => (
-                                 <Typography key={nanoid()}>{item}</Typography>
+                              {item.desctiption.map((item, index) => (
+                                 <Typography key={index}>{item}</Typography>
                               ))}
                            </div>
                         </div>
@@ -122,7 +121,7 @@ const DetailsSection: React.FC<detailsSectionProps> = ({
                                  transition
 									   "
                            >
-                              {labelButton()}
+                              {labelButton}
                            </button>
                         </div>
                      )}

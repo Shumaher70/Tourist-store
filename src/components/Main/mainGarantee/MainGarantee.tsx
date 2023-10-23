@@ -7,29 +7,24 @@ const dammyBD = [
    {
       img: './garantee-bg-1.webp',
       title: 'LIFETIME WARRANTY',
-      description: `All HEIMPLANET Products are built to withstand the harsh
-      test of time. If any of our products do not perform as
-      promised, just contact us!`,
+      description:
+         'All HEIMPLANET Products are built to withstand the harsh test of time. If any of our products do not perform as promised, just contact us!',
       src: '/blogs/projekte/lebenslanger-support-garantie',
    },
 
    {
       img: './garantee-bg-2.webp',
       title: '1% FOR THE PLANET',
-      description: `It is not so much for its beauty that the forest makes a
-      claim upon men's hearts, as for that subtle something, that
-      quality of air that emanation from old trees, that so
-      wonderfully changes and renews a weary spirit.`,
+      description:
+         'It is not so much for its beauty that the forest makes a claim upon men is hearts, as for that subtle something, that quality of air that emanation from old trees, that sowonderfully changes and renews a weary spirit.',
       src: '/blogs/projekte/1-for-the-planet',
    },
 
    {
       img: './garantee-bg-3.webp',
       title: 'DYECOSHELL',
-      description: `It is not so much for its beauty that the forest makes a
-      claim upon men's hearts, as for that subtle something, that
-      quality of air that emanation from old trees, that so
-      wonderfully changes and renews a weary spirit.`,
+      description:
+         'It is not so much for its beauty that the forest makes a claim upon men is hearts, as for that subtle something, that quality of air that emanation from old trees, that so  wonderfully changes and renews a weary spirit.',
       src: '/blogs/designraum/dyecoshell™',
    },
 ];
