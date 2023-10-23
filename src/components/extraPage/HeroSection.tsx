@@ -24,6 +24,26 @@ const HeroSection: React.FC<HeroSectionProps> = ({
    btnStyle,
    id,
 }) => {
+   const ButtonLink = ({ children }: { children: React.ReactNode }) => {
+      if (id) {
+         return (
+            <AnchorLink className="mt-5" href={`#${id}`} offset={100}>
+               {children}
+            </AnchorLink>
+         );
+      } else {
+         return (
+            <Link
+               onClick={() => window.scrollTo(0, 0)}
+               to={src ? src : '/'}
+               className="mt-5"
+            >
+               {children}
+            </Link>
+         );
+      }
+   };
+
    return (
       <section
          className="
@@ -78,21 +98,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <Typography className="font-normal text-white sm:text-xl text-sm text-center mt-5">
                {description}
             </Typography>
-            {src && (
-               <Link
-                  onClick={() => window.scrollTo(0, 0)}
-                  to={src ? src : '/'}
-                  className="mt-5"
-               >
-                  <ButtonCustom btnStyle={btnStyle} btnTitle={btnTitle} />
-               </Link>
-            )}
 
-            {id && (
-               <AnchorLink className="mt-5" href={`#${id}`} offset={100}>
-                  <ButtonCustom btnStyle={btnStyle} btnTitle={btnTitle} />
-               </AnchorLink>
-            )}
+            <ButtonLink>
+               <ButtonCustom btnStyle={btnStyle} btnTitle={btnTitle} />
+            </ButtonLink>
          </div>
       </section>
    );
