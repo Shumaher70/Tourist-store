@@ -71,10 +71,30 @@ import Layout from './Layout';
 import { useDispatch } from 'react-redux';
 import { hideInfo } from './store/redusers/sideBarReduser';
 import ShoppingPaymentPage from './components/navbar/cart/shoppingCart/ShoppingPaymentPage';
-import { useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
+
+import { useLocation } from 'react-router-dom';
 
 const App = () => {
    const dispatch = useDispatch();
+   const url = useLocation();
+   const [transformUrl, setTransformUrl] = useState('');
+
+   const formatString = useCallback((input: string) => {
+      const slashIndex = input.lastIndexOf('/');
+      const cleanedString = input.substring(slashIndex + 1);
+
+      const formattedString = cleanedString
+         .replace(/-/g, ' ')
+         .replace(/\b\w/g, (match: string) => match.toUpperCase());
+
+      return formattedString;
+   }, []);
+
+   useEffect(() => {
+      setTransformUrl(formatString(url.pathname));
+   }, [formatString, url.pathname]);
 
    useEffect(() => {
       const handleResize = () => {
@@ -92,6 +112,16 @@ const App = () => {
 
    return (
       <>
+         <Helmet>
+            <title>
+               {`${transformUrl === '' ? 'Home' : transformUrl}`} | Tourist
+               store
+            </title>
+            <meta
+               name="description"
+               content={`Welcome to the ${transformUrl} page of the Tourist Store. Here you can find a variety of goods for your travels and adventures.`}
+            />
+         </Helmet>
          <Routes>
             <Route element={<Layout />}>
                <Route path="/" element={<Main />} />
