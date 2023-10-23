@@ -164,7 +164,7 @@ const HighLightsSection = ({
    return (
       <section
          id="highlights"
-         className="relative flex flex-col lg:flex-row gap-5 items-center px-[10%] mt-2 py-[2%] bg-[#f2f2f2]"
+         className="relative flex flex-col lg:flex-row gap-5 items-center px-[10%] py-[2%] bg-[#f2f2f2]"
       >
          <div className="relative flex lg:basis-3/5 flex-col">
             <div className="lg:w-2/5">

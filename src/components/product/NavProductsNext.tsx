@@ -1,10 +1,15 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 
 import { Button, Typography } from '@material-tailwind/react';
+
+import { addToCart } from '../../store/redusers/cartReduser';
+import { toggleCart } from '../../store/redusers/sideBarReduser';
+
 import AnchorLink from '../../components/AnchorLink';
+import { useDispatch } from 'react-redux';
 
 interface NavProductsNextProps {
    product: { [key: string]: string | string[] };
@@ -27,12 +32,19 @@ const NavProductsNext = ({
       (state: RootState) => state.size.heightNav
    );
 
+   const dispatch = useDispatch();
    const [changer, setChanger] = useState({
       highLight: highLight,
       videos: videos,
       details: details,
       review: review,
    });
+   const [navHeight, setNavHeight] = useState(0);
+   const [navFixed, setNavFixed] = useState<boolean>(false);
+   const scroll = useRef<HTMLDivElement>(null);
+   const heightHandler = useCallback(() => {
+      return setNavHeight(scroll.current?.clientHeight!);
+   }, []);
 
    useEffect(() => {
       if (highLight) {
@@ -73,9 +85,14 @@ const NavProductsNext = ({
       }
    }, [details, highLight, review, videos]);
 
-   const scroll = useRef<HTMLDivElement>(null);
+   useEffect(() => {
+      heightHandler();
+      window.addEventListener('resize', heightHandler);
 
-   const [navFixed, setNavFixed] = useState<boolean>(false);
+      return () => {
+         window.removeEventListener('resize', heightHandler);
+      };
+   }, [heightHandler]);
 
    useEffect(() => {
       if (beforeBottmElement < 0) {
@@ -85,8 +102,18 @@ const NavProductsNext = ({
       }
    }, [beforeBottmElement]);
 
+   const productCart = {
+      mainImg: product.mainImg[0] as string,
+      title: product.title as string,
+      price: +product.price as number,
+      quantity: 1,
+      totalPriceProduct: +product.price as number,
+      src: product.src as string,
+      id: product.id as string,
+   };
+
    return (
-      <div className="relative w-full h-[60px]">
+      <div className="relative w-full">
          <div
             ref={scroll}
             style={
@@ -95,21 +122,22 @@ const NavProductsNext = ({
                        position: 'fixed',
                        top: `${navHeightSlice}px`,
                     }
-                  : { position: 'absolute' }
+                  : { position: 'absolute', top: '0', right: '0' }
             }
             className="
                px-[10%] 
+               py-5
                flex 
                justify-between 
                items-center 
                w-full 
-               h-[60px] 
+               min-h-[60px] 
                bg-white 
                z-10 
                border-y-[1px] 
                border-[rgba(133,133,133,.2)]"
          >
-            <div className="lg:gap-10 sm:gap-5 md:flex hidden items-center">
+            <div className="lg:gap-10 sm:gap-5 lg:flex hidden items-center mr-5">
                {highLight !== undefined && (
                   <AnchorLink href="#highlights" offset={+navHeightSlice + 60}>
                      <div
@@ -151,7 +179,7 @@ const NavProductsNext = ({
                               : { border: 'none' }
                         }
                      >
-                        <Typography className="text-black font-normal cursor-pointer uppercase">
+                        <Typography className="w-max text-black font-normal cursor-pointer uppercase">
                            Detailed information
                         </Typography>
                      </div>
@@ -174,16 +202,30 @@ const NavProductsNext = ({
                   </AnchorLink>
                )}
             </div>
-            <div className="flex gap-5 md:justify-start justify-between w-full md:w-auto">
-               <div>
+
+            <div className="flex gap-5 lg:justify-start lg:w-auto w-full justify-between items-center ">
+               <div className="w-full">
                   <Typography className="uppercase sm:text-1xl text-sm">
                      {product.title}
                   </Typography>
                   <Typography>€ {product.price},00</Typography>
                </div>
-               <Button className="rounded-none bg-black">add to cart</Button>
+               <div>
+                  <Button
+                     onClick={() => {
+                        dispatch(addToCart(productCart));
+                        dispatch(toggleCart());
+                     }}
+                     color="gray"
+                     className="rounded-none bg-black w-max"
+                  >
+                     add to cart
+                  </Button>
+               </div>
             </div>
          </div>
+
+         <div style={{ height: `${navHeight}px` }} className="w-full" />
       </div>
    );
 };
