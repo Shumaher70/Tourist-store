@@ -1,4 +1,10 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, {
+   useEffect,
+   useState,
+   useRef,
+   useCallback,
+   useMemo,
+} from 'react';
 import { nanoid } from 'nanoid';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -28,15 +34,17 @@ const ProductSectionCart = ({
       (state: RootState) => state.size.heightNav
    );
 
-   const productCart = {
-      mainImg: product.mainImg[0] as string,
-      title: product.title as string,
-      price: +product.price as number,
-      quantity: 1,
-      totalPriceProduct: +product.price as number,
-      src: product.src as string,
-      id: product.id as string,
-   };
+   const productCart = useMemo(() => {
+      return {
+         mainImg: product.mainImg[0] as string,
+         title: product.title as string,
+         price: +product.price as number,
+         quantity: 1,
+         totalPriceProduct: +product.price as number,
+         src: product.src as string,
+         id: product.id as string,
+      };
+   }, [product.id, product.mainImg, product.price, product.src, product.title]);
 
    const dispatch = useDispatch();
 
@@ -83,22 +91,24 @@ const ProductSectionCart = ({
       }
    }, [elementBotton, mainNavHeight]);
 
+   const scrollHandler = useCallback(() => {
+      topHandler();
+      bottomHandler();
+   }, [topHandler, bottomHandler]);
+
    useEffect(() => {
       widthHandler();
+      scrollHandler();
+
       window.addEventListener('resize', widthHandler);
-
-      topHandler();
       window.addEventListener('scroll', topHandler);
-
-      bottomHandler();
       window.addEventListener('scroll', bottomHandler);
-
       return () => {
          window.removeEventListener('resize', widthHandler);
          window.removeEventListener('scroll', topHandler);
          window.removeEventListener('scroll', bottomHandler);
       };
-   }, [bottomHandler, topHandler, widthHandler]);
+   }, [scrollHandler, widthHandler]);
 
    const clickMainImgHandlerShowSlider = (
       event: React.MouseEvent<HTMLDivElement>
