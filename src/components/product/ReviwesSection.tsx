@@ -1,15 +1,14 @@
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { Button, Typography } from '@material-tailwind/react';
 import { nanoid } from '@reduxjs/toolkit';
-import { useState, useRef, useCallback, useEffect } from 'react';
 import AnimateHeight from 'react-animate-height';
+import { useInView } from 'react-intersection-observer';
 import {
    AiOutlineStar,
    AiFillStar,
    AiOutlineDownload,
    AiOutlineClose,
 } from 'react-icons/ai';
-
-import { useInView } from 'react-intersection-observer';
 
 interface reviwesSectionProps {
    reviwesSectionHandler: (event: boolean) => void;
@@ -20,8 +19,8 @@ const ReviwesSection: React.FC<reviwesSectionProps> = ({
 }) => {
    const [rating, setRating] = useState(0);
    const [hover, setHover] = useState(0);
-   const [maxLengthInput, setmaxLengthInput] = useState<null | number>(null);
-   const [maxLengthArea, setmaxLengthArea] = useState<null | number>(null);
+   const [maxLengthInput, setMaxLengthInput] = useState<null | number>(null);
+   const [maxLengthArea, setMaxLengthArea] = useState<null | number>(null);
    const [image, setImage] = useState<File>();
    const [preview, setPreview] = useState<string[]>([]);
    const [show, setShow] = useState(false);
@@ -54,12 +53,12 @@ const ReviwesSection: React.FC<reviwesSectionProps> = ({
 
    const onChangeInputHandler = useCallback(() => {
       const maxlengthInput = 100 - valueTile.current?.value.length!;
-      setmaxLengthInput(maxlengthInput);
+      setMaxLengthInput(maxlengthInput);
    }, []);
 
    const onChangeTextAreaHandler = useCallback(() => {
       const maxlengthArea = 5000 - valueArea.current?.value.length!;
-      setmaxLengthArea(maxlengthArea);
+      setMaxLengthArea(maxlengthArea);
    }, []);
 
    const inputChangeHandler = useCallback(
@@ -77,7 +76,7 @@ const ReviwesSection: React.FC<reviwesSectionProps> = ({
    const closeHandler = useCallback(
       (event: React.MouseEvent<SVGElement>) => {
          const removeImg = preview?.filter(
-            (img, index) =>
+            (_, index) =>
                index !==
                Number(
                   event.currentTarget.parentElement?.getAttribute('data-index')
@@ -88,14 +87,12 @@ const ReviwesSection: React.FC<reviwesSectionProps> = ({
       [preview]
    );
 
-   const clickShowHandler = useCallback(() => {
+   const clickShowHandler = () => {
       setShow((priv) => !priv);
-   }, []);
-
-   const clickCloseHandler = useCallback(() => {
+   };
+   const clickCloseHandler = () => {
       setShow(false);
-   }, []);
-
+   };
    return (
       <section id="reviews" className="wrapper">
          <Typography ref={ref} className="sm:text-4xl text-3xl font-normal">

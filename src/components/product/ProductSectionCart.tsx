@@ -108,6 +108,8 @@ const ProductSectionCart = ({
          window.removeEventListener('scroll', topHandler);
          window.removeEventListener('scroll', bottomHandler);
       };
+
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [scrollHandler, widthHandler]);
 
    const clickMainImgHandlerShowSlider = (
