@@ -11,10 +11,11 @@ interface MoreSpaceSectionProps {
    bg?: boolean;
    reverse?: boolean;
 }
+
 const MoreSpaceSection = ({
    img = 'MoreSpaceSectionImg.webp',
    title = 'MORE SPACE',
-   description = ` Thanks to a new variant of our Inflatable Diamond Grid (IDG),
+   description = `Thanks to a new variant of our Inflatable Diamond Grid (IDG),
    we were able to handle the struts of the airframe more
    efficiently. This results in a stable tent with less weight.
    With a footprint of 5.2 m² (inner tent 4.2 m²), Kirra weighs
@@ -33,19 +34,11 @@ const MoreSpaceSection = ({
             flex-col 
             gap-[10%]
             sm:h-[80vh]
-            ${bg && 'bg-[#f2f2f2]'}
-            `}
+            ${bg ? 'bg-[#f2f2f2]' : ''}
+         `}
       >
          <div className="flex-1">
-            <div
-               className="
-               w-full 
-               h-full 
-               flex 
-               flex-col 
-               justify-center
-            "
-            >
+            <div className="w-full h-full flex flex-col justify-center">
                <Typography className="sm:text-4xl text-[8vw] font-normal uppercase">
                   {title}
                </Typography>
@@ -61,8 +54,6 @@ const MoreSpaceSection = ({
                                  ? 'border-b-[1px] border-black'
                                  : 'border-t-[1px]  border-black  '
                            }
-                           
-                        
                            font-medium 
                            flex 
                            gap-2 
