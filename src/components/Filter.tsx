@@ -17,32 +17,22 @@ interface IconProps {
    open: boolean;
 }
 
+interface CheckboxItemProps {
+   label: string;
+   checked: boolean;
+}
+
 interface FilterProps {
    activityProps?: boolean;
    typeProps?: boolean;
    sizeProps?: boolean;
    collectionProps?: boolean;
    brandProps?: boolean;
-   checkboxActivity?: {
-      label: string;
-      checked: boolean;
-   }[];
-   checkboxType?: {
-      label: string;
-      checked: boolean;
-   }[];
-   checkboxSize?: {
-      label: string;
-      checked: boolean;
-   }[];
-   checkboxCollection?: {
-      label: string;
-      checked: boolean;
-   }[];
-   checkboxBrend?: {
-      label: string;
-      checked: boolean;
-   }[];
+   checkboxActivity?: CheckboxItemProps[];
+   checkboxType?: CheckboxItemProps[];
+   checkboxSize?: CheckboxItemProps[];
+   checkboxCollection?: CheckboxItemProps[];
+   checkboxBrend?: CheckboxItemProps[];
    checkedHandler?: (event: string) => any;
    productCart?: object[];
    id?: (id: string) => void;
