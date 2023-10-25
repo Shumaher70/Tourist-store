@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { Button, Typography } from '@material-tailwind/react';
@@ -23,29 +23,34 @@ const InspirationSectionAboutusPage = () => {
    const [scrollTop, setScrollTop] = useState<number>(0);
    const [navFixed, setNavFixed] = useState<boolean>(false);
 
+   const scrollHandler = useCallback(() => {
+      const navItems = [
+         { ref: navMissionRef, setFunc: setNavMission },
+         { ref: navStoreRef, setFunc: setNavStore },
+         { ref: navNewsRef, setFunc: setNavNews },
+      ];
+
+      for (let item of navItems) {
+         item.setFunc(false);
+      }
+
+      for (let item of navItems) {
+         const offset = Number('-' + item.ref.current?.offsetHeight);
+         const top = item.ref.current?.getBoundingClientRect().top;
+
+         if (top && top < +navHeightSlice + 70 && top >= offset) {
+            item.setFunc(true);
+            break;
+         }
+      }
+   }, [navHeightSlice]);
+
    useEffect(() => {
-      window.addEventListener('scroll', () => {
-         const navItems = [
-            { ref: navMissionRef, setFunc: setNavMission },
-            { ref: navStoreRef, setFunc: setNavStore },
-            { ref: navNewsRef, setFunc: setNavNews },
-         ];
-
-         for (let item of navItems) {
-            item.setFunc(false);
-         }
-
-         for (let item of navItems) {
-            const offset = Number('-' + item.ref.current?.offsetHeight);
-            const top = item.ref.current?.getBoundingClientRect().top;
-
-            if (top && top < +navHeightSlice + 70 && top >= offset) {
-               item.setFunc(true);
-               break;
-            }
-         }
-      });
-   }, [navHeightSlice, navMission, navNews, navStore]);
+      window.addEventListener('scroll', scrollHandler);
+      return () => {
+         window.removeEventListener('scroll', scrollHandler);
+      };
+   }, [scrollHandler]);
 
    useEffect(() => {
       if (scrollTop < 0) {
