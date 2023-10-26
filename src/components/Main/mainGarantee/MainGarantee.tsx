@@ -32,7 +32,7 @@ const dammyBD = [
 const MainGarantee = () => {
    return (
       <Carousel
-         className="xl:h-[70vh] 2xl:h-[80vh] lg:h-[60vh] w-full overflow-y-hidden"
+         className="h-[90vh] w-full overflow-y-hidden"
          prevArrow={() => false}
          nextArrow={() => false}
          navigation={({ setActiveIndex, activeIndex }) => (
@@ -64,7 +64,7 @@ const MainGarantee = () => {
                      />
                   </div>
                   <div className="absolute wrapper flex flex-col gap-5 lg:w-2/4 sm:w-3/4 w-full">
-                     <Typography className="uppercase self-start text-white font-normal sm:text-4xl text-2xl py-2 border-y-[1px] border-white whitespace-nowrap">
+                     <Typography className="uppercase self-start text-white font-normal text-3xl xl:text-7xl lg:text-6xl sm:text-5xl py-2 border-y-[1px] border-white">
                         {item.title}
                      </Typography>
 
@@ -76,11 +76,7 @@ const MainGarantee = () => {
                            onClick={() => window.scrollTo(0, 0)}
                            to={`${item.src}`}
                         >
-                           <Button
-                              size="lg"
-                              color="white"
-                              className="rounded-none mt-5"
-                           >
+                           <Button color="white" className="rounded-none mt-5">
                               LEARN MORE
                            </Button>
                         </NavLink>
