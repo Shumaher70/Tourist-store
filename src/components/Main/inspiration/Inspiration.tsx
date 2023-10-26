@@ -3,32 +3,37 @@ import { NavLink } from 'react-router-dom';
 
 const Inspiration = () => {
    return (
-      <div className="relative max-w-full">
+      <div className="relative h-[90vh] max-w-full">
          <img
             src={require('./inspiration-bg.webp')}
             alt="inspiration"
-            className="absolute z-[-1] w-full h-full object-cover brightness-[0.9]"
+            className="absolute z-[-1] w-full h-full object-cover brightness-[0.7]"
          />
-         <div className="absolute w-full h-full bg-black opacity-30" />
-         <div className="relative flex-col py-[5%] px-[10%]  xl:w-2/4 sm:w-3/4 w-full">
-            <Typography
-               variant="h2"
-               color="white"
-               className="border-t-[1px] border-b-[1px] border-white sm:text-4xl text-2xl"
-            >
-               HEIMPLANET IS INSPIRED BY THE EXCITEMENT OF TRAVEL.
-            </Typography>
-            <Typography variant="paragraph" color="white" className="mt-5">
-               When you travel, you feel alive. All your senses are awake and
-               you always expect something new. You are constantly adapting to
-               new situations, new people, new cultures and new environments.
-            </Typography>
-            <div className="mt-5 flex ">
+         <div className="flex flex-col justify-between h-full py-[5%] px-[10%]  xl:w-2/4 sm:w-3/4 w-full">
+            <div>
+               <Typography
+                  variant="h2"
+                  color="white"
+                  className="border-t-[1px] border-b-[1px] border-white sm:text-4xl text-2xl"
+               >
+                  HEIMPLANET IS INSPIRED BY THE EXCITEMENT OF TRAVEL.
+               </Typography>
+               <Typography variant="paragraph" color="white" className="mt-5">
+                  When you travel, you feel alive. All your senses are awake and
+                  you always expect something new. You are constantly adapting
+                  to new situations, new people, new cultures and new
+                  environments.
+               </Typography>
+            </div>
+            <div className="mt-5 flex gap-5 ">
                <NavLink
                   onClick={() => window.scrollTo(0, 0)}
                   to="/pages/unternehmen-store"
                >
-                  <Button color="white" className="rounded-none">
+                  <Button
+                     color="white"
+                     className="rounded-none sm:px-7 px-3 border-[1px] border-white"
+                  >
                      ABOUT AS
                   </Button>
                </NavLink>
@@ -38,7 +43,7 @@ const Inspiration = () => {
                >
                   <Button
                      variant="text"
-                     className="rounded-none text-white border-[1px] border-white ml-5 hover:bg-white hover:text-black transition-all"
+                     className="rounded-none sm:px-7 px-3 text-white border-[1px] border-white hover:bg-white hover:text-black"
                   >
                      RE:STORE PROGRAM
                   </Button>
