@@ -44,7 +44,7 @@ const MainCarousel = () => {
                additionalTransfrom={0}
                arrows={false}
                centerMode={false}
-               className=""
+               className="h-[90vh] relative"
                containerClass="container-with-dots"
                dotListClass="bottom-[5%] translate-y-[-55%] right-[10%] justify-end"
                customDot={<CustomDot />}
@@ -72,15 +72,15 @@ const MainCarousel = () => {
                rewindWithAnimation={false}
                rtl={false}
                showDots={true}
-               sliderClass=""
+               sliderClass="h-full"
                slidesToSlide={1}
                swipeable
             >
                {dammyDiscriptionMainCarousel.map((item) => {
                   return (
-                     <div key={nanoid()}>
+                     <div key={nanoid()} className="w-full h-full">
                         <img
-                           className="min-h-[600px] w-full object-cover object-center sm:max-h-[693px] brightness-[80%]"
+                           className="h-full w-full object-cover object-center brightness-[80%]"
                            src={require(`./img/${item.img}`)}
                            alt={`${item.img}`}
                         />
