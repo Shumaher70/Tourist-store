@@ -25,7 +25,7 @@ const NavProducts = ({ className, content }: NavProductsProps) => {
                return (
                   <div
                      key={nanoid()}
-                     className="flex text-gray-600 last:text-gray-900 hover:text-gray-900 after:content-link last:after:content-[''] after:pl-2 after:opacity-100 "
+                     className="flex text-gray-600 last:text-gray-900 hover:text-gray-900 after:content-link last:after:content-[''] after:pl-2 after:opacity-100 whitespace-nowrap"
                   >
                      <NavLink
                         onClick={() => window.scrollTo(0, 0)}
