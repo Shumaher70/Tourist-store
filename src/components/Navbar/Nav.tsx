@@ -52,17 +52,18 @@ const Nav = () => {
             border-b-[1px]
             border-[#f2f2f2]
             shadow-none
+            gap-3
          "
       >
          <NavLink
-            className="flex justify-center items-center w-[150px] sm:w-[200px] lg:w-[20%]"
+            className="flex justify-center items-center sm:w-[200px] md:w-[200px]  w-[125px]"
             to="/"
             onClick={() => window.scrollTo(0, 0)}
          >
             <img src={require('./logo/logo.png')} alt="logo" />
          </NavLink>
          {showInfo && <NavInfo />}
-         <div className="w-auto flex items-center gap-5">
+         <div className="w-auto flex items-center gap-3">
             {showInfo && <ShopFinder />}
             <Search />
             <IconProfile />
