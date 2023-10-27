@@ -7,9 +7,7 @@ const SideBarMagazine = () => {
    const dispatch = useDispatch();
 
    return (
-      <Card
-         className={'fixed rounded-none xl:w-1/6 lg:w-1/4 w-2/6 h-full z-20'}
-      >
+      <Card className={'fixed rounded-none md:w-[300px] h-full z-20'}>
          <ul className="absolute top-[15%] pl-[10%]">
             <li>
                <Link

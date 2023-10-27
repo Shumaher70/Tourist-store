@@ -8,7 +8,7 @@ const SidebarAboutUs = () => {
    return (
       <Card
          className={
-            'fixed translate-x-[100%] rounded-none xl:w-1/6 lg:w-1/4 w-2/6 h-full z-20'
+            'fixed translate-x-[100%] rounded-none md:w-[300px] h-full z-20'
          }
       >
          <List className="absolute top-[15%] pl-[10%]">
