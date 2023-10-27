@@ -1,48 +1,48 @@
 import { useDispatch } from 'react-redux';
-import { ListItem } from '@material-tailwind/react';
+import { ListItem, Typography } from '@material-tailwind/react';
 import {
-  toggleStore,
-  toggleMagazine,
-  toggleCompany,
+   toggleStore,
+   toggleMagazine,
+   toggleCompany,
 } from '../../../store/redusers/sideBarReduser';
 
 const NavInfo = () => {
-  const dsispatch = useDispatch();
+   const dsispatch = useDispatch();
 
-  const clickStoreHandler = () => {
-    dsispatch(toggleStore());
-  };
+   const clickStoreHandler = () => {
+      dsispatch(toggleStore());
+   };
 
-  const clickMagazineHandler = () => {
-    dsispatch(toggleMagazine());
-  };
+   const clickMagazineHandler = () => {
+      dsispatch(toggleMagazine());
+   };
 
-  const clickCompanyHandler = () => {
-    dsispatch(toggleCompany());
-  };
+   const clickCompanyHandler = () => {
+      dsispatch(toggleCompany());
+   };
 
-  return (
-    <div className="flex">
-      <ListItem
-        onClick={() => clickStoreHandler()}
-        className="text-black md:text-base rounded-none w-auto"
-      >
-        STORE
-      </ListItem>
-      <ListItem
-        onClick={() => clickMagazineHandler()}
-        className="text-black md:text-base rounded-none w-auto"
-      >
-        MAGAZINE
-      </ListItem>
-      <ListItem
-        onClick={() => clickCompanyHandler()}
-        className="text-black md:text-base rounded-none w-auto"
-      >
-        COMPANY
-      </ListItem>
-    </div>
-  );
+   return (
+      <div className="flex xl:gap-10 lg:gap-6 gap-3">
+         <Typography
+            onClick={() => clickStoreHandler()}
+            className="text-black md:text-base rounded-none w-auto"
+         >
+            STORE
+         </Typography>
+         <Typography
+            onClick={() => clickMagazineHandler()}
+            className="text-black md:text-base rounded-none w-auto"
+         >
+            MAGAZINE
+         </Typography>
+         <Typography
+            onClick={() => clickCompanyHandler()}
+            className="text-black md:text-base rounded-none w-auto"
+         >
+            COMPANY
+         </Typography>
+      </div>
+   );
 };
 
 export default NavInfo;
