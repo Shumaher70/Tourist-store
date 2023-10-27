@@ -1,4 +1,4 @@
-import { List, ListItem } from '@material-tailwind/react';
+import { Typography } from '@material-tailwind/react';
 import { NavLink } from 'react-router-dom';
 const FooterCookies = () => {
    return (
@@ -9,42 +9,42 @@ const FooterCookies = () => {
             </a>
          </div>
          <div>
-            <List className="flex flex-row flex-wrap p-0">
+            <div className="flex sm:flex-wrap sm:flex-row flex-col gap-2 ">
                <NavLink
                   onClick={() => window.scrollTo(0, 0)}
                   to="/pages/impressum"
                >
-                  <ListItem className="text-white w-auto p-1  mr-3 rounded-none">
+                  <Typography className="text-white w-auto p-1  mr-3 rounded-none">
                      IMPRINT
-                  </ListItem>
+                  </Typography>
                </NavLink>
                <NavLink onClick={() => window.scrollTo(0, 0)} to="/pages/agb">
-                  <ListItem className="text-white w-auto p-1  mr-3 rounded-none">
+                  <Typography className="text-white w-auto p-1  mr-3 rounded-none">
                      AGB
-                  </ListItem>
+                  </Typography>
                </NavLink>
                <NavLink
                   onClick={() => window.scrollTo(0, 0)}
                   to="/pages/datenschutz"
                >
-                  <ListItem className="text-white w-auto p-1  mr-3 rounded-none">
+                  <Typography className="text-white w-auto p-1  mr-3 rounded-none">
                      PRIVAC POLICY
-                  </ListItem>
+                  </Typography>
                </NavLink>
                <NavLink
                   onClick={() => window.scrollTo(0, 0)}
                   to="/pages/widerruf"
                >
-                  <ListItem className="text-white w-auto p-1  mr-3 rounded-none">
+                  <Typography className="text-white w-auto p-1  mr-3 rounded-none">
                      REVOCATION
-                  </ListItem>
+                  </Typography>
                </NavLink>
                <NavLink onClick={() => window.scrollTo(0, 0)} to="/">
-                  <ListItem className="text-white w-auto p-1  mr-3 rounded-none">
+                  <Typography className="text-white w-auto p-1  mr-3 rounded-none">
                      COOKIES
-                  </ListItem>
+                  </Typography>
                </NavLink>
-            </List>
+            </div>
          </div>
       </div>
    );
