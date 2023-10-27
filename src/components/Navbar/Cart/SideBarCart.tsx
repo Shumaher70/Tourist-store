@@ -98,9 +98,9 @@ const SideBarCart = () => {
                   </div>
                </div>
 
-               <div className="p-5">
+               <div className="px-5 pt-5">
                   <div className="flex justify-between items-center">
-                     <Typography className="uppercase font-bold text-2xl text-black">
+                     <Typography className="uppercase font-bold sm:text-2xl text-black">
                         total
                      </Typography>
 
