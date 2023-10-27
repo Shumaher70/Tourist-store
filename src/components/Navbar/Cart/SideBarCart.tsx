@@ -30,7 +30,7 @@ const SideBarCart = () => {
                toggleCartSelector ? 'translateX(0)' : 'translateX(105%)'
             }`,
          }}
-         className="z-40 fixed right-0 h-full rounded-none w-[100%] xl:w-[30%] lg:w-[40%] md:w-[50%] transition"
+         className="z-[99] fixed right-0 h-full rounded-none w-[100%] xl:w-[30%] lg:w-[40%] md:w-[50%] transition"
       >
          <div className="flex justify-between items-center p-5">
             <Typography className="text-black font-bold text-4xl">
