@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { ListItem, Typography } from '@material-tailwind/react';
+import { Typography } from '@material-tailwind/react';
 import {
    toggleStore,
    toggleMagazine,
@@ -7,18 +7,18 @@ import {
 } from '../../../store/redusers/sideBarReduser';
 
 const NavInfo = () => {
-   const dsispatch = useDispatch();
+   const dispatch = useDispatch();
 
    const clickStoreHandler = () => {
-      dsispatch(toggleStore());
+      dispatch(toggleStore());
    };
 
    const clickMagazineHandler = () => {
-      dsispatch(toggleMagazine());
+      dispatch(toggleMagazine());
    };
 
    const clickCompanyHandler = () => {
-      dsispatch(toggleCompany());
+      dispatch(toggleCompany());
    };
 
    return (
