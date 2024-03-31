@@ -25,19 +25,19 @@ const NavInfo = () => {
       <div className="flex xl:gap-10 lg:gap-6 gap-3">
          <Typography
             onClick={() => clickStoreHandler()}
-            className="text-black md:text-base rounded-none w-auto"
+            className="cursor-pointer text-black md:text-base rounded-none w-auto"
          >
             STORE
          </Typography>
          <Typography
             onClick={() => clickMagazineHandler()}
-            className="text-black md:text-base rounded-none w-auto"
+            className="cursor-pointer text-black md:text-base rounded-none w-auto"
          >
             MAGAZINE
          </Typography>
          <Typography
             onClick={() => clickCompanyHandler()}
-            className="text-black md:text-base rounded-none w-auto"
+            className="cursor-pointer text-black md:text-base rounded-none w-auto"
          >
             COMPANY
          </Typography>
