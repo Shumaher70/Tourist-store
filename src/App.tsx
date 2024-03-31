@@ -57,6 +57,7 @@ import {
    NewTentKirraPage,
    HelmplanetX66NorthPage,
    ShoppingCartPage,
+   ShoppingPaymentPage,
 } from './pages/index';
 import TrapsDawnMTTrapGray from './pages/products/TrapsDawnMTTrapGray';
 import BagsTransitLineSlingPocket from './pages/products/BagsTransitLineSlingPocket';
@@ -70,7 +71,6 @@ import HptSotoStormbreaker from './pages/products/HptSotoStormbreaker';
 import Layout from './Layout';
 import { useDispatch } from 'react-redux';
 import { hideInfo } from './store/redusers/sideBarReduser';
-import ShoppingPaymentPage from './components/navbar/cart/shoppingCart/ShoppingPaymentPage';
 import { useCallback, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 

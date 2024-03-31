@@ -55,6 +55,7 @@ import GreatMakeoverPage from './GreatMakeoverPage';
 import NewTentKirraPage from './NewTentKirraPage';
 import HelmplanetX66NorthPage from './HelmplanetX66NorthPage';
 import ShoppingCartPage from '../components/navbar/cart/shoppingCart/ShoppingCartPage';
+import ShoppingPaymentPage from '../components/navbar/cart/shoppingCart/ShoppingPaymentPage';
 
 export {
    Colections,
@@ -114,4 +115,5 @@ export {
    NewTentKirraPage,
    HelmplanetX66NorthPage,
    ShoppingCartPage,
+   ShoppingPaymentPage,
 };
