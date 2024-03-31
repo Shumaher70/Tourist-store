@@ -58,16 +58,17 @@ import {
    HelmplanetX66NorthPage,
    ShoppingCartPage,
    ShoppingPaymentPage,
+   TrapsDawnMTTrapGray,
+   BagsTransitLineSlingPocket,
+   GearHptXMizuCairoGrid750MlSilverWhite,
+   HptKniveJamesBrandTheElko,
+   HptHelinoxTacticalChairOne,
+   HptSleepingThermarestNeoairXlite,
+   HpthygieneBasicNatureFirstAidKitStandart,
+   GiftCard,
+   HptSotoStormbreaker,
 } from './pages/index';
-import TrapsDawnMTTrapGray from './pages/products/TrapsDawnMTTrapGray';
-import BagsTransitLineSlingPocket from './pages/products/BagsTransitLineSlingPocket';
-import GearHptXMizuCairoGrid750MlSilverWhite from './pages/products/GearHptXMizuCairoGrid750MlSilverWhite';
-import HptKniveJamesBrandTheElko from './pages/products/HptKniveJamesBrandTheElko';
-import HptHelinoxTacticalChairOne from './pages/products/HptHelinoxTacticalChairOne';
-import HptSleepingThermarestNeoairXlite from './pages/products/HptSleepingThermarestNeoairXlite';
-import HpthygieneBasicNatureFirstAidKitStandart from './pages/products/HpthygieneBasicNatureFirstAidKitStandart';
-import GiftCard from './pages/products/GiftCard';
-import HptSotoStormbreaker from './pages/products/HptSotoStormbreaker';
+
 import Layout from './Layout';
 import { useDispatch } from 'react-redux';
 import { hideInfo } from './store/redusers/sideBarReduser';

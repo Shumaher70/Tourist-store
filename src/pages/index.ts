@@ -56,6 +56,15 @@ import NewTentKirraPage from './NewTentKirraPage';
 import HelmplanetX66NorthPage from './HelmplanetX66NorthPage';
 import ShoppingCartPage from '../components/navbar/cart/shoppingCart/ShoppingCartPage';
 import ShoppingPaymentPage from '../components/navbar/cart/shoppingCart/ShoppingPaymentPage';
+import TrapsDawnMTTrapGray from './products/TrapsDawnMTTrapGray';
+import BagsTransitLineSlingPocket from './products/BagsTransitLineSlingPocket';
+import GearHptXMizuCairoGrid750MlSilverWhite from './products/GearHptXMizuCairoGrid750MlSilverWhite';
+import HptKniveJamesBrandTheElko from './products/HptKniveJamesBrandTheElko';
+import HptHelinoxTacticalChairOne from './products/HptHelinoxTacticalChairOne';
+import HptSleepingThermarestNeoairXlite from './products/HptSleepingThermarestNeoairXlite';
+import HpthygieneBasicNatureFirstAidKitStandart from './products/HpthygieneBasicNatureFirstAidKitStandart';
+import GiftCard from './products/GiftCard';
+import HptSotoStormbreaker from './products/HptSotoStormbreaker';
 
 export {
    Colections,
@@ -116,4 +125,13 @@ export {
    HelmplanetX66NorthPage,
    ShoppingCartPage,
    ShoppingPaymentPage,
+   TrapsDawnMTTrapGray,
+   BagsTransitLineSlingPocket,
+   GearHptXMizuCairoGrid750MlSilverWhite,
+   HptKniveJamesBrandTheElko,
+   HptHelinoxTacticalChairOne,
+   HptSleepingThermarestNeoairXlite,
+   HpthygieneBasicNatureFirstAidKitStandart,
+   GiftCard,
+   HptSotoStormbreaker,
 };
