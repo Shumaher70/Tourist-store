@@ -3,7 +3,7 @@ import { toggleCart } from '../../../store/redusers/sideBarReduser';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../store';
 
-const Cart = () => {
+const CartComponent = () => {
    const dispatch = useDispatch();
    const productSelector = useSelector(
       (state: RootState) => state.cart.totalQuantity
@@ -39,4 +39,4 @@ const Cart = () => {
    );
 };
 
-export default Cart;
+export default CartComponent;
