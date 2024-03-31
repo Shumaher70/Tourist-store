@@ -6,7 +6,7 @@ import MaterialSection from '../components/extraPage/MaterialSection';
 import ColorWaysSection from '../components/extraPage/ColorWaysSection';
 import MoreSpaceSection from '../components/extraPage/MoreSpaceSection';
 import VariantSection from '../components/extraPage/VariantSection';
-import DetailsSection from '../components/extraPage/DetailsSection';
+import DetailsSectionExtra from '../components/extraPage/DetailsSectionExtra';
 import SaleSection from '../components/extraPage/SaleSection';
 
 const temporarySlide1 = [
@@ -61,7 +61,7 @@ const NewTentKirraPage = () => {
                '4-Season: for extreme conditions',
             ]}
          />
-         <DetailsSection slide1={temporarySlide1} />
+         <DetailsSectionExtra slide1={temporarySlide1} />
          <SaleSection
             img="NewTentKirraPageSaleSectionImg.webp"
             title="KIRRA"

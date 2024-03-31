@@ -1,18 +1,16 @@
 import { useState } from 'react';
-import { ProductSectionCart } from '../../components';
+
 import { products, productCard } from '../../dammyDB/dammyProducts';
 
-import {
-   NavProducts,
-   NavProductsNext,
-   DetailsSection,
-   ReviwesSection,
-   MoreSection,
-   ProductCard,
-   SimilarProduct,
-} from '../../components/product/index';
-
 import { nanoid } from '@reduxjs/toolkit';
+import NavProducts from '../../components/product/NavProducts';
+import NavProductsNext from '../../components/product/NavProductsNext';
+import DetailsSection from '../../components/product/DetailsSection';
+import ReviwesSection from '../../components/product/ReviwesSection';
+import SimilarProduct from '../../components/product/SimilarProduct';
+import ProductCard from '../../components/product/ProductCard';
+import MoreSection from '../../components/product/MoreSection';
+import ProductSectionCart from '../../components/product/ProductSectionCart';
 
 const GiftCard = () => {
    const [bottomElement, setBottomElement] = useState<number>(0);

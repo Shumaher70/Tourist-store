@@ -1,18 +1,17 @@
 import { useState } from 'react';
-import { ProductSectionCart } from '../../components';
+
 import { products, productCard } from '../../dammyDB/dammyProducts';
 
-import {
-   NavProducts,
-   NavProductsNext,
-   DetailsSection,
-   ReviwesSection,
-   MoreSection,
-   ProductCard,
-   SimilarProduct,
-} from '../../components/product/index';
+import NavProducts from '../../components/product/NavProducts';
+import NavProductsNext from '../../components/product/NavProductsNext';
+import DetailsSection from '../../components/product/DetailsSection';
+import ReviwesSection from '../../components/product/ReviwesSection';
+import MoreSection from '../../components/product/MoreSection';
+import ProductCard from '../../components/product/ProductCard';
+import SimilarProduct from '../../components/product/SimilarProduct';
 
 import { nanoid } from '@reduxjs/toolkit';
+import ProductSectionCart from '../../components/product/ProductSectionCart';
 
 const HptHelinoxTacticalChairOne = () => {
    const [bottomElement, setBottomElement] = useState<number>(0);

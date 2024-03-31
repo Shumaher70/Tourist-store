@@ -4,25 +4,23 @@ import { hiddeAction } from '../store/redusers/mobailNavAccordionReducer';
 import { useSelector } from 'react-redux';
 import { RootState } from '../store/index';
 import '../index.css';
-import {
-   Nav,
-   BgClose,
-   BgCloseSearch,
-   BgCloseCart,
-   SideBarCompany,
-   SidebarAboutUs,
-   SidebarSustainAbility,
-   SidebarDisignSpace,
-   SideBarMagazine,
-   SidebarStore,
-   SidebarProduct,
-   SidebarHptSelected,
-   SidebarReStore,
-   SideBarSearch,
-   SideBarCart,
-   ToggleNav,
-   NavMobail,
-} from './index';
+import ToggleNav from './ToggleNav';
+import BgCloseCart from './navbar/cart/BgCloseCart';
+import BgCloseSearch from './navbar/cart/BgCloseSearch';
+import BgClose from './navbar/info/BgCloseInfo';
+import SidebarStore from './navbar/info/sideBarStore/SidebarStore';
+import SidebarProduct from './navbar/info/sideBarStore/SidebarProduct';
+import SidebarHptSelected from './navbar/info/sideBarStore/SidebarHptSelected';
+import SidebarReStore from './navbar/info/sideBarStore/SidebarReStore';
+import SideBarMagazine from './navbar/info/sideBarMagazine/SideBarMagazine';
+import SideBarCompany from './navbar/info/sideBarCompany/SideBarCompany';
+import SidebarAboutUs from './navbar/info/sideBarCompany/SidebarAboutUs';
+import SidebarSustainAbility from './navbar/info/sideBarCompany/SidebarSustainAbility';
+import SidebarDisignSpace from './navbar/info/sideBarCompany/SidebarDisignSpace';
+import NavMobail from './navbar/NavMobail';
+import SideBarCart from './navbar/cart/SideBarCart';
+import SideBarSearch from './navbar/cart/SideBarSearch';
+import Nav from './navbar/Nav';
 
 const Header = () => {
    const dispatch = useDispatch();

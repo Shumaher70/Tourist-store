@@ -6,7 +6,7 @@ import MaterialSection from '../components/extraPage/MaterialSection';
 import ColorWaysSection from '../components/extraPage/ColorWaysSection';
 import MoreSpaceSection from '../components/extraPage/MoreSpaceSection';
 import VariantSection from '../components/extraPage/VariantSection';
-import DetailsSection from '../components/extraPage/DetailsSection';
+import DetailsSectionExtra from '../components/extraPage/DetailsSectionExtra';
 import SaleSection from '../components/extraPage/SaleSection';
 
 const temporarySlide1 = [
@@ -65,7 +65,10 @@ const GreatMakeoverPage = () => {
             season2="4-Season"
             details={['4-Season', 'CairoCamo']}
          />
-         <DetailsSection slide1={temporarySlide1} slide2={temporarySlide2} />
+         <DetailsSectionExtra
+            slide1={temporarySlide1}
+            slide2={temporarySlide2}
+         />
          <SaleSection
             img="GreatMakeoverPageSaleSectionImg.webp"
             title="THE GREAT MAKEOVER"

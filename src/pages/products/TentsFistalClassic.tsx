@@ -1,21 +1,19 @@
 import { useState } from 'react';
-import { ProductSectionCart } from '../../components';
+
 import { products, productCard } from '../../dammyDB/dammyProducts';
 
-import {
-   NavProducts,
-   NavProductsNext,
-   HighLightsSection,
-   VideoSection,
-   DetailsSection,
-   ReviwesSection,
-   ImgesSection,
-   MoreSection,
-   ProductCard,
-   SimilarProduct,
-} from '../../components/product/index';
-
 import { nanoid } from '@reduxjs/toolkit';
+import NavProducts from '../../components/product/NavProducts';
+import NavProductsNext from '../../components/product/NavProductsNext';
+import HighLightsSection from '../../components/product/HighLightsSection';
+import VideoSection from '../../components/product/VideoSection';
+import DetailsSection from '../../components/product/DetailsSection';
+import ReviwesSection from '../../components/product/ReviwesSection';
+import ImgesSection from '../../components/product/ImgesSection';
+import SimilarProduct from '../../components/product/SimilarProduct';
+import ProductCard from '../../components/product/ProductCard';
+import MoreSection from '../../components/product/MoreSection';
+import ProductSectionCart from '../../components/product/ProductSectionCart';
 
 const TentsFistalClassic = () => {
    const [bottomElement, setBottomElement] = useState<number>(0);

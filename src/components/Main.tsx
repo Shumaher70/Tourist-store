@@ -1,12 +1,10 @@
-import {
-   CatrgoryCarousel,
-   MainCarousel,
-   MainGarantee,
-   TopSeller,
-   Magazine,
-   Inspiration,
-   Contributions,
-} from './index';
+import CatrgoryCarousel from './main/categoryCarousel/CatergoryCarousel';
+import Contributions from './main/currentContributions/Contributions';
+import Inspiration from './main/inspiration/Inspiration';
+import Magazine from './main/magazine/Magazine';
+import MainCarousel from './main/mainCarousel/MainCarousel';
+import MainGarantee from './main/mainGarantee/MainGarantee';
+import TopSeller from './main/topSeller/TopSeller';
 
 const Main = () => {
    return (

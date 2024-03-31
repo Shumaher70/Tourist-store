@@ -5,7 +5,7 @@ import ProductPresentation from '../components/extraPage/ProductPresentation';
 import MaterialSection from '../components/extraPage/MaterialSection';
 import MoreSpaceSection from '../components/extraPage/MoreSpaceSection';
 import VariantSection from '../components/extraPage/VariantSection';
-import DetailsSection from '../components/extraPage/DetailsSection';
+import DetailsSectionExtra from '../components/extraPage/DetailsSectionExtra';
 import SaleSection from '../components/extraPage/SaleSection';
 
 const temporarySlide1 = [
@@ -102,7 +102,7 @@ const HelmplanetX66NorthPage = () => {
             season2="HEIMPLANET"
             details={['5 years development time']}
          />
-         <DetailsSection slide1={temporarySlide1} />
+         <DetailsSectionExtra slide1={temporarySlide1} />
          <SaleSection
             img="HelmplanetX66NorthPageSaleSectionImg.webp"
             title="THE CAVE XL (4-SEASON) - 66°NORTH LIMITED EDITION"

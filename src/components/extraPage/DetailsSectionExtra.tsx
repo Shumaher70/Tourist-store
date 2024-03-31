@@ -3,7 +3,7 @@ import { nanoid } from '@reduxjs/toolkit';
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 
-interface DetailsSectionProps {
+interface DetailsSectionExtraProps {
    slide1: {
       img: string;
       description: string;
@@ -12,7 +12,10 @@ interface DetailsSectionProps {
    imgDescription?: string[];
 }
 
-const DetailsSection: React.FC<DetailsSectionProps> = ({ slide1, slide2 }) => {
+const DetailsSectionExtra: React.FC<DetailsSectionExtraProps> = ({
+   slide1,
+   slide2,
+}) => {
    const CustomDotSlide1 = ({ ...rest }) => {
       const { index, active, onClick } = rest;
 
@@ -173,4 +176,4 @@ const DetailsSection: React.FC<DetailsSectionProps> = ({ slide1, slide2 }) => {
    );
 };
 
-export default DetailsSection;
+export default DetailsSectionExtra;

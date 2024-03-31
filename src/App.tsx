@@ -1,73 +1,72 @@
 import { Routes, Route } from 'react-router-dom';
 import Main from './components/Main';
-import {
-   Colections,
-   PageMissed,
-   Zelte,
-   CollabMaharishi,
-   CarryeEssentials,
-   TransitLine,
-   HptSelected,
-   TopSellerPage,
-   LifetimeGuaranteePage,
-   OnePercentPage,
-   Dyecoshell,
-   MagazineSectionHtpPage,
-   MagazineSectionAdventurePage,
-   MagazineSectionProductCallabsPage,
-   InspirationSectionAboutusPage,
-   ReStorePage,
-   ContributionsPage,
-   ContributionsSectionMaharishiPage,
-   FootherHelpFaqsPage,
-   FootherContactPage,
-   FootherTentSizePage,
-   FootherTarpsPage,
-   FootherShippingPage,
-   ContributionsAdventuresPage,
-   ContributionsOurTipsPage,
-   ContributionsCampingPage,
-   FootherGearPage,
-   FootherCareerPage,
-   FootherPreesContactPage,
-   FootherAffiliatePage,
-   FootherNewsletterPage,
-   FootherImprintPage,
-   FootherAgbPage,
-   FootherPrivacyPolicy,
-   FootherRevocationPage,
-   ShopFinderPage,
-   RegisterPage,
-   AllProducts,
-   KnivesPage,
-   CampingFurniturePage,
-   CookingPage,
-   SleepingPage,
-   HygienePage,
-   TentsFistalClassic,
-   ProjectePage,
-   AmbassadorsPage,
-   MagazineNavBlogMavericksTour,
-   MagazineNavBlogPilgrimageInEasternTibet,
-   HptStoreHamburgPage,
-   TentTechnologyPage,
-   CooleverTechnologyPage,
-   DesignSpacePage,
-   GreatMakeoverPage,
-   NewTentKirraPage,
-   HelmplanetX66NorthPage,
-   ShoppingCartPage,
-   ShoppingPaymentPage,
-   TrapsDawnMTTrapGray,
-   BagsTransitLineSlingPocket,
-   GearHptXMizuCairoGrid750MlSilverWhite,
-   HptKniveJamesBrandTheElko,
-   HptHelinoxTacticalChairOne,
-   HptSleepingThermarestNeoairXlite,
-   HpthygieneBasicNatureFirstAidKitStandart,
-   GiftCard,
-   HptSotoStormbreaker,
-} from './pages/index';
+
+import Colections from './pages/Collections';
+import PageMissed from './pages/pageMissed/PageMissed';
+import Zelte from './pages/Zelte';
+import CollabMaharishi from './pages/CollabMaharishi';
+import CarryeEssentials from './pages/CarryeEssentials';
+import TransitLine from './pages/TransitLine';
+import HptSelected from './pages/HptSelected';
+import TopSellerPage from './pages/TopSellerPage';
+import LifetimeGuaranteePage from './pages/LifetimeGuaranteePage';
+import OnePercentPage from './pages/OnePercentPage';
+import Dyecoshell from './pages/Dyecoshell';
+import MagazineSectionHtpPage from './pages/MagazineSectionHtpPage';
+import MagazineSectionAdventurePage from './pages/MagazineSectionAdventurePage';
+import MagazineSectionProductCallabsPage from './pages/MagazineSectionProductCallabsPage';
+import InspirationSectionAboutusPage from './pages/InspirationSectionAboutusPage';
+import ReStorePage from './pages/ReStorePage';
+import ContributionsPage from './pages/ContributionsPage';
+import ContributionsSectionMaharishiPage from './pages/ContributionsSectionMaharishiPage';
+import FootherHelpFaqsPage from './pages/FootherHelpFaqsPage';
+import FootherContactPage from './pages/FootherContactPage';
+import FootherTentSizePage from './pages/FootherTentSizePage';
+import FootherTarpsPage from './pages/FootherTarpsPage';
+import FootherShippingPage from './pages/FootherShippingPage';
+import ContributionsAdventuresPage from './pages/ContributionsAdventuresPage';
+import ContributionsOurTipsPage from './pages/ContributionsOurTipsPage';
+import ContributionsCampingPage from './pages/ContributionsCampingPage';
+import FootherGearPage from './pages/FootherGearPage';
+import FootherCareerPage from './pages/FootherCareerPage';
+import FootherPreesContactPage from './pages/FootherPreesContactPage';
+import FootherAffiliatePage from './pages/FootherAffiliatePage';
+import FootherNewsletterPage from './pages/FootherNewsletterPage';
+import FootherImprintPage from './pages/FootherImprintPage';
+import FootherAgbPage from './pages/FootherAgbPage';
+import FootherPrivacyPolicy from './pages/FootherPrivacyPolicy';
+import FootherRevocationPage from './pages/FootherRevocationPage';
+import ShopFinderPage from './pages/ShopFinderPage';
+import RegisterPage from './pages/RegisterPage';
+import AllProducts from './pages/AllProducts';
+import KnivesPage from './pages/KnivesPage';
+import CampingFurniturePage from './pages/CampingFurniturePage';
+import CookingPage from './pages/CookingPage';
+import SleepingPage from './pages/SleepingPage';
+import HygienePage from './pages/HygienePage';
+import TentsFistalClassic from './pages/products/TentsFistalClassic';
+import ProjectePage from './pages/ProjectePage';
+import AmbassadorsPage from './pages/AmbassadorsPage';
+import MagazineNavBlogMavericksTour from './pages/MagazineNavBlogMavericksTour';
+import MagazineNavBlogPilgrimageInEasternTibet from './pages/MagazineNavBlogPilgrimageInEasternTibet';
+import HptStoreHamburgPage from './pages/HptStoreHamburgPage';
+import TentTechnologyPage from './pages/TentTechnologyPage';
+import CooleverTechnologyPage from './pages/CooleverTechnologyPage';
+import DesignSpacePage from './pages/DesignSpacePage';
+import GreatMakeoverPage from './pages/GreatMakeoverPage';
+import NewTentKirraPage from './pages/NewTentKirraPage';
+import HelmplanetX66NorthPage from './pages/HelmplanetX66NorthPage';
+import ShoppingCartPage from './components/navbar/cart/shoppingCart/ShoppingCartPage';
+import ShoppingPaymentPage from './components/navbar/cart/shoppingCart/ShoppingPaymentPage';
+import TrapsDawnMTTrapGray from './pages/products/TrapsDawnMTTrapGray';
+import BagsTransitLineSlingPocket from './pages/products/BagsTransitLineSlingPocket';
+
+import HptKniveJamesBrandTheElko from './pages/products/HptKniveJamesBrandTheElko';
+import HptHelinoxTacticalChairOne from './pages/products/HptHelinoxTacticalChairOne';
+import HptSleepingThermarestNeoairXlite from './pages/products/HptSleepingThermarestNeoairXlite';
+import HpthygieneBasicNatureFirstAidKitStandart from './pages/products/HpthygieneBasicNatureFirstAidKitStandart';
+import GiftCard from './pages/products/GiftCard';
+import HptSotoStormbreaker from './pages/products/HptSotoStormbreaker';
 
 import Layout from './Layout';
 import { useDispatch } from 'react-redux';
@@ -76,6 +75,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 
 import { useLocation } from 'react-router-dom';
+import GearHptXMizuCairoGrid750MlSilverWhite from './pages/products/GearHptXMizuCairoGrid750MlSilverWhite';
 
 const App = () => {
    const dispatch = useDispatch();
